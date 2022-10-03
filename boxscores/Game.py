@@ -1,7 +1,6 @@
 from datetime import datetime
-import numbers
-from re import template
 from Player import Player
+import re
 
 class Game:
     ### dictionary with abbrev as key and corresponding team as the value
@@ -107,13 +106,70 @@ class Game:
         return info
     
     ##### PUBLIC HELPERS  
-    def extract_score_plays(self, text):
+    def extract_scoring_plays(self, text):
+        # create list of plays
+        plays = []
+
         text_start = text.find('<div class="content_grid"')
         scores = text[:text_start]
+        # trim to table
+        start = scores.find('<div id="all_scoring"')
+        scores = scores[start:]
+        # trim to tbody
+        start = scores.find('tbody')
+        scores = scores[start:]
+        
+        while scores.find('<tr>') > -1:
+            row_start = scores.find('<tr>')
+            row_end = scores.find('</tr>')
+            row = scores[row_start:row_end]
+            self.extract_scoring_play(row, plays)
+            scores = scores[row_end + 5:]
 
-        print(scores)
+        for row in plays:
+            print(row)
 
         return text[text_start:]
+
+    def extract_scoring_play(self, score, plays):
+        # extract quarter
+        qtr_start = score.find('data-stat="quarter">') + 20
+        qtr_end = score.find('</th>')
+        qtr = score[qtr_start:qtr_end]
+        # extract quarter time
+        qtr_time_start = score.find('data-stat="time">') + 17
+        qtr_time_end = score.find('</td>')
+        qtr_time = score[qtr_time_start:qtr_time_end]
+        qtr_time = qtr_time.replace('<', '')
+        score = score[qtr_time_end + 5:]
+        # extract scoring team
+        tm_start = score.find('data-stat="team">') + 17
+        tm_end = score.find('</td>')
+        score_tm = score[tm_start:tm_end]
+        score = score[tm_end + 5:]
+        # extract scoring play description
+        desc_start = score.find('data-stat="description">') + 24
+        desc_end = score.find('</td>')
+        desc = score[desc_start:desc_end]
+        desc = desc.replace('\n', '')
+        html = re.compile('<.*?>')
+        desc = re.sub(html, '', desc)
+        space = re.compile(' +')
+        desc = re.sub(space, ' ', desc)
+        score = score[desc_end + 5:]
+        # extract visiting score after play
+        vis_scr_start = score.find('data-stat="vis_team_score">') + 27
+        vis_scr_end = score.find('</td>')
+        vis_score = score[vis_scr_start:vis_scr_end]
+        score = score[vis_scr_end + 5:]
+        # extract home score after play
+        hm_scr_start = score.find('data-stat="home_team_score">') + 28
+        hm_scr_end = score.find('</td>')
+        hm_score = score[hm_scr_start:hm_scr_end]
+        score = score[hm_scr_end + 5:]
+
+        plays.append([qtr, qtr_time, score_tm, desc, vis_score, hm_score])
+        return score
                 
     def extract_scorebox_meta(self, text):
         beg = text.index('</strong>: ')
