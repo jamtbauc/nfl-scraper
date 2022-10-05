@@ -91,6 +91,8 @@ def run_scraper():
     text = game.extract_scorebox_meta(text)
     # extract linescores
     text = game.extract_scoring_plays(text)
+    # extract game info
+    text = game.extract_game_info(text)
 
     print(text[:30])
     game.print_game_info() 
