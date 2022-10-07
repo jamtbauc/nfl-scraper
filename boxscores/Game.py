@@ -30,10 +30,13 @@ class Game:
         "New England Patriots": "NWE",
         "New York Giants": "NYG",
         "New York Jets": "NYJ",
+        "Oakland Raiders": "OAK",
         "Philadelphia Eagles": "PHI",
         "Pittsburgh Steelers": "PIT",
-        "Seattle Seahawks": "SEA",
+        "San Diego Chargers": "SDG",
         "San Francisco 49ers": "SFO",
+        "Seattle Seahawks": "SEA",
+        "St. Louis Rams": "STL",
         "Tampa Bay Buccaneers": "TAM",
         "Tennessee Titans": "TEN",
         "Washington Football Team": "WAS",
@@ -105,6 +108,7 @@ class Game:
 
         return info
     
+<<<<<<< HEAD
     ##### PUBLIC HELPERS 
     def extract_game_info(self, text):
         game_info = {}
@@ -161,6 +165,19 @@ class Game:
 
         return text[text_start:]
 
+=======
+    ##### PUBLIC HELPERS  
+    def extract_game_info(self, text):
+        idx = text.find('<div class="table_container"')
+        text_start = text.find('<div id="all_officials"')
+        
+        info = text[:text_start]
+        while info.find('<tr'):
+            pass
+            ### TODO
+        return text[text_start:]
+    
+>>>>>>> f967cb57f7cfeabc3a348e4897e8c8c1957a18d1
     def extract_scoring_plays(self, text):
         # create list of plays
         plays = []

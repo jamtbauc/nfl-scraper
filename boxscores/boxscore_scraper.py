@@ -102,10 +102,15 @@ def run_scraper():
     ### OPTIMIZATION: Starting from here can be ran asynchronously
     # extract linescores
     text = game.extract_scoring_plays(text)
+<<<<<<< HEAD
     # extract basic game info
     text = game.extract_game_info(text)
     # extract game officials
     text = game.extract_officials(text)
+=======
+    # extract game info
+    text = game.extract_game_info(text)
+>>>>>>> f967cb57f7cfeabc3a348e4897e8c8c1957a18d1
 
     #print(text[:30])
     game.print_game_info() 
