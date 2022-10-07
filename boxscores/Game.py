@@ -108,7 +108,6 @@ class Game:
 
         return info
     
-<<<<<<< HEAD
     ##### PUBLIC HELPERS 
     def extract_game_info(self, text):
         game_info = {}
@@ -165,19 +164,6 @@ class Game:
 
         return text[text_start:]
 
-=======
-    ##### PUBLIC HELPERS  
-    def extract_game_info(self, text):
-        idx = text.find('<div class="table_container"')
-        text_start = text.find('<div id="all_officials"')
-        
-        info = text[:text_start]
-        while info.find('<tr'):
-            pass
-            ### TODO
-        return text[text_start:]
-    
->>>>>>> f967cb57f7cfeabc3a348e4897e8c8c1957a18d1
     def extract_scoring_plays(self, text):
         # create list of plays
         plays = []
