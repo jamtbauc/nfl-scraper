@@ -74,7 +74,17 @@ def open_html(file):
 
     
 def run_scraper():
-    games = {}
+    # Hold all games
+    games = []
+    # Hold all teams
+    teams = []
+    # Hold all players
+    players = []
+    # Hold all officials
+    officials = []
+    # Hold all stadiums
+    stadiums = []
+
     # define base url and get request urls
     base = "www.pro-football-reference.com"
     url = "/boxscores/202109090tam.htm"
@@ -89,10 +99,15 @@ def run_scraper():
     text = game.extract_scorebox(text)
     # extract scorebox meta
     text = game.extract_scorebox_meta(text)
+    ### OPTIMIZATION: Starting from here can be ran asynchronously
     # extract linescores
     text = game.extract_scoring_plays(text)
+    # extract basic game info
+    text = game.extract_game_info(text)
+    # extract game officials
+    text = game.extract_officials(text)
 
-    print(text[:30])
+    #print(text[:30])
     game.print_game_info() 
 
         

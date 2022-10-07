@@ -105,7 +105,62 @@ class Game:
 
         return info
     
-    ##### PUBLIC HELPERS  
+    ##### PUBLIC HELPERS 
+    def extract_game_info(self, text):
+        game_info = {}
+
+        text_start = text.find('<div id="all_officials"')
+        info_start = text.find('<div class="table_container" id="div_game_info">')
+        info = text[info_start:text_start]
+        # loop through all rows of html
+        while info.find('<tr >') > -1:
+            # define row start
+            row_start = info.find('<tr >')
+            # define row end
+            row_end = info.find('</tr>')
+            row = info[row_start:row_end]
+            # define game info cat
+            head_start = row.find('="info" >')
+            head_end = row.find('</th>')
+            header = row[head_start + 9:head_end]
+            # define game info stat
+            stat_start = row.find('="stat" >')
+            stat_end = row.find('</td>')
+            stat = row[stat_start + 9:stat_end]
+            # remove html from stats
+            html = re.compile('<.*?>')
+            stat = re.sub(html, '', stat)
+            game_info[header] = stat;
+            info = info[row_end + 5:]
+
+        return text[text_start:]
+
+    def extract_officials(self, text):
+        referees = {}
+
+        text_start = text.find('<div id="all_expected_points"')
+        official_start = text.find('<div class="table_container" id="div_officials">')
+        officials = text[official_start:text_start]
+
+        while officials.find('<tr ') > -1:
+            row_start = officials.find('<tr ')
+            row_end = officials.find('</tr>')
+            row = officials[row_start:row_end]
+            
+            off_pos_start = row.find('"ref_pos" >') + 11
+            off_pos_end = row.find('</th>')
+            off_pos = row[off_pos_start:off_pos_end]
+
+            off_start = row.find('.htm">') + 6
+            off_end = row.find('</a>')
+            off = row[off_start:off_end]
+
+            referees[off_pos] = off
+
+            officials = officials[row_end + 5:]
+
+        return text[text_start:]
+
     def extract_scoring_plays(self, text):
         # create list of plays
         plays = []
@@ -118,24 +173,27 @@ class Game:
         # trim to tbody
         start = scores.find('tbody')
         scores = scores[start:]
+
+        last_known_qtr = 0
         
         while scores.find('<tr>') > -1:
             row_start = scores.find('<tr>')
             row_end = scores.find('</tr>')
             row = scores[row_start:row_end]
-            self.extract_scoring_play(row, plays)
+            last_known_qtr = self.extract_scoring_play(row, plays, last_known_qtr)
             scores = scores[row_end + 5:]
-
-        for row in plays:
-            print(row)
 
         return text[text_start:]
 
-    def extract_scoring_play(self, score, plays):
+    def extract_scoring_play(self, score, plays, last_known_qtr):
         # extract quarter
         qtr_start = score.find('data-stat="quarter">') + 20
         qtr_end = score.find('</th>')
         qtr = score[qtr_start:qtr_end]
+        if qtr == '':
+            qtr = last_known_qtr
+        else:
+            last_known_qtr = qtr
         # extract quarter time
         qtr_time_start = score.find('data-stat="time">') + 17
         qtr_time_end = score.find('</td>')
@@ -169,7 +227,7 @@ class Game:
         score = score[hm_scr_end + 5:]
 
         plays.append([qtr, qtr_time, score_tm, desc, vis_score, hm_score])
-        return score
+        return last_known_qtr
                 
     def extract_scorebox_meta(self, text):
         beg = text.index('</strong>: ')
