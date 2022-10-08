@@ -58,11 +58,15 @@ class Game:
         self.__home_off_players = []
         self.__home_score = -1
         self.__home_starters = {}
+        self._id = self.__create_ids
         self.__officials = {}
         self.__stadium = ""
     
     ### HELPER METHODS  
-    ##### PRIVATE HELPERS  
+    ##### PRIVATE HELPERS 
+    def __create_ids(self, date, away, home):
+        pass
+
     def __extract_time(self, time_str):
         am_pm = time_str[-2:]
         if am_pm == "am":
@@ -258,16 +262,16 @@ class Game:
         return text[text_break:]
 
     def extract_scorebox(self, text):
-        # trim info
-        s_idx = text.find('<div class="scorebox')
-        e_idx = text.find('<div class="scorebox_meta')
-        info = text[s_idx:e_idx]
         # extract info and trim
         info = self.__extract_score_coach(info)
         # repeat for next team
         info = self.__extract_score_coach(info)
 
-        return text[e_idx:]
+    def extract_team_stats(self, text):
+        text_start = text.find('<div id="all_player_offense" class="table_wrapper">')
+        stats_start = text.find('<div class="table_container" id="div_team_stats">')
+
+        return text[text_start:]
                 
     def print_game_info(self):
         print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance")

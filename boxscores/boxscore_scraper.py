@@ -27,10 +27,6 @@ def extract_basic_info(text):
     date = datetime.strptime(date, "%B %d, %Y")
     # create game object
     game = Game(date, away, home)
-    # remove used data from text
-    text = text[e_idx:]
-    idx = text.find("<div")
-    text = text[idx:]
 
     return text, game
         
@@ -93,19 +89,49 @@ def run_scraper():
     text = open_html("./page.html")
     # trim html to content we need
     text = trim_text(text, '<div id="content"', '<div id="footer"')
+
+    ### Declare the sections we need to parse
+    matchup = trim_text(text, '<div id="content" role="main" class="box">', '<div class="section_wrapper setup_commented commented" id="all_other_scores">')
+    scorebox = trim_text(text, '<div class="scorebox">', '<div class="scorebox_meta">')
+    scorebox_meta = trim_text(text, '<div class="scorebox_meta">', '<style>')
+    all_scoring = trim_text(text, '<div class="table_container" id="div_scoring">', '<div class="content_grid">')
+    game_info = trim_text(text, '<div id="all_game_info"', '<div id="all_officials"')
+    all_officials = trim_text(text, '<div id="all_officials"', '<div id="all_expected_points"')
+    expected_pts = trim_text(text, '<div id="all_expected_points"', '<div id="all_team_stats"')
+    all_team_stats = trim_text(text, '<div id="all_team_stats"', '<div id="all_player_offense"')
+    all_player_off = trim_text(text, '<div id="all_player_offense"', '<div id="all_player_defense"')
+    all_player_def = trim_text(text, '<div id="all_player_defense"', '<div id="all_returns"')
+    all_returns = trim_text(text, '<div id="all_returns"', '<div id="all_kicking"')
+    all_kicking = trim_text(text, '<div id="all_kicking"', '<div id="all_passing_advanced"')
+    passing_adv = trim_text(text, '<div id="all_passing_advanced"', '<div id="all_rushing_advanced"')
+    rusing_adv = trim_text(text, '<div id="all_rushing_advanced"', '<div id="all_receiving_advanced"')
+    receiving_adv = trim_text(text, '<div id="all_receiving_advanced"', '<div id="all_defense_advanced"')
+    defense_adv = trim_text(text, '<div id="all_defense_advanced"', '<div id="all_home_starters"')
+    home_starters = trim_text(text, '<div id="all_home_starters"', '<div id="all_vis_starters"')
+    away_starters = trim_text(text, '<div id="all_vis_starters"', '<div id="all_home_snap_counts"')
+    home_snaps = trim_text(text, '<div id="all_home_snap_counts"', '<div id="all_vis_snap_counts"')
+    away_snaps = trim_text(text, '<div id="all_vis_snap_counts"', '<div id="all_home_drives"')
+    home_drives = trim_text(text, '<div id="all_home_drives"', '<div id="all_vis_drives"')
+    away_drives = trim_text(text, '<div id="all_vis_drives"', '<div id="all_pbp"')
+    plays = trim_text(text, '<div id="all_pbp"', '<div id="bottom_nav"')
+
+
+
     # extract game date string, home and away teams
-    text, game = extract_basic_info(text)
+    game = extract_basic_info(matchup)
     # extract scores and coaches
-    text = game.extract_scorebox(text)
+    game.extract_scorebox(scorebox)
     # extract scorebox meta
-    text = game.extract_scorebox_meta(text)
-    ### OPTIMIZATION: Starting from here can be ran asynchronously
+    game.extract_scorebox_meta(text)
+    ### OPTIMIZATION: Starting from here can be ran concurrently
     # extract linescores
-    text = game.extract_scoring_plays(text)
+    game.extract_scoring_plays(text)
     # extract basic game info
-    text = game.extract_game_info(text)
+    game.extract_game_info(text)
     # extract game officials
-    text = game.extract_officials(text)
+    game.extract_officials(text)
+    # extract team stats
+    game.extract_team_stats(text)
 
     #print(text[:30])
     game.print_game_info() 
