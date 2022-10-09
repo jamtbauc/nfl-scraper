@@ -126,8 +126,8 @@ def run_scraper():
     ### OPTIMIZATION: Starting from here can be ran concurrently
     # extract linescores
     game.extract_scoring_plays(all_scoring)
-    # # extract basic game info
-    # game.extract_game_info(text)
+    # extract basic game info
+    game.extract_game_info(game_info)
     # # extract game officials
     # game.extract_officials(text)
     # # extract team stats

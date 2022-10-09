@@ -52,6 +52,7 @@ class Game:
         self.__away_score = -1
         self.__away_starters = {}
         self.__date = date
+        self.__game_info = {}
         self.__home = home
         self.__home_coach = ""
         self.__home_def_players = []
@@ -59,7 +60,8 @@ class Game:
         self.__home_score = -1
         self.__home_starters = {}
         self.__id = self.__create_ids
-        self.__score_meta = {}
+        self.__scorebox_meta = {}
+        self.__scoring_plays = []
         self.__officials = {}
         self.__stadium = ""
     
@@ -160,18 +162,13 @@ class Game:
     
     ##### PUBLIC HELPERS 
     def extract_game_info(self, text):
-        game_info = {}
-
-        text_start = text.find('<div id="all_officials"')
-        info_start = text.find('<div class="table_container" id="div_game_info">')
-        info = text[info_start:text_start]
         # loop through all rows of html
-        while info.find('<tr >') > -1:
+        while text.find('<tr >') > -1:
             # define row start
-            row_start = info.find('<tr >')
+            row_start = text.find('<tr >')
             # define row end
-            row_end = info.find('</tr>')
-            row = info[row_start:row_end]
+            row_end = text.find('</tr>')
+            row = text[row_start:row_end]
             # define game info cat
             head_start = row.find('="info" >')
             head_end = row.find('</th>')
@@ -183,10 +180,10 @@ class Game:
             # remove html from stats
             html = re.compile('<.*?>')
             stat = re.sub(html, '', stat)
-            game_info[header] = stat;
-            info = info[row_end + 5:]
-
-        return text[text_start:]
+            if header != '':
+                self.__game_info[header] = stat;
+            
+            text = text[row_end + 5:]
 
     def extract_officials(self, text):
         referees = {}
@@ -215,9 +212,6 @@ class Game:
         return text[text_start:]
 
     def extract_scoring_plays(self, text):
-        # create list of plays
-        plays = []
-
         # trim to tbody
         start = text.find('tbody')
         text = text[start:]
@@ -230,14 +224,11 @@ class Game:
             row = text[row_start:row_end]
             
             last_known_qtr, play = self.__extract_scoring_play(row, last_known_qtr)
-            plays.append(play)
+            self.__scoring_plays.append(play)
             
             text = text[row_end:]
-            
-        print(plays)
                 
     def extract_scorebox_meta(self, text):
-        meta = {}
         while text.find('<strong>') > -1:
             start = text.find('<strong>')
             text = text[start:]
@@ -248,10 +239,8 @@ class Game:
             info = info.split(': ')
             type = info[0]
             info = info[1]
-            meta[type] = info
+            self.__scorebox_meta[type] = info
             text = text[end:]
-            
-        self.__score_meta = meta
 
     def extract_scorebox(self, text):
         text = self.__extract_score_coach(text)
