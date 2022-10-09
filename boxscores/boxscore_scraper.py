@@ -28,7 +28,7 @@ def extract_basic_info(text):
     # create game object
     game = Game(date, away, home)
 
-    return text, game
+    return game
         
 def remove_date_formals(date):
     formals = ("st", "nd", "rd", "th")
@@ -122,19 +122,19 @@ def run_scraper():
     # extract scores and coaches
     game.extract_scorebox(scorebox)
     # extract scorebox meta
-    game.extract_scorebox_meta(text)
+    game.extract_scorebox_meta(scorebox_meta)
     ### OPTIMIZATION: Starting from here can be ran concurrently
     # extract linescores
-    game.extract_scoring_plays(text)
-    # extract basic game info
-    game.extract_game_info(text)
-    # extract game officials
-    game.extract_officials(text)
-    # extract team stats
-    game.extract_team_stats(text)
+    game.extract_scoring_plays(all_scoring)
+    # # extract basic game info
+    # game.extract_game_info(text)
+    # # extract game officials
+    # game.extract_officials(text)
+    # # extract team stats
+    # game.extract_team_stats(text)
 
-    #print(text[:30])
-    game.print_game_info() 
+    # #print(text[:30])
+    # game.print_game_info() 
 
         
 if __name__ == "__main__":
