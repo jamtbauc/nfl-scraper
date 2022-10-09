@@ -201,11 +201,8 @@ class Game:
             text = text[row_end + 5:]
 
     def extract_officials(self, text):
-        referees = {}
-
-        text_start = text.find('<div id="all_expected_points"')
         official_start = text.find('<div class="table_container" id="div_officials">')
-        officials = text[official_start:text_start]
+        officials = text[official_start:]
 
         while officials.find('<tr ') > -1:
             row_start = officials.find('<tr ')
@@ -214,17 +211,16 @@ class Game:
             
             off_pos_start = row.find('"ref_pos" >') + 11
             off_pos_end = row.find('</th>')
-            off_pos = row[off_pos_start:off_pos_end]
+            if off_pos_start > -1 and off_pos_end > -1:
+                off_pos = row[off_pos_start:off_pos_end]
 
-            off_start = row.find('.htm">') + 6
-            off_end = row.find('</a>')
-            off = row[off_start:off_end]
-
-            referees[off_pos] = off
+                off_start = row.find('.htm">') + 6
+                off_end = row.find('</a>')
+                if off_start > -1 and off_end > -1:
+                    off = row[off_start:off_end]
+                    self.__officials[off_pos] = off
 
             officials = officials[row_end + 5:]
-
-        return text[text_start:]
 
     def extract_scoring_plays(self, text):
         # trim to tbody
@@ -302,7 +298,7 @@ class Game:
             
         print(f"{self.__home} Def Players Count: {len(self.__home_def_players)}")
         
-        print(f"Officials Count: {len(self.__officials)}")
+        print(f"Officials: {self.__officials}")
         
     def get_game_as_list(self):
         return [

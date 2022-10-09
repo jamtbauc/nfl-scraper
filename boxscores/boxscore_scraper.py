@@ -128,12 +128,12 @@ def run_scraper():
     game.extract_scoring_plays(all_scoring)
     # extract basic game info
     game.extract_game_info(game_info)
-    # # extract game officials
-    # game.extract_officials(text)
+    # extract game officials
+    game.extract_officials(all_officials)
     # # extract team stats
     # game.extract_team_stats(text)
 
-    game.print_game_info() 
+    # game.print_game_info() 
 
         
 if __name__ == "__main__":
