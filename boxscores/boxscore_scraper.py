@@ -130,8 +130,8 @@ def run_scraper():
     game.extract_game_info(game_info)
     # extract game officials
     game.extract_officials(all_officials)
-    # # extract team stats
-    # game.extract_team_stats(text)
+    # extract expected points
+    game.extract_exp_points_added(expected_pts)
 
     # game.print_game_info() 
 

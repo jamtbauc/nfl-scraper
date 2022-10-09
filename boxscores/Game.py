@@ -1,5 +1,6 @@
 from cmath import inf
 from datetime import datetime
+from tracemalloc import start
 from Player import Player
 import re
 
@@ -49,6 +50,7 @@ class Game:
         self.__away = away
         self.__away_coach = ""
         self.__away_def_players = []
+        self.__away_exp_points = {}
         self.__away_off_players = []
         self.__away_score = -1
         self.__away_starters = {}
@@ -57,6 +59,7 @@ class Game:
         self.__home = home
         self.__home_coach = ""
         self.__home_def_players = []
+        self.__home_exp_points = {}
         self.__home_off_players = []
         self.__home_score = -1
         self.__home_starters = {}
@@ -165,6 +168,39 @@ class Game:
         return last_known_qtr, scoring_play
     
     ##### PUBLIC HELPERS 
+    def extract_exp_points_added(self, text):
+        exp_pts_start = text.find('tbody')
+        exp_pts = text[exp_pts_start:]
+        
+        while exp_pts.find('<tr') > -1:
+            row_start = exp_pts.find('<tr')
+            row_end = exp_pts.find('</tr>')
+            row = exp_pts[row_start:row_end]
+            
+            tm_start = row.find('"team_name" >') + 13
+            tm_end = row.find('</th>')
+            tm = row[tm_start:tm_end]
+            print(tm)
+            
+            while row.find('<td ') > -1:
+                label_start = row.find('data-stat=') + 11
+                label_end = row.find('" >')
+                label = row[label_start:label_end]
+                if label != "team_name":
+                    stat_start = row.find('>') + 1
+                    stat_end = row.find('</td>')
+                    stat = row[stat_start:stat_end]
+                    
+                    if tm in self.__away:
+                        self.__away_exp_points[label] = stat
+                    elif tm in self.__home:
+                        self.__home_exp_points[label] = stat
+                
+                row = row[row.find('</td>') + 5:]
+                
+            
+            exp_pts = exp_pts[row_end + 4:]
+    
     def extract_game_info(self, text):
         # loop through all rows of html
         while text.find('<tr >') > -1:
@@ -299,6 +335,10 @@ class Game:
         print(f"{self.__home} Def Players Count: {len(self.__home_def_players)}")
         
         print(f"Officials: {self.__officials}")
+        
+        print(f"{self.__away} (Away) Expected Points: {self.__away_exp_points}")
+        
+        print(f"{self.__home} (Home) Expected Points: {self.__home_exp_points}")
         
     def get_game_as_list(self):
         return [
