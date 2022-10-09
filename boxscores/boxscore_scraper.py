@@ -133,8 +133,7 @@ def run_scraper():
     # # extract team stats
     # game.extract_team_stats(text)
 
-    # #print(text[:30])
-    # game.print_game_info() 
+    game.print_game_info() 
 
         
 if __name__ == "__main__":

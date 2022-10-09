@@ -1,3 +1,4 @@
+from cmath import inf
 from datetime import datetime
 from Player import Player
 import re
@@ -52,6 +53,7 @@ class Game:
         self.__away_score = -1
         self.__away_starters = {}
         self.__date = date
+        self.__game_duration = 0
         self.__game_info = {}
         self.__home = home
         self.__home_coach = ""
@@ -60,9 +62,9 @@ class Game:
         self.__home_score = -1
         self.__home_starters = {}
         self.__id = self.__create_ids
+        self.__officials = {}
         self.__scorebox_meta = {}
         self.__scoring_plays = []
-        self.__officials = {}
         self.__stadium = ""
     
     ### HELPER METHODS  
@@ -134,6 +136,8 @@ class Game:
             qtr = last_known_qtr
         else:
             last_known_qtr = qtr
+            
+        scoring_play["quarter"] = qtr
             
         row = row[qtr_end:]
         while row.find('<td ') > -1:
@@ -232,14 +236,26 @@ class Game:
         while text.find('<strong>') > -1:
             start = text.find('<strong>')
             text = text[start:]
+            
             end = text.find('</div>')
             info = text[:end]
+            
             html = re.compile('<.*?>')
             info = re.sub(html, '', info)
+            
             info = info.split(': ')
             type = info[0]
             info = info[1]
-            self.__scorebox_meta[type] = info
+            
+            if type == "Attendance":
+                self.__attendance = info
+            elif type == "Stadium":
+                self.__stadium = info
+            elif type == "Start Time":
+                self.__extract_time(info)
+            elif type == "Time of Game":
+                self.__game_duration = info
+                
             text = text[end:]
 
     def extract_scorebox(self, text):
@@ -253,11 +269,13 @@ class Game:
         return text[text_start:]
                 
     def print_game_info(self):
-        print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance")
+        print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance | Duration: {self.__game_duration}")
 
         print(f"{self.__away}-{self.__away_score} at {self.__home}-{self.__home_score}")
         
         print(f"{self.__away_coach} vs {self.__home_coach}")
+        
+        print(f"Scoring plays: {self.__scoring_plays}")
         
         print(f"{self.__away} Off Players Count: {len(self.__away_off_players)}")
             
