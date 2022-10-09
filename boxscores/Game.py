@@ -54,24 +54,24 @@ class Game:
         self.__away_starters = {}
         self.__date = date
         self.__game_duration = 0
-        self.__game_info = {}
         self.__home = home
         self.__home_coach = ""
         self.__home_def_players = []
         self.__home_off_players = []
         self.__home_score = -1
         self.__home_starters = {}
-        self.__id = self.__create_ids
         self.__officials = {}
-        self.__scorebox_meta = {}
+        self.__over_under = 0
+        self.__roof = ""
         self.__scoring_plays = []
         self.__stadium = ""
+        self.__surface = ""
+        self.__spread = 0
+        self.__weather = ""
+        self.__won_toss = ""
     
     ### HELPER METHODS  
     ##### PRIVATE HELPERS 
-    def __create_ids(self, date, away, home):
-        pass
-
     def __extract_time(self, time_str):
         am_pm = time_str[-2:]
         if am_pm == "am":
@@ -184,8 +184,19 @@ class Game:
             # remove html from stats
             html = re.compile('<.*?>')
             stat = re.sub(html, '', stat)
-            if header != '':
-                self.__game_info[header] = stat;
+            
+            if header == "Won Toss":
+                self.__won_toss = stat
+            elif header == "Roof":
+                self.__roof = stat
+            elif header == "Surface":
+                self.__surface = stat
+            elif header == "Weather":
+                self.__weather = stat
+            elif header == "Vegas Line":
+                self.__spread = stat
+            elif header == "Over/Under":
+                self.__over_under = stat
             
             text = text[row_end + 5:]
 
@@ -270,6 +281,12 @@ class Game:
                 
     def print_game_info(self):
         print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance | Duration: {self.__game_duration}")
+
+        print(f"Favored: {self.__spread} | Over/Under: {self.__over_under}")
+        
+        print(f"Weather: {self.__weather}")
+        
+        print(f"Roof: {self.__roof} | Surface: {self.__surface}")
 
         print(f"{self.__away}-{self.__away_score} at {self.__home}-{self.__home_score}")
         
