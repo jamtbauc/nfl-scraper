@@ -54,6 +54,7 @@ class Game:
         self.__away_off_players = []
         self.__away_score = -1
         self.__away_starters = {}
+        self.__away_team_stats = {}
         self.__date = date
         self.__game_duration = 0
         self.__home = home
@@ -63,6 +64,7 @@ class Game:
         self.__home_off_players = []
         self.__home_score = -1
         self.__home_starters = {}
+        self.__home_team_stats = {}
         self.__officials = {}
         self.__over_under = 0
         self.__roof = ""
@@ -180,7 +182,6 @@ class Game:
             tm_start = row.find('"team_name" >') + 13
             tm_end = row.find('</th>')
             tm = row[tm_start:tm_end]
-            print(tm)
             
             while row.find('<td ') > -1:
                 label_start = row.find('data-stat=') + 11
@@ -306,10 +307,29 @@ class Game:
         self.__extract_score_coach(text)
 
     def extract_team_stats(self, text):
-        text_start = text.find('<div id="all_player_offense" class="table_wrapper">')
-        stats_start = text.find('<div class="table_container" id="div_team_stats">')
-
-        return text[text_start:]
+        start = text.find('<tbody')
+        text = text[start:]
+        
+        while text.find('<tr') > -1:
+            row_start = text.find('<tr ')
+            row_end = text.find('</tr>')
+            row = text[row_start:row_end]
+            
+            label_start = row.find('"stat" >') + 8
+            label_end = row.find('</th>')
+            label = row[label_start:label_end]
+            
+            vis_start = row.find('vis_stat" >') + 11
+            vis_end = row.find('</td>')
+            vis_stat = row[vis_start:vis_end]
+            self.__away_team_stats[label] = vis_stat
+            
+            home_start = row.find('home_stat" >') + 12
+            home_end = row.find('</td></tr>') - 4
+            home_stat = row[home_start:home_end]
+            self.__home_team_stats[label] = home_stat
+            
+            text = text[row_end + 5:]
                 
     def print_game_info(self):
         print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance | Duration: {self.__game_duration}")
@@ -339,6 +359,10 @@ class Game:
         print(f"{self.__away} (Away) Expected Points: {self.__away_exp_points}")
         
         print(f"{self.__home} (Home) Expected Points: {self.__home_exp_points}")
+        
+        print(f"{self.__away} Team Stats: {self.__away_team_stats}")
+        
+        print(f"{self.__home} Team Stats: {self.__home_team_stats}")
         
     def get_game_as_list(self):
         return [
