@@ -136,8 +136,10 @@ def run_scraper():
     game.extract_team_stats(all_team_stats)
     # extract player offense
     game.extract_player_offense(all_player_off)
+    # extract player defense
+    game.extract_player_defense(all_player_def)
 
-    # game.print_game_info() 
+    game.print_game_info() 
 
         
 if __name__ == "__main__":
