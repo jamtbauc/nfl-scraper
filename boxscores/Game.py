@@ -2,6 +2,7 @@ from cmath import inf
 from datetime import datetime
 from sqlite3 import Row
 from tracemalloc import start
+from turtle import ht
 from Player import Player
 import re
 
@@ -874,7 +875,33 @@ class Game:
                 row = row[stat_end + 5:]
             
             returns = returns[row_end + 5:]
+
+    def extract_plays(self, text):
+        start = text.find('<tbody>')
+        plays = text[start:]
+        
+        while plays.find('<tr ') > -1:
+            row_start = plays.find('<tr ')
+            row_end = plays.find('</tr>')
+            row = plays[row_start:row_end]
             
+            qtr_start = row.find('data-stat="quarter" >') + 21
+            qtr_end = row.find('</th>')
+            qtr = row[qtr_start:qtr_end]
+            if qtr.find("onecell") < 0 and qtr.find("aria-label") < 0:
+                pass # do something here
+
+            rem_time_start = row.find('data-stat="qtr_time_remain" >') + 29
+            rem_time = row[rem_time_start:]
+            rem_time_end = rem_time.find('</a>')
+            rem_time = rem_time[:rem_time_end]
+            if rem_time.find("aria-label") < 0 and rem_time.find("onecell") < 0:
+                html = re.compile('<.*?>')
+                rem_time = re.sub(html, '', rem_time)
+                print(rem_time)
+            
+            plays = plays[row_end + 5:]
+
     def extract_scorebox(self, text):
         text = self.__extract_score_coach(text)
         self.__extract_score_coach(text)

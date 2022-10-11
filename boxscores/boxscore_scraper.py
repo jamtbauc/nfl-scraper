@@ -162,8 +162,10 @@ def run_scraper():
     game.extract_home_drives(home_drives)
     # extract away drives
     game.extract_away_drives(away_drives)
+    # extract play by plays
+    game.extract_plays(plays)
 
-    game.print_game_info() 
+    #game.print_game_info() 
 
         
 if __name__ == "__main__":
