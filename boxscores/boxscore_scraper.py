@@ -138,6 +138,8 @@ def run_scraper():
     game.extract_player_offense(all_player_off)
     # extract player defense
     game.extract_player_defense(all_player_def)
+    # extract player returns
+    game.extract_player_returns(all_returns)
 
     game.print_game_info() 
 

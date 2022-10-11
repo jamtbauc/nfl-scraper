@@ -53,6 +53,7 @@ class Game:
         self.__away_def_players = {}
         self.__away_exp_points = {}
         self.__away_off_players = {}
+        self.__away_ret_players= {}
         self.__away_score = -1
         self.__away_starters = {}
         self.__away_team_stats = {}
@@ -63,6 +64,7 @@ class Game:
         self.__home_def_players = {}
         self.__home_exp_points = {}
         self.__home_off_players = {}
+        self.__home_ret_players = {}
         self.__home_score = -1
         self.__home_starters = {}
         self.__home_team_stats = {}
@@ -358,6 +360,54 @@ class Game:
             
             defense = defense[row_end + 5:]
             
+    def extract_player_returns(self, text):
+        # Vars to hold player and team as we loop through rows
+        team = ""
+        player = ""
+        
+        ret_start = text.find('<tbody>')
+        returns = text[ret_start:]
+        
+        while returns.find('<tr >') > -1:
+            row_start = returns.find('<tr >')
+            row_end = returns.find('</tr>')
+            row = returns[row_start:row_end]
+            
+            while row.find('data-stat="') > -1:
+                ds_start = row.find('data-stat="') + 11
+                ds_end = row.find('" >')
+                ds = row[ds_start:ds_end]
+                
+                stat_end = row.find('</t')
+                stat = row[ds_end + 3:stat_end]
+                stat = stat.replace('\n', '')
+                stat = stat.replace("   ", '')
+                
+                html = re.compile('<.*?>')
+                stat = re.sub(html, '', stat)
+                
+                if stat == '':
+                    stat = 0
+                
+                if ds == "player":
+                    player = stat
+                elif ds == "team":
+                    team = stat
+                else:
+                    if self.abbrevs[self.__away] == team:
+                        if player not in self.__away_ret_players:
+                            self.__away_ret_players[player] = {}
+                        
+                        self.__away_ret_players[player][ds] = stat
+                    elif self.abbrevs[self.__home] == team:
+                        if player not in self.__home_ret_players:
+                            self.__home_ret_players[player] = {}
+                        
+                        self.__home_ret_players[player][ds] = stat
+                
+                row = row[stat_end + 5:]
+            
+            returns = returns[row_end + 5:]
 
     def extract_scoring_plays(self, text):
         # trim to tbody
@@ -450,9 +500,13 @@ class Game:
             
         print(f"{self.__away} Def Players Count: {len(self.__away_def_players)}")
             
+        print(f"{self.__away} Ret Players Count: {len(self.__away_ret_players)}")
+        
         print(f"{self.__home} Off Players Count: {len(self.__home_off_players)}")
             
         print(f"{self.__home} Def Players Count: {len(self.__home_def_players)}")
+        
+        print(f"{self.__home} Ret Players Count: {len(self.__home_ret_players)}")
         
         print(f"Officials Count: {len(self.__officials)}")
         
