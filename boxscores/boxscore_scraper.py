@@ -154,6 +154,10 @@ def run_scraper():
     game.extract_home_starters(home_starters)
     # extract away starters
     game.extract_away_starters(away_starters)
+    # extract home snaps
+    game.extract_home_snaps(home_snaps)
+    # extract away snaps
+    game.extract_away_snaps(away_snaps)
 
     game.print_game_info() 
 

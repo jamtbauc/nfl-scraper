@@ -53,6 +53,7 @@ class Game:
         self.__away_exp_points = {}
         self.__away_players = {}
         self.__away_score = -1
+        self.__away_snaps = {}
         self.__away_starters = {}
         self.__away_team_stats = {}
         self.__date = date
@@ -62,6 +63,7 @@ class Game:
         self.__home_exp_points = {}
         self.__home_players = {}
         self.__home_score = -1
+        self.__home_snaps = {}
         self.__home_starters = {}
         self.__home_team_stats = {}
         self.__officials = {}
@@ -345,6 +347,62 @@ class Game:
             
             adv_rush = adv_rush[row_end + 5:]
 
+    def extract_away_snaps(self, text):
+        start = text.find('<tbody>')
+        snaps = text[start:]
+        
+        while snaps.find('<tr >') > -1:
+            row_start = snaps.find('<tr >')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            self.__away_snaps[player] = {}
+
+            osnap_start = row.find('data-stat="offense" >') + 21
+            osnap = row[osnap_start:]
+            osnap_end = osnap.find('</td>')
+            osnap = osnap[:osnap_end]
+            self.__away_snaps[player]["Offense"] = osnap
+            
+            osnappct_start = row.find('data-stat="off_pct" >') + 21
+            osnap_pct = row[osnappct_start:]
+            osnappct_end = osnap_pct.find('</td>')
+            osnap_pct = osnap_pct[:osnappct_end]
+            self.__away_snaps[player]["Offense Pct"] = osnap_pct
+
+            dsnap_start = row.find('data-stat="defense" >') + 21
+            dsnap = row[dsnap_start:]
+            dsnap_end = dsnap.find('</td>')
+            dsnap = dsnap[:dsnap_end]
+            self.__away_snaps[player]["Defense"] = dsnap
+            
+            dsnappct_start = row.find('data-stat="def_pct" >') + 21
+            dsnap_pct = row[dsnappct_start:]
+            dsnappct_end = dsnap_pct.find('</td>')
+            dsnap_pct = dsnap_pct[:dsnappct_end]
+            self.__away_snaps[player]["Defense Pct"] = dsnap_pct
+
+            stsnap_start = row.find('data-stat="defense" >') + 21
+            stsnap = row[stsnap_start:]
+            stsnap_end = stsnap.find('</td>')
+            stsnap = stsnap[:stsnap_end]
+            self.__away_snaps[player]["Special Teams"] = stsnap
+            
+            stsnappct_start = row.find('data-stat="def_pct" >') + 21
+            stsnap_pct = row[stsnappct_start:]
+            stsnappct_end = stsnap_pct.find('</td>')
+            stsnap_pct = stsnap_pct[:stsnappct_end]
+            self.__away_snaps[player]["Special Teams Pct"] = stsnap_pct
+            
+            snaps = snaps[row_end + 5:]
+
     def extract_away_starters(self, text):
         start = text.find('<tbody>')
         starters = text[start:]
@@ -436,6 +494,62 @@ class Game:
                 self.__over_under = stat
             
             text = text[row_end + 5:]
+
+    def extract_home_snaps(self, text):
+        start = text.find('<tbody>')
+        snaps = text[start:]
+        
+        while snaps.find('<tr >') > -1:
+            row_start = snaps.find('<tr >')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            self.__home_snaps[player] = {}
+
+            osnap_start = row.find('data-stat="offense" >') + 21
+            osnap = row[osnap_start:]
+            osnap_end = osnap.find('</td>')
+            osnap = osnap[:osnap_end]
+            self.__home_snaps[player]["Offense"] = osnap
+            
+            osnappct_start = row.find('data-stat="off_pct" >') + 21
+            osnap_pct = row[osnappct_start:]
+            osnappct_end = osnap_pct.find('</td>')
+            osnap_pct = osnap_pct[:osnappct_end]
+            self.__home_snaps[player]["Offense Pct"] = osnap_pct
+
+            dsnap_start = row.find('data-stat="defense" >') + 21
+            dsnap = row[dsnap_start:]
+            dsnap_end = dsnap.find('</td>')
+            dsnap = dsnap[:dsnap_end]
+            self.__home_snaps[player]["Defense"] = dsnap
+            
+            dsnappct_start = row.find('data-stat="def_pct" >') + 21
+            dsnap_pct = row[dsnappct_start:]
+            dsnappct_end = dsnap_pct.find('</td>')
+            dsnap_pct = dsnap_pct[:dsnappct_end]
+            self.__home_snaps[player]["Defense Pct"] = dsnap_pct
+
+            stsnap_start = row.find('data-stat="defense" >') + 21
+            stsnap = row[stsnap_start:]
+            stsnap_end = stsnap.find('</td>')
+            stsnap = stsnap[:stsnap_end]
+            self.__home_snaps[player]["Special Teams"] = stsnap
+            
+            stsnappct_start = row.find('data-stat="def_pct" >') + 21
+            stsnap_pct = row[stsnappct_start:]
+            stsnappct_end = stsnap_pct.find('</td>')
+            stsnap_pct = stsnap_pct[:stsnappct_end]
+            self.__home_snaps[player]["Special Teams Pct"] = stsnap_pct
+            
+            snaps = snaps[row_end + 5:]
 
     def extract_home_starters(self, text):
         start = text.find('<tbody>')
@@ -784,6 +898,10 @@ class Game:
         print(f"{self.__away} Starters: {self.__away_starters}")
 
         print(f"{self.__home} Starters: {self.__home_starters}")
+
+        print(f"{self.__away} Players with Snaps: {len(self.__away_snaps)}")
+
+        print(f"{self.__home} Players with Snaps: {len(self.__home_snaps)}")
 
         # for player in self.__away_players:
         #     print(f"{player}*************")
