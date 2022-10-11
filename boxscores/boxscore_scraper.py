@@ -142,6 +142,8 @@ def run_scraper():
     game.extract_player_returns(all_returns)
     # extract player kicking/punting
     game.extract_kick_punt(all_kicking)
+    # extract advanced passing
+    game.extract_adv_passing(passing_adv)
 
     game.print_game_info() 
 
