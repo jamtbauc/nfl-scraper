@@ -104,7 +104,7 @@ def run_scraper():
     all_returns = trim_text(text, '<div id="all_returns"', '<div id="all_kicking"')
     all_kicking = trim_text(text, '<div id="all_kicking"', '<div id="all_passing_advanced"')
     passing_adv = trim_text(text, '<div id="all_passing_advanced"', '<div id="all_rushing_advanced"')
-    rusing_adv = trim_text(text, '<div id="all_rushing_advanced"', '<div id="all_receiving_advanced"')
+    rushing_adv = trim_text(text, '<div id="all_rushing_advanced"', '<div id="all_receiving_advanced"')
     receiving_adv = trim_text(text, '<div id="all_receiving_advanced"', '<div id="all_defense_advanced"')
     defense_adv = trim_text(text, '<div id="all_defense_advanced"', '<div id="all_home_starters"')
     home_starters = trim_text(text, '<div id="all_home_starters"', '<div id="all_vis_starters"')
@@ -144,6 +144,8 @@ def run_scraper():
     game.extract_kick_punt(all_kicking)
     # extract advanced passing
     game.extract_adv_passing(passing_adv)
+    # extract advanced rushing
+    game.extract_adv_rushing(rushing_adv)
 
     game.print_game_info() 
 

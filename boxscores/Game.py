@@ -187,8 +187,6 @@ class Game:
             row_start = adv_pass.find('<tr >')
             row_end = adv_pass.find('</tr>')
             row = adv_pass[row_start:row_end]
-
-            print(row)
             
             while row.find('data-stat="') > -1:
                 ds_start = row.find('data-stat="') + 11
@@ -219,6 +217,49 @@ class Game:
                 row = row[stat_end + 5:]
             
             adv_pass = adv_pass[row_end + 5:]
+
+    def extract_adv_rushing(self, text):
+        # Vars to hold player and team as we loop through rows
+        team = ""
+        player = ""
+        
+        ap_start = text.find('<tbody>')
+        adv_rush = text[ap_start:]
+        
+        while adv_rush.find('<tr >') > -1:
+            row_start = adv_rush.find('<tr >')
+            row_end = adv_rush.find('</tr>')
+            row = adv_rush[row_start:row_end]
+            
+            while row.find('data-stat="') > -1:
+                ds_start = row.find('data-stat="') + 11
+                ds_end = row.find('" >')
+                ds = row[ds_start:ds_end]
+                
+                stat_end = row.find('</t')
+                stat = row[ds_end + 3:stat_end]
+                stat = stat.replace('\n', '')
+                stat = stat.replace("   ", '')
+                
+                html = re.compile('<.*?>')
+                stat = re.sub(html, '', stat)
+                
+                if stat == '':
+                    stat = 0
+                
+                if ds == "player":
+                    player = stat
+                elif ds == "team":
+                    team = stat
+                else:
+                    if self.abbrevs[self.__away] == team:       
+                        self.__away_off_players[player][ds] = stat
+                    elif self.abbrevs[self.__home] == team:
+                        self.__home_off_players[player][ds] = stat
+                
+                row = row[stat_end + 5:]
+            
+            adv_rush = adv_rush[row_end + 5:]
 
     def extract_exp_points_added(self, text):
         exp_pts_start = text.find('tbody')
@@ -617,6 +658,11 @@ class Game:
         print(f"{self.__away} Team Stats: {self.__away_team_stats}")
         
         print(f"{self.__home} Team Stats: {self.__home_team_stats}")
+
+        for player in self.__home_off_players:
+            print(f"{player}*************")
+            for stat in self.__home_off_players[player]:
+                print(f"{stat}: {self.__home_off_players[player][stat]}")
         
     def get_game_as_list(self):
         return [
