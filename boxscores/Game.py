@@ -174,8 +174,8 @@ class Game:
         team = ""
         player = ""
         
-        ap_start = text.find('<tbody>')
-        adv_def = text[ap_start:]
+        start = text.find('<tbody>')
+        adv_def = text[start:]
         
         while adv_def.find('<tr >') > -1:
             row_start = adv_def.find('<tr >')
@@ -221,8 +221,8 @@ class Game:
         team = ""
         player = ""
         
-        ap_start = text.find('<tbody>')
-        adv_pass = text[ap_start:]
+        start = text.find('<tbody>')
+        adv_pass = text[start:]
         
         while adv_pass.find('<tr >') > -1:
             row_start = adv_pass.find('<tr >')
@@ -264,8 +264,8 @@ class Game:
         team = ""
         player = ""
         
-        ap_start = text.find('<tbody>')
-        adv_rec = text[ap_start:]
+        start = text.find('<tbody>')
+        adv_rec = text[start:]
         
         while adv_rec.find('<tr >') > -1:
             row_start = adv_rec.find('<tr >')
@@ -307,8 +307,8 @@ class Game:
         team = ""
         player = ""
         
-        ap_start = text.find('<tbody>')
-        adv_rush = text[ap_start:]
+        start = text.find('<tbody>')
+        adv_rush = text[start:]
         
         while adv_rush.find('<tr >') > -1:
             row_start = adv_rush.find('<tr >')
@@ -344,6 +344,31 @@ class Game:
                 row = row[stat_end + 5:]
             
             adv_rush = adv_rush[row_end + 5:]
+
+    def extract_away_starters(self, text):
+        start = text.find('<tbody>')
+        starters = text[start:]
+        
+        while starters.find('<tr >') > -1:
+            row_start = starters.find('<tr >')
+            row_end = starters.find('</tr>')
+            row = starters[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            pos_start = row.find('data-stat="pos" >') + 17
+            pos_end = row.find('</td>')
+            pos = row[pos_start:pos_end]
+
+            if pos:
+                self.__away_starters[player] = pos
+            
+            starters = starters[row_end + 5:]
 
     def extract_exp_points_added(self, text):
         exp_pts_start = text.find('tbody')
@@ -411,6 +436,31 @@ class Game:
                 self.__over_under = stat
             
             text = text[row_end + 5:]
+
+    def extract_home_starters(self, text):
+        start = text.find('<tbody>')
+        starters = text[start:]
+        
+        while starters.find('<tr >') > -1:
+            row_start = starters.find('<tr >')
+            row_end = starters.find('</tr>')
+            row = starters[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            pos_start = row.find('data-stat="pos" >') + 17
+            pos_end = row.find('</td>')
+            pos = row[pos_start:pos_end]
+
+            if pos:
+                self.__home_starters[player] = pos
+            
+            starters = starters[row_end + 5:]
 
     def extract_officials(self, text):
         official_start = text.find('<div class="table_container" id="div_officials">')
@@ -730,6 +780,10 @@ class Game:
         print(f"{self.__away} Team Stats: {self.__away_team_stats}")
         
         print(f"{self.__home} Team Stats: {self.__home_team_stats}")
+
+        print(f"{self.__away} Starters: {self.__away_starters}")
+
+        print(f"{self.__home} Starters: {self.__home_starters}")
 
         # for player in self.__away_players:
         #     print(f"{player}*************")

@@ -150,6 +150,10 @@ def run_scraper():
     game.extract_adv_receiving(receiving_adv)
     # extract advanced defense
     game.extract_adv_defense(defense_adv)
+    # extract home starters
+    game.extract_home_starters(home_starters)
+    # extract away starters
+    game.extract_away_starters(away_starters)
 
     game.print_game_info() 
 
