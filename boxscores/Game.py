@@ -50,6 +50,7 @@ class Game:
         self.__attendance = 0
         self.__away = away
         self.__away_coach = ""
+        self.__away_drives = {}
         self.__away_exp_points = {}
         self.__away_players = {}
         self.__away_score = -1
@@ -60,6 +61,7 @@ class Game:
         self.__game_duration = 0
         self.__home = home
         self.__home_coach = ""
+        self.__home_drives = {}
         self.__home_exp_points = {}
         self.__home_players = {}
         self.__home_score = -1
@@ -347,6 +349,70 @@ class Game:
             
             adv_rush = adv_rush[row_end + 5:]
 
+    def extract_away_drives(self, text):
+        start = text.find('<tbody>')
+        snaps = text[start:]
+        
+        while snaps.find('<tr ') > -1:
+            row_start = snaps.find('<tr ')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+            
+            num_start = row.find('data-stat="drive_num" >') + 23
+            num_end = row.find('</th>')
+            num = row[num_start:num_end]
+            if num not in self.__away_drives:
+                self.__away_drives[num] = {}
+            
+            qtr_start = row.find('data-stat="quarter" >') + 21
+            qtr_end = row.find('</td>')
+            qtr = row[qtr_start:qtr_end]
+            self.__away_drives[num]["Quarter"] = qtr
+
+            time_start = row.find('data-stat="time_start" ') + 25
+            time = row[time_start:]
+            skip = time.find('>') + 1
+            time = time[skip:]
+            time_end = time.find('</td>')
+            time = time[:time_end]
+            self.__away_drives[num]["Time Start"] = time
+
+            yard_start = row.find('data-stat="start_at" >') + 22
+            yard = row[yard_start:]
+            yard_end = yard.find('</td>')
+            yard = yard[:yard_end]
+            if not yard:
+                yard = self.abbrevs[self.__away] + " 50"
+            self.__away_drives[num]["Yard Start"] = yard
+
+            plays_start = row.find('Penalty">') + 9
+            plays = row[plays_start:]
+            plays_end = plays.find('</span>')
+            plays = plays[:plays_end]
+            self.__away_drives[num]["Num Plays"] = plays
+
+            tot_start = row.find('data-stat="time_total" ') + 25
+            tot = row[tot_start:]
+            skip = tot.find('>') + 1
+            tot = tot[skip:]
+            tot_end = tot.find('</td>')
+            tot = tot[:tot_end]
+            self.__away_drives[num]["Total Time"] = tot
+
+            net_start = row.find('data-stat="net_yds" >') + 21
+            net = row[net_start:]
+            net_end = net.find('</td>')
+            net = net[:net_end]
+            self.__away_drives[num]["Net Yards"] = net
+
+            res_start = row.find('data-stat="end_event" >') + 23
+            res = row[res_start:]
+            res_end = res.find('</td>')
+            res = res[:res_end]
+            self.__away_drives[num]["Result"] = res
+            
+            snaps = snaps[row_end + 5:]
+
     def extract_away_snaps(self, text):
         start = text.find('<tbody>')
         snaps = text[start:]
@@ -494,6 +560,70 @@ class Game:
                 self.__over_under = stat
             
             text = text[row_end + 5:]
+
+    def extract_home_drives(self, text):
+        start = text.find('<tbody>')
+        snaps = text[start:]
+        
+        while snaps.find('<tr ') > -1:
+            row_start = snaps.find('<tr ')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+            
+            num_start = row.find('data-stat="drive_num" >') + 23
+            num_end = row.find('</th>')
+            num = row[num_start:num_end]
+            if num not in self.__home_drives:
+                self.__home_drives[num] = {}
+            
+            qtr_start = row.find('data-stat="quarter" >') + 21
+            qtr_end = row.find('</td>')
+            qtr = row[qtr_start:qtr_end]
+            self.__home_drives[num]["Quarter"] = qtr
+
+            time_start = row.find('data-stat="time_start" ') + 25
+            time = row[time_start:]
+            skip = time.find('>') + 1
+            time = time[skip:]
+            time_end = time.find('</td>')
+            time = time[:time_end]
+            self.__home_drives[num]["Time Start"] = time
+
+            yard_start = row.find('data-stat="start_at" >') + 22
+            yard = row[yard_start:]
+            yard_end = yard.find('</td>')
+            yard = yard[:yard_end]
+            if not yard:
+                yard = self.abbrevs[self.__home] + " 50"
+            self.__home_drives[num]["Yard Start"] = yard
+
+            plays_start = row.find('Penalty">') + 9
+            plays = row[plays_start:]
+            plays_end = plays.find('</span>')
+            plays = plays[:plays_end]
+            self.__home_drives[num]["Num Plays"] = plays
+
+            tot_start = row.find('data-stat="time_total" ') + 25
+            tot = row[tot_start:]
+            skip = tot.find('>') + 1
+            tot = tot[skip:]
+            tot_end = tot.find('</td>')
+            tot = tot[:tot_end]
+            self.__home_drives[num]["Total Time"] = tot
+
+            net_start = row.find('data-stat="net_yds" >') + 21
+            net = row[net_start:]
+            net_end = net.find('</td>')
+            net = net[:net_end]
+            self.__home_drives[num]["Net Yards"] = net
+
+            res_start = row.find('data-stat="end_event" >') + 23
+            res = row[res_start:]
+            res_end = res.find('</td>')
+            res = res[:res_end]
+            self.__home_drives[num]["Result"] = res
+            
+            snaps = snaps[row_end + 5:]
 
     def extract_home_snaps(self, text):
         start = text.find('<tbody>')
@@ -902,6 +1032,14 @@ class Game:
         print(f"{self.__away} Players with Snaps: {len(self.__away_snaps)}")
 
         print(f"{self.__home} Players with Snaps: {len(self.__home_snaps)}")
+
+        print(f"{self.__away} Drives")
+        for drive in self.__home_drives:
+            print(self.__home_drives[drive])
+
+        print(f"{self.__home} Drives:")
+        for drive in self.__away_drives:
+            print(self.__away_drives[drive])
 
         # for player in self.__away_players:
         #     print(f"{player}*************")

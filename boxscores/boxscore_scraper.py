@@ -158,6 +158,10 @@ def run_scraper():
     game.extract_home_snaps(home_snaps)
     # extract away snaps
     game.extract_away_snaps(away_snaps)
+    # extract home drives
+    game.extract_home_drives(home_drives)
+    # extract away drives
+    game.extract_away_drives(away_drives)
 
     game.print_game_info() 
 
