@@ -134,6 +134,8 @@ def run_scraper():
     game.extract_exp_points_added(expected_pts)
     # extract team stats
     game.extract_team_stats(all_team_stats)
+    # extract player offense
+    game.extract_player_offense(all_player_off)
 
     # game.print_game_info() 
 

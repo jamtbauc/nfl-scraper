@@ -1,5 +1,6 @@
 from cmath import inf
 from datetime import datetime
+from sqlite3 import Row
 from tracemalloc import start
 from Player import Player
 import re
@@ -51,7 +52,7 @@ class Game:
         self.__away_coach = ""
         self.__away_def_players = []
         self.__away_exp_points = {}
-        self.__away_off_players = []
+        self.__away_off_players = {}
         self.__away_score = -1
         self.__away_starters = {}
         self.__away_team_stats = {}
@@ -61,7 +62,7 @@ class Game:
         self.__home_coach = ""
         self.__home_def_players = []
         self.__home_exp_points = {}
-        self.__home_off_players = []
+        self.__home_off_players = {}
         self.__home_score = -1
         self.__home_starters = {}
         self.__home_team_stats = {}
@@ -259,6 +260,58 @@ class Game:
 
             officials = officials[row_end + 5:]
 
+    def extract_player_offense(self, text):
+        # Vars to hold player and team as we loop through rows
+        team = ""
+        player = ""
+        # Dict with player as key and stats as value
+        player_stats = {}
+        
+        off_start = text.find('<tbody>')
+        offense = text[off_start:]
+        
+        while offense.find('<tr>') > -1:
+            row_start = offense.find('<tr>')
+            row_end = offense.find('</tr>')
+            row = offense[row_start:row_end]
+            
+            while row.find('data-stat="') > -1:
+                ds_start = row.find('data-stat="') + 11
+                ds_end = row.find('">')
+                ds = row[ds_start:ds_end]
+                
+                stat_end = row.find('</t')
+                stat = row[ds_end + 2:stat_end]
+                stat = stat.replace('\n', '')
+                stat = stat.replace("   ", '')
+                
+                html = re.compile('<.*?>')
+                stat = re.sub(html, '', stat)
+                
+                if stat == '':
+                    stat = 0
+                
+                if ds == "player":
+                    player = stat
+                elif ds == "team":
+                    team = stat
+                else:
+                    if self.abbrevs[self.__away] == team:
+                        if player not in self.__away_off_players:
+                            self.__away_off_players[player] = {}
+                        
+                        self.__away_off_players[player][ds] = stat
+                    elif self.abbrevs[self.__home] == team:
+                        if player not in self.__home_off_players:
+                            self.__home_off_players[player] = {}
+                        
+                        self.__home_off_players[player][ds] = stat
+                
+                row = row[stat_end + 5:]
+            
+            offense = offense[row_end + 5:]
+            
+
     def extract_scoring_plays(self, text):
         # trim to tbody
         start = text.find('tbody')
@@ -344,7 +397,7 @@ class Game:
         
         print(f"{self.__away_coach} vs {self.__home_coach}")
         
-        print(f"Scoring plays: {self.__scoring_plays}")
+        print(f"Scoring Plays Count: {len(self.__scoring_plays)}")
         
         print(f"{self.__away} Off Players Count: {len(self.__away_off_players)}")
             
@@ -354,7 +407,7 @@ class Game:
             
         print(f"{self.__home} Def Players Count: {len(self.__home_def_players)}")
         
-        print(f"Officials: {self.__officials}")
+        print(f"Officials Count: {len(self.__officials)}")
         
         print(f"{self.__away} (Away) Expected Points: {self.__away_exp_points}")
         
