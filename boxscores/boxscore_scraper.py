@@ -148,6 +148,8 @@ def run_scraper():
     game.extract_adv_rushing(rushing_adv)
     # extract advanced receiving
     game.extract_adv_receiving(receiving_adv)
+    # extract advanced defense
+    game.extract_adv_defense(defense_adv)
 
     game.print_game_info() 
 
