@@ -5796,63 +5796,148 @@
 <div class="table_container" id="div_returns">
     
     <table class="sortable stats_table" id="returns" data-cols-to-freeze=",1">
-    <caption>Kick/Punt Returns Table</caption>
+        <caption>Kick/Punt Returns Table</caption>
     
-
-   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
-   <thead>
-
-      
-      <tr class="over_header">
-         <th aria-label="" data-stat="" colspan="2" class=" over_header center" ></th>
-         <th aria-label="" data-stat="header_kr" colspan="5" class=" over_header center" >Kick Returns</th>
-         <th aria-label="" data-stat="header_pr" colspan="5" class=" over_header center" >Punt Returns</th>
-      </tr>
-            
-      <tr>
-         <th aria-label="Player" data-stat="player" scope="col" class=" poptip sort_default_asc show_partial_when_sorting left" >Player</th>
-         <th aria-label="Tm" data-stat="team" scope="col" class=" poptip sort_default_asc show_partial_when_sorting left" >Tm</th>
-         <th aria-label="Kick Returns" data-stat="kick_ret" scope="col" class=" poptip center" data-tip="Kickoff Returns" data-over-header="Kick Returns" >Rt</th>
-         <th aria-label="Kick Return Yds" data-stat="kick_ret_yds" scope="col" class=" poptip center" data-tip="Yardage for Kickoffs Returned" data-over-header="Kick Returns" >Yds</th>
-         <th aria-label="Yds/Kick Return" data-stat="kick_ret_yds_per_ret" scope="col" class=" poptip hide_non_quals center" data-tip="Yards per Kickoff Return - Kick Return Yardage/Kickoff Returns<br />Minimum one return per game scheduled to qualify as leader.<br />Minimum 75 kick returns to qualify as career leader" data-over-header="Kick Returns" data-filter="1" data-name="Yds/Kick Return" >Y/Rt</th>
-         <th aria-label="Kick Return TD" data-stat="kick_ret_td" scope="col" class=" poptip center" data-tip="Kickoffs Returned for a touchdown" data-over-header="Kick Returns" >TD</th>
-         <th aria-label="Long Kick Return" data-stat="kick_ret_long" scope="col" class=" poptip center" data-tip="Longest Kickoff Return" data-over-header="Kick Returns" >Lng</th>
-         <th aria-label="Punt Returns" data-stat="punt_ret" scope="col" class=" poptip center" data-tip="Punts Returned" data-over-header="Punt Returns" >Ret</th>
-         <th aria-label="Punt Return Yds" data-stat="punt_ret_yds" scope="col" class=" poptip center" data-tip="Punts Return Yardage" data-over-header="Punt Returns" >Yds</th>
-         <th aria-label="Yds/Punt Return" data-stat="punt_ret_yds_per_ret" scope="col" class=" poptip hide_non_quals center" data-tip="<b>Yards per Punt Return</b><br>Minimum 1.25 returns per game scheduled to qualify as leader.<br>Minimum 75 punt returns to qualify as career leader." data-over-header="Punt Returns" data-filter="1" data-name="Yds/Punt Return" >Y/R</th>
-         <th aria-label="Punt Return TD" data-stat="punt_ret_td" scope="col" class=" poptip center" data-tip="Punts Returned for Touchdown" data-over-header="Punt Returns" >TD</th>
-         <th aria-label="Long Punt Return" data-stat="punt_ret_long" scope="col" class=" poptip center" data-tip="Longest Punt Return" data-over-header="Punt Returns" >Lng</th>
-      </tr>
-      </thead>
-<tbody><tr ><th scope="row" class="left " data-append-csv="LambCe00" data-stat="player" ><a href="/players/L/LambCe00.htm">CeeDee Lamb</a></th><td class="left " data-stat="team" >DAL</td><td class="right iz" data-stat="kick_ret" >0</td><td class="right iz" data-stat="kick_ret_yds" >0</td><td class="right iz" data-stat="kick_ret_yds_per_ret" ></td><td class="right iz" data-stat="kick_ret_td" >0</td><td class="right iz" data-stat="kick_ret_long" >0</td><td class="right " data-stat="punt_ret" >1</td><td class="right " data-stat="punt_ret_yds" >12</td><td class="right " data-stat="punt_ret_yds_per_ret" >12.0</td><td class="right iz" data-stat="punt_ret_td" >0</td><td class="right " data-stat="punt_ret_long" >12</td></tr>
-<tr ><th scope="row" class="left " data-append-csv="WilsCe01" data-stat="player" ><a href="/players/W/WilsCe01.htm">Cedrick Wilson Jr.</a></th><td class="left " data-stat="team" >DAL</td><td class="right iz" data-stat="kick_ret" >0</td><td class="right iz" data-stat="kick_ret_yds" >0</td><td class="right iz" data-stat="kick_ret_yds_per_ret" ></td><td class="right iz" data-stat="kick_ret_td" >0</td><td class="right iz" data-stat="kick_ret_long" >0</td><td class="right " data-stat="punt_ret" >1</td><td class="right " data-stat="punt_ret_yds" >2</td><td class="right " data-stat="punt_ret_yds_per_ret" >2.0</td><td class="right iz" data-stat="punt_ret_td" >0</td><td class="right " data-stat="punt_ret_long" >2</td></tr>
-
-
-
-      
-      <tr class="over_header thead">
-         <th aria-label="" data-stat="" colspan="2" class=" over_header center" ></th>
-         <th aria-label="" data-stat="header_kr" colspan="5" class=" over_header center" >Kick Returns</th>
-         <th aria-label="" data-stat="header_pr" colspan="5" class=" over_header center" >Punt Returns</th>
-      </tr>
-            
-      <tr class="thead">
-         <th aria-label="Player" data-stat="player" class=" sort_default_asc show_partial_when_sorting left" >Player</th>
-         <th aria-label="Tm" data-stat="team" class=" sort_default_asc show_partial_when_sorting left" >Tm</th>
-         <th aria-label="Kick Returns" data-stat="kick_ret" class=" center" data-tip="Kickoff Returns" data-over-header="Kick Returns" >Rt</th>
-         <th aria-label="Kick Return Yds" data-stat="kick_ret_yds" class=" center" data-tip="Yardage for Kickoffs Returned" data-over-header="Kick Returns" >Yds</th>
-         <th aria-label="Yds/Kick Return" data-stat="kick_ret_yds_per_ret" class=" hide_non_quals center" data-tip="Yards per Kickoff Return - Kick Return Yardage/Kickoff Returns<br />Minimum one return per game scheduled to qualify as leader.<br />Minimum 75 kick returns to qualify as career leader" data-over-header="Kick Returns" data-filter="1" data-name="Yds/Kick Return" >Y/Rt</th>
-         <th aria-label="Kick Return TD" data-stat="kick_ret_td" class=" center" data-tip="Kickoffs Returned for a touchdown" data-over-header="Kick Returns" >TD</th>
-         <th aria-label="Long Kick Return" data-stat="kick_ret_long" class=" center" data-tip="Longest Kickoff Return" data-over-header="Kick Returns" >Lng</th>
-         <th aria-label="Punt Returns" data-stat="punt_ret" class=" center" data-tip="Punts Returned" data-over-header="Punt Returns" >Ret</th>
-         <th aria-label="Punt Return Yds" data-stat="punt_ret_yds" class=" center" data-tip="Punts Return Yardage" data-over-header="Punt Returns" >Yds</th>
-         <th aria-label="Yds/Punt Return" data-stat="punt_ret_yds_per_ret" class=" hide_non_quals center" data-tip="<b>Yards per Punt Return</b><br>Minimum 1.25 returns per game scheduled to qualify as leader.<br>Minimum 75 punt returns to qualify as career leader." data-over-header="Punt Returns" data-filter="1" data-name="Yds/Punt Return" >Y/R</th>
-         <th aria-label="Punt Return TD" data-stat="punt_ret_td" class=" center" data-tip="Punts Returned for Touchdown" data-over-header="Punt Returns" >TD</th>
-         <th aria-label="Long Punt Return" data-stat="punt_ret_long" class=" center" data-tip="Longest Punt Return" data-over-header="Punt Returns" >Lng</th>
-      </tr>
-      <tr ><th scope="row" class="left " data-append-csv="MickJa01" data-stat="player" ><a href="/players/M/MickJa01.htm">Jaydon Mickens</a></th><td class="left " data-stat="team" >TAM</td><td class="right " data-stat="kick_ret" >3</td><td class="right " data-stat="kick_ret_yds" >92</td><td class="right " data-stat="kick_ret_yds_per_ret" >30.7</td><td class="right iz" data-stat="kick_ret_td" >0</td><td class="right " data-stat="kick_ret_long" >41</td><td class="right " data-stat="punt_ret" >2</td><td class="right " data-stat="punt_ret_yds" >21</td><td class="right " data-stat="punt_ret_yds_per_ret" >10.5</td><td class="right iz" data-stat="punt_ret_td" >0</td><td class="right " data-stat="punt_ret_long" >7</td></tr>
-
-</table>
+    
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+    
+    
+            <tr class="over_header">
+                <th aria-label="" data-stat="" colspan="2" class=" over_header center"></th>
+                <th aria-label="" data-stat="header_kr" colspan="5" class=" over_header center">Kick Returns</th>
+                <th aria-label="" data-stat="header_pr" colspan="5" class=" over_header center">Punt Returns</th>
+            </tr>
+    
+            <tr>
+                <th aria-label="Player" data-stat="player" scope="col"
+                    class=" poptip sort_default_asc show_partial_when_sorting left">Player</th>
+                <th aria-label="Tm" data-stat="team" scope="col"
+                    class=" poptip sort_default_asc show_partial_when_sorting left">Tm</th>
+                <th aria-label="Kick Returns" data-stat="kick_ret" scope="col" class=" poptip center"
+                    data-tip="Kickoff Returns" data-over-header="Kick Returns">Rt</th>
+                <th aria-label="Kick Return Yds" data-stat="kick_ret_yds" scope="col" class=" poptip center"
+                    data-tip="Yardage for Kickoffs Returned" data-over-header="Kick Returns">Yds</th>
+                <th aria-label="Yds/Kick Return" data-stat="kick_ret_yds_per_ret" scope="col"
+                    class=" poptip hide_non_quals center"
+                    data-tip="Yards per Kickoff Return - Kick Return Yardage/Kickoff Returns<br />Minimum one return per game scheduled to qualify as leader.<br />Minimum 75 kick returns to qualify as career leader"
+                    data-over-header="Kick Returns" data-filter="1" data-name="Yds/Kick Return">Y/Rt</th>
+                <th aria-label="Kick Return TD" data-stat="kick_ret_td" scope="col" class=" poptip center"
+                    data-tip="Kickoffs Returned for a touchdown" data-over-header="Kick Returns">TD</th>
+                <th aria-label="Long Kick Return" data-stat="kick_ret_long" scope="col" class=" poptip center"
+                    data-tip="Longest Kickoff Return" data-over-header="Kick Returns">Lng</th>
+                <th aria-label="Punt Returns" data-stat="punt_ret" scope="col" class=" poptip center"
+                    data-tip="Punts Returned" data-over-header="Punt Returns">Ret</th>
+                <th aria-label="Punt Return Yds" data-stat="punt_ret_yds" scope="col" class=" poptip center"
+                    data-tip="Punts Return Yardage" data-over-header="Punt Returns">Yds</th>
+                <th aria-label="Yds/Punt Return" data-stat="punt_ret_yds_per_ret" scope="col"
+                    class=" poptip hide_non_quals center"
+                    data-tip="<b>Yards per Punt Return</b><br>Minimum 1.25 returns per game scheduled to qualify as leader.<br>Minimum 75 punt returns to qualify as career leader."
+                    data-over-header="Punt Returns" data-filter="1" data-name="Yds/Punt Return">Y/R</th>
+                <th aria-label="Punt Return TD" data-stat="punt_ret_td" scope="col" class=" poptip center"
+                    data-tip="Punts Returned for Touchdown" data-over-header="Punt Returns">TD</th>
+                <th aria-label="Long Punt Return" data-stat="punt_ret_long" scope="col" class=" poptip center"
+                    data-tip="Longest Punt Return" data-over-header="Punt Returns">Lng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="left " data-append-csv="LambCe00" data-stat="player"><a
+                        href="/players/L/LambCe00.htm">CeeDee Lamb</a></th>
+                <td class="left " data-stat="team">DAL</td>
+                <td class="right iz" data-stat="kick_ret">0</td>
+                <td class="right iz" data-stat="kick_ret_yds">0</td>
+                <td class="right iz" data-stat="kick_ret_yds_per_ret"></td>
+                <td class="right iz" data-stat="kick_ret_td">0</td>
+                <td class="right iz" data-stat="kick_ret_long">0</td>
+                <td class="right " data-stat="punt_ret">1</td>
+                <td class="right " data-stat="punt_ret_yds">12</td>
+                <td class="right " data-stat="punt_ret_yds_per_ret">12.0</td>
+                <td class="right iz" data-stat="punt_ret_td">0</td>
+                <td class="right " data-stat="punt_ret_long">12</td>
+            </tr>
+            <tr>
+                <th scope="row" class="left " data-append-csv="WilsCe01" data-stat="player"><a
+                        href="/players/W/WilsCe01.htm">Cedrick Wilson Jr.</a></th>
+                <td class="left " data-stat="team">DAL</td>
+                <td class="right iz" data-stat="kick_ret">0</td>
+                <td class="right iz" data-stat="kick_ret_yds">0</td>
+                <td class="right iz" data-stat="kick_ret_yds_per_ret"></td>
+                <td class="right iz" data-stat="kick_ret_td">0</td>
+                <td class="right iz" data-stat="kick_ret_long">0</td>
+                <td class="right " data-stat="punt_ret">1</td>
+                <td class="right " data-stat="punt_ret_yds">2</td>
+                <td class="right " data-stat="punt_ret_yds_per_ret">2.0</td>
+                <td class="right iz" data-stat="punt_ret_td">0</td>
+                <td class="right " data-stat="punt_ret_long">2</td>
+            </tr>
+    
+    
+    
+    
+            <tr class="over_header thead">
+                <th aria-label="" data-stat="" colspan="2" class=" over_header center"></th>
+                <th aria-label="" data-stat="header_kr" colspan="5" class=" over_header center">Kick Returns</th>
+                <th aria-label="" data-stat="header_pr" colspan="5" class=" over_header center">Punt Returns</th>
+            </tr>
+    
+            <tr class="thead">
+                <th aria-label="Player" data-stat="player" class=" sort_default_asc show_partial_when_sorting left">Player
+                </th>
+                <th aria-label="Tm" data-stat="team" class=" sort_default_asc show_partial_when_sorting left">Tm</th>
+                <th aria-label="Kick Returns" data-stat="kick_ret" class=" center" data-tip="Kickoff Returns"
+                    data-over-header="Kick Returns">Rt</th>
+                <th aria-label="Kick Return Yds" data-stat="kick_ret_yds" class=" center"
+                    data-tip="Yardage for Kickoffs Returned" data-over-header="Kick Returns">Yds</th>
+                <th aria-label="Yds/Kick Return" data-stat="kick_ret_yds_per_ret" class=" hide_non_quals center"
+                    data-tip="Yards per Kickoff Return - Kick Return Yardage/Kickoff Returns<br />Minimum one return per game scheduled to qualify as leader.<br />Minimum 75 kick returns to qualify as career leader"
+                    data-over-header="Kick Returns" data-filter="1" data-name="Yds/Kick Return">Y/Rt</th>
+                <th aria-label="Kick Return TD" data-stat="kick_ret_td" class=" center"
+                    data-tip="Kickoffs Returned for a touchdown" data-over-header="Kick Returns">TD</th>
+                <th aria-label="Long Kick Return" data-stat="kick_ret_long" class=" center"
+                    data-tip="Longest Kickoff Return" data-over-header="Kick Returns">Lng</th>
+                <th aria-label="Punt Returns" data-stat="punt_ret" class=" center" data-tip="Punts Returned"
+                    data-over-header="Punt Returns">Ret</th>
+                <th aria-label="Punt Return Yds" data-stat="punt_ret_yds" class=" center" data-tip="Punts Return Yardage"
+                    data-over-header="Punt Returns">Yds</th>
+                <th aria-label="Yds/Punt Return" data-stat="punt_ret_yds_per_ret" class=" hide_non_quals center"
+                    data-tip="<b>Yards per Punt Return</b><br>Minimum 1.25 returns per game scheduled to qualify as leader.<br>Minimum 75 punt returns to qualify as career leader."
+                    data-over-header="Punt Returns" data-filter="1" data-name="Yds/Punt Return">Y/R</th>
+                <th aria-label="Punt Return TD" data-stat="punt_ret_td" class=" center"
+                    data-tip="Punts Returned for Touchdown" data-over-header="Punt Returns">TD</th>
+                <th aria-label="Long Punt Return" data-stat="punt_ret_long" class=" center" data-tip="Longest Punt Return"
+                    data-over-header="Punt Returns">Lng</th>
+            </tr>
+            <tr>
+                <th scope="row" class="left " data-append-csv="MickJa01" data-stat="player"><a
+                        href="/players/M/MickJa01.htm">Jaydon Mickens</a></th>
+                <td class="left " data-stat="team">TAM</td>
+                <td class="right " data-stat="kick_ret">3</td>
+                <td class="right " data-stat="kick_ret_yds">92</td>
+                <td class="right " data-stat="kick_ret_yds_per_ret">30.7</td>
+                <td class="right iz" data-stat="kick_ret_td">0</td>
+                <td class="right " data-stat="kick_ret_long">41</td>
+                <td class="right " data-stat="punt_ret">2</td>
+                <td class="right " data-stat="punt_ret_yds">21</td>
+                <td class="right " data-stat="punt_ret_yds_per_ret">10.5</td>
+                <td class="right iz" data-stat="punt_ret_td">0</td>
+                <td class="right " data-stat="punt_ret_long">7</td>
+            </tr>
+    
+    </table>
 
 
 </div>

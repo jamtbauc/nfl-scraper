@@ -52,6 +52,7 @@ class Game:
         self.__away_coach = ""
         self.__away_def_players = {}
         self.__away_exp_points = {}
+        self.__away_kp_players = {}
         self.__away_off_players = {}
         self.__away_ret_players= {}
         self.__away_score = -1
@@ -63,6 +64,7 @@ class Game:
         self.__home_coach = ""
         self.__home_def_players = {}
         self.__home_exp_points = {}
+        self.__home_kp_players = {}
         self.__home_off_players = {}
         self.__home_ret_players = {}
         self.__home_score = -1
@@ -368,18 +370,18 @@ class Game:
         ret_start = text.find('<tbody>')
         returns = text[ret_start:]
         
-        while returns.find('<tr >') > -1:
-            row_start = returns.find('<tr >')
+        while returns.find('<tr>') > -1:
+            row_start = returns.find('<tr>')
             row_end = returns.find('</tr>')
             row = returns[row_start:row_end]
             
             while row.find('data-stat="') > -1:
                 ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
+                ds_end = row.find('">')
                 ds = row[ds_start:ds_end]
                 
                 stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
+                stat = row[ds_end + 2:stat_end]
                 stat = stat.replace('\n', '')
                 stat = stat.replace("   ", '')
                 
@@ -480,6 +482,55 @@ class Game:
             self.__home_team_stats[label] = home_stat
             
             text = text[row_end + 5:]
+    
+    def extract_kick_punt(self, text):
+        # Vars to hold player and team as we loop through rows
+        team = ""
+        player = ""
+        
+        kp_start = text.find('<tbody>')
+        k_punts = text[kp_start:]
+        
+        while k_punts.find('<tr >') > -1:
+            row_start = k_punts.find('<tr >')
+            row_end = k_punts.find('</tr>')
+            row = k_punts[row_start:row_end]
+            
+            while row.find('data-stat="') > -1:
+                ds_start = row.find('data-stat="') + 11
+                ds_end = row.find('" >')
+                ds = row[ds_start:ds_end]
+                
+                stat_end = row.find('</t')
+                stat = row[ds_end + 3:stat_end]
+                stat = stat.replace('\n', '')
+                stat = stat.replace("   ", '')
+                
+                html = re.compile('<.*?>')
+                stat = re.sub(html, '', stat)
+                
+                if stat == '':
+                    stat = 0
+                
+                if ds == "player":
+                    player = stat
+                elif ds == "team":
+                    team = stat
+                else:
+                    if self.abbrevs[self.__away] == team:
+                        if player not in self.__away_kp_players:
+                            self.__away_kp_players[player] = {}
+                        
+                        self.__away_kp_players[player][ds] = stat
+                    elif self.abbrevs[self.__home] == team:
+                        if player not in self.__home_kp_players:
+                            self.__home_kp_players[player] = {}
+                        
+                        self.__home_kp_players[player][ds] = stat
+                
+                row = row[stat_end + 5:]
+            
+            k_punts = k_punts[row_end + 5:]
                 
     def print_game_info(self):
         print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance | Duration: {self.__game_duration}")
@@ -502,11 +553,15 @@ class Game:
             
         print(f"{self.__away} Ret Players Count: {len(self.__away_ret_players)}")
         
+        print(f"{self.__away} Kick/Punt Players Count: {len(self.__away_kp_players)}")
+        
         print(f"{self.__home} Off Players Count: {len(self.__home_off_players)}")
             
         print(f"{self.__home} Def Players Count: {len(self.__home_def_players)}")
         
         print(f"{self.__home} Ret Players Count: {len(self.__home_ret_players)}")
+        
+        print(f"{self.__home} Kick/Punt Players Count: {len(self.__home_kp_players)}")
         
         print(f"Officials Count: {len(self.__officials)}")
         
