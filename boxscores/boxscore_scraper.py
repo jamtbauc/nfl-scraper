@@ -124,48 +124,48 @@ def run_scraper():
     # extract scorebox meta
     game.extract_scorebox_meta(scorebox_meta)
     ### OPTIMIZATION: Starting from here can be ran concurrently
-    # extract linescores
+    # extract all scoring
     game.extract_scoring_plays(all_scoring)
     # extract basic game info
     game.extract_game_info(game_info)
-    # extract game officials
-    game.extract_officials(all_officials)
-    # extract expected points
-    game.extract_exp_points_added(expected_pts)
-    # extract team stats
-    game.extract_team_stats(all_team_stats)
-    # extract player offense
-    game.extract_player_offense(all_player_off)
-    # extract player defense
-    game.extract_player_defense(all_player_def)
-    # extract player returns
-    game.extract_player_returns(all_returns)
-    # extract player kicking/punting
-    game.extract_kick_punt(all_kicking)
-    # extract advanced passing
-    game.extract_adv_passing(passing_adv)
-    # extract advanced rushing
-    game.extract_adv_rushing(rushing_adv)
-    # extract advanced receiving
-    game.extract_adv_receiving(receiving_adv)
-    # extract advanced defense
-    game.extract_adv_defense(defense_adv)
-    # extract home starters
-    game.extract_home_starters(home_starters)
-    # extract away starters
-    game.extract_away_starters(away_starters)
-    # extract home snaps
-    game.extract_home_snaps(home_snaps)
-    # extract away snaps
-    game.extract_away_snaps(away_snaps)
-    # extract home drives
-    game.extract_home_drives(home_drives)
-    # extract away drives
-    game.extract_away_drives(away_drives)
-    # extract play by plays
-    game.extract_plays(plays)
+    # # extract game officials
+    # game.extract_officials(all_officials)
+    # # extract expected points
+    # game.extract_exp_points_added(expected_pts)
+    # # extract team stats
+    # game.extract_team_stats(all_team_stats)
+    # # extract player offense
+    # game.extract_player_offense(all_player_off)
+    # # extract player defense
+    # game.extract_player_defense(all_player_def)
+    # # extract player returns
+    # game.extract_player_returns(all_returns)
+    # # extract player kicking/punting
+    # game.extract_kick_punt(all_kicking)
+    # # extract advanced passing
+    # game.extract_adv_passing(passing_adv)
+    # # extract advanced rushing
+    # game.extract_adv_rushing(rushing_adv)
+    # # extract advanced receiving
+    # game.extract_adv_receiving(receiving_adv)
+    # # extract advanced defense
+    # game.extract_adv_defense(defense_adv)
+    # # extract home starters
+    # game.extract_home_starters(home_starters)
+    # # extract away starters
+    # game.extract_away_starters(away_starters)
+    # # extract home snaps
+    # game.extract_home_snaps(home_snaps)
+    # # extract away snaps
+    # game.extract_away_snaps(away_snaps)
+    # # extract home drives
+    # game.extract_home_drives(home_drives)
+    # # extract away drives
+    # game.extract_away_drives(away_drives)
+    # # extract play by plays
+    # game.extract_plays(plays)
 
-    #game.print_game_info() 
+    game.print_game_info() 
 
         
 if __name__ == "__main__":

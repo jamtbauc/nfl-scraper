@@ -1,8 +1,3 @@
-from cmath import inf
-from datetime import datetime
-from sqlite3 import Row
-from tracemalloc import start
-from turtle import ht
 from Player import Player
 import re
 
@@ -46,6 +41,8 @@ class Game:
         "Washington Football Team": "WAS",
         "Washington Commanders": "WAS"
     }
+    
+    rem_html = re.compile('<.*?>')
     
     def __init__(self, date, away, home):
         self.__attendance = 0
@@ -98,26 +95,25 @@ class Game:
     def __extract_score_coach(self, info):
         # trim unwanted info
         tm_start = info.find('<strong>') + 8
-        tm_end = info.find('</strong>')
-        team = info[tm_start:tm_end]
         info = info[tm_start:]
+        tm_end = info.find('</strong>')
+        team = info[:tm_end]
         # remove <a href... from Team name
-        html = re.compile('<.*?>')
-        team = re.sub(html, '', team)
+        team = re.sub(self.rem_html, '', team)
         team = team.strip()
         # find next score info
-        score_start = info.find('<div class="score">') + 19
+        score_start = info.find('class="score">') + 14
         score = info[score_start:]
         score_end = score.find('</div>')
         score = score[:score_end]
         # find next coach info
-        coach_start = info.find('<div class="datapoint"')
+        coach_start = info.find('class="datapoint"') + 17
         coach = info[coach_start:]
         coach_start = coach.find(': ') + 2
         coach = coach[coach_start:]
         coach_end = coach.find('</a>')
         coach = coach[:coach_end]
-        coach = re.sub(html, '', coach)
+        coach = re.sub(self.rem_html, '', coach)
         coach = coach.strip()
         # assign score and coach to team
         if team == self.__away:
@@ -126,52 +122,9 @@ class Game:
         elif team == self.__home:
             self.__home_score = score
             self.__home_coach = coach
-
         # trim info
         info_start = info.find('<div class="media-item logo loader">')
         return info[info_start:]
-    
-    def __extract_scoring_play(self, row, last_known_qtr):
-        scoring_play = {}
-        
-        qtr_start = row.find('<th ')
-        qtr_end = row.find('</th>')
-        qtr = row[qtr_start:qtr_end]
-        
-        html = re.compile('<.*?>')
-        qtr = re.sub(html, '', qtr)
-        
-        if qtr == '':
-            qtr = last_known_qtr
-        else:
-            last_known_qtr = qtr
-            
-        scoring_play["quarter"] = qtr
-            
-        row = row[qtr_end:]
-        while row.find('<td ') > -1:
-            start = row.find('<td ')
-            end = row.find('</td>')
-
-            info = row[start:end]
-            
-            data_stat_start = info.find('data-stat="') + 11
-            data_stat_end = info.find('">')
-            data_stat = info[data_stat_start:data_stat_end]
-            
-            stat = info.replace('\n', '')
-            stat = stat.replace('   ', '')
-            stat = stat.strip()
-            html = re.compile('<.*?>')
-            stat = re.sub(html, '', stat)
-            
-            if data_stat != '':
-                scoring_play[data_stat] = stat
-            
-            
-            row = row[end + 5:]
-        
-        return last_known_qtr, scoring_play
     
     ##### PUBLIC HELPERS
     def extract_adv_defense(self, text):
@@ -898,7 +851,15 @@ class Game:
             if rem_time.find("aria-label") < 0 and rem_time.find("onecell") < 0:
                 html = re.compile('<.*?>')
                 rem_time = re.sub(html, '', rem_time)
-                print(rem_time)
+                
+            down_start = row.find('data-stat="down" >') + 18
+            down = row[down_start:]
+            down_end = down.find('</a>')
+            down = down[:down_end]
+            if down.find("aria-label") < 0 and down.find("onecell") < 0:
+                html = re.compile('<.*?>')
+                down = re.sub(html, '', down)
+                print(down)
             
             plays = plays[row_end + 5:]
 
@@ -907,47 +868,86 @@ class Game:
         self.__extract_score_coach(text)
 
     def extract_scorebox_meta(self, text):
-        while text.find('<strong>') > -1:
-            start = text.find('<strong>')
-            text = text[start:]
+        start = text.find('</div>') + 6
+        info = text[start:]
+        
+        while info.find('<strong>') > -1:
+            d_start = info.find('<strong>') + 8
+            d_end = info.find('</div>')
+            data = info[d_start:d_end]
+            data = re.sub(self.rem_html, '', data)
             
-            end = text.find('</div>')
-            info = text[:end]
+            data = data.split(": ")
+            label = data[0]
+            stat = data[1]
             
-            html = re.compile('<.*?>')
-            info = re.sub(html, '', info)
-            
-            info = info.split(': ')
-            type = info[0]
-            info = info[1]
-            
-            if type == "Attendance":
-                self.__attendance = info
-            elif type == "Stadium":
-                self.__stadium = info
-            elif type == "Start Time":
-                self.__extract_time(info)
-            elif type == "Time of Game":
-                self.__game_duration = info
+            if label == "Attendance":
+                self.__attendance = stat
+            elif label == "Stadium":
+                self.__stadium = stat
+            elif label == "Start Time":
+                self.__extract_time(stat)
+            elif label == "Time of Game":
+                self.__game_duration = stat
                 
-            text = text[end:]
+            info = info[d_end + 6:]         
 
     def extract_scoring_plays(self, text):
         # trim to tbody
-        start = text.find('tbody')
-        text = text[start:]
+        start = text.find('<tbody>') + 7
+        scores = text[start:]
 
         last_known_qtr = 0
         
-        while text.find('<tr>') > -1:
-            row_start = text.find('<tr>') + 4
-            row_end = text.find('</tr>') + 5
-            row = text[row_start:row_end]
+        while scores.find('<tr >') > -1:
+            play = {}
             
-            last_known_qtr, play = self.__extract_scoring_play(row, last_known_qtr)
+            row_start = scores.find('<tr >') + 5
+            row_end = scores.find('</tr>')
+            row = scores[row_start:row_end]
+            
+            qtr_start = row.find('data-stat="quarter" >') + 21
+            qtr_end = row.find('</th>')
+            qtr = row[qtr_start:qtr_end]
+            if qtr:
+                last_known_qtr = qtr
+            else:
+                qtr = last_known_qtr
+            play["quarter"] = qtr
+            
+            time_start = row.find('data-stat="time" >') + 18
+            time_end = row.find('</td>')
+            time = row[time_start:time_end]
+            play["time"] = time
+            
+            team_start = row.find('data-stat="team" >') + 18
+            team = row[team_start:]
+            team_end = team.find('</td>')
+            team = team[:team_end]
+            play["team"] = team
+            
+            desc_start = row.find('data-stat="description" >') + 25
+            desc = row[desc_start:]
+            desc_end = desc.find('</td>')
+            desc = desc[:desc_end]
+            desc = re.sub(self.rem_html, '', desc)
+            play["description"] = desc
+            
+            a_scr_start = row.find('data-stat="vis_team_score" >') + 28
+            a_scr = row[a_scr_start:]
+            a_scr_end = a_scr.find('</td>')
+            a_scr = a_scr[:a_scr_end]
+            play["away_team_score"] = a_scr
+            
+            h_scr_start = row.find('data-stat="home_team_score" >') + 29
+            h_scr = row[h_scr_start:]
+            h_scr_end = h_scr.find('</td>')
+            h_scr = h_scr[:h_scr_end]
+            play["away_team_score"] = h_scr
+            
             self.__scoring_plays.append(play)
             
-            text = text[row_end:]
+            scores = scores[row_end + 5:]
 
     def extract_team_stats(self, text):
         start = text.find('<tbody')
