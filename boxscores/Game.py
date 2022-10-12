@@ -1,3 +1,5 @@
+from cProfile import label
+from turtle import home
 from Player import Player
 import re
 
@@ -68,6 +70,7 @@ class Game:
         self.__home_team_stats = {}
         self.__officials = {}
         self.__over_under = 0
+        self.__play_by_play = []
         self.__roof = ""
         self.__scoring_plays = []
         self.__stadium = ""
@@ -127,326 +130,49 @@ class Game:
         return info[info_start:]
     
     ##### PUBLIC HELPERS
-    def extract_adv_defense(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        start = text.find('<tbody>')
-        adv_def = text[start:]
-        
-        while adv_def.find('<tr >') > -1:
-            row_start = adv_def.find('<tr >')
-            row_end = adv_def.find('</tr>')
-            row = adv_def[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:   
-                        if player not in self.__away_players:
-                            self.__away_players[player] = {}    
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        if player not in self.__home_players:
-                            self.__home_players[player] = {} 
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            adv_def = adv_def[row_end + 5:]
-    
-    def extract_adv_passing(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        start = text.find('<tbody>')
-        adv_pass = text[start:]
-        
-        while adv_pass.find('<tr >') > -1:
-            row_start = adv_pass.find('<tr >')
-            row_end = adv_pass.find('</tr>')
-            row = adv_pass[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:       
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            adv_pass = adv_pass[row_end + 5:]
+    def extract_drives(self, text):
+        is_home = False
+        if text.find('home_drives') > -1:
+            is_home = True
 
-    def extract_adv_receiving(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
         start = text.find('<tbody>')
-        adv_rec = text[start:]
+        drives = text[start:]
         
-        while adv_rec.find('<tr >') > -1:
-            row_start = adv_rec.find('<tr >')
-            row_end = adv_rec.find('</tr>')
-            row = adv_rec[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:       
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            adv_rec = adv_rec[row_end + 5:]
-
-    def extract_adv_rushing(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        start = text.find('<tbody>')
-        adv_rush = text[start:]
-        
-        while adv_rush.find('<tr >') > -1:
-            row_start = adv_rush.find('<tr >')
-            row_end = adv_rush.find('</tr>')
-            row = adv_rush[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:       
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            adv_rush = adv_rush[row_end + 5:]
-
-    def extract_away_drives(self, text):
-        start = text.find('<tbody>')
-        snaps = text[start:]
-        
-        while snaps.find('<tr ') > -1:
-            row_start = snaps.find('<tr ')
-            row_end = snaps.find('</tr>')
-            row = snaps[row_start:row_end]
+        while drives.find('<tr ') > -1:
+            row_start = drives.find('<tr ')
+            row_end = drives.find('</tr>')
+            row = drives[row_start:row_end]
             
             num_start = row.find('data-stat="drive_num" >') + 23
             num_end = row.find('</th>')
             num = row[num_start:num_end]
-            if num not in self.__away_drives:
-                self.__away_drives[num] = {}
+
+            row = row[num_end + 5:]
+            while row.find('data-stat="') > -1:
+                lbl_start = row.find('data-stat="') + 11
+                lbl_end = row.find('" >')
+                label = row[lbl_start:lbl_end]
+
+                if label.find('" csk="') > -1:
+                    end = label.find('" csk="')
+                    label = label[:end]
+
+                data_end = row.find('</td>')
+                data = row[lbl_end + 3:data_end]
+                data = re.sub(self.rem_html, '', data)
+
+                if is_home:
+                    if num not in self.__home_drives:
+                        self.__home_drives[num] = {}
+                    self.__home_drives[num][label] = data
+                else:
+                    if num not in self.__away_drives:
+                        self.__away_drives[num] = {}
+                    self.__away_drives[num][label] = data
+
+                row = row[data_end + 5:]
             
-            qtr_start = row.find('data-stat="quarter" >') + 21
-            qtr_end = row.find('</td>')
-            qtr = row[qtr_start:qtr_end]
-            self.__away_drives[num]["Quarter"] = qtr
-
-            time_start = row.find('data-stat="time_start" ') + 25
-            time = row[time_start:]
-            skip = time.find('>') + 1
-            time = time[skip:]
-            time_end = time.find('</td>')
-            time = time[:time_end]
-            self.__away_drives[num]["Time Start"] = time
-
-            yard_start = row.find('data-stat="start_at" >') + 22
-            yard = row[yard_start:]
-            yard_end = yard.find('</td>')
-            yard = yard[:yard_end]
-            if not yard:
-                yard = self.abbrevs[self.__away] + " 50"
-            self.__away_drives[num]["Yard Start"] = yard
-
-            plays_start = row.find('Penalty">') + 9
-            plays = row[plays_start:]
-            plays_end = plays.find('</span>')
-            plays = plays[:plays_end]
-            self.__away_drives[num]["Num Plays"] = plays
-
-            tot_start = row.find('data-stat="time_total" ') + 25
-            tot = row[tot_start:]
-            skip = tot.find('>') + 1
-            tot = tot[skip:]
-            tot_end = tot.find('</td>')
-            tot = tot[:tot_end]
-            self.__away_drives[num]["Total Time"] = tot
-
-            net_start = row.find('data-stat="net_yds" >') + 21
-            net = row[net_start:]
-            net_end = net.find('</td>')
-            net = net[:net_end]
-            self.__away_drives[num]["Net Yards"] = net
-
-            res_start = row.find('data-stat="end_event" >') + 23
-            res = row[res_start:]
-            res_end = res.find('</td>')
-            res = res[:res_end]
-            self.__away_drives[num]["Result"] = res
-            
-            snaps = snaps[row_end + 5:]
-
-    def extract_away_snaps(self, text):
-        start = text.find('<tbody>')
-        snaps = text[start:]
-        
-        while snaps.find('<tr >') > -1:
-            row_start = snaps.find('<tr >')
-            row_end = snaps.find('</tr>')
-            row = snaps[row_start:row_end]
-            
-            player_start = row.find('data-stat="player" >') + 20
-            player_end = row.find('</a>')
-            player = row[player_start:player_end]
-
-            html = re.compile('<.*?>')
-            player = re.sub(html, '', player)
-
-            self.__away_snaps[player] = {}
-
-            osnap_start = row.find('data-stat="offense" >') + 21
-            osnap = row[osnap_start:]
-            osnap_end = osnap.find('</td>')
-            osnap = osnap[:osnap_end]
-            self.__away_snaps[player]["Offense"] = osnap
-            
-            osnappct_start = row.find('data-stat="off_pct" >') + 21
-            osnap_pct = row[osnappct_start:]
-            osnappct_end = osnap_pct.find('</td>')
-            osnap_pct = osnap_pct[:osnappct_end]
-            self.__away_snaps[player]["Offense Pct"] = osnap_pct
-
-            dsnap_start = row.find('data-stat="defense" >') + 21
-            dsnap = row[dsnap_start:]
-            dsnap_end = dsnap.find('</td>')
-            dsnap = dsnap[:dsnap_end]
-            self.__away_snaps[player]["Defense"] = dsnap
-            
-            dsnappct_start = row.find('data-stat="def_pct" >') + 21
-            dsnap_pct = row[dsnappct_start:]
-            dsnappct_end = dsnap_pct.find('</td>')
-            dsnap_pct = dsnap_pct[:dsnappct_end]
-            self.__away_snaps[player]["Defense Pct"] = dsnap_pct
-
-            stsnap_start = row.find('data-stat="defense" >') + 21
-            stsnap = row[stsnap_start:]
-            stsnap_end = stsnap.find('</td>')
-            stsnap = stsnap[:stsnap_end]
-            self.__away_snaps[player]["Special Teams"] = stsnap
-            
-            stsnappct_start = row.find('data-stat="def_pct" >') + 21
-            stsnap_pct = row[stsnappct_start:]
-            stsnappct_end = stsnap_pct.find('</td>')
-            stsnap_pct = stsnap_pct[:stsnappct_end]
-            self.__away_snaps[player]["Special Teams Pct"] = stsnap_pct
-            
-            snaps = snaps[row_end + 5:]
-
-    def extract_away_starters(self, text):
-        start = text.find('<tbody>')
-        starters = text[start:]
-        
-        while starters.find('<tr >') > -1:
-            row_start = starters.find('<tr >')
-            row_end = starters.find('</tr>')
-            row = starters[row_start:row_end]
-            
-            player_start = row.find('data-stat="player" >') + 20
-            player_end = row.find('</a>')
-            player = row[player_start:player_end]
-
-            html = re.compile('<.*?>')
-            player = re.sub(html, '', player)
-
-            pos_start = row.find('data-stat="pos" >') + 17
-            pos_end = row.find('</td>')
-            pos = row[pos_start:pos_end]
-
-            if pos:
-                self.__away_starters[player] = pos
-            
-            starters = starters[row_end + 5:]
+            drives = drives[row_end + 5:]
 
     def extract_exp_points_added(self, text):
         exp_pts_start = text.find('tbody')
@@ -515,151 +241,6 @@ class Game:
             
             text = text[row_end + 5:]
 
-    def extract_home_drives(self, text):
-        start = text.find('<tbody>')
-        snaps = text[start:]
-        
-        while snaps.find('<tr ') > -1:
-            row_start = snaps.find('<tr ')
-            row_end = snaps.find('</tr>')
-            row = snaps[row_start:row_end]
-            
-            num_start = row.find('data-stat="drive_num" >') + 23
-            num_end = row.find('</th>')
-            num = row[num_start:num_end]
-            if num not in self.__home_drives:
-                self.__home_drives[num] = {}
-            
-            qtr_start = row.find('data-stat="quarter" >') + 21
-            qtr_end = row.find('</td>')
-            qtr = row[qtr_start:qtr_end]
-            self.__home_drives[num]["Quarter"] = qtr
-
-            time_start = row.find('data-stat="time_start" ') + 25
-            time = row[time_start:]
-            skip = time.find('>') + 1
-            time = time[skip:]
-            time_end = time.find('</td>')
-            time = time[:time_end]
-            self.__home_drives[num]["Time Start"] = time
-
-            yard_start = row.find('data-stat="start_at" >') + 22
-            yard = row[yard_start:]
-            yard_end = yard.find('</td>')
-            yard = yard[:yard_end]
-            if not yard:
-                yard = self.abbrevs[self.__home] + " 50"
-            self.__home_drives[num]["Yard Start"] = yard
-
-            plays_start = row.find('Penalty">') + 9
-            plays = row[plays_start:]
-            plays_end = plays.find('</span>')
-            plays = plays[:plays_end]
-            self.__home_drives[num]["Num Plays"] = plays
-
-            tot_start = row.find('data-stat="time_total" ') + 25
-            tot = row[tot_start:]
-            skip = tot.find('>') + 1
-            tot = tot[skip:]
-            tot_end = tot.find('</td>')
-            tot = tot[:tot_end]
-            self.__home_drives[num]["Total Time"] = tot
-
-            net_start = row.find('data-stat="net_yds" >') + 21
-            net = row[net_start:]
-            net_end = net.find('</td>')
-            net = net[:net_end]
-            self.__home_drives[num]["Net Yards"] = net
-
-            res_start = row.find('data-stat="end_event" >') + 23
-            res = row[res_start:]
-            res_end = res.find('</td>')
-            res = res[:res_end]
-            self.__home_drives[num]["Result"] = res
-            
-            snaps = snaps[row_end + 5:]
-
-    def extract_home_snaps(self, text):
-        start = text.find('<tbody>')
-        snaps = text[start:]
-        
-        while snaps.find('<tr >') > -1:
-            row_start = snaps.find('<tr >')
-            row_end = snaps.find('</tr>')
-            row = snaps[row_start:row_end]
-            
-            player_start = row.find('data-stat="player" >') + 20
-            player_end = row.find('</a>')
-            player = row[player_start:player_end]
-
-            html = re.compile('<.*?>')
-            player = re.sub(html, '', player)
-
-            self.__home_snaps[player] = {}
-
-            osnap_start = row.find('data-stat="offense" >') + 21
-            osnap = row[osnap_start:]
-            osnap_end = osnap.find('</td>')
-            osnap = osnap[:osnap_end]
-            self.__home_snaps[player]["Offense"] = osnap
-            
-            osnappct_start = row.find('data-stat="off_pct" >') + 21
-            osnap_pct = row[osnappct_start:]
-            osnappct_end = osnap_pct.find('</td>')
-            osnap_pct = osnap_pct[:osnappct_end]
-            self.__home_snaps[player]["Offense Pct"] = osnap_pct
-
-            dsnap_start = row.find('data-stat="defense" >') + 21
-            dsnap = row[dsnap_start:]
-            dsnap_end = dsnap.find('</td>')
-            dsnap = dsnap[:dsnap_end]
-            self.__home_snaps[player]["Defense"] = dsnap
-            
-            dsnappct_start = row.find('data-stat="def_pct" >') + 21
-            dsnap_pct = row[dsnappct_start:]
-            dsnappct_end = dsnap_pct.find('</td>')
-            dsnap_pct = dsnap_pct[:dsnappct_end]
-            self.__home_snaps[player]["Defense Pct"] = dsnap_pct
-
-            stsnap_start = row.find('data-stat="defense" >') + 21
-            stsnap = row[stsnap_start:]
-            stsnap_end = stsnap.find('</td>')
-            stsnap = stsnap[:stsnap_end]
-            self.__home_snaps[player]["Special Teams"] = stsnap
-            
-            stsnappct_start = row.find('data-stat="def_pct" >') + 21
-            stsnap_pct = row[stsnappct_start:]
-            stsnappct_end = stsnap_pct.find('</td>')
-            stsnap_pct = stsnap_pct[:stsnappct_end]
-            self.__home_snaps[player]["Special Teams Pct"] = stsnap_pct
-            
-            snaps = snaps[row_end + 5:]
-
-    def extract_home_starters(self, text):
-        start = text.find('<tbody>')
-        starters = text[start:]
-        
-        while starters.find('<tr >') > -1:
-            row_start = starters.find('<tr >')
-            row_end = starters.find('</tr>')
-            row = starters[row_start:row_end]
-            
-            player_start = row.find('data-stat="player" >') + 20
-            player_end = row.find('</a>')
-            player = row[player_start:player_end]
-
-            html = re.compile('<.*?>')
-            player = re.sub(html, '', player)
-
-            pos_start = row.find('data-stat="pos" >') + 17
-            pos_end = row.find('</td>')
-            pos = row[pos_start:pos_end]
-
-            if pos:
-                self.__home_starters[player] = pos
-            
-            starters = starters[row_end + 5:]
-
     def extract_officials(self, text):
         official_start = text.find('<div class="table_container" id="div_officials">')
         officials = text[official_start:]
@@ -682,187 +263,102 @@ class Game:
 
             officials = officials[row_end + 5:]
 
-    def extract_player_offense(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        off_start = text.find('<tbody>')
-        offense = text[off_start:]
-        
-        while offense.find('<tr>') > -1:
-            row_start = offense.find('<tr>')
-            row_end = offense.find('</tr>')
-            row = offense[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('">')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 2:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:
-                        if player not in self.__away_players:
-                            self.__away_players[player] = {}
-                        
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        if player not in self.__home_players:
-                            self.__home_players[player] = {}
-                        
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            offense = offense[row_end + 5:]
-            
-    def extract_player_defense(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        def_start = text.find('<tbody>')
-        defense = text[def_start:]
-        
-        while defense.find('<tr>') > -1:
-            row_start = defense.find('<tr>')
-            row_end = defense.find('</tr>')
-            row = defense[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('">')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 2:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:
-                        if player not in self.__away_players:
-                            self.__away_players[player] = {}
-                        
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        if player not in self.__home_players:
-                            self.__home_players[player] = {}
-                        
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            defense = defense[row_end + 5:]
-            
-    def extract_player_returns(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        ret_start = text.find('<tbody>')
-        returns = text[ret_start:]
-        
-        while returns.find('<tr>') > -1:
-            row_start = returns.find('<tr>')
-            row_end = returns.find('</tr>')
-            row = returns[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('">')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 2:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:
-                        if player not in self.__away_players:
-                            self.__away_players[player] = {}
-                        
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        if player not in self.__home_players:
-                            self.__home_players[player] = {}
-                        
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            returns = returns[row_end + 5:]
-
     def extract_plays(self, text):
         start = text.find('<tbody>')
         plays = text[start:]
+
+        count = 0
         
         while plays.find('<tr ') > -1:
+            count += 1
             row_start = plays.find('<tr ')
             row_end = plays.find('</tr>')
             row = plays[row_start:row_end]
             
-            qtr_start = row.find('data-stat="quarter" >') + 21
-            qtr_end = row.find('</th>')
-            qtr = row[qtr_start:qtr_end]
-            if qtr.find("onecell") < 0 and qtr.find("aria-label") < 0:
-                pass # do something here
+            play = {}
+            
+            while row.find('data-stat="') > -1:
+                if row.find('thead') < 0:
+                    if row.find('class=" score" >') > -1:
+                        skip = row.find('class=" score" >') + 16
+                        row = row[skip:]
+                    elif row.find('class="divider" >') > -1:
+                        skip = row.find('class="divider" >') + 17
+                        row = row[skip:]
 
-            rem_time_start = row.find('data-stat="qtr_time_remain" >') + 29
-            rem_time = row[rem_time_start:]
-            rem_time_end = rem_time.find('</a>')
-            rem_time = rem_time[:rem_time_end]
-            if rem_time.find("aria-label") < 0 and rem_time.find("onecell") < 0:
-                html = re.compile('<.*?>')
-                rem_time = re.sub(html, '', rem_time)
-                
-            down_start = row.find('data-stat="down" >') + 18
-            down = row[down_start:]
-            down_end = down.find('</a>')
-            down = down[:down_end]
-            if down.find("aria-label") < 0 and down.find("onecell") < 0:
-                html = re.compile('<.*?>')
-                down = re.sub(html, '', down)
-                print(down)
+                    lbl_start = row.find('data-stat="') + 11
+                    lbl_end = row.find('" >')
+                    label = row[lbl_start:lbl_end]
+
+                    if label:
+                        if label.find('" csk=') > -1:
+                            end = label.find('" csk=')
+                            label = label[:end]
+
+                        data_end = row.find('</t')
+                        data = row[lbl_end + 3:data_end]
+                        data = re.sub(self.rem_html, '', data)
+                        
+                        play[label] = data
+            
+                    row = row[data_end + 5:]
+                else:
+                    row = row[row_end + 5:]
+
+            if play:
+                self.__play_by_play.append(play)
             
             plays = plays[row_end + 5:]
 
+    def extract_player_stats(self, text):
+        # Vars to hold player and team as we loop through rows
+        team = ""
+        player = ""
+        
+        start = text.find('<tbody>')
+        data = text[start:]
+        
+        while data.find('<tr >') > -1:
+            row_start = data.find('<tr >')
+            row_end = data.find('</tr>')
+            row = data[row_start:row_end]
+            
+            while row.find('data-stat="') > -1:
+                ds_start = row.find('data-stat="') + 11
+                ds_end = row.find('" >')
+                ds = row[ds_start:ds_end]
+                
+                stat_end = row.find('</t')
+                stat = row[ds_end + 3:stat_end]
+                stat = stat.replace('\n', '')
+                stat = stat.replace("   ", '')
+                
+                html = re.compile('<.*?>')
+                stat = re.sub(html, '', stat)
+                
+                if stat == '':
+                    stat = 0
+                
+                if ds == "player":
+                    player = stat
+                elif ds == "team":
+                    team = stat
+                else:
+                    if self.abbrevs[self.__away] == team:
+                        if player not in self.__away_players:
+                            self.__away_players[player] = {}
+                        
+                        self.__away_players[player][ds] = stat
+                    elif self.abbrevs[self.__home] == team:
+                        if player not in self.__home_players:
+                            self.__home_players[player] = {}
+                        
+                        self.__home_players[player][ds] = stat
+                
+                row = row[stat_end + 5:]
+            
+            data = data[row_end + 5:]
+                     
     def extract_scorebox(self, text):
         text = self.__extract_score_coach(text)
         self.__extract_score_coach(text)
@@ -882,13 +378,13 @@ class Game:
             stat = data[1]
             
             if label == "Attendance":
-                self.__attendance = stat
+                self.__attendance = stat.strip()
             elif label == "Stadium":
-                self.__stadium = stat
+                self.__stadium = stat.strip()
             elif label == "Start Time":
-                self.__extract_time(stat)
+                self.__extract_time(stat.strip())
             elif label == "Time of Game":
-                self.__game_duration = stat
+                self.__game_duration = stat.strip()
                 
             info = info[d_end + 6:]         
 
@@ -943,11 +439,82 @@ class Game:
             h_scr = row[h_scr_start:]
             h_scr_end = h_scr.find('</td>')
             h_scr = h_scr[:h_scr_end]
-            play["away_team_score"] = h_scr
+            play["home_team_score"] = h_scr
             
             self.__scoring_plays.append(play)
             
             scores = scores[row_end + 5:]
+
+    def extract_snaps(self, text):
+        is_home = False
+        if text.find('home_snap') > -1:
+            is_home = True
+
+        start = text.find('<tbody>')
+        snaps = text[start:]
+        
+        while snaps.find('<tr >') > -1:
+            row_start = snaps.find('<tr >')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            row = row[player_end + 4:]
+
+            while row.find('data-stat="') > -1:
+                lbl_start = row.find('data-stat="') + 11
+                lbl_end = row.find('" >')
+                label = row[lbl_start:lbl_end]
+
+                data_end = row.find('</td>')
+                data = row[lbl_end + 3:data_end]
+
+                if is_home:
+                    if player not in self.__home_snaps:
+                        self.__home_snaps[player] = {}
+                    self.__home_snaps[player][label] = data
+                else:
+                    if player not in self.__away_snaps:
+                        self.__away_snaps[player] = {}
+                    self.__away_snaps[player][label] = data
+
+                row = row[data_end + 5:]
+            
+            snaps = snaps[row_end + 5:]
+
+    def extract_starters(self, text):
+        start = text.find('<tbody>')
+        starters = text[start:]
+        
+        while starters.find('<tr ') > -1:
+            row_start = starters.find('<tr ')
+            row_end = starters.find('</tr>')
+            row = starters[row_start:row_end]
+            
+            player_start = row.find('data-stat="player" >') + 20
+            player_end = row.find('</a>')
+            player = row[player_start:player_end]
+
+            html = re.compile('<.*?>')
+            player = re.sub(html, '', player)
+
+            pos_start = row.find('data-stat="pos" >') + 17
+            pos_end = row.find('</td>')
+            pos = row[pos_start:pos_end]
+
+            if pos:
+                if text.find('home_starters') > -1:
+                    self.__home_starters[player] = pos
+                elif text.find('vis_starters') > -1:
+                    self.__away_starters[player] = pos
+            
+            starters = starters[row_end + 5:]
 
     def extract_team_stats(self, text):
         start = text.find('<tbody')
@@ -973,60 +540,17 @@ class Game:
             self.__home_team_stats[label] = home_stat
             
             text = text[row_end + 5:]
-    
-    def extract_kick_punt(self, text):
-        # Vars to hold player and team as we loop through rows
-        team = ""
-        player = ""
-        
-        kp_start = text.find('<tbody>')
-        k_punts = text[kp_start:]
-        
-        while k_punts.find('<tr >') > -1:
-            row_start = k_punts.find('<tr >')
-            row_end = k_punts.find('</tr>')
-            row = k_punts[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                html = re.compile('<.*?>')
-                stat = re.sub(html, '', stat)
-                
-                if stat == '':
-                    stat = 0
-                
-                if ds == "player":
-                    player = stat
-                elif ds == "team":
-                    team = stat
-                else:
-                    if self.abbrevs[self.__away] == team:
-                        if player not in self.__away_players:
-                            self.__away_players[player] = {}
-                        
-                        self.__away_players[player][ds] = stat
-                    elif self.abbrevs[self.__home] == team:
-                        if player not in self.__home_players:
-                            self.__home_players[player] = {}
-                        
-                        self.__home_players[player][ds] = stat
-                
-                row = row[stat_end + 5:]
-            
-            k_punts = k_punts[row_end + 5:]
-                
+                  
+    def get_away_players(self):
+        return self.__away_players
+
+    def get_home_players(self):
+        return self.__home_players
+
     def print_game_info(self):
         print(f"{self.__date}: {self.__stadium} | {self.__attendance} in attendance | Duration: {self.__game_duration}")
 
-        print(f"Favored: {self.__spread} | Over/Under: {self.__over_under}")
+        print(f"Favored: {self.__spread} | Over/Under: {self.__over_under} | Won Toss: {self.__won_toss}")
         
         print(f"Weather: {self.__weather}")
         
@@ -1036,13 +560,23 @@ class Game:
         
         print(f"{self.__away_coach} vs {self.__home_coach}")
         
-        print(f"Scoring Plays Count: {len(self.__scoring_plays)}")
+        print("Scoring Plays:")
+        for play in self.__scoring_plays:
+            print(play)
         
-        print(f"{self.__away} Players Count: {len(self.__away_players)}")
+        print(f"{self.__away} Players:")
+        for player in self.__away_players:
+            print(player)
+            for stat in self.__away_players[player]:
+                print(f"{stat}: {self.__away_players[player][stat]}")
         
-        print(f"{self.__home} Players Count: {len(self.__home_players)}")
+        print(f"{self.__home} Players")
+        for player in self.__home_players:
+            print(player)
+            for stat in self.__home_players[player]:
+                print(f"{stat}: {self.__home_players[player][stat]}")
         
-        print(f"Officials Count: {len(self.__officials)}")
+        print(f"Officials: {self.__officials}")
         
         print(f"{self.__away} (Away) Expected Points: {self.__away_exp_points}")
         
@@ -1056,9 +590,15 @@ class Game:
 
         print(f"{self.__home} Starters: {self.__home_starters}")
 
-        print(f"{self.__away} Players with Snaps: {len(self.__away_snaps)}")
+        print(f"{self.__away} Players with Snaps:")
+        for player in self.__away_snaps:
+            print(player)
+            print(self.__away_snaps[player])
 
-        print(f"{self.__home} Players with Snaps: {len(self.__home_snaps)}")
+        print(f"{self.__home} Players with Snaps:")
+        for player in self.__home_snaps:
+            print(player)
+            print(self.__home_snaps[player])
 
         print(f"{self.__away} Drives")
         for drive in self.__home_drives:
@@ -1068,10 +608,11 @@ class Game:
         for drive in self.__away_drives:
             print(self.__away_drives[drive])
 
-        # for player in self.__away_players:
-        #     print(f"{player}*************")
-        #     for stat in self.__away_players[player]:
-        #         print(f"{stat}: {self.__away_players[player][stat]}")
+        print("Play by play:")
+        for play in self.__play_by_play:
+            print(play)
+
+        print(f"Play count: {len(self.__play_by_play)}")
         
     def get_game_as_list(self):
         return [
