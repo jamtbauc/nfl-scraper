@@ -1,16 +1,10 @@
-from cgitb import html, text
-from itertools import tee
-from sqlite3 import Date
-from bs4 import BeautifulSoup
-from bs4 import SoupStrainer as strainer
-from bs4 import Comment
 import csv
 from datetime import datetime
 from Game import Game
 import http.client
-import re
 from time import time
 
+# extract date, home and away teams from header
 def extract_basic_info(text):
     idx = text.find("<h1>")
     e_idx = text.find("</h1>")
@@ -29,7 +23,26 @@ def extract_basic_info(text):
     game = Game(date, away, home)
 
     return game
-        
+# Load teams and abbrevs from csv file
+def load_teams(file, teams):
+    header_read = False
+    with open(file) as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+
+        header = next(reader)
+
+        for row in reader:
+            for i in range(len(row)):
+                print(i)
+
+### REMOVE WHEN DEV IS DONE
+def open_html(file):
+    with open(file) as html:
+        text = html.read()
+
+        text = bytes(text, "utf-8")
+        return text.decode("utf-8", "replace")
+# Remove 'st', 'nd', 'rd', 'th', from date
 def remove_date_formals(date):
     formals = ("st", "nd", "rd", "th")
     for ending in formals:
@@ -38,7 +51,7 @@ def remove_date_formals(date):
             date = date[:idx] + date[idx+2:]
     
     return date
-
+# Send get request to url specified at base website. Returns response body
 def request_data(base, url):
         ### open connection to nfl.com
         conn = http.client.HTTPSConnection(base)
@@ -53,33 +66,21 @@ def request_data(base, url):
         
         #return html.decode('ISO-8859-1')
         return html.decode("utf-8", "replace")
-
-def trim_text(text, start, end):
-    start_idx = text.find(start)
-    end_idx = text.find(end)
-
-    return text[start_idx:end_idx]
-
-### REMOVE WHEN DEV IS DONE
-def open_html(file):
-    with open(file) as html:
-        text = html.read()
-
-        text = bytes(text, "utf-8")
-        return text.decode("utf-8", "replace")
-
-    
+# Scrape response body for desired information  
 def run_scraper():
     # Hold all games
     games = []
     # Hold all teams
-    teams = []
+    teams = {}
     # Hold all players
     players = []
     # Hold all officials
     officials = []
     # Hold all stadiums
     stadiums = []
+
+    load_teams('../teams.csv', teams)
+    print(teams)
 
     # define base url and get request urls
     base = "www.pro-football-reference.com"
@@ -163,11 +164,17 @@ def run_scraper():
     # extract away drives
     game.extract_drives(away_drives)
     # extract play by plays
-    game.extract_plays(plays)
+    # game.extract_plays(plays)
 
-    game.print_game_info() 
+    #game.print_game_info() 
+# Trim body of test to start and end
+def trim_text(text, start, end):
+    start_idx = text.find(start)
+    end_idx = text.find(end)
 
-        
+    return text[start_idx:end_idx]
+
+# Main function
 if __name__ == "__main__":
     start_time = time()
     try:

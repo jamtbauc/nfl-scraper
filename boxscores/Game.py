@@ -346,12 +346,12 @@ class Game:
                 else:
                     if self.abbrevs[self.__away] == team:
                         if player not in self.__away_players:
-                            self.__away_players[player] = {}
+                            self.__away_players[player] = {"name": player}
                         
                         self.__away_players[player][ds] = stat
                     elif self.abbrevs[self.__home] == team:
                         if player not in self.__home_players:
-                            self.__home_players[player] = {}
+                            self.__home_players[player] = {"name": player}
                         
                         self.__home_players[player][ds] = stat
                 
@@ -477,11 +477,11 @@ class Game:
 
                 if is_home:
                     if player not in self.__home_snaps:
-                        self.__home_snaps[player] = {}
+                        self.__home_snaps[player] = {"name": player}
                     self.__home_snaps[player][label] = data
                 else:
                     if player not in self.__away_snaps:
-                        self.__away_snaps[player] = {}
+                        self.__away_snaps[player] = {"name": player}
                     self.__away_snaps[player][label] = data
 
                 row = row[data_end + 5:]
@@ -566,15 +566,11 @@ class Game:
         
         print(f"{self.__away} Players:")
         for player in self.__away_players:
-            print(player)
-            for stat in self.__away_players[player]:
-                print(f"{stat}: {self.__away_players[player][stat]}")
+            print(self.__away_players[player])
         
         print(f"{self.__home} Players")
         for player in self.__home_players:
-            print(player)
-            for stat in self.__home_players[player]:
-                print(f"{stat}: {self.__home_players[player][stat]}")
+            print(self.__home_players[player])
         
         print(f"Officials: {self.__officials}")
         
@@ -592,12 +588,10 @@ class Game:
 
         print(f"{self.__away} Players with Snaps:")
         for player in self.__away_snaps:
-            print(player)
             print(self.__away_snaps[player])
 
         print(f"{self.__home} Players with Snaps:")
         for player in self.__home_snaps:
-            print(player)
             print(self.__home_snaps[player])
 
         print(f"{self.__away} Drives")
