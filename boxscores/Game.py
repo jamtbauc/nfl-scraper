@@ -1,6 +1,3 @@
-from cProfile import label
-from turtle import home
-from Player import Player
 import re
 
 class Game:
