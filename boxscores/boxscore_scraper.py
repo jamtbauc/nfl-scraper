@@ -164,9 +164,9 @@ def run_scraper():
     # extract away drives
     game.extract_drives(away_drives)
     # extract play by plays
-    # game.extract_plays(plays)
+    game.extract_plays(plays)
 
-    #game.print_game_info() 
+    game.print_game_info() 
 # Trim body of test to start and end
 def trim_text(text, start, end):
     start_idx = text.find(start)
