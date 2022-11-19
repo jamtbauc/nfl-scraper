@@ -20,8 +20,8 @@ def get_data(base, url):
         return html.decode('ISO-8859-1')
     
 def run_scraper():
-    # define starting year to gather data
-    year = 2011
+    # define starting year to gather data (2018 is fisrt year for advanced stats)
+    year = 2018
     today = date.today()
     with open('links.csv', 'w', newline='') as f:
         writer = csv.writer(f)

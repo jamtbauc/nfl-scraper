@@ -1,4 +1,4 @@
-id,team_name,locale,mascot,pff_abbrev,nfl_abbrev
+id,name,locale,mascot,abbrev_pff,abbrev_nfl
 1,Chicago Bears,Chicago,Bears,CHI,CHI
 2,Arizona Cardinals,Arizona,Cardinals,ARI,ARI
 3,Green Bay Packers,Green Bay,Packers,GNB,GB
@@ -7,7 +7,7 @@ id,team_name,locale,mascot,pff_abbrev,nfl_abbrev
 6,Washington Redksins,Washington,Redksins,WAS,WAS
 7,Pittsburgh Steelers,Pittsburgh,Steelers,PIT,PIT
 8,Philadelphia Eagles,Philadelphia,Eagles,PHI,PHI
-9,St. Louis Rams,St. ,Rams,STL,STL
+9,St. Louis Rams,St. Louis,Rams,STL,STL
 10,San Francisco 49ers,San Francisco,49ers,SFO,SF
 11,Cleveland Browns,Cleveland,Browns,CLE,CLE
 12,Indianapolis Colts,Indianapolis,Colts,IND,IND
