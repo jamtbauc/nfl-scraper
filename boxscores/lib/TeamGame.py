@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime
 import json
 
 class TeamGame:
@@ -153,10 +153,7 @@ class TeamGame:
         self.penalty_yds = penYds
     
     def getPossessionTime(self):
-        if self.possession_time:
-            return self.possession_time.isoformat()
-        else:
-            return self.possession_time
+        return self.possession_time
     
     def setPossessionTime(self, time):
         self.possession_time = time
@@ -245,7 +242,50 @@ class TeamGame:
     def setWonToss(self, didWin):
         self.won_toss = didWin
         
-    # for print
+    def mapToTmGm(self, label, value):
+        if label == "First Downs":
+            self.setFirstDowns(int(value))
+        elif label == "Rush-Yds-TDs":
+            stats = value.split('-')
+            self.setRushAtts(int(stats[0]))
+            self.setRushYds(int(stats[1]))
+            self.setRushTds(int(stats[2]))
+        elif label == "Cmp-Att-Yd-TD-INT":
+            stats = value.split('-')
+            self.setPassComps(int(stats[0]))
+            self.setPassAtts(int(stats[1]))
+            self.setPassYds(int(stats[2]))
+            self.setPassTds(int(stats[3]))
+            self.setPassInts(int(stats[4]))
+        elif label == "Sacked-Yards":
+            stats = value.split('-')
+            self.setSacked(int(stats[0]))
+            self.setSackYdsLost(int(stats[1]))
+        elif label == "Net Pass Yards":
+            self.setNetPassYds(int(value))
+        elif label == "Total Yards":
+            self.setTotalYds(int(value))
+        elif label == "Fumbles-Lost":
+            stats = value.split('-')
+            self.setFumbles(int(stats[0]))
+            self.setFumblesLost(int(stats[1]))
+        elif label == "Turnovers":
+            self.setTurnovers(int(value))
+        elif label == "Penalties-Yards":
+            stats = value.split('-')
+            self.setPenalites(int(stats[0]))
+            self.setPenaltyYds(int(stats[1]))
+        elif label == "Third Down Conv.":
+            stats = value.split('-')
+            self.setThirdDownConvs(int(stats[0]))
+            self.setThirdDownAtts(int(stats[1]))
+        elif label == "Fourth Down Conv.":
+            stats = value.split('-')
+            self.setFourthDownConvs(int(stats[0]))
+            self.setFourthDownAtts(int(stats[1]))
+        elif label == "Time of Possession":
+            self.setPossessionTime(datetime.strptime(value, "%M:%S").time())
+        
     def getInfo(self):
         info = {
             "id": self.getId(),
@@ -279,7 +319,7 @@ class TeamGame:
             "thirdDownConvs": self.getThirdDownConvs(),
             "fourthDownAtts": self.getFourthDownAtts(),
             "fourthDownConvs": self.getFourthDownConvs(),
-            "possessionTime": self.getPossessionTime(),
+            "possessionTime": self.getPossessionTime().isoformat(),
             "coach": self.getCoach(),
             "score": self.getScore()
         }

@@ -65,7 +65,7 @@ class Game:
             "week": self.getWeek(),
             "attendance": self.getAttendance(),
             "stadiumId": self.getStadiumId(),
-            "gameDuration": self.getGameDuration()   
+            "gameDuration": self.getGameDuration().isoformat()   
         }
         
         return json.dumps(info, indent=4)

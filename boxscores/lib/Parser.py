@@ -214,10 +214,10 @@ class Parser:
         coach = coach.strip()
         # assign score and coach to team
         if team == self.away_team.getTeamId():
-            self.away_team.setScore(score)
+            self.away_team.setScore(int(score))
             self.away_team.setCoach(coach)
         elif team == self.home_team.getTeamId():
-            self.home_team.setScore(score)
+            self.home_team.setScore(int(score))
             self.home_team.setCoach(coach)
             
         return
@@ -510,7 +510,7 @@ class Parser:
                 self.__extract_time(stat.strip())
             elif label == "Time of Game":
                 time = stat.strip()
-                time = datetime.strptime(time, "%H:%M").time().isoformat()
+                time = datetime.strptime(time, "%H:%M").time()
                 self.game.setGameDuration(time)
                 
             info = info[d_end + 6:]         
@@ -660,9 +660,9 @@ class Parser:
             
             starters = starters[row_end + 5:]
 
-    def extract_team_stats(self, text):
-        start = text.find('<tbody')
-        text = text[start:]
+    def extract_team_stats(self):
+        start = self._all_team_stats.find('<tbody')
+        text = self._all_team_stats[start:]
         
         while text.find('<tr') > -1:
             row_start = text.find('<tr ')
@@ -676,12 +676,12 @@ class Parser:
             vis_start = row.find('vis_stat" >') + 11
             vis_end = row.find('</td>')
             vis_stat = row[vis_start:vis_end]
-            self.__away_team_stats[label] = vis_stat
+            self.away_team.mapToTmGm(label, vis_stat)
             
             home_start = row.find('home_stat" >') + 12
             home_end = row.find('</td></tr>') - 4
             home_stat = row[home_start:home_end]
-            self.__home_team_stats[label] = home_stat
+            self.home_team.mapToTmGm(label, home_stat)
             
             text = text[row_end + 5:]
             
