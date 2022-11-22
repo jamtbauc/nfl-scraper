@@ -145,7 +145,6 @@ class Parser:
         week = self._matchup[week_idx:week_e_idx]
         # split title into teams and date
         info = info.split(" - ")
-        print(info)
         # separate into name vars
         matchup = info[0]
         date_str = info[1]

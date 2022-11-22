@@ -3,7 +3,7 @@ from datetime import datetime
 import http.client
 # import json
 from lib.Parser import Parser
-from time import time
+from time import time, sleep
 
 # load all game urls into list
 def get_urls(file):
@@ -33,7 +33,6 @@ def request_data(conn, url):
         html = resp.read()
         # return html.decode('ISO-8859-1')
         body_str = html.decode("utf-8", "replace")
-        print(body_str)
         # trim body
         body = trim_text(body_str, '<div id="content"', '<div id="nav_bottom"')
         
@@ -57,7 +56,6 @@ def run_scraper():
             print(url)
             # using defined base and request urls, get decoded data
             bytes = request_data(conn, url)
-            print(bytes)
             # trim html to content we need
             text = trim_text(bytes, '<div id="content"', '<div id="footer"')
             ### Declare the sections we need to parse
@@ -88,6 +86,8 @@ def run_scraper():
             today = datetime.today().date()
             if game_date < today:
                 parser.parseGame()
+                
+        # sleep(3)
        
     # close http connection
     conn.close()
