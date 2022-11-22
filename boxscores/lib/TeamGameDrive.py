@@ -73,4 +73,10 @@ class TeamGameDrive:
     def setYdStart(self, start):
         self.yd_start = start
     
+    def getInfo(self):
+        info = {
+            
+        }
+        
+        return info
     

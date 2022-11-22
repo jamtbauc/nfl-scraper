@@ -1,8 +1,10 @@
+import json
+
 class PlayerGame:
-    def __init__(self):
-        self.id = None
-        self.player_id = None
-        self.game_id = None
+    def __init__(self, id, playerId, gameId):
+        self.id = id
+        self.player_id = playerId
+        self.game_id = gameId
         self.pass_comps = None
         self.pass_atts = None
         self.pass_yds = None
@@ -285,7 +287,7 @@ class PlayerGame:
     def setPassTds(self, tds):
         self.pass_tds = tds
     
-    def getPassYds(self, yds):
+    def getPassYds(self):
         return self.pass_yds
  
     def setPassYds(self, yds):
@@ -393,3 +395,76 @@ class PlayerGame:
     def setXpm(self, value):
         self.xpm = value
         
+        
+    # MAPPER when parsing html    
+    def mapToPlayerGame(self, label, value):
+        if label == "pass_cmp":
+            self.pass_comps = int(value)
+        elif label == "pass_att":
+            self.pass_atts = int(value)
+        elif label == "pass_yds":
+            self.pass_yds = int(value)
+        elif label == "pass_td":
+            self.pass_tds = int(value)
+        elif label =="pass_int":
+            self.pass_ints = int(value)
+        elif label == "pass_sacked":
+            self.sacked = int(value)
+        elif label == "pass_sacked_yds":
+            self.sack_yds_lost = int(value)
+        elif label == "pass_long":
+            self.long_pass = int(value)
+        elif label == "pass_rating":
+            self.pass_rating = float(value)
+        elif label == "rush_att":
+            self.rush_atts = int(value)
+        elif label == "rush_yds":
+            self.rush_yds = int(value)
+        elif label == "rush_td":
+            self.rush_tds = int(value)
+        elif label == "rush_long":
+            self.long_rush = int(value)
+        elif label == "targets":
+            self.rec_targets = int(value)
+        elif label == "rec":
+            self.receptions = int(value)
+        elif label == "rec_yds":
+            self.rec_yds = int(value)
+        elif label == "rec_td":
+            self.rec_tds = int(value)
+        elif label == "rec_long":
+            self.long_rec = int(value)
+        elif label == "fumbles":
+            self.fumbles = int(value)
+        elif label == "fumbles_lost":
+            self.fumbles_lost = int(value)
+            
+    # Return JSON object
+    def getInfo(self):
+        info = {
+            "id": self.getId(),
+            "playerId": self.getPlayerId(),
+            "tmGameId": self.getGameId(),
+            "passComps": self.getPassComps(),
+            "passAtts": self.getPassAtts(),
+            "passYds": self.getPassYds(),
+            "passTds": self.getPassTds(),
+            "passInts": self.getPassInts(),
+            "sacked": self.getSacked(),
+            "sackYdsLost": self.getSackYdsLost(),
+            "longPass": self.getLongPass(),
+            "passRating": self.getPassRating(),
+            "rushAtts": self.getRushAtts(),
+            "rushYds": self.getRushYds(),
+            "rushTds": self.getRushTds(),
+            "longRush": self.getLongRush(),
+            "recTargets": self.getRecTargets(),
+            "recs": self.getReceptions(),
+            "recYds": self.getRecYds(),
+            "recTds": self.getRecTds(),
+            "longRec": self.getLongRec(),
+            "fumbles": self.getFumbles(),
+            "fumblesLost": self.getFumblesLost()
+        }
+        
+        return info

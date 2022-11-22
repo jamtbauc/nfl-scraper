@@ -1,8 +1,8 @@
 import csv
 from datetime import datetime
-from lib.Parser import Parser
 import http.client
-import json
+# import json
+from lib.Parser import Parser
 from time import time
 
 # load all game urls into list
@@ -15,13 +15,13 @@ def get_urls(file):
             
     return urls
 
-### REMOVE WHEN DEV IS DONE
-def open_html(file):
-    with open(file) as html:
-        text = html.read()
+# ### REMOVE WHEN DEV IS DONE
+# def open_html(file):
+#     with open(file) as html:
+#         text = html.read()
 
-        text = bytes(text, "utf-8")
-        return text.decode("utf-8", "replace")
+#         text = bytes(text, "utf-8")
+#         return text.decode("utf-8", "replace")
 
 # Send get request to url specified at base website. Returns response body
 def request_data(conn, url):
@@ -33,6 +33,7 @@ def request_data(conn, url):
         html = resp.read()
         # return html.decode('ISO-8859-1')
         body_str = html.decode("utf-8", "replace")
+        print(body_str)
         # trim body
         body = trim_text(body_str, '<div id="content"', '<div id="nav_bottom"')
         
@@ -52,14 +53,15 @@ def run_scraper():
     parser = Parser()
     # loop through all urls
     for url in urls:
-        if url == '/boxscores/202210270tam.htm':
+        if "/boxscores/201810180crd.htm" in url:
             print(url)
             # using defined base and request urls, get decoded data
             bytes = request_data(conn, url)
+            print(bytes)
             # trim html to content we need
             text = trim_text(bytes, '<div id="content"', '<div id="footer"')
             ### Declare the sections we need to parse
-            parser.setMatchup(trim_text(text, '<div id="content" role="main" class="box">', '<div class="game_summary nohover current">'))
+            parser.setMatchup(trim_text(text, '<div id="content" role="main" class="box">', '<div class="placeholder">'))
             parser.setScorebox(trim_text(text, '<div class="scorebox">', '<div class="scorebox_meta">'))
             parser.setScoreboxMeta(trim_text(text, '<div class="scorebox_meta">', '<style>'))
             parser.setAllScoring(trim_text(text, '<div class="table_container" id="div_scoring">', '<div class="content_grid">'))
@@ -82,7 +84,6 @@ def run_scraper():
             parser.setAwayDrives(trim_text(text, '<div id="all_vis_drives"', '<div id="all_pbp"'))
             parser.setPlays(trim_text(text, '<div id="all_pbp"', '<div id="bottom_nav"'))
             
-            # extract game date string, home and away teams
             game_date = parser.extract_basic_info()
             today = datetime.today().date()
             if game_date < today:
@@ -90,8 +91,9 @@ def run_scraper():
        
     # close http connection
     conn.close()
-    # write json file using game info
-    write_file(json.dumps(games, indent=4))
+    
+    # write files
+    parser.writeFiles()
     
 # Trim body of test to start and end
 def trim_text(text, start, end):
@@ -100,9 +102,9 @@ def trim_text(text, start, end):
 
     return text[start_idx:end_idx]
 
-def write_file(game_json):
-    with open('json_test.json', 'w') as json_file:
-        json_file.write(game_json)
+# def write_file(game_json):
+#     with open('json_test.json', 'w') as json_file:
+#         json_file.write(game_json)
 
 # Main function
 if __name__ == "__main__":

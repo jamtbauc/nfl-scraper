@@ -1,4 +1,4 @@
-class Player:
+class PlayerWhole:
     def __init__(self, name, tm_id, gm_id):
         self.stats = {
             "name": name,

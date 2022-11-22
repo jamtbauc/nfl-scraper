@@ -1,9 +1,10 @@
 from datetime import date
+import json
 
 class Player:
-    def __init__(self):
-        self.id = None
-        self.name = None
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
         self.college = None
         self.dob = None
         self.career_start = None
@@ -44,5 +45,16 @@ class Player:
         
     def setName(self, name):
         self.name = name
-    
+        
+    def getInfo(self):
+        info = {
+            "id": self.getId(),
+            "name": self.getName(),
+            "college": self.getCollege(),
+            "dob": self.getDOB(),
+            "careerStart": self.getCareerStart(),
+            "careerEnd": self.getCareerEnd()
+        }
+        
+        return info
     

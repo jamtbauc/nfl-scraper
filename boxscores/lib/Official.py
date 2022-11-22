@@ -39,4 +39,4 @@ class Official:
             "jerseyNum": self.getJerseyNum()
         }
         
-        return json.dumps(info, indent=4)
+        return info

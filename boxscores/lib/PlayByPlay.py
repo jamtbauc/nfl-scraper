@@ -94,5 +94,10 @@ class PlayByPlay:
     def setYdsToGo(self, yds):
         self.yds_to_go = yds
     
-    
+    def getInfo(self):
+        info = {
+            
+        }
+        
+        return info
         

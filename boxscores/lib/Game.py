@@ -56,7 +56,7 @@ class Game:
     def setWeek(self, week):
         self.week = week
     
-    # HELPER FUNCTIONS
+    # OUTPUT FUNCTIONS
     def getInfo(self):
         info = {
             "id": self.getId(),
@@ -68,4 +68,4 @@ class Game:
             "gameDuration": self.getGameDuration().isoformat()   
         }
         
-        return json.dumps(info, indent=4)
+        return info

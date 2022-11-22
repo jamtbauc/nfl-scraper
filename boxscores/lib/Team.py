@@ -1,3 +1,5 @@
+import json
+
 class Team:
     
     team_info = {
@@ -69,4 +71,14 @@ class Team:
     
     def setName(self, name):
         self.name = name
+        
+    def getInfo(self):
+        info = {
+            "name": self.getName(),
+            "locale": self.getLocale(),
+            "mascot": self.getMascot(),
+            "abbrevPff": self.getAbbrevPff()
+        }
+        
+        return info
     

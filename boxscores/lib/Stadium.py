@@ -47,4 +47,4 @@ class Stadium:
             "roof": self.getRoof()
         }
         
-        return json.dumps(info, indent=4)
+        return info

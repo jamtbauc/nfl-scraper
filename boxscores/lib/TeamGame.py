@@ -323,4 +323,4 @@ class TeamGame:
             "coach": self.getCoach(),
             "score": self.getScore()
         }
-        return json.dumps(info, indent=4)
+        return info

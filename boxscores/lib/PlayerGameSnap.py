@@ -56,3 +56,10 @@ class PlayerGameSnap:
     
     def setStartPos(self, pos):
         self.start_pos = pos
+        
+    def getInfo(self):
+        info = {
+            
+        }
+        
+        return info

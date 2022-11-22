@@ -64,5 +64,5 @@ class ScoringPlay:
             "homeScore": self.getHomeScore()
         }
         
-        return json.dumps(info, indent=4)
+        return info
         

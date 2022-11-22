@@ -1,11 +1,11 @@
 import json
 
 class GameWeather:
-    def __init__(self, id, temp, humidity, gameId):
+    def __init__(self, id, temp, humidity, wind, gameId):
         self.id = id
         self.temp = temp
         self.humidity = humidity
-        self.wind = None
+        self.wind = wind
         self.game_id = gameId
         
     def getId(self):
@@ -44,8 +44,8 @@ class GameWeather:
             "temp": self.getTemp(),
             "humidity": self.getHumidity(),
             "wind": self.getWind(),
-            "game_id": self.getGameId()
+            "gameId": self.getGameId()
         }
         
-        return json.dumps(info, indent=4)
+        return info
         

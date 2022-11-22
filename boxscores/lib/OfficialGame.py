@@ -39,4 +39,4 @@ class OfficialGame:
             "gameId": self.getGameId()
         }
         
-        return json.dumps(info, indent=4)
+        return info
