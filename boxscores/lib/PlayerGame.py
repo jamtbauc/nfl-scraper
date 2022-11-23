@@ -1,4 +1,5 @@
 import json
+import re
 
 class PlayerGame:
     def __init__(self, id, playerId, gameId):
@@ -58,6 +59,62 @@ class PlayerGame:
         self.punt_yds = 0
         self.avg_punt = 0.0
         self.long_punt = 0
+        self.pass_first_downs = 0 
+        self.pass_first_down_pct = 0.0
+        self.pass_tgt_yds = 0
+        self.pass_tgt_yds_per_att = 0.0
+        self.pass_air_yds = 0
+        self.pass_air_yds_per_comp = 0.0
+        self.pass_air_yds_per_att = 0.0
+        self.pass_yac = 0 
+        self.pass_yac_per_comp = 0.0
+        self.pass_drops = 0 
+        self.pass_drop_pct = 0.0
+        self.pass_poor_throws = 0 
+        self.pass_poor_throw_pct = 0.0 
+        self.pass_blitzed = 0
+        self.pass_hurried = 0 
+        self.pass_hits = 0 
+        self.pass_pressured = 0 
+        self.pass_pressured_pct = 0.0
+        self.rush_scrambles = 0
+        self.rush_scrambles_yds_per_att = 0.0 
+        self.rush_first_down = 0 
+        self.rush_yds_before_contact = 0 
+        self.rush_yds_bc_per_rush = 0.0
+        self.rush_yac = 0 
+        self.rush_yac_per_rush = 0.0
+        self.rush_broken_tacks = 0 
+        self.rush_broken_tacks_per_rush = 0.0
+        self.rec_first_down = 0 
+        self.rec_air_yds = 0 
+        self.rec_air_yds_per_rec = 0.0
+        self.rec_yac = 0 
+        self.rec_yac_per_rec = 0.0
+        self.rec_adot = 0.0
+        self.rec_broken_tacks = 0 
+        self.rec_broken_tacks_per_rec = 0.0 
+        self.rec_drops = 0 
+        self.rec_drop_pct = 0.0
+        self.rec_target_int = 0 
+        self.rec_pass_rating = 0.0 
+        self.def_targets = 0 
+        self.def_comps = 0 
+        self.def_comp_pct = 0.0
+        self.def_comp_yds = 0
+        self.def_yds_per_comp = 0.0 
+        self.def_yds_per_target = 0.0 
+        self.def_comp_tds = 0 
+        self.def_pass_rating = 0.0
+        self.def_tgt_yds_per_att = 0.0 
+        self.def_air_yds = 0 
+        self.def_yac = 0 
+        self.blitzes = 0 
+        self.qb_hurries = 0 
+        self.qb_knockdown = 0
+        self.pressures = 0 
+        self.tacks_missed = 0 
+        self.tacks_missed_pct = 0.0
         
     def getAvgKickRet(self):
         return self.avg_kick_ret
@@ -395,6 +452,212 @@ class PlayerGame:
     def setXpm(self, value):
         self.xpm = value
         
+    def getPassFirstDowns(self):
+        return self.pass_first_downs
+    
+    def setPassFirstDowns(self, value):
+        self.pass_first_downs = int(value)
+    
+    def getPassFirstDownPct(self):
+        return self.pass_first_down_pct
+    
+    def setPassFirstDownPct(self, value):
+        self.pass_first_down_pct = float(value)
+        
+    def getPassTgtYds(self):
+        return self.pass_tgt_yds
+    
+    def setPassTgtYds(self, value):
+        self.pass_tgt_yds = int(value)
+    
+    def getPassTgtYdsPerAtt(self):
+        return self.pass_tgt_yds_per_att
+    
+    def setPassTgtYdsPerAtt(self, value):
+        self.pass_tgt_yds_per_att = float(value)
+        
+    def getPassAirYds(self):
+        return self.pass_air_yds
+    
+    def setPassAirYds(self, value):
+        self.pass_air_yds = int(value)
+        
+    def getPassAirYdsPerComp(self):
+        return self.pass_air_yds_per_comp
+    
+    def setPassAirYdsPerComp(self, value):
+        self.pass_air_yds_per_comp = float(value)
+    
+    def getPassAirYdsPerAtt(self):
+        return self.pass_air_yds_per_att
+    
+    def setPassAirYdsPerAtt(self, value):
+        self.pass_air_yds_per_att = float(value)
+
+    def getPassYac(self):
+        return self.pass_yac
+    
+    def setPassYac(self, value):
+        self.pass_yac = int(value)
+        
+    def getPassYacPerComp(self):
+        return self.pass_yac_per_comp
+    
+    def setPassYacPerComp(self, value):
+        self.pass_yac_per_comp = float(value)
+        
+    def getPassDrops(self):
+        return self.pass_drops
+    
+    def setPassDrops(self, value):
+        self.pass_drops = int(value)
+         
+    def getPassDropPct(self):
+        return self.pass_drop_pct
+    
+    def setPassDropPct(self, value):
+        value = re.findall('[0-9]+', value)
+        value = int(value[0])
+        self.pass_drop_pct = int(value)
+         
+    def getPassPoorThrows(self):
+        return self.pass_poor_throws
+    
+    def setPassPoorThrows(self, value):
+        self.pass_poor_throws = int(value)
+        
+    def getPassPoorThrowPct(self):
+        return self.pass_poor_throw_pct
+    
+    def getPassBlitzed(self):
+        return self.pass_blitzed
+    
+    def getPassHurried(self): 
+        return self.pass_hurried
+    
+    def getPassHits(self): 
+        return self.pass_hits
+    
+    def getPassPressured(self): 
+        return self.pass_pressured
+    
+    def getPassPressuredPct(self): 
+        return self.pass_pressured_pct
+    
+    def getRushScrambles(self):
+        return self.rush_scrambles
+    
+    def getRushScramblesYdsPerAtt(self): 
+        return self.rush_scrambles_yds_per_att
+    
+    def getRushFirstDown(self): 
+        return self.rush_first_down
+    
+    def getRushYdsBeforeContact(self): 
+        return self.rush_yds_before_contact
+    
+    def getRushYdsBcPerRush(self):
+        return self.rush_yds_bc_per_rush
+    
+    def getRushYac(self): 
+        return self.rush_yac
+    
+    def getRushYacPerRush(self): 
+        return self.rush_yac_per_rush
+    
+    def getRushBrokenTacks(self):
+        return self.rush_broken_tacks
+     
+    def getRushBrokenTacksPerRush(self):
+        return self.rush_broken_tacks_per_rush
+    
+    def getRecFirstDown(self): 
+        return self.rec_first_down
+    
+    def getRecAirYds(self): 
+        return self.rec_air_yds
+    
+    def getRecAirYdsPerRec(self): 
+        return self.rec_air_yds_per_rec
+    
+    def getRecYac(self): 
+        return self.rec_yac
+    
+    def getRecYacPerRec(self):
+        return self.rec_yac_per_rec
+    
+    def getRecAdot(self): 
+        return self.rec_adot
+    
+    def getRecBrokenTacks(self): 
+        return self.rec_broken_tacks
+    
+    def getRecBrokenTacksPerRec(self): 
+        return self.rec_broken_tacks_per_rec
+    
+    def getRecDrops(self): 
+        return self.rec_drops
+    
+    def getRecDropPct(self):
+        return self.rec_drop_pct
+    
+    def getRecTargetInt(self): 
+        return self.rec_target_int
+    
+    def getRecPassRating(self): 
+        return self.rec_pass_rating
+    
+    def getDefTargets(self): 
+        return self.def_targets
+    
+    def getDefComps(self): 
+        return self.def_comps
+    
+    def getDefCompPct(self):
+        return self.def_comp_pct
+    
+    def getDefCompYds(self): 
+        return self.def_comp_yds
+    
+    def getDefYdsPerComp(self): 
+        return self.def_yds_per_comp
+    
+    def getDefYdsPerTarget(self):
+        return self.def_yds_per_target
+     
+    def getDefCompTds(self): 
+        return self.def_comp_tds
+    
+    def getDefPassRating(self):
+        return self.def_pass_rating
+    
+    def getDefTgtYdsPerAtt(self): 
+        return self.def_tgt_yds_per_att
+    
+    def getDefAirYds(self): 
+        return self.def_air_yds
+    
+    def getDefYac(self): 
+        return self.def_yac
+    
+    def getBlitzes(self):
+        return self.blitzes
+     
+    def getQbHurries(self): 
+        return self.qb_hurries
+    
+    def getQbKnockdown(self):
+        return self.qb_knockdown
+    
+    def getPressures(self): 
+        return self.pressures
+    
+    def getTacksMissed(self):
+        return self.tacks_missed
+    
+    def getTacksMissedPct(self):
+        return self.tacks_missed_pct
+        
         
     # MAPPER when parsing html    
     def mapToPlayerGame(self, label, value):
@@ -468,6 +731,168 @@ class PlayerGame:
             self.fumble_rec_tds = int(value)
         elif label == "fumbles_forced":
             self.forced_fumbles = int(value)
+        elif label == "kick_ret":
+            self.kick_rets = int(value)
+        elif label == "kick_ret_yds":
+            self.kick_ret_yds = int(value)
+        elif label == "kick_ret_yds_per_ret":
+            self.avg_kick_ret = float(value)
+        elif label == "kick_ret_td":
+            self.kick_ret_tds = int(value)
+        elif label == "kick_ret_long":
+            self.long_kick_ret = int(value)
+        elif label == "punt_ret":
+            self.punt_rets = int(value)
+        elif label == "punt_ret_yds":
+            self.punt_ret_yds = int(value)
+        elif label == "punt_ret_yds_per_ret":
+            self.avg_punt_ret = float(value)
+        elif label == "punt_ret_td":
+            self.punt_ret_tds = int(value)
+        elif label == "punt_ret_long":
+            self.long_punt_ret = int(value)
+        elif label == "xpm":
+            self.xpm = int(value)
+        elif label == "xpa":
+            self.xpa = int(value)
+        elif label == "fgm":
+            self.fgm = int(value)
+        elif label == "fga":
+            self.fga = int(value)
+        elif label == "punt":
+            self.punt = int(value)
+        elif label == "punt_yds":
+            self.punt_yds = int(value)
+        elif label == "punt_yds_per_punt":
+            self.avg_punt = float(value)
+        elif label == "punt_long":
+            self.long_punt = int(value)
+        elif label == "pass_first_down":
+            self.pass_first_downs = int(value)
+        elif label == "pass_first_down_pct":
+            self.pass_first_down_pct = float(value)
+        elif label == "pass_target_yds":
+            self.pass_tgt_yds = int(value)
+        elif label == "pass_tgt_yds_per_att":
+            self.pass_air_yds_per_att = float(value)
+        elif label == "pass_air_yds":
+            self.pass_air_yds = int(value)
+        elif label == "pass_air_yds_per_cmp":
+            self.pass_air_yds_per_comp = float(value)
+        elif label == "pass_air_yds_per_att":
+            self.pass_air_yds_per_att = float(value)
+        elif label == "pass_yac":
+            self.pass_yac = int(value)
+        elif label == "pass_yac_per_cmp":
+            self.pass_yac_per_comp = float(value)
+        elif label == "pass_drops":
+            self.pass_drops = int(value)
+        elif label == "pass_drop_pct":
+            value = re.findall('[0-9]+', value)
+            value = int(value[0])
+            self.pass_drop_pct = float(value)
+        elif label == "pass_poor_throws":
+            self.pass_poor_throws = int(value)
+        elif label == "pass_poor_throw_pct":
+            value = re.findall('[0-9]+', value)
+            value = int(value[0])
+            self.pass_poor_throw_pct = float(value)
+        elif label == "pass_blitzed":
+            self.pass_blitzed = int(value)
+        elif label == "pass_hurried":
+            self.pass_hurried = int(value)
+        elif label == "pass_hits":
+            self.pass_hits = int(value)
+        elif label == "pass_pressured":
+            self.pass_pressured = int(value)
+        elif label == "pass_pressured_pct":
+            value = re.findall('[0-9]+', value)
+            value = int(value[0])
+            self.pass_pressured_pct = float(value)
+        elif label == "rush_scrambles":
+            self.rush_scrambles = int(value)
+        elif label == "rush_scrambles_yds_per_att":
+            self.rush_scrambles_yds_per_att = float(value)
+        elif label == "rush_first_down":
+            self.rush_first_down = int(value)
+        elif label == "rush_yds_before_contact":
+            self.rush_yds_before_contact = int(value)
+        elif label == "rush_yds_bc_per_rush":
+            self.rush_yds_bc_per_rush = float(value)
+        elif label == "rush_yac":
+            self.rush_yac = int(value)
+        elif label == "rush_yac_per_rush":
+            self.rush_yac_per_rush = float(value)
+        elif label == "rush_broken_tackles":
+            self.rush_broken_tacks = int(value)
+        elif label == "rush_broken_tackles_per_rush":
+            self.rush_broken_tacks_per_rush = float(value)
+        elif label == "rec_first_down":
+            self.rec_first_down = int(value)
+        elif label == "rec_air_yds":
+            self.rec_air_yds = int(value)
+        elif label == "rec_air_yds_per_rec":
+            self.rec_air_yds_per_rec = float(value)
+        elif label == "rec_yac":
+            self.rec_yac = int(value)
+        elif label == "rec_yac_per_rec":
+            self.rec_yac_per_rec = float(value)
+        elif label == "rec_adot":
+            self.rec_adot = float(value)
+        elif label == "rec_broken_tackles":
+            self.rec_broken_tacks = int(value)
+        elif label == "rec_broken_tackles_per_rec":
+            self.rec_broken_tacks_per_rec = float(value)
+        elif label == "rec_drops":
+            self.rec_drops = int(value)
+        elif label == "rec_drop_pct":
+            value = re.findall('[0-9]+', value)
+            value = int(value[0])
+            self.rec_drop_pct = float(value)
+        elif label == "rec_target_int":
+            self.rec_target_int = int(value)
+        elif label == "rec_pass_rating":
+            self.rec_pass_rating = float(value)
+        elif label == "def_targets":
+            self.def_targets = int(value)
+        elif label == "def_cmp":
+            self.def_comps = int(value)
+        elif label == "def_cmp_perc":
+            if isinstance(value, str):
+                value = re.findall('[0-9]+', value)
+                value = float(value[0])
+            self.def_comp_pct = float(value)
+        elif label == "def_cmp_yds":
+            self.def_comp_yds = int(value)
+        elif label == "def_yds_per_cmp":
+            self.def_yds_per_comp = float(value)
+        elif label == "def_yds_per_target":
+            self.def_yds_per_target = float(value)
+        elif label == "def_cmp_td":
+            self.def_comp_tds = int(value)
+        elif label == "def_pass_rating":
+            self.def_pass_rating = float(value)
+        elif label == "def_tgt_yds_per_att":
+            self.def_tgt_yds_per_att = float(value)
+        elif label == "def_air_yds":
+            self.def_air_yds = int(value)
+        elif label == "def_yac":
+            self.def_yac = int(value)
+        elif label == "blitzes":
+            self.blitzes = int(value)
+        elif label == "qb_hurry":
+            self.qb_hurries = int(value)
+        elif label == "qb_knockdown":
+            self.qb_knockdown = int(value)
+        elif label == "pressures":
+            self.pressures = int(value)
+        elif label == "tackles_missed":
+            self.tacks_missed = int(value)
+        elif label == "tackles_missed_pct":
+            if isinstance(value, str):
+                value = re.findall('[0-9]+', value)
+                value = float(value[0])
+            self.tacks_missed_pct = float(value)
         else:
             print(f"{label}: {value}")
             
@@ -529,7 +954,62 @@ class PlayerGame:
             "punts": self.getPunts(),
             "puntYds": self.getPuntYds(),
             "avgPunt": self.getAvgPunt(),
-            "longPunt": self.getLongPunt()
-        }
+            "longPunt": self.getLongPunt(),
+            "passFirstDowns": self.getPassFirstDowns(),
+            "passFirstDownPct": self.getPassFirstDownPct(),
+            "passTgtYdsPerAtt": self.getPassTgtYdsPerAtt(),
+            "passAirYds": self.getPassAirYds(),
+            "passAirYdsPerComp": self.getPassAirYdsPerComp(),
+            "passAirYdsPerAtt": self.getPassAirYdsPerAtt(),
+            "passYac": self.getPassYac(),
+            "passYacPerComp": self.getPassYacPerComp(),
+            "passDrops": self.getPassDrops(),
+            "passDropPct": self.getPassDropPct(),
+            "passPoorThrows": self.getPassPoorThrows(),
+            "passPoorThrowPct": self.getPassPoorThrowPct(),
+            "passBlitzed": self.getPassBlitzed(),
+            "passHurried": self.getPassHurried(),
+            "passHits": self.getPassHits(),
+            "passPressured": self.getPassPressured(),
+            "passPressuredPct": self.getPassPressuredPct(),
+            "rushScrambles": self.getRushScrambles(),
+            "rushScramblesYdsPerAtt": self.getRushScramblesYdsPerAtt(),
+            "rushFirstDown": self.getRushFirstDown(),
+            "rushYdsBeforeContact": self.getRushYdsBeforeContact(),
+            "rushYdsBcPerRush": self.getRushYdsBcPerRush(),
+            "rushYac": self.getRushYac(),
+            "rushYacPerRush": self.getRushYacPerRush(),
+            "rushBrokenTacks": self.getRushBrokenTacks(),
+            "rushBrokenTacksPerRush": self.getRushBrokenTacksPerRush(),
+            "recFirstDown": self.getRecFirstDown(),
+            "recAirYds": self.getRecAirYds(),
+            "recAirYdsPerRec": self.getRecAirYdsPerRec(),
+            "recYac": self.getRecYac(),
+            "recYacPerRec": self.getRecYacPerRec(),
+            "recAdot": self.getRecAdot(),
+            "recBrokenTacks": self.getRecBrokenTacks(),
+            "recBrokenTacksPerRec": self.getRecBrokenTacksPerRec(),
+            "recDrops": self.getRecDrops(),
+            "recDropPct": self.getRecDropPct(),
+            "recTargetInt": self.getRecTargetInt(),
+            "recPassRating": self.getRecPassRating(),
+            "defTargets": self.getDefTargets(),
+            "defComps": self.getDefComps(),
+            "defCompPct": self.getDefCompPct(),
+            "defCompYds": self.getDefCompYds(),
+            "defYdsPerComp": self.getDefYdsPerComp(),
+            "defYdsPerTarget": self.getDefYdsPerTarget(),
+            "defCompTds": self.getDefCompTds(),
+            "defPassRating": self.getDefPassRating(),
+            "defTgtYdsPerAtt": self.getDefTgtYdsPerAtt(),
+            "defAirYds": self.getDefAirYds(),
+            "defYac": self.getDefYac(),
+            "blitzes": self.getBlitzes(),
+            "qbHurries": self.getQbHurries(),
+            "qbKnockdown": self.getQbKnockdown(),
+            "pressures": self.getPressures(),
+            "tacksMissed": self.getTacksMissed(),
+            "tacksMissedPct": self.getTacksMissedPct()
+}
         
         return info

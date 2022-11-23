@@ -462,100 +462,13 @@ class Parser:
             
 #             plays = plays[row_end + 5:]
 
-    def extract_player_def_stats(self):
+    def extract_player_stats(self, text):
         # Vars to hold player and team as we loop through rows
         team = None
         player_gm = None
         
-        start = self._all_player_def.find('<tbody>')
-        data = self._all_player_def[start:]
-        
-        while data.find('<tr >') > -1:
-            row_start = data.find('<tr >')
-            row_end = data.find('</tr>')
-            row = data[row_start:row_end]
-            
-            while row.find('data-stat="') > -1:
-                ds_start = row.find('data-stat="') + 11
-                ds_end = row.find('" >')
-                ds = row[ds_start:ds_end]
-                
-                stat_end = row.find('</t')
-                stat = row[ds_end + 3:stat_end]
-                stat = stat.replace('\n', '')
-                stat = stat.replace("   ", '')
-                
-                if ds == "player":
-                    id_start = stat.find('href="') + 6
-                    id_end = stat.find(".htm")
-                    id = stat[id_start:id_end]
-                    id = re.sub('/.*/.*/','', id)
-                    
-                    html = re.compile('<.*?>')
-                    stat = re.sub(html, '', stat)
-                    
-                    if stat == '':
-                        stat = 0
-                    
-                    player = None
-                       
-                    # check if player id in master players list 
-                    if id not in self.players:
-                        player = Player(id, stat)
-                        self.players[player.getId()] = player
-                    else:
-                        player = self.players[id]
-                    
-                        
-                    if player:
-                        # check if player_gm is in single game player_games list
-                        if player.getId() not in self.player_games:
-                            # create new player game object
-                            player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId(), self.game.getId())
-                            # add to master list
-                            self.player_gms[player_gm.getId()] = player_gm
-                            # add to single game list with this id as value
-                            self.player_games[player.getId()] = player_gm.getId()
-                        # if player_gm exists for this game
-                        else:
-                            # get master list id from this game player_game list
-                            player_gm_id = self.player_games[player.getId()]
-                            # retrieve master player_gm
-                            player_gm = self.player_gms[player_gm_id]
-                        
-                elif ds == "team":
-                    html = re.compile('<.*?>')
-                    stat = re.sub(html, '', stat)
-                    
-                    if stat == '':
-                        stat = 0
-                        
-                    team = stat
-                else:
-                    html = re.compile('<.*?>')
-                    stat = re.sub(html, '', stat)
-                    
-                    if stat == '':
-                        stat = 0
-                        
-                    if team == self.teams[self.away_team.getTeamId()].getAbbrevPff():
-                        player_gm.setGameId(self.away_team.getId())
-                    elif team == self.teams[self.home_team.getTeamId()].getAbbrevPff():
-                        player_gm.setGameId(self.home_team.getId())
-                        
-                    player_gm.mapToPlayerGame(ds, stat)
-                
-                row = row[stat_end + 5:]
-            
-            data = data[row_end + 5:]
-
-    def extract_player_off_stats(self):
-        # Vars to hold player and team as we loop through rows
-        team = None
-        player_gm = None
-        
-        start = self._all_player_off.find('<tbody>')
-        data = self._all_player_off[start:]
+        start = text.find('<tbody>')
+        data = text[start:]
         
         while data.find('<tr >') > -1:
             row_start = data.find('<tr >')
@@ -990,21 +903,21 @@ class Parser:
         # extract team stats
         self.extract_team_stats()
         # extract player offense
-        self.extract_player_off_stats()
+        self.extract_player_stats(self._all_player_off)
         # extract player defense
-        self.extract_player_def_stats()
-        # # extract player returns
-        # self.extract_player_stats()
-        # # extract player kicking/punting
-        # self.extract_player_stats()
-        # # extract advanced passing
-        # self.extract_player_stats()
-        # # extract advanced rushing
-        # self.extract_player_stats()
-        # # extract advanced receiving
-        # self.extract_player_stats()
-        # # extract advanced defense
-        # self.extract_player_stats()
+        self.extract_player_stats(self._all_player_def)
+        # extract player returns
+        self.extract_player_stats(self._all_returns)
+        # extract player kicking/punting
+        self.extract_player_stats(self._all_kicking)
+        # extract advanced passing
+        self.extract_player_stats(self._passing_adv)
+        # extract advanced rushing
+        self.extract_player_stats(self._rushing_adv)
+        # extract advanced receiving
+        self.extract_player_stats(self._receiving_adv)
+        # extract advanced defense
+        self.extract_player_stats(self._defense_adv)
         # # extract home starters
         # self.extract_starters()
         # # extract away starters
@@ -1109,7 +1022,19 @@ class Parser:
                           'defQbHits', 'fumbleRecs', 'fumbleRecYds', 'fumbleRecTds', 'forcedFumbles',
                           'kickRets', 'kickRetYds', 'avgKickRet', 'kickRetTds', 'longKickRet',
                           'puntRets', 'puntRetYds', 'avgPuntRet', 'puntRetTds', 'longPuntRet',
-                          'xpm', 'xpa', 'fgm', 'fga', 'punts', 'puntYds', 'avgPunt', 'longPunt']
+                          'xpm', 'xpa', 'fgm', 'fga', 'punts', 'puntYds', 'avgPunt', 'longPunt',
+                          'passFirstDowns', 'passFirstDownPct', 'passTgtYdsPerAtt', 'passAirYds',
+                          'passAirYdsPerComp', 'passAirYdsPerAtt', 'passYac', 'passYacPerComp',
+                          'passDrops', 'passDropPct', 'passPoorThrows', 'passPoorThrowPct', 'passBlitzed',
+                          'passHurried', 'passHits', 'passPressured', 'passPressuredPct', 'rushScrambles',
+                          'rushScramblesYdsPerAtt', 'rushFirstDown', 'rushYdsBeforeContact', 'rushYdsBcPerRush',
+                          'rushYac', 'rushYacPerRush', 'rushBrokenTacks', 'rushBrokenTacksPerRush',
+                          'recFirstDown', 'recAirYds', 'recAirYdsPerRec', 'recYac', 'recYacPerRec',
+                          'recAdot', 'recBrokenTacks', 'recBrokenTacksPerRec', 'recDrops', 'recDropPct',
+                          'recTargetInt', 'recPassRating', 'defTargets', 'defComps', 'defCompPct',
+                          'defCompYds', 'defYdsPerComp', 'defYdsPerTarget', 'defCompTds', 'defPassRating',
+                          'defTgtYdsPerAtt', 'defAirYds', 'defYac', 'blitzes', 'qbHurries', 'qbKnockdown',
+                          'pressures', 'tacksMissed', 'tacksMissedPct']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player_gm in self.player_gms:
