@@ -5,59 +5,59 @@ class PlayerGame:
         self.id = id
         self.player_id = playerId
         self.game_id = gameId
-        self.pass_comps = None
-        self.pass_atts = None
-        self.pass_yds = None
-        self.pass_tds = None
-        self.pass_ints = None
-        self.sacked = None
-        self.sack_yds_lost = None
-        self.long_pass = None
-        self.pass_rating = None
-        self.rush_atts = None
-        self.rush_yds = None
-        self.rush_tds = None
-        self.long_rush = None
-        self.rec_targets = None
-        self.receptions = None
-        self.rec_yds = None
-        self.rec_tds = None
-        self.long_rec = None
-        self.fumbles = None
-        self.fumbles_lost = None
-        self.def_int = None
-        self.def_int_yds = None
-        self.def_int_tds = None
-        self.long_def_int = None
-        self.pass_defs = None
-        self.def_sacks = None
-        self.def_tack_comb = None
-        self.def_tack_solo = None
-        self.def_tack_assist = None
-        self.def_tack_loss = None
-        self.def_qb_hits = None
-        self.fumble_recs = None
-        self.fumble_rec_yds = None
-        self.fumble_rec_tds = None
-        self.forced_fumbles = None
-        self.kick_rets = None
-        self.kick_ret_yds = None
-        self.avg_kick_ret = None
-        self.kick_ret_tds = None
-        self.long_kick_ret = None
-        self.punt_rets = None
-        self.punt_ret_yds = None
-        self.avg_punt_ret = None
-        self.punt_ret_tds = None
-        self.long_punt_ret = None
-        self.xpm = None
-        self.xpa = None
-        self.fgm = None
-        self.fga = None
-        self.punts = None
-        self.punt_yds = None
-        self.avg_punt = None
-        self.long_punt = None
+        self.pass_comps = 0
+        self.pass_atts = 0
+        self.pass_yds = 0
+        self.pass_tds = 0
+        self.pass_ints = 0
+        self.sacked = 0
+        self.sack_yds_lost = 0
+        self.long_pass = 0
+        self.pass_rating = 0
+        self.rush_atts = 0
+        self.rush_yds = 0
+        self.rush_tds = 0
+        self.long_rush = 0
+        self.rec_targets = 0
+        self.receptions = 0
+        self.rec_yds = 0
+        self.rec_tds = 0
+        self.long_rec = 0
+        self.fumbles = 0
+        self.fumbles_lost = 0
+        self.def_int = 0
+        self.def_int_yds = 0
+        self.def_int_tds = 0
+        self.long_def_int = 0
+        self.pass_defs = 0
+        self.def_sacks = 0.0
+        self.def_tack_comb = 0
+        self.def_tack_solo = 0
+        self.def_tack_assist = 0
+        self.def_tack_loss = 0
+        self.def_qb_hits = 0
+        self.fumble_recs = 0
+        self.fumble_rec_yds = 0
+        self.fumble_rec_tds = 0
+        self.forced_fumbles = 0
+        self.kick_rets = 0
+        self.kick_ret_yds = 0
+        self.avg_kick_ret = 0.0
+        self.kick_ret_tds = 0
+        self.long_kick_ret = 0
+        self.punt_rets = 0
+        self.punt_ret_yds = 0
+        self.avg_punt_ret = 0.0
+        self.punt_ret_tds = 0
+        self.long_punt_ret = 0
+        self.xpm = 0
+        self.xpa = 0
+        self.fgm = 0
+        self.fga = 0
+        self.punts = 0
+        self.punt_yds = 0
+        self.avg_punt = 0.0
+        self.long_punt = 0
         
     def getAvgKickRet(self):
         return self.avg_kick_ret
@@ -87,7 +87,7 @@ class PlayerGame:
         return self.def_int_tds
     
     def setDefIntTds(self, intTds):
-        self.def_int_Tds = intTds
+        self.def_int_tds = intTds
         
     def getDefIntYds(self):
         return self.def_int_yds
@@ -191,10 +191,10 @@ class PlayerGame:
     def setId(self, id):
         self.id = id
         
-    def getKickRetYds(self):
+    def getKickRetTds(self):
         return self.kick_ret_tds
     
-    def setKickRetYds(self, tds):
+    def setKickRetTds(self, tds):
         self.kick_ret_tds = tds
         
     def getKickRetYds(self):
@@ -438,6 +438,38 @@ class PlayerGame:
             self.fumbles = int(value)
         elif label == "fumbles_lost":
             self.fumbles_lost = int(value)
+        elif label == "def_int":
+            self.def_int = int(value)
+        elif label == "def_int_yds":
+            self.def_int_yds = int(value)
+        elif label == "def_int_td":
+            self.def_int_tds = int(value)
+        elif label == "def_int_long":
+            self.long_def_int = int(value)
+        elif label == "pass_defended":
+            self.pass_defs = int(value)
+        elif label == "sacks":
+            self.def_sacks = float(value)
+        elif label == "tackles_combined":
+            self.def_tack_comb = int(value)
+        elif label == "tackles_solo":
+            self.def_tack_solo = int(value)
+        elif label == "tackles_assists":
+            self.def_tack_assist = int(value)
+        elif label == "tackles_loss":
+            self.def_tack_loss = int(value)
+        elif label == "qb_hits":
+            self.def_qb_hits = int(value)
+        elif label == "fumbles_rec":
+            self.fumble_recs = int(value)
+        elif label == "fumbles_rec_yds":
+            self.fumble_rec_yds = int(value)
+        elif label == "fumbles_rec_td":
+            self.fumble_rec_tds = int(value)
+        elif label == "fumbles_forced":
+            self.forced_fumbles = int(value)
+        else:
+            print(f"{label}: {value}")
             
     # Return JSON object
     def getInfo(self):
@@ -464,7 +496,40 @@ class PlayerGame:
             "recTds": self.getRecTds(),
             "longRec": self.getLongRec(),
             "fumbles": self.getFumbles(),
-            "fumblesLost": self.getFumblesLost()
+            "fumblesLost": self.getFumblesLost(),
+            "defInts": self.getDefInt(),
+            "defIntYds": self.getDefIntYds(),
+            "defIntTds": self.getDefIntTds(),
+            "longDefInt": self.getLongDefInt(),
+            "passDefs": self.getPassDefs(),
+            "defSacks": self.getDefSacks(),
+            "defTackCombined": self.getDefTacksComb(),
+            "defTackSolo": self.getDefTacksSolo(),
+            "defTackAssists": self.getDefTacksAssist(),
+            "defTackForLoss": self.getDefTacksLoss(),
+            "defQbHits": self.getDefQbHits(),
+            "fumbleRecs": self.getFumbleRecs(),
+            "fumbleRecYds": self.getFumbleRecYds(),
+            "fumbleRecTds": self.getFumbleRecTds(),
+            "forcedFumbles": self.getForcedFumbles(),
+            "kickRets": self.getKickRets(),
+            "kickRetYds": self.getKickRetYds(),
+            "avgKickRet": self.getAvgKickRet(),
+            "kickRetTds": self.getKickRetTds(),
+            "longKickRet": self.getLongKickRet(),
+            "puntRets": self.getPuntRets(),
+            "puntRetYds": self.getPuntRetYds(),
+            "avgPuntRet": self.getAvgPuntRet(),
+            "puntRetTds": self.getPuntRetTds(),
+            "longPuntRet": self.getLongPuntRet(),
+            "xpm": self.getXpm(),
+            "xpa": self.getXpa(),
+            "fgm": self.getFgm(),
+            "fga": self.getFga(),
+            "punts": self.getPunts(),
+            "puntYds": self.getPuntYds(),
+            "avgPunt": self.getAvgPunt(),
+            "longPunt": self.getLongPunt()
         }
         
         return info

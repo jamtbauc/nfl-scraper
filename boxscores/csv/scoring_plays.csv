@@ -1,10 +1,7 @@
 id,homeScore,scoringTeamId,awayScore,qtr,qtrTimeRem,description
-1,0,1,7,1,00:14:01,Todd Davis 20 yard interception return (Brandon McManus kick)
-2,0,1,14,1,00:08:38,Courtland Sutton 28 yard pass from Emmanuel Sanders (Brandon McManus kick)
-3,3,2,14,1,00:05:18,Phil Dawson 43 yard field goal 
-4,3,1,21,1,00:02:02,Chris Harris Jr. 53 yard interception return (Brandon McManus kick)
-5,3,1,28,2,00:14:40,Emmanuel Sanders 64 yard pass from Case Keenum (Brandon McManus kick)
-6,3,1,35,2,00:00:21,Royce Freeman 1 yard rush (Brandon McManus kick)
-7,10,2,35,3,00:08:33,Larry Fitzgerald 4 yard pass from Josh Rosen (Phil Dawson kick)
-8,10,1,42,3,00:03:32,Phillip Lindsay 28 yard rush (Brandon McManus kick)
-9,10,1,45,4,00:05:35,Brandon McManus 41 yard field goal 
+1,0,1,3,1,00:05:01,Matt Bryant 21 yard field goal 
+2,3,2,3,2,00:06:09,Jake Elliott  26 yard field goal 
+3,3,1,6,2,00:02:08,Matt Bryant 52 yard field goal 
+4,10,2,6,3,00:04:37,Jay Ajayi 1 yard rush (Jake Elliott  kick)
+5,10,1,12,4,00:09:48,Tevin Coleman 9 yard rush (Matt Bryant kick failed)
+6,18,2,12,4,00:02:19,Jay Ajayi 11 yard rush (Jay Ajayi run)

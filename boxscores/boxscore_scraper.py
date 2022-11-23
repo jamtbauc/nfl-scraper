@@ -52,7 +52,7 @@ def run_scraper():
     parser = Parser()
     # loop through all urls
     for url in urls:
-        if "/boxscores/201810180crd.htm" in url:
+        if "/boxscores/201809060phi.htm" in url:
             print(url)
             # using defined base and request urls, get decoded data
             bytes = request_data(conn, url)
@@ -86,8 +86,6 @@ def run_scraper():
             today = datetime.today().date()
             if game_date < today:
                 parser.parseGame()
-                
-        # sleep(3)
        
     # close http connection
     conn.close()
