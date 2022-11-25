@@ -2,10 +2,10 @@ import json
 import re
 
 class PlayerGame:
-    def __init__(self, id, playerId, gameId):
+    def __init__(self, id, playerId):
         self.id = id
         self.player_id = playerId
-        self.game_id = gameId
+        self.game_id = None
         self.pass_comps = 0
         self.pass_atts = 0
         self.pass_yds = 0
@@ -115,6 +115,8 @@ class PlayerGame:
         self.pressures = 0 
         self.tacks_missed = 0 
         self.tacks_missed_pct = 0.0
+        self.is_starter = False
+        self.starting_pos = None
         
     def getAvgKickRet(self):
         return self.avg_kick_ret
@@ -657,7 +659,12 @@ class PlayerGame:
     
     def getTacksMissedPct(self):
         return self.tacks_missed_pct
-        
+    
+    def getIsStarter(self):
+        return self.is_starter
+    
+    def getStartingPos(self):
+        return self.starting_pos
         
     # MAPPER when parsing html    
     def mapToPlayerGame(self, label, value):
@@ -1009,7 +1016,9 @@ class PlayerGame:
             "qbKnockdown": self.getQbKnockdown(),
             "pressures": self.getPressures(),
             "tacksMissed": self.getTacksMissed(),
-            "tacksMissedPct": self.getTacksMissedPct()
-}
+            "tacksMissedPct": self.getTacksMissedPct(),
+            "isStarter": self.getIsStarter(),
+            "startingPos": self.getStartingPos()
+        }
         
         return info

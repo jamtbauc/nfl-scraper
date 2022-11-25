@@ -65,6 +65,7 @@ class Parser:
         self.away_team = {}
         self.home_team = {}
         self.player_games = {}
+        self.starters = {}
     
 #     ### HELPER METHODS 
     def setMatchup(self, text):
@@ -511,7 +512,7 @@ class Parser:
                         # check if player_gm is in single game player_games list
                         if player.getId() not in self.player_games:
                             # create new player game object
-                            player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId(), self.game.getId())
+                            player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
                             # add to master list
                             self.player_gms[player_gm.getId()] = player_gm
                             # add to single game list with this id as value
@@ -745,41 +746,64 @@ class Parser:
             
 #             snaps = snaps[row_end + 5:]
 
-#     def extract_starters(self, text):
-#         start = text.find('<tbody>')
-#         starters = text[start:]
+    def extract_starters(self, text):
+        start = text.find('<tbody>')
+        starters = text[start:]
         
-#         while starters.find('<tr ') > -1:
-#             row_start = starters.find('<tr ')
-#             row_end = starters.find('</tr>')
-#             row = starters[row_start:row_end]
+        while starters.find('<tr ') > -1:
+            player = None
             
-#             player_start = row.find('data-stat="player" >') + 20
-#             player_end = row.find('</a>')
-#             player = row[player_start:player_end]
-
-#             html = re.compile('<.*?>')
-#             player = re.sub(html, '', player)
-
-#             pos_start = row.find('data-stat="pos" >') + 17
-#             pos_end = row.find('</td>')
-#             pos = row[pos_start:pos_end]
-
-#             if pos:
-#                 if text.find('home_starters') > -1:
-#                     if player not in self.__home_players:
-#                         plyr = Player(player, self.__home_id, self.__id)
-#                         self.__home_players[player] = plyr.get_stats()
-#                     self.__home_players[player]["is_starting"] = True
-#                     self.__home_players[player]["starting_pos"] = pos
-#                 elif text.find('vis_starters') > -1:
-#                     if player not in self.__away_players:
-#                         plyr = Player(player, self.__away_id, self.__id)
-#                         self.__away_players[player] = plyr.get_stats()
-#                     self.__away_players[player]["is_starting"] = True
-#                     self.__away_players[player]["starting_pos"] = pos
+            row_start = starters.find('<tr ')
+            row_end = starters.find('</tr>')
+            row = starters[row_start:row_end]
             
-#             starters = starters[row_end + 5:]
+            id_start = row.find('append-csv="') + 12
+            id = row[id_start:]
+            id_end = id.find('" ')
+            id = id[:id_end]
+            
+            name_start = row.find('data-stat="player" >') + 20
+            name_end = row.find('</a>')
+            name = row[name_start:name_end]
+
+            html = re.compile('<.*?>')
+            name = re.sub(html, '', name)
+            
+            if id not in self.players:
+                player = Player(id, name)
+                self.players[player.getId()] = player
+            else:
+                player = self.players[id]
+
+            pos_start = row.find('data-stat="pos" >') + 17
+            pos_end = row.find('</td>')
+            pos = row[pos_start:pos_end]
+            
+            if player:
+                player_gm = None
+                # check if player_gm is in single game player_games list
+                if player.getId() not in self.player_games:
+                    # create new player game object
+                    player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
+                    # add to master list
+                    self.player_gms[player_gm.getId()] = player_gm
+                    # add to single game list with this id as value
+                    self.player_games[player.getId()] = player_gm.getId()
+                # if player_gm exists for this game
+                else:
+                    # get master list id from this game player_game list
+                    player_gm_id = self.player_games[player.getId()]
+                    # retrieve master player_gm
+                    player_gm = self.player_gms[player_gm_id]
+                    
+                player_gm.is_starter = True
+                player_gm.starting_pos = pos
+                if text.find('all_home_starters'):
+                    player_gm.setGameId(self.home_team.getId())
+                elif text.find('all_vis_starters'):
+                    player_gm.setGameID(self.away_team.getId())
+
+            starters = starters[row_end + 5:]
 
     def extract_team_stats(self):
         start = self._all_team_stats.find('<tbody')
@@ -918,10 +942,10 @@ class Parser:
         self.extract_player_stats(self._receiving_adv)
         # extract advanced defense
         self.extract_player_stats(self._defense_adv)
-        # # extract home starters
-        # self.extract_starters()
-        # # extract away starters
-        # self.extract_starters()
+        # extract home starters
+        self.extract_starters(self._home_starters)
+        # extract away starters
+        self.extract_starters(self._away_starters)
         # # extract home snaps
         # self.extract_snaps()
         # # extract away snaps
@@ -1034,7 +1058,7 @@ class Parser:
                           'recTargetInt', 'recPassRating', 'defTargets', 'defComps', 'defCompPct',
                           'defCompYds', 'defYdsPerComp', 'defYdsPerTarget', 'defCompTds', 'defPassRating',
                           'defTgtYdsPerAtt', 'defAirYds', 'defYac', 'blitzes', 'qbHurries', 'qbKnockdown',
-                          'pressures', 'tacksMissed', 'tacksMissedPct']
+                          'pressures', 'tacksMissed', 'tacksMissedPct', 'isStarter', 'startingPos']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player_gm in self.player_gms:
