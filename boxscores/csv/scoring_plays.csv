@@ -1,7 +1,113 @@
 id,homeScore,scoringTeamId,awayScore,qtr,qtrTimeRem,description
-1,0,1,3,1,00:05:01,Matt Bryant 21 yard field goal 
-2,3,2,3,2,00:06:09,Jake Elliott  26 yard field goal 
-3,3,1,6,2,00:02:08,Matt Bryant 52 yard field goal 
-4,10,2,6,3,00:04:37,Jay Ajayi 1 yard rush (Jake Elliott  kick)
-5,10,1,12,4,00:09:48,Tevin Coleman 9 yard rush (Matt Bryant kick failed)
-6,18,2,12,4,00:02:19,Jay Ajayi 11 yard rush (Jay Ajayi run)
+1,7,2,0,1,00:08:42,Alex Collins 8 yard rush (Justin Tucker kick)
+2,14,2,0,1,00:01:32,John Brown 7 yard pass from Joe Flacco (Justin Tucker kick)
+3,17,2,0,2,00:13:14,Justin Tucker 41 yard field goal 
+4,20,2,0,2,00:04:16,Justin Tucker 39 yard field goal 
+5,26,2,0,2,00:00:13,Michael Crabtree 12 yard pass from Joe Flacco (pass failed)
+6,33,2,0,3,00:12:28,Willie Snead 13 yard pass from Joe Flacco (Justin Tucker kick)
+7,40,2,0,3,00:11:22,Javorius Allen 1 yard rush (Justin Tucker kick)
+8,40,1,3,3,00:02:38,Stephen Hauschka 35 yard field goal 
+9,47,2,3,4,00:03:52,Kenneth Dixon 2 yard rush (Justin Tucker kick)
+10,0,3,3,1,00:08:20,Randy Bullock 42 yard field goal 
+11,3,4,3,1,00:01:23,Adam Vinatieri 21 yard field goal 
+12,10,4,3,2,00:12:02,Eric Ebron 26 yard pass from Andrew Luck (Adam Vinatieri kick)
+13,13,4,3,2,00:03:01,Adam Vinatieri 38 yard field goal 
+14,13,3,10,2,00:01:44,John Ross 3 yard pass from Andy Dalton (Randy Bullock kick)
+15,16,4,10,2,00:00:02,Adam Vinatieri 51 yard field goal 
+16,23,4,10,3,00:08:13,T.Y. Hilton 5 yard pass from Andrew Luck (Adam Vinatieri kick)
+17,23,3,17,3,00:04:09,A.J. Green 38 yard pass from Andy Dalton (Randy Bullock kick)
+18,23,3,24,4,00:11:07,Joe Mixon 1 yard rush (Randy Bullock kick)
+19,23,3,27,4,00:03:57,Randy Bullock 39 yard field goal 
+20,23,3,34,4,00:00:24,Clayton Fejedelem  83 yard fumble return (Randy Bullock kick)
+21,0,5,7,2,00:11:16,James Conner 4 yard rush (Chris Boswell kick)
+22,7,6,7,3,00:10:05,Tyrod Taylor 20 yard rush (Zane Gonzalez kick)
+23,7,5,14,3,00:08:24,Antonio Brown 22 yard pass from Ben Roethlisberger (Chris Boswell kick)
+24,7,5,21,3,00:05:23,James Conner 22 yard rush (Chris Boswell kick)
+25,14,6,21,4,00:07:32,Carlos Hyde 1 yard rush (Zane Gonzalez kick)
+26,21,6,21,4,00:01:58,Josh Gordon 17 yard pass from Tyrod Taylor (Zane Gonzalez kick)
+27,7,8,0,1,00:11:50,Rob Gronkowski 21 yard pass from Tom Brady (Stephen Gostkowski kick)
+28,7,7,3,1,00:02:33,Ka'imi Fairbairn 42 yard field goal 
+29,14,8,3,2,00:12:38,James White 12 yard pass from Tom Brady (Stephen Gostkowski kick)
+30,14,7,6,2,00:09:01,Ka'imi Fairbairn 36 yard field goal 
+31,21,8,6,2,00:00:14,Phillip Dorsett 4 yard pass from Tom Brady (Stephen Gostkowski kick)
+32,24,8,6,3,00:06:02,Stephen Gostkowski 39 yard field goal 
+33,24,7,13,3,00:01:52,Alfred Blue 1 yard rush (Ka'imi Fairbairn kick)
+34,27,8,13,4,00:09:48,Stephen Gostkowski 35 yard field goal 
+35,27,7,20,4,00:02:08,Bruce Ellington 5 yard pass from Deshaun Watson (Ka'imi Fairbairn kick)
+36,0,9,3,1,00:10:12,Josh Lambo 39 yard field goal 
+37,3,10,3,1,00:00:23,Aldrick Rosas 27 yard field goal 
+38,3,9,6,2,00:07:19,Josh Lambo 39 yard field goal 
+39,3,9,13,2,00:02:42,T.J. Yeldon 1 yard pass from Blake Bortles (Josh Lambo kick)
+40,6,10,13,2,00:00:04,Aldrick Rosas 31 yard field goal 
+41,9,10,13,3,00:09:18,Aldrick Rosas 44 yard field goal 
+42,9,9,20,4,00:11:24,Myles Jack 32 yard interception return (Josh Lambo kick)
+43,15,10,20,4,00:10:39,Saquon Barkley 68 yard rush 
+44,0,11,3,1,00:10:18,Ryan Succop 47 yard field goal 
+45,7,12,3,2,00:11:21,Kenny Stills 10 yard pass from Ryan Tannehill (Jason Sanders kick)
+46,10,12,3,3,00:04:05,Jason Sanders 27 yard field goal 
+47,10,11,10,4,00:14:17,Dion Lewis 4 yard rush (Ryan Succop kick)
+48,17,12,10,4,00:14:04,Jakeem Grant 102 yard kickoff return (Jason Sanders kick)
+49,24,12,10,4,00:10:22,Kenny Stills 75 yard pass from Ryan Tannehill (Jason Sanders kick)
+50,24,11,17,4,00:10:11,Darius Jennings 94 yard kickoff return (Ryan Succop kick)
+51,27,12,17,4,00:03:49,Jason Sanders 30 yard field goal 
+52,27,11,20,4,00:00:11,Ryan Succop 53 yard field goal 
+53,3,14,0,1,00:03:56,Daniel Carlson 48 yard field goal 
+54,10,14,0,2,00:13:39,Stefon Diggs 22 yard pass from Kirk Cousins (Daniel Carlson kick)
+55,10,13,3,2,00:11:42,Robbie Gould 42 yard field goal 
+56,17,14,3,3,00:10:41,Mike Hughes 28 yard interception return (Daniel Carlson kick)
+57,17,13,6,3,00:09:15,Robbie Gould 33 yard field goal 
+58,24,14,6,3,00:04:22,Kyle Rudolph 11 yard pass from Kirk Cousins (Daniel Carlson kick)
+59,24,13,13,3,00:00:31,Dante Pettis 22 yard pass from Jimmy Garoppolo (Robbie Gould kick)
+60,24,13,16,4,00:08:09,Robbie Gould 22 yard field goal 
+61,7,16,0,1,00:11:41,Alvin Kamara 5 yard rush (Wil Lutz kick)
+62,7,15,7,1,00:09:41,DeSean Jackson 58 yard pass from Ryan Fitzpatrick (Chandler Catanzaro kick)
+63,10,16,7,1,00:04:25,Wil Lutz 36 yard field goal 
+64,10,15,14,1,00:01:58,Ryan Fitzpatrick 3 yard rush (Chandler Catanzaro kick)
+65,17,16,14,2,00:14:54,Ted Ginn Jr. 28 yard pass from Drew Brees (Wil Lutz kick)
+66,17,15,17,2,00:11:12,Chandler Catanzaro 33 yard field goal 
+67,17,15,24,2,00:04:42,Chris Godwin 9 yard pass from Ryan Fitzpatrick (Chandler Catanzaro kick)
+68,17,15,31,2,00:04:27,Justin Evans 34 yard fumble return (Chandler Catanzaro kick)
+69,24,16,31,2,00:00:55,Michael Thomas 6 yard pass from Drew Brees (Wil Lutz kick)
+70,24,15,34,3,00:11:24,Chandler Catanzaro 36 yard field goal 
+71,24,15,41,3,00:02:58,Mike Evans 50 yard pass from Ryan Fitzpatrick (Chandler Catanzaro kick)
+72,24,15,48,4,00:12:19,DeSean Jackson 36 yard pass from Ryan Fitzpatrick (Chandler Catanzaro kick)
+73,32,16,48,4,00:08:54,Alvin Kamara 1 yard rush (Alvin Kamara run)
+74,40,16,48,4,00:03:31,Alvin Kamara 7 yard pass from Drew Brees (Ted Ginn Jr. pass from Drew Brees)
+75,0,17,7,1,00:13:03,Tyreek Hill 91 yard punt return (Harrison Butker kick)
+76,3,18,7,1,00:09:20,Caleb Sturgis 45 yard field goal 
+77,3,17,14,1,00:06:39,Tyreek Hill 58 yard pass from Patrick Mahomes (Harrison Butker kick)
+78,6,18,14,1,00:00:21,Caleb Sturgis 39 yard field goal 
+79,12,18,14,2,00:07:47,Austin Ekeler 13 yard pass from Philip Rivers (pass failed)
+80,12,17,17,2,00:02:00,Harrison Butker 46 yard field goal 
+81,12,17,24,3,00:09:25,De'Anthony Thomas 1 yard pass from Patrick Mahomes (Harrison Butker kick)
+82,12,17,31,3,00:00:48,Anthony Sherman 36 yard pass from Patrick Mahomes (Harrison Butker kick)
+83,20,18,31,4,00:12:04,Keenan Allen 20 yard pass from Philip Rivers (Antonio Gates pass from Philip Rivers)
+84,20,17,38,4,00:09:42,Tyreek Hill 1 yard pass from Patrick Mahomes (Harrison Butker kick)
+85,28,18,38,4,00:05:01,Tyrell Williams 4 yard pass from Philip Rivers (Melvin Gordon run)
+86,7,20,0,2,00:08:50,Cam Newton 4 yard rush (Graham Gano kick)
+87,10,20,0,2,00:00:03,Graham Gano 27 yard field goal 
+88,16,20,0,4,00:14:12,Alex Armah 1 yard rush (run failed)
+89,16,19,8,4,00:08:51,Ezekiel Elliott 4 yard rush (Dak Prescott run)
+90,0,21,7,2,00:14:54,Chris Thompson 13 yard pass from Alex Smith (Dustin Hopkins kick)
+91,0,21,14,2,00:04:10,Adrian Peterson 1 yard rush (Dustin Hopkins kick)
+92,0,21,21,2,00:00:08,Jordan Reed 4 yard pass from Alex Smith (Dustin Hopkins kick)
+93,0,21,24,4,00:12:13,Dustin Hopkins 31 yard field goal 
+94,6,22,24,4,00:05:47,David Johnson 2 yard rush (pass failed)
+95,0,23,7,1,00:09:04,Will Dissly 15 yard pass from Russell Wilson (Sebastian Janikowski kick)
+96,7,24,7,1,00:06:10,Phillip Lindsay 29 yard pass from Case Keenum (Brandon McManus kick)
+97,7,23,10,2,00:13:59,Sebastian Janikowski 35 yard field goal 
+98,14,24,10,2,00:10:29,Emmanuel Sanders 43 yard pass from Case Keenum (Brandon McManus kick)
+99,17,24,10,2,00:05:25,Brandon McManus 51 yard field goal 
+100,17,23,17,3,00:06:02,Brandon Marshall 20 yard pass from Russell Wilson (Sebastian Janikowski kick)
+101,20,24,17,3,00:02:01,Brandon McManus 53 yard field goal 
+102,20,23,24,4,00:14:46,Tyler Lockett 51 yard pass from Russell Wilson (Sebastian Janikowski kick)
+103,27,24,24,4,00:11:11,Demaryius Thomas 4 yard pass from Case Keenum (Brandon McManus kick)
+104,0,25,7,1,00:07:11,Mitchell Trubisky 2 yard rush (Cody Parkey kick)
+105,0,25,10,2,00:14:56,Cody Parkey 26 yard field goal 
+106,0,25,17,2,00:00:39,Khalil Mack 27 yard interception return (Cody Parkey kick)
+107,0,25,20,3,00:09:14,Cody Parkey 33 yard field goal 
+108,3,26,20,3,00:03:37,Mason Crosby 42 yard field goal 
+109,10,26,20,4,00:13:59,Geronimo Allison 39 yard pass from Aaron Rodgers (Mason Crosby kick)
+110,17,26,20,4,00:09:01,Davante Adams 12 yard pass from Aaron Rodgers (Mason Crosby kick)
+111,17,25,23,4,00:02:39,Cody Parkey 32 yard field goal 
+112,24,26,23,4,00:02:13,Randall Cobb 75 yard pass from Aaron Rodgers (Mason Crosby kick)

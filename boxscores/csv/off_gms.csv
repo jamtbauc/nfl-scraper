@@ -1,8 +1,92 @@
 id,refPosition,officialId,gameId
-1,Referee,John Hussey,20180906ATLPHI
-2,Umpire,Tony Michalek,20180906ATLPHI
-3,Down Judge,Kevin Codey,20180906ATLPHI
-4,Line Judge,Derick Bowers,20180906ATLPHI
-5,Back Judge,Greg Steed,20180906ATLPHI
-6,Side Judge,Allen Baynes,20180906ATLPHI
-7,Field Judge,Don Willard,20180906ATLPHI
+1,Referee,Shawn Hochuli,20180909BUFBAL
+2,Umpire,Roy Ellison,20180909BUFBAL
+3,Down Judge,Ed Camp,20180909BUFBAL
+4,Line Judge,Greg Bradley,20180909BUFBAL
+5,Back Judge,Rich Martinez,20180909BUFBAL
+6,Side Judge,Chad Hill,20180909BUFBAL
+7,Field Judge,Tom Hill,20180909BUFBAL
+8,Referee,Peter Morelli,20180909CININD
+9,Umpire,Steven Woods,20180909CININD
+10,Down Judge,Steve Stelljes,20180909CININD
+11,Line Judge,Jeff Seeman,20180909CININD
+12,Back Judge,Keith Ferguson,20180909CININD
+13,Side Judge,Boris Cheek,20180909CININD
+14,Field Judge,Anthony Jeffries,20180909CININD
+15,Referee,Shawn Smith,20180909PITCLE
+16,Umpire,Bryan Neale,20180909PITCLE
+17,Down Judge,Mark Hittner,20180909PITCLE
+18,Line Judge,Bart Longson,20180909PITCLE
+19,Back Judge,Dino Paganelli,20180909PITCLE
+20,Side Judge,James Coleman,20180909PITCLE
+21,Field Judge,Brad Rogers,20180909PITCLE
+22,Referee,Tony Corrente,20180909HOUNWE
+23,Umpire,Alan Eck,20180909HOUNWE
+24,Down Judge,Patrick Turner,20180909HOUNWE
+25,Line Judge,Tim Podraza,20180909HOUNWE
+26,Back Judge,Todd Prukop,20180909HOUNWE
+27,Side Judge,Ryan Dickson,20180909HOUNWE
+28,Field Judge,Keith Washington,20180909HOUNWE
+29,Referee,Craig Wrolstad,20180909JAXNYG
+30,Umpire,Paul King,20180909JAXNYG
+31,Down Judge,Jerod Phillips,20180909JAXNYG
+32,Line Judge,Carl Johnson,20180909JAXNYG
+33,Back Judge,Scott Helverson,20180909JAXNYG
+34,Side Judge,Adrian Hill,20180909JAXNYG
+35,Field Judge,Jeff Lamberth,20180909JAXNYG
+36,Referee,Jerome Boger,20180909TENMIA
+37,Umpire,Bill Schuster,20180909TENMIA
+38,Down Judge,Mike Carr,20180909TENMIA
+39,Line Judge,Rusty Baynes,20180909TENMIA
+40,Back Judge,Tony Steratore,20180909TENMIA
+41,Side Judge,Jonah Monroe,20180909TENMIA
+42,Field Judge,Dale Shaw,20180909TENMIA
+43,Referee,Clay Martin,20180909SFOMIN
+44,Umpire,Fred Bryan,20180909SFOMIN
+45,Down Judge,Danny Short,20180909SFOMIN
+46,Line Judge,Kent Payne,20180909SFOMIN
+47,Back Judge,Gregory Wilson,20180909SFOMIN
+48,Side Judge,Brad Freeman,20180909SFOMIN
+49,Field Judge,David Meslow,20180909SFOMIN
+50,Referee,John Parry,20180909TAMNOR
+51,Umpire,Mark Pellis,20180909TAMNOR
+52,Down Judge,David Oliver,20180909TAMNOR
+53,Line Judge,Julian Mapp,20180909TAMNOR
+54,Back Judge,Perry Paganelli,20180909TAMNOR
+55,Side Judge,Michael Banks,20180909TAMNOR
+56,Field Judge,Matt Edwards,20180909TAMNOR
+57,Referee,Clete Blakeman,20180909KANLAC
+58,Umpire,Ramon George,20180909KANLAC
+59,Down Judge,Dana McKenzie,20180909KANLAC
+60,Line Judge,Walt Coleman IV,20180909KANLAC
+61,Back Judge,Jim Quirk,20180909KANLAC
+62,Side Judge,Dyrol Prioleau,20180909KANLAC
+63,Field Judge,Joe Larrew,20180909KANLAC
+64,Referee,Walt Anderson,20180909DALCAR
+65,Umpire,Carl Paganelli,20180909DALCAR
+66,Down Judge,Tom Stephan,20180909DALCAR
+67,Line Judge,Byron Boston,20180909DALCAR
+68,Back Judge,Lee Dyer,20180909DALCAR
+69,Side Judge,Rick Patterson,20180909DALCAR
+70,Field Judge,Terry Brown,20180909DALCAR
+71,Referee,Walt Coleman,20180909WASARI
+72,Umpire,Jeff Rice,20180909WASARI
+73,Down Judge,Jerry Bergman,20180909WASARI
+74,Line Judge,Mark Stewart,20180909WASARI
+75,Back Judge,Greg Yette,20180909WASARI
+76,Side Judge,Jabir Walker,20180909WASARI
+77,Field Judge,Greg Gautreaux,20180909WASARI
+78,Referee,Brad Allen,20180909SEADEN
+79,Umpire,Ruben Fowler,20180909SEADEN
+80,Down Judge,Jim Mello,20180909SEADEN
+81,Line Judge,Brian Bolinger,20180909SEADEN
+82,Back Judge,Terrence Miles,20180909SEADEN
+83,Side Judge,Scott Novak,20180909SEADEN
+84,Field Judge,Steve Zimmer,20180909SEADEN
+85,Referee,Carl Cheffers,20180909CHIGNB
+86,Umpire,Barry Anderson,20180909CHIGNB
+87,Down Judge,Hugo Cruz,20180909CHIGNB
+88,Line Judge,Gary Arthur,20180909CHIGNB
+89,Back Judge,Greg Meyer,20180909CHIGNB
+90,Side Judge,Eugene Hall,20180909CHIGNB
+91,Field Judge,Land Clark,20180909CHIGNB
