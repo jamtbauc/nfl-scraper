@@ -52,7 +52,7 @@ def run_scraper():
     parser = Parser()
     # loop through all urls
     for url in urls:
-        if "201809090" in url:
+        if "/boxscores/201809060phi.htm" in url:
             print(url)
             # using defined base and request urls, get decoded data
             bytes = request_data(conn, url)

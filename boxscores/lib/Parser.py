@@ -6,6 +6,7 @@ from lib.Official import Official
 from lib.OfficialGame import OfficialGame
 from lib.Player import Player
 from lib.PlayerGame import PlayerGame
+from lib.PlayerGameSnap import PlayerGameSnap
 from lib.ScoringPlay import ScoringPlay
 from lib.Stadium import Stadium
 from lib.Team import Team
@@ -26,6 +27,7 @@ class Parser:
     off_gms = {}
     players = {}
     player_gms = {}
+    player_gm_snaps = {}
     
     # hold id counters
     tm_game_id = 1
@@ -33,7 +35,7 @@ class Parser:
     gm_weather_id = 1
     off_gm_id = 1
     player_gm_id = 1
-    
+    player_gm_snap_id = 1
     
     def __init__(self):
         # define text blocks
@@ -701,50 +703,84 @@ class Parser:
             
             scores = scores[row_end + 5:]
 
-#     def extract_snaps(self, text):
-#         is_home = False
-#         if text.find('home_snap') > -1:
-#             is_home = True
-
-#         start = text.find('<tbody>')
-#         snaps = text[start:]
+    def extract_snaps(self, text):
+    
+        start = text.find('<tbody>')
+        snaps = text[start:]
         
-#         while snaps.find('<tr >') > -1:
-#             row_start = snaps.find('<tr >')
-#             row_end = snaps.find('</tr>')
-#             row = snaps[row_start:row_end]
+        while snaps.find('<tr >') > -1:
+            row_start = snaps.find('<tr >')
+            row_end = snaps.find('</tr>')
+            row = snaps[row_start:row_end]
+
+            id_start = row.find('append-csv="') + 12
+            id = row[id_start:]
+            id_end = id.find('" ')
+            id = id[:id_end]
             
-#             player_start = row.find('data-stat="player" >') + 20
-#             player_end = row.find('</a>')
-#             player = row[player_start:player_end]
+            name_start = row.find('data-stat="player" >') + 20
+            name_end = row.find('</a>')
+            name = row[name_start:name_end]
 
-#             html = re.compile('<.*?>')
-#             player = re.sub(html, '', player)
+            html = re.compile('<.*?>')
+            name = re.sub(html, '', name)
 
-#             row = row[player_end + 4:]
+            player = None
 
-#             while row.find('data-stat="') > -1:
-#                 lbl_start = row.find('data-stat="') + 11
-#                 lbl_end = row.find('" >')
-#                 label = row[lbl_start:lbl_end]
+            if id not in self.players:
+                player = Player(id, name)
+                self.players[player.getId()] = player
+            else:
+                player = self.players[id]
 
-#                 data_end = row.find('</td>')
-#                 data = row[lbl_end + 3:data_end]
+            player_gm = None
 
-#                 if is_home:
-#                     if player not in self.__home_players:
-#                         plyr = Player(player, self.__home_id, self.__id)
-#                         self.__home_players[player] = plyr.get_stats()
-#                     self.__home_players[player]["snaps"][label] = data
-#                 else:
-#                     if player not in self.__away_players:
-#                         plyr = Player(player, self.__away_id, self.__id)
-#                         self.__away_players[player] = plyr.get_stats()
-#                     self.__away_players[player]["snaps"][label] = data
+            if player:
+                # check if player_gm is in single game player_games list
+                if player.getId() not in self.player_games:
+                    # create new player game object
+                    player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
+                    # add to master list
+                    self.player_gms[player_gm.getId()] = player_gm
+                    # add to single game list with this id as value
+                    self.player_games[player.getId()] = player_gm.getId()
+                # if player_gm exists for this game
+                else:
+                    # get master list id from this game player_game list
+                    player_gm_id = self.player_games[player.getId()]
+                    # retrieve master player_gm
+                    player_gm = self.player_gms[player_gm_id]
+                    
+                if text.find('all_home_starters'):
+                    player_gm.setGameId(self.home_team.getId())
+                elif text.find('all_vis_starters'):
+                    player_gm.setGameID(self.away_team.getId())
 
-#                 row = row[data_end + 5:]
+            row = row[name_end + 4:]
+            player_gm_snap = None
+
+            if player and player_gm:
+                player_gm_snap = PlayerGameSnap(self.getNextPlayerGmSnapId(), player_gm.getId())
+
+            while row.find('data-stat="') > -1:
+                lbl_start = row.find('data-stat="') + 11
+                lbl_end = row.find('" >')
+                label = row[lbl_start:lbl_end]
+
+                data_end = row.find('</td>')
+                data = row[lbl_end + 3:data_end]
+
+                player_gm_snap.mapToPlayerGmSnap(label, data)
+
+                row = row[data_end + 5:]
+
+            if player_gm_snap:
+                if player_gm_snap not in self.player_gm_snaps:
+                    self.player_gm_snaps[player_gm_snap.getId()] = player_gm_snap
+            else:
+                print(f"Cannot add player_gm_snap")
             
-#             snaps = snaps[row_end + 5:]
+            snaps = snaps[row_end + 5:]
 
     def extract_starters(self, text):
         start = text.find('<tbody>')
@@ -901,6 +937,11 @@ class Parser:
         temp = self.player_gm_id
         self.player_gm_id += 1
         return temp
+
+    def getNextPlayerGmSnapId(self):
+        temp = self.player_gm_snap_id
+        self.player_gm_snap_id += 1
+        return temp
     
     def getNextScoringPlayId(self):
         temp = self.scoring_play_id
@@ -946,10 +987,10 @@ class Parser:
         self.extract_starters(self._home_starters)
         # extract away starters
         self.extract_starters(self._away_starters)
-        # # extract home snaps
-        # self.extract_snaps()
-        # # extract away snaps
-        # self.extract_snaps()
+        # extract home snaps
+        self.extract_snaps(self._home_snaps)
+        # extract away snaps
+        self.extract_snaps(self._away_snaps)
         # # extract home drives
         # self.extract_drives()
         # # extract away drives
@@ -1063,4 +1104,11 @@ class Parser:
             writer.writeheader()
             for player_gm in self.player_gms:
                 writer.writerow(self.player_gms[player_gm].getInfo())
+
+        with open("csv/playerGmSnaps.csv", "w") as file:
+            fieldnames = ['id', 'playerGmId', 'startPos', 'offSnaps', 'offSnapPct', 'defSnaps', 'defSnapPct', 'stSnaps', 'stSnapPct']
+            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
+            writer.writeheader()
+            for player in self.player_gm_snaps:
+                writer.writerow(self.player_gm_snaps[player].getInfo())
         
