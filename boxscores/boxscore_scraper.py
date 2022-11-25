@@ -59,7 +59,7 @@ def run_scraper():
             # trim html to content we need
             text = trim_text(bytes, '<div id="content"', '<div id="footer"')
             ### Declare the sections we need to parse
-            parser.setMatchup(trim_text(text, '<div id="content" role="main" class="box">', '<div class="placeholder">'))
+            parser.setMatchup(trim_text(text, '<div id="content" role="main" class="box">', '<div class="game_summary nohover current">'))
             parser.setScorebox(trim_text(text, '<div class="scorebox">', '<div class="scorebox_meta">'))
             parser.setScoreboxMeta(trim_text(text, '<div class="scorebox_meta">', '<style>'))
             parser.setAllScoring(trim_text(text, '<div class="table_container" id="div_scoring">', '<div class="content_grid">'))

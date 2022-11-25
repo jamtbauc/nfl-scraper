@@ -136,6 +136,7 @@ class Parser:
         
     # extract date, home and away teams from header
     def extract_basic_info(self):
+        print(self._matchup)
         # trim data to matchup only
         idx = self._matchup.find("<h1>") + 4
         e_idx = self._matchup.find("</h1>")
