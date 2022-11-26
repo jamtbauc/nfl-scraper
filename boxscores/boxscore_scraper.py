@@ -1,7 +1,6 @@
 import csv
 from datetime import datetime
 import http.client
-# import json
 from lib.Parser import Parser
 from time import time, sleep
 
@@ -14,14 +13,6 @@ def get_urls(file):
             urls += tuple(row)
             
     return urls
-
-# ### REMOVE WHEN DEV IS DONE
-# def open_html(file):
-#     with open(file) as html:
-#         text = html.read()
-
-#         text = bytes(text, "utf-8")
-#         return text.decode("utf-8", "replace")
 
 # Send get request to url specified at base website. Returns response body
 def request_data(conn, url):
@@ -40,8 +31,6 @@ def request_data(conn, url):
     
 # Scrape response body for desired information  
 def run_scraper():
-    # Hold all games
-    games = {}
     # hold all urls
     urls = get_urls('links.csv')
     # define base url and get request urls
@@ -51,10 +40,17 @@ def run_scraper():
     # create Parser object
     parser = Parser()
     # loop through all urls
+    last_run = time()
     for url in urls:
-        if "/boxscores/201809060phi.htm" in url:
+        if "20180909" in url:
             print(url)
-            # using defined base and request urls, get decoded data
+            # pro-football-reference limits to 20 request per minute. Ensure request only happens every 3 seconds
+            if (time() - last_run) < 3:
+                diff = 3.01 - (time() - last_run)
+                print(f"Sleeping for {diff} seconds")
+                sleep(diff)
+                last_run = time()
+            # using defined base and request urls, get decoded data   
             bytes = request_data(conn, url)
             # trim html to content we need
             text = trim_text(bytes, '<div id="content"', '<div id="footer"')
@@ -86,7 +82,7 @@ def run_scraper():
             today = datetime.today().date()
             if game_date < today:
                 parser.parseGame()
-       
+                
     # close http connection
     conn.close()
     
@@ -99,10 +95,6 @@ def trim_text(text, start, end):
     end_idx = text.find(end)
 
     return text[start_idx:end_idx]
-
-# def write_file(game_json):
-#     with open('json_test.json', 'w') as json_file:
-#         json_file.write(game_json)
 
 # Main function
 if __name__ == "__main__":
