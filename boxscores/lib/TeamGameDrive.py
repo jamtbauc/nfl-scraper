@@ -1,9 +1,9 @@
-from datetime import time
+from datetime import datetime
 
 class TeamGameDrive:
-    def __init__(self):
-        self.id = None
-        self.drive_num = None
+    def __init__(self, id, num):
+        self.id = int(id)
+        self.drive_num = int(num)
         self.quarter = None
         self.time_start = None
         self.yd_start = None
@@ -28,8 +28,8 @@ class TeamGameDrive:
     def getDriveTime(self):
         return self.drive_time
     
-    def setDriveTime(self, time):
-        self.drive_time = time
+    def setDriveTime(self, value):
+        self.drive_time = datetime.strptime(value,"%M:%S").time()
     
     def getId(self):
         return self.id
@@ -59,13 +59,13 @@ class TeamGameDrive:
         return self.team_game_id
     
     def setTeamGameId(self, id):
-        self.team_game_id = id
+        self.team_game_id = int(id)
     
     def getTimeStart(self):
         return self.time_start
     
-    def setTimeStart(self, time):
-        self.time_start = time
+    def setTimeStart(self, value):
+        self.time_start = datetime.strptime(value,"%M:%S").time()
     
     def getYdStart(self):
         return self.yd_start
@@ -75,8 +75,35 @@ class TeamGameDrive:
     
     def getInfo(self):
         info = {
-            
+            "id": self.getId(),
+            "driveNum": self.getDriveNum(),
+            "quarter": self.getQuarter(),
+            "timeStart": self.getTimeStart(),
+            "ydStart": self.getYdStart(),
+            "numPlays": self.getNumPlays(),
+            "driveTime": self.getDriveTime(),
+            "netYds": self.getNetYds(),
+            "driveResult": self.getDriveResult(),
+            "teamGameId": self.getTeamGameId()
         }
         
         return info
+    
+    def mapToTeamGameDrive(self, label, value):
+        if label == "quarter":
+            self.setQuarter(value)
+        elif label == "time_start":
+            self.setTimeStart(value)
+        elif label == "start_at":
+            self.setYdStart(value)
+        elif label == "play_count_tip":
+            self.setNumPlays(value)
+        elif label == "time_total":
+            self.setDriveTime(value)
+        elif label == "net_yds":
+            self.setNetYds(value)
+        elif label == "end_event":
+            self.setDriveResult(value)
+        else:
+            print(f"Did not find label {label}")
     

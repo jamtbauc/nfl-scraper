@@ -11,6 +11,7 @@ from lib.ScoringPlay import ScoringPlay
 from lib.Stadium import Stadium
 from lib.Team import Team
 from lib.TeamGame import TeamGame
+from lib.TeamGameDrive import TeamGameDrive
 import re
 
 class Parser:
@@ -28,6 +29,7 @@ class Parser:
     players = {}
     player_gms = {}
     player_gm_snaps = {}
+    tm_gm_drives = {}
     
     # hold id counters
     tm_game_id = 1
@@ -36,6 +38,7 @@ class Parser:
     off_gm_id = 1
     player_gm_id = 1
     player_gm_snap_id = 1
+    team_gm_drive_id = 1
     
     def __init__(self):
         # define text blocks
@@ -128,10 +131,10 @@ class Parser:
         self._away_snaps = text
         
     def setHomeDrives(self, text):
-        self._home_drives
+        self._home_drives = text
         
     def setAwayDrives(self, text):
-        self._away_drives
+        self._away_drives = text
         
     def setPlays(self, text):
         self._plays = text
@@ -242,50 +245,52 @@ class Parser:
         return
     
 #     ##### PUBLIC HELPERS
-#     def extract_drives(self, text):
-#         is_home = False
-#         if text.find('home_drives') > -1:
-#             is_home = True
+    def extract_drives(self, text):
+        is_home = False
+        if text.find('home_drives') > -1:
+            is_home = True
 
-#         start = text.find('<tbody>')
-#         drives = text[start:]
+        start = text.find('<tbody>')
+        drives = text[start:]
         
-#         while drives.find('<tr ') > -1:
-#             row_start = drives.find('<tr ')
-#             row_end = drives.find('</tr>')
-#             row = drives[row_start:row_end]
+        while drives.find('<tr ') > -1:
+            row_start = drives.find('<tr ')
+            row_end = drives.find('</tr>')
+            row = drives[row_start:row_end]
             
-#             num_start = row.find('data-stat="drive_num" >') + 23
-#             num_end = row.find('</th>')
-#             num = row[num_start:num_end]
-
-#             row = row[num_end + 5:]
-#             drive = {}
-#             drive["drive_num"] = num
-#             drive["game_id"] = self.__id
-#             while row.find('data-stat="') > -1:
-#                 lbl_start = row.find('data-stat="') + 11
-#                 lbl_end = row.find('" >')
-#                 label = row[lbl_start:lbl_end]
-
-#                 if label.find('" csk="') > -1:
-#                     end = label.find('" csk="')
-#                     label = label[:end]
-
-#                 data_end = row.find('</td>')
-#                 data = row[lbl_end + 3:data_end]
-#                 data = re.sub(self.rem_html, '', data)
-                
-#                 drive[label] = data
-
-#                 row = row[data_end + 5:]
-                
-#             if is_home:
-#                 self.__home_drives.append(drive)
-#             else:
-#                 self.__away_drives.append(drive)
+            num_start = row.find('data-stat="drive_num" >') + 23
+            num_end = row.find('</th>')
+            num = row[num_start:num_end]
             
-#             drives = drives[row_end + 5:]
+            gm_drive = TeamGameDrive(self.getNextTmGmDriveId(), num)
+
+            row = row[num_end + 5:]
+            while row.find('data-stat="') > -1:
+                lbl_start = row.find('data-stat="') + 11
+                lbl_end = row.find('" >')
+                label = row[lbl_start:lbl_end]
+
+                if label.find('" csk="') > -1:
+                    end = label.find('" csk="')
+                    label = label[:end]
+
+                data_end = row.find('</td>')
+                data = row[lbl_end + 3:data_end]
+                data = re.sub(self.rem_html, '', data)
+                
+                gm_drive.mapToTeamGameDrive(label, data)
+
+                row = row[data_end + 5:]
+                
+            if is_home:
+                gm_drive.setTeamGameId(self.home_team.getId())
+            else:
+                gm_drive.setTeamGameId(self.away_team.getId())
+                
+            if gm_drive not in self.tm_gm_drives:
+                self.tm_gm_drives[gm_drive.getId()] = gm_drive
+            
+            drives = drives[row_end + 5:]
 
     def extract_game_info(self):
         # loop through all rows of html
@@ -551,57 +556,6 @@ class Parser:
                 row = row[stat_end + 5:]
             
             data = data[row_end + 5:]
-          
-#     def extract_player_stats(self, text):
-#         # Vars to hold player and team as we loop through rows
-#         team = ""
-#         player = ""
-        
-#         start = text.find('<tbody>')
-#         data = text[start:]
-        
-#         while data.find('<tr >') > -1:
-#             row_start = data.find('<tr >')
-#             row_end = data.find('</tr>')
-#             row = data[row_start:row_end]
-            
-#             while row.find('data-stat="') > -1:
-#                 ds_start = row.find('data-stat="') + 11
-#                 ds_end = row.find('" >')
-#                 ds = row[ds_start:ds_end]
-                
-#                 stat_end = row.find('</t')
-#                 stat = row[ds_end + 3:stat_end]
-#                 stat = stat.replace('\n', '')
-#                 stat = stat.replace("   ", '')
-                
-#                 html = re.compile('<.*?>')
-#                 stat = re.sub(html, '', stat)
-                
-#                 if stat == '':
-#                     stat = 0
-                
-#                 if ds == "player":
-#                     player = stat
-#                 elif ds == "team":
-#                     team = stat
-#                 else:
-#                     if self.abbrevs[self.__away] == team:
-#                         if player not in self.__away_players:
-#                             plyr = Player(player, self.__away_id, self.__id)
-#                             self.__away_players[player] = plyr.get_stats()
-                        
-#                         self.__away_players[player][ds] = stat
-#                     elif self.abbrevs[self.__home] == team:
-#                         if player not in self.__home_players:
-#                             plyr = Player(player, self.__home_id, self.__id)
-#                             self.__home_players[player] = plyr.get_stats()
-                        
-#                         self.__home_players[player][ds] = stat
-                
-#                 row = row[stat_end + 5:]
-            
-#             data = data[row_end + 5:]
                      
     def extract_scorebox(self):
         data = self._scorebox.split('<div class="media-item logo loader">')
@@ -865,10 +819,7 @@ class Parser:
             self.home_team.mapToTmGm(label, home_stat)
             
             text = text[row_end + 5:]
-            
-#     def get_date(self):
-#         return self.__date
-    
+        
 #     def get_game_dict(self):
 #         game = {
 #                     "id": self.__id,
@@ -953,6 +904,11 @@ class Parser:
         self.tm_game_id += 1
         return temp
     
+    def getNextTmGmDriveId(self):
+        temp = self.team_gm_drive_id
+        self.team_gm_drive_id += 1
+        return temp
+    
     def parseGame(self):
         # extract scores and coaches
         self.extract_scorebox()
@@ -991,10 +947,10 @@ class Parser:
         self.extract_snaps(self._home_snaps)
         # extract away snaps
         self.extract_snaps(self._away_snaps)
-        # # extract home drives
-        # self.extract_drives()
-        # # extract away drives
-        # self.extract_drives()
+        # extract home drives
+        self.extract_drives(self._home_drives)
+        # extract away drives
+        self.extract_drives(self._away_drives)
         # # extract play by plays
         # self.extract_plays()
         
@@ -1034,6 +990,18 @@ class Parser:
             writer.writeheader()
             for team in self.teams:
                 writer.writerow(self.teams[team].getInfo())
+                
+        with open("csv/team_games.csv", "w") as file:
+            fieldnames = ["id", "teamId", "gameId", "wonToss", "tossDecision", "isHome", "isFavored",
+                          "spread", "overUnder", "firstDowns", "rushAtts", "rushYds", "rushTds", "passComps",
+                          "passAtts", "passYds", "passTds", "passInts", "sacked", "sackYdsLost", "netPassYds",
+                          "totalYds", "fumbles", "fumblesLost", "turnovers", "penalties", "penaltyYds",
+                          "thirdDownAtts", "thirdDownConvs", "fourthDownAtts", "fourthDownConvs", "possessionTime",
+                          "coach", "score"]
+            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
+            writer.writeheader()
+            for team in self.team_gms:
+                writer.writerow(self.team_gms[team].getInfo())
                 
         with open("csv/stadiums.csv", "w") as file:
             fieldnames = ['name', 'city', 'state', 'surface', 'roof']
@@ -1105,10 +1073,17 @@ class Parser:
             for player_gm in self.player_gms:
                 writer.writerow(self.player_gms[player_gm].getInfo())
 
-        with open("csv/playerGmSnaps.csv", "w") as file:
+        with open("csv/player_gm_snaps.csv", "w") as file:
             fieldnames = ['id', 'playerGmId', 'startPos', 'offSnaps', 'offSnapPct', 'defSnaps', 'defSnapPct', 'stSnaps', 'stSnapPct']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player in self.player_gm_snaps:
                 writer.writerow(self.player_gm_snaps[player].getInfo())
+                
+        with open("csv/tm_gm_drives.csv", "w") as file:
+            fieldnames = ['id', 'driveNum', 'quarter', 'timeStart', 'ydStart', 'numPlays', 'driveTime', 'netYds', 'driveResult', 'teamGameId']
+            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
+            writer.writeheader()
+            for drive in self.tm_gm_drives:
+                writer.writerow(self.tm_gm_drives[drive].getInfo())
         
