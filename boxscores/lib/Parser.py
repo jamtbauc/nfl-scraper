@@ -4,6 +4,7 @@ from lib.Game import Game
 from lib.GameWeather import GameWeather
 from lib.Official import Official
 from lib.OfficialGame import OfficialGame
+from lib.PlayByPlay import PlayByPlay
 from lib.Player import Player
 from lib.PlayerGame import PlayerGame
 from lib.PlayerGameSnap import PlayerGameSnap
@@ -26,6 +27,7 @@ class Parser:
     gm_weathers = {}
     officials = {}
     off_gms = {}
+    play_by_plays = {}
     players = {}
     player_gms = {}
     player_gm_snaps = {}
@@ -39,6 +41,7 @@ class Parser:
     player_gm_id = 1
     player_gm_snap_id = 1
     team_gm_drive_id = 1
+    play_by_play_id = 1
     
     def __init__(self):
         # define text blocks
@@ -350,18 +353,6 @@ class Parser:
                 if gm_weather.getId() not in self.gm_weathers:
                     self.gm_weathers[gm_weather.getId()] = gm_weather 
                 
-                
-                
-                # humidity = re.findall('[0-9]+', weather[1])
-                
-                # gm_weather = GameWeather(self.getNextGmWeatherId(), int(temp[0]), int(humidity[0]), self.game.getId())
-                # if gm_weather.getId() not in self.gm_weathers:
-                #     self.gm_weathers[gm_weather.getId()] = gm_weather
-                
-                # if weather[2]:
-                #     wind = re.findall('[0-9]', weather[2])
-                #     gm_weather.setWind(int(wind[0]))
-                
             elif header == "Vegas Line":
                 if stat == 'Pick':
                     self.away_team.setIsFavored(False);
@@ -423,52 +414,56 @@ class Parser:
 
             officials = officials[row_end + 5:]
 
-#     def extract_plays(self, text):
-#         start = text.find('<tbody>')
-#         plays = text[start:]
+    def extract_plays(self):
+        start = self._plays.find('<tbody>')
+        plays = self._plays[start:]
 
-#         count = 0
+        count = 0
         
-#         while plays.find('<tr ') > -1:
-#             count += 1
-#             row_start = plays.find('<tr ')
-#             row_end = plays.find('</tr>')
-#             row = plays[row_start:row_end]
+        while plays.find('<tr ') > -1:
+            count += 1
+            row_start = plays.find('<tr ')
+            row_end = plays.find('</tr>')
+            row = plays[row_start:row_end]
             
-#             play = {}
+            play = PlayByPlay(self.getNextPlayId(), count, self.game.getId())
             
-#             while row.find('data-stat="') > -1:
-#                 if row.find('thead') < 0:
-#                     if row.find('class=" score" >') > -1:
-#                         skip = row.find('class=" score" >') + 16
-#                         row = row[skip:]
-#                     elif row.find('class="divider" >') > -1:
-#                         skip = row.find('class="divider" >') + 17
-#                         row = row[skip:]
+            while row.find('data-stat="') > -1:
+                if row.find('thead') < 0:
+                    if row.find('class=" score" >') > -1:
+                        skip = row.find('class=" score" >') + 16
+                        row = row[skip:]
+                    elif row.find('class="divider" >') > -1:
+                        skip = row.find('class="divider" >') + 17
+                        row = row[skip:]
 
-#                     lbl_start = row.find('data-stat="') + 11
-#                     lbl_end = row.find('" >')
-#                     label = row[lbl_start:lbl_end]
+                    lbl_start = row.find('data-stat="') + 11
+                    lbl_end = row.find('" >')
+                    label = row[lbl_start:lbl_end]
 
-#                     if label:
-#                         if label.find('" csk=') > -1:
-#                             end = label.find('" csk=')
-#                             label = label[:end]
+                    if label:
+                        if label.find('" csk=') > -1:
+                            end = label.find('" csk=')
+                            label = label[:end]
 
-#                         data_end = row.find('</t')
-#                         data = row[lbl_end + 3:data_end]
-#                         data = re.sub(self.rem_html, '', data)
+                        data_end = row.find('</t')
+                        data = row[lbl_end + 3:data_end]
+                        data = re.sub(self.rem_html, '', data)
                         
-#                         play[label] = data
+                        play.mapToPlayByPlay(label, data)
             
-#                     row = row[data_end + 5:]
-#                 else:
-#                     row = row[row_end + 5:]
+                    row = row[data_end + 5:]
+                else:
+                    row = row[row_end + 5:]
 
-#             if play:
-#                 self.__play_by_play.append(play)
+            if play.detail:
+                if play not in self.play_by_plays:
+                    self.play_by_plays[play.getId()] = play
+            else:
+                self.play_by_play_id -= 1
+                count -= 1
             
-#             plays = plays[row_end + 5:]
+            plays = plays[row_end + 5:]
 
     def extract_player_stats(self, text):
         # Vars to hold player and team as we loop through rows
@@ -909,6 +904,11 @@ class Parser:
         self.team_gm_drive_id += 1
         return temp
     
+    def getNextPlayId(self):
+        temp = self.play_by_play_id
+        self.play_by_play_id += 1
+        return temp
+    
     def parseGame(self):
         # extract scores and coaches
         self.extract_scorebox()
@@ -951,8 +951,8 @@ class Parser:
         self.extract_drives(self._home_drives)
         # extract away drives
         self.extract_drives(self._away_drives)
-        # # extract play by plays
-        # self.extract_plays()
+        # extract play by plays
+        self.extract_plays()
         
         # print(self.game)
         # print(self.away_team)
@@ -1086,4 +1086,13 @@ class Parser:
             writer.writeheader()
             for drive in self.tm_gm_drives:
                 writer.writerow(self.tm_gm_drives[drive].getInfo())
+                
+        with open("csv/play_by_plays.csv", "w") as file:
+            fieldnames = ["id", "qtr", "qtrTimeRem", "down", "ydsToGo", "ydStart",
+                          "scoreAway", "scoreHome", "detail", "expPtsBefore", "expPtsAfter",
+                          "seq", "gameId"]
+            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
+            writer.writeheader()
+            for play in self.play_by_plays:
+                writer.writerow(self.play_by_plays[play].getInfo())
         

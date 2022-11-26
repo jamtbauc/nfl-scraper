@@ -1,0 +1,181 @@
+id,qtr,qtrTimeRem,down,ydsToGo,ydStart,scoreAway,scoreHome,detail,expPtsBefore,expPtsAfter,seq,gameId
+1,,,,,,,,"Eagles won the coin toss and deferred, Falcons to receive the opening kickoff.",,,1,20180906ATLPHI
+2,1,15:00,,,PHI 35,0,0,"Jake Elliott kicks off 65 yards, touchback.",0.000,0.610,2,20180906ATLPHI
+3,1,15:00,1,10,ATL 25,0,0,"Penalty on Logan Paulsen: False Start, 5 yards (no play)",0.610,0.280,3,20180906ATLPHI
+4,1,15:00,1,15,ATL 20,0,0,Matt Ryan pass complete short right to Julio Jones for 10 yards (tackle by Malcolm Jenkins),0.280,0.740,4,20180906ATLPHI
+5,1,14:22,2,5,ATL 30,0,0,Julio Jones left end for 11 yards (tackle by Derek Barnett),0.740,1.660,5,20180906ATLPHI
+6,1,13:46,1,10,ATL 41,0,0,Devonta Freeman right end for 20 yards (tackle by Malcolm Jenkins),1.660,2.980,6,20180906ATLPHI
+7,1,13:10,1,10,PHI 39,0,0,Matt Ryan pass incomplete short right intended for Calvin Ridley (defended by Jalen Mills) (defended by Jordan Hicks),2.980,2.440,7,20180906ATLPHI
+8,1,13:05,2,10,PHI 39,0,0,Matt Ryan pass incomplete short left intended for Devonta Freeman,2.440,1.750,8,20180906ATLPHI
+9,1,13:01,3,10,PHI 39,0,0,Matt Ryan pass complete deep left to Julio Jones for 33 yards (tackle by Ronald Darby),1.750,5.830,9,20180906ATLPHI
+10,1,12:15,1,6,PHI 6,0,0,Devonta Freeman up the middle for 5 yards (tackle by Rodney McLeod and Sidney Jones),5.830,5.910,10,20180906ATLPHI
+11,1,11:41,2,1,PHI 1,0,0,Devonta Freeman left guard for no gain (tackle by Fletcher Cox and Derek Barnett),5.910,5.170,11,20180906ATLPHI
+12,1,10:59,3,1,PHI 1,0,0,Matt Ryan pass incomplete short right intended for Devonta Freeman,5.170,3.550,12,20180906ATLPHI
+13,1,10:55,4,1,PHI 1,0,0,Devonta Freeman left end for -1 yards (tackle by Kamu Grugier-Hill and Jordan Hicks),3.550,0.380,13,20180906ATLPHI
+14,1,10:51,1,10,PHI 2,0,0,Darren Sproles up the middle for 2 yards (tackle by Keanu Neal),-0.380,-0.630,14,20180906ATLPHI
+15,1,10:10,2,8,PHI 4,0,0,Nick Foles pass complete short left to Nelson Agholor for 4 yards (tackle by Robert Alford),-0.630,-0.720,15,20180906ATLPHI
+16,1,9:24,3,4,PHI 8,0,0,Nick Foles pass incomplete short left intended for Darren Sproles (defended by Ricardo Allen),-0.720,-2.490,16,20180906ATLPHI
+17,1,9:20,4,4,PHI 8,0,0,"Cameron Johnston punts 56 yards, returned by Justin Hardy for 5 yards (tackle by Kamu Grugier-Hill). Penalty on Shelton Gibson: Unsportsmanlike Conduct, 15 yards",-2.490,-2.650,17,20180906ATLPHI
+18,1,9:08,1,10,PHI 44,0,0,Matt Ryan pass incomplete deep left intended for Mohamed Sanu,2.650,2.110,18,20180906ATLPHI
+19,1,9:02,2,10,PHI 44,0,0,Tevin Coleman left guard for 5 yards (tackle by Jalen Mills),2.110,2.080,19,20180906ATLPHI
+20,1,8:24,3,5,PHI 39,0,0,Matt Ryan right end for 6 yards (tackle by Sidney Jones),2.080,3.380,20,20180906ATLPHI
+21,1,7:38,1,10,PHI 33,0,0,Tevin Coleman left end for -3 yards (tackle by Ronald Darby),3.380,2.430,21,20180906ATLPHI
+22,1,7:01,2,13,PHI 36,0,0,Matt Ryan pass complete short left to Tevin Coleman for 26 yards (tackle by Rodney McLeod),2.430,4.910,22,20180906ATLPHI
+23,1,6:19,1,10,PHI 10,0,0,Matt Ryan pass complete short left to Austin Hooper for 3 yards (tackle by Nathan Gerry),4.910,4.760,23,20180906ATLPHI
+24,1,5:38,2,7,PHI 7,0,0,Matt Ryan pass incomplete short left,4.760,3.810,24,20180906ATLPHI
+25,1,5:32,3,7,PHI 7,0,0,"Matt Ryan sacked by Chris Long for no gain. Penalty on Derek Barnett: Defensive Offside, 4 yards (no play)",3.810,4.720,25,20180906ATLPHI
+26,1,5:07,3,3,PHI 3,0,0,Matt Ryan pass incomplete short left intended for Austin Hooper,4.720,3.040,26,20180906ATLPHI
+27,1,5:03,4,3,PHI 3,3,0,Matt Bryant 21 yard field goal good,3.040,3.000,27,20180906ATLPHI
+28,1,5:01,,,ATL 35,3,0,"Matthew Bosher kicks off 64 yards, returned by Shelton Gibson for no gain (tackle by Damontae Kazee and Duke Riley)",0.000,1.000,28,20180906ATLPHI
+29,1,4:50,1,10,PHI 31,3,0,Darren Sproles left end for 1 yard (tackle by Vic Beasley),1.000,0.600,29,20180906ATLPHI
+30,1,4:13,2,9,PHI 32,3,0,"Corey Clement up the middle for no gain (tackle by Deion Jones). Penalty on Takkarist McKinley: Defensive Offside, 5 yards (no play)",0.600,1.270,30,20180906ATLPHI
+31,1,3:46,2,4,PHI 37,3,0,Nick Foles pass complete short left to Nelson Agholor for 6 yards (tackle by Robert Alford),1.270,1.800,31,20180906ATLPHI
+32,1,3:06,1,10,PHI 43,3,0,Nick Foles sacked by Brian Poole for -7 yards,1.800,0.310,32,20180906ATLPHI
+33,1,2:24,2,17,PHI 36,3,0,Corey Clement left tackle for no gain (tackle by Grady Jarrett),0.310,-0.360,33,20180906ATLPHI
+34,1,1:43,3,17,PHI 36,3,0,"Penalty on Takkarist McKinley: Neutral Zone Infraction, 5 yards (no play)",-0.360,0.300,34,20180906ATLPHI
+35,1,1:21,3,12,PHI 41,3,0,"Nick Foles aborted snap, recovered by Nick Foles at PHI-35 Nick Foles sacked by Takkarist McKinley for -6 yards",0.300,-1.040,35,20180906ATLPHI
+36,1,0:33,4,18,PHI 35,3,0,"Cameron Johnston punts 65 yards, touchback.",-1.040,-0.280,36,20180906ATLPHI
+37,1,0:30,1,10,ATL 20,3,0,Matt Ryan pass incomplete short middle intended for Julio Jones (defended by Ronald Darby),0.280,-0.270,37,20180906ATLPHI
+38,1,0:26,2,10,ATL 20,3,0,Tevin Coleman left tackle for -2 yards (tackle by Brandon Graham),-0.270,-1.330,38,20180906ATLPHI
+39,2,15:00,3,12,ATL 18,3,0,Matt Ryan pass complete short left to Devonta Freeman for -7 yards (tackle by Brandon Graham),-1.330,-2.490,39,20180906ATLPHI
+40,2,14:18,4,19,ATL 11,3,0,"Matthew Bosher punts 49 yards, fair catch by Darren Sproles at PHI-40",-2.490,-1.600,40,20180906ATLPHI
+41,2,14:12,1,10,PHI 40,3,0,Nick Foles pass complete short right to Nelson Agholor for 1 yard (tackle by De'Vondre Campbell),1.600,1.190,41,20180906ATLPHI
+42,2,13:37,2,9,PHI 41,3,0,Jay Ajayi left tackle for 2 yards (tackle by Deadrin Senat),1.190,0.760,42,20180906ATLPHI
+43,2,12:53,3,7,PHI 43,3,0,Nick Foles pass complete short left to Nelson Agholor for 10 yards (tackle by Robert Alford),0.760,2.460,43,20180906ATLPHI
+44,2,12:14,1,10,ATL 47,3,0,Nick Foles pass complete short left to Nelson Agholor for 6 yards (tackle by Robert Alford),2.460,2.720,44,20180906ATLPHI
+45,2,11:43,2,4,ATL 41,3,0,Nick Foles pass complete short right to DeAndre Carter for 10 yards (tackle by Brian Poole),2.720,3.510,45,20180906ATLPHI
+46,2,11:19,1,10,ATL 31,3,0,Jay Ajayi left end for 8 yards (tackle by Ricardo Allen and Keanu Neal),3.510,4.050,46,20180906ATLPHI
+47,2,10:46,2,2,ATL 23,3,0,Jay Ajayi up the middle for 1 yard (tackle by De'Vondre Campbell),4.050,3.470,47,20180906ATLPHI
+48,2,10:13,3,1,ATL 22,3,0,Darren Sproles left end for 2 yards (tackle by De'Vondre Campbell),3.470,4.240,48,20180906ATLPHI
+49,2,9:42,1,10,ATL 20,3,0,Darren Sproles left end for no gain (tackle by Jack Crawford),4.240,3.690,49,20180906ATLPHI
+50,2,9:07,2,10,ATL 20,3,0,Nick Foles pass complete short middle to Darren Sproles for 3 yards (tackle by Deion Jones),3.690,3.360,50,20180906ATLPHI
+51,2,8:23,3,7,ATL 17,3,0,"Nick Foles pass incomplete short right intended for Mike Wallace (defended by Desmond Trufant). Penalty on Desmond Trufant: Defensive Pass Interference, 8 yards (no play)",3.360,5.140,51,20180906ATLPHI
+52,2,8:17,1,9,ATL 9,3,0,"Darren Sproles left tackle for no gain (tackle by Damontae Kazee). Penalty on Jason Kelce: Offensive Holding, 10 yards (no play)",5.140,4.230,52,20180906ATLPHI
+53,2,7:43,1,19,ATL 19,3,0,Nick Foles pass incomplete deep right intended for Dallas Goedert (defended by Duke Riley),4.230,3.070,53,20180906ATLPHI
+54,2,7:37,2,19,ATL 19,3,0,Corey Clement left end for 1 yard (tackle by Deadrin Senat),3.070,2.630,54,20180906ATLPHI
+55,2,6:53,3,18,ATL 18,3,0,Nick Foles pass complete short left to Zach Ertz for 10 yards (tackle by De'Vondre Campbell and Deion Jones),2.630,2.950,55,20180906ATLPHI
+56,2,6:12,4,8,ATL 8,3,3,Jake Elliott 26 yard field goal good,2.950,3.000,56,20180906ATLPHI
+57,2,6:09,,,PHI 35,3,3,"Jake Elliott kicks off 65 yards, touchback.",0.000,0.610,57,20180906ATLPHI
+58,2,6:09,1,10,ATL 25,3,3,Tevin Coleman right end for 2 yards (tackle by Jalen Mills),0.610,0.330,58,20180906ATLPHI
+59,2,5:34,2,8,ATL 27,3,3,Matt Ryan pass complete deep left to Julio Jones for 22 yards (tackle by Ronald Darby),0.330,2.190,59,20180906ATLPHI
+60,2,4:59,1,10,ATL 49,3,3,Tevin Coleman left tackle for 1 yard (tackle by Michael Bennett and Chris Long),2.190,1.780,60,20180906ATLPHI
+61,2,4:20,2,9,ATL 50,3,3,"Matt Ryan pass complete short left to Mohamed Sanu for 8 yards (tackle by Rodney McLeod). Penalty on Chris Long: Roughing the Passer, 15 yards",1.780,3.780,61,20180906ATLPHI
+62,2,3:52,1,10,PHI 27,3,3,Matt Ryan right end for 2 yards (tackle by Jordan Hicks),3.780,3.500,62,20180906ATLPHI
+63,2,3:03,,,,,,Timeout #1 by Atlanta Falcons,,,63,20180906ATLPHI
+64,2,3:03,2,8,PHI 25,3,3,Matt Ryan pass incomplete deep left intended for Mohamed Sanu,3.500,2.810,64,20180906ATLPHI
+65,2,2:58,3,8,PHI 25,3,3,Matt Ryan sacked by Jordan Hicks for -9 yards,2.810,1.060,65,20180906ATLPHI
+66,2,2:13,4,17,PHI 34,6,3,Matt Bryant 52 yard field goal good,1.060,3.000,66,20180906ATLPHI
+67,2,2:08,,,ATL 35,6,3,"Matthew Bosher kicks off 68 yards, returned by Shelton Gibson for no gain (tackle by Kemal Ishmael). Penalty on Avonte Maddox: Offensive Holding, 5 yards",0.000,-0.380,67,20180906ATLPHI
+68,2,2:01,1,10,PHI 5,6,3,Nick Foles pass incomplete short right intended for Darren Sproles,-0.380,-0.780,68,20180906ATLPHI
+69,2,1:57,2,10,PHI 5,6,3,"Nick Foles pass complete short right to Nelson Agholor for 4 yards (tackle by Deion Jones). Penalty on Grady Jarrett: Roughing the Passer, 15 yards",-0.780,0.540,69,20180906ATLPHI
+70,2,1:50,1,10,PHI 24,6,3,"Nick Foles pass complete short right to Nelson Agholor for 7 yards. Penalty on Desmond Trufant: Defensive Holding, 5 yards (no play)",0.540,0.870,70,20180906ATLPHI
+71,2,1:44,1,10,PHI 29,6,3,Nick Foles pass complete short right to Zach Ertz for 7 yards (tackle by Desmond Trufant),0.870,1.270,71,20180906ATLPHI
+72,2,1:39,2,3,PHI 36,6,3,Nick Foles pass incomplete short right intended for Darren Sproles,1.270,0.560,72,20180906ATLPHI
+73,2,1:35,3,3,PHI 36,6,3,Nick Foles pass incomplete short right intended for Zach Ertz,0.560,-0.980,73,20180906ATLPHI
+74,2,1:30,4,3,PHI 36,6,3,"Penalty on Avonte Maddox: False Start, 5 yards (no play)",-0.980,-1.310,74,20180906ATLPHI
+75,2,1:30,4,8,PHI 31,6,3,Cameron Johnston punts 58 yards downed by Avonte Maddox,-1.310,0.370,75,20180906ATLPHI
+76,2,1:20,1,10,ATL 11,6,3,Matt Ryan pass complete short right to Julio Jones for 13 yards (tackle by Jalen Mills),-0.370,0.540,76,20180906ATLPHI
+77,2,1:15,1,10,ATL 24,6,3,Matt Ryan pass incomplete deep left intended for Calvin Ridley (defended by Rodney McLeod),0.540,0.000,77,20180906ATLPHI
+78,2,1:10,2,10,ATL 24,6,3,Matt Ryan pass complete short right to Devonta Freeman for 7 yards (tackle by Malcolm Jenkins),0.000,0.230,78,20180906ATLPHI
+79,2,0:48,3,3,ATL 31,6,3,Matt Ryan pass incomplete short left intended for Julio Jones (defended by Ronald Darby),0.230,-1.310,79,20180906ATLPHI
+80,2,0:44,4,3,ATL 31,6,3,"Penalty on Foyesade Oluokun: False Start, 5 yards (no play)",-1.310,-1.630,80,20180906ATLPHI
+81,2,0:44,4,8,ATL 26,6,3,"Matthew Bosher punts 57 yards, returned by Darren Sproles for 8 yards (tackle by Brian Poole). Penalty on LaRoy Reynolds: Unnecessary Roughness, 12 yards",-1.630,0.320,81,20180906ATLPHI
+82,2,0:33,1,10,PHI 13,6,3,"Nick Foles aborted snap, recovered by Nick Foles at PHI-7 Nick Foles pass incomplete short right intended for Nelson Agholor. Penalty on Brooks Reed: Defensive Offside, 5 yards (no play)",-0.320,0.400,82,20180906ATLPHI
+83,2,0:29,1,5,PHI 18,6,3,Nick Foles pass incomplete deep right intended for Mike Wallace,0.400,-0.140,83,20180906ATLPHI
+84,2,0:22,,,,,,Timeout #2 by Philadelphia Eagles,,,84,20180906ATLPHI
+85,2,0:22,2,5,PHI 18,6,3,Nick Foles pass incomplete deep right intended for Mike Wallace,-0.140,-0.830,85,20180906ATLPHI
+86,2,0:17,3,5,PHI 18,6,3,Nick Foles pass complete short left to Darren Sproles for 4 yards (tackle by Brian Poole and Deion Jones),-0.830,-1.900,86,20180906ATLPHI
+87,2,0:11,,,,,,Timeout #3 by Philadelphia Eagles,,,87,20180906ATLPHI
+88,2,0:11,4,1,PHI 22,6,3,"Cameron Johnston punts 43 yards, fair catch by Justin Hardy at ATL-35. Penalty on Foyesade Oluokun: Roughing the Kicker, 15 yards (no play)",-1.900,1.400,88,20180906ATLPHI
+89,2,0:05,1,10,PHI 37,6,3,Nick Foles kneels for -1 yards,1.400,0.720,89,20180906ATLPHI
+90,3,15:00,,,ATL 35,6,3,"Matthew Bosher kicks off 65 yards, touchback.",0.000,0.610,90,20180906ATLPHI
+91,3,15:00,1,10,PHI 25,6,3,Nick Foles pass complete short left to Zach Ertz for 8 yards (tackle by Deion Jones),0.610,1.140,91,20180906ATLPHI
+92,3,14:21,2,2,PHI 33,6,3,Jay Ajayi left guard for 3 yards (tackle by Deion Jones and Grady Jarrett),1.140,1.330,92,20180906ATLPHI
+93,3,13:44,1,10,PHI 36,6,3,"Nick Foles pass incomplete short right intended for Zach Ertz (defended by Brian Poole). Penalty on Robert Alford: Illegal Contact, 5 yards (no play)",1.330,1.660,93,20180906ATLPHI
+94,3,13:39,1,10,PHI 41,6,3,Corey Clement up the middle for 1 yard (tackle by Terrell McClain),1.660,1.260,94,20180906ATLPHI
+95,3,12:57,2,9,PHI 42,6,3,Nick Foles pass incomplete deep left intended for Nelson Agholor (defended by Robert Alford),1.260,0.560,95,20180906ATLPHI
+96,3,12:51,3,9,PHI 42,6,3,Nick Foles pass complete short right to Nelson Agholor for no gain (tackle by Desmond Trufant),0.560,-0.590,96,20180906ATLPHI
+97,3,12:33,4,9,PHI 42,6,3,"Cameron Johnston punts 38 yards, fair catch by Justin Hardy at ATL-20",-0.590,-0.280,97,20180906ATLPHI
+98,3,12:25,1,10,ATL 20,6,3,Devonta Freeman up the middle for 8 yards (tackle by Jordan Hicks),0.280,0.810,98,20180906ATLPHI
+99,3,11:54,2,2,ATL 28,6,3,Matt Ryan pass complete short left to Julio Jones for 4 yards (tackle by Ronald Darby),0.810,1.070,99,20180906ATLPHI
+100,3,11:15,1,10,ATL 32,6,3,Matt Ryan pass incomplete deep right intended for Julio Jones (defended by Jalen Mills),1.070,0.530,100,20180906ATLPHI
+101,3,11:04,2,10,ATL 32,6,3,"Matt Ryan pass incomplete short left. Penalty on Matt Ryan: Intentional Grounding, 12 yards",0.530,-1.750,101,20180906ATLPHI
+102,3,10:57,3,22,ATL 20,6,3,Matt Ryan pass complete short middle to Julio Jones for 6 yards (tackle by Jordan Hicks),-1.750,-1.630,102,20180906ATLPHI
+103,3,10:22,4,16,ATL 26,6,3,"Matthew Bosher punts 46 yards, returned by Darren Sproles for 9 yards (tackle by Foyesade Oluokun)",-1.630,-1.400,103,20180906ATLPHI
+104,3,10:11,1,10,PHI 37,6,3,Nick Foles pass complete short right to Dallas Goedert for 4 yards (tackle by Ricardo Allen and Deion Jones),1.400,1.400,104,20180906ATLPHI
+105,3,9:32,2,6,PHI 41,6,3,Nick Foles pass complete short right to Zach Ertz for 5 yards (tackle by Duke Riley),1.400,1.360,105,20180906ATLPHI
+106,3,8:49,3,1,PHI 46,6,3,Jay Ajayi right guard for 8 yards (tackle by Desmond Trufant),1.360,2.520,106,20180906ATLPHI
+107,3,8:09,1,10,ATL 46,6,3,Nick Foles pass incomplete short left intended for Nelson Agholor (defended by Deion Jones),2.520,1.980,107,20180906ATLPHI
+108,3,8:04,2,10,ATL 46,6,3,Jay Ajayi up the middle for 5 yards (tackle by Brian Poole and Deion Jones),1.980,1.950,108,20180906ATLPHI
+109,3,7:41,3,5,ATL 41,6,3,Nelson Agholor pass complete short right to Nick Foles for 15 yards (tackle by Desmond Trufant),1.950,3.840,109,20180906ATLPHI
+110,3,6:46,1,10,ATL 26,6,3,Nick Foles pass incomplete short right intended for Zach Ertz,3.840,3.300,110,20180906ATLPHI
+111,3,6:42,2,10,ATL 26,6,3,Jay Ajayi right end for 2 yards (tackle by Grady Jarrett and Brooks Reed),3.300,2.870,111,20180906ATLPHI
+112,3,6:00,3,8,ATL 24,6,3,Nick Foles pass complete short middle to Zach Ertz for 18 yards (tackle by Ricardo Allen and Deante Burton),2.870,5.830,112,20180906ATLPHI
+113,3,5:15,1,6,ATL 6,6,3,Darren Sproles left end for 5 yards (tackle by Brian Poole),5.830,5.910,113,20180906ATLPHI
+114,3,4:41,2,1,ATL 1,6,9,"Jay Ajayi left guard for 1 yard, touchdown",5.910,7.000,114,20180906ATLPHI
+115,3,4:37,,,ATL 15,6,10,Jake Elliott kicks extra point good,0.000,0.000,115,20180906ATLPHI
+116,3,4:37,,,PHI 35,6,10,"Jake Elliott kicks off 65 yards, touchback.. Penalty on Nathan Gerry: Unnecessary Roughness, 15 yards",0.000,1.600,116,20180906ATLPHI
+117,3,4:37,1,10,ATL 40,6,10,Tevin Coleman right end for no gain (tackle by Kamu Grugier-Hill and Chris Long),1.600,1.050,117,20180906ATLPHI
+118,3,3:57,2,10,ATL 40,6,10,"Tevin Coleman left end for no gain (tackle by Jordan Hicks). Penalty on Ryan Schraeder: Clipping, 15 yards (no play)",1.050,-0.970,118,20180906ATLPHI
+119,3,3:33,2,25,ATL 25,6,10,Matt Ryan pass complete short right to Austin Hooper for 15 yards (tackle by Jalen Mills),-0.970,0.370,119,20180906ATLPHI
+120,3,2:48,3,10,ATL 40,6,10,Matt Ryan pass incomplete short left intended for Julio Jones (defended by Ronald Darby),0.370,-0.720,120,20180906ATLPHI
+121,3,2:44,4,10,ATL 40,6,10,Matthew Bosher punts 44 yards downed by Ricky Ortiz,-0.720,0.140,121,20180906ATLPHI
+122,3,2:32,1,10,PHI 16,6,10,Jay Ajayi up the middle for 4 yards (tackle by Derrick Shelby),-0.140,0.010,122,20180906ATLPHI
+123,3,1:49,2,6,PHI 20,6,10,Nick Foles pass incomplete short right intended for Zach Ertz (defended by Brian Poole),0.010,-0.820,123,20180906ATLPHI
+124,3,1:41,3,6,PHI 20,6,10,Nick Foles pass incomplete short right intended for Zach Ertz,-0.820,-2.030,124,20180906ATLPHI
+125,3,1:35,4,6,PHI 20,6,10,"Cameron Johnston punts 50 yards, returned by Justin Hardy for 6 yards (tackle by Rick Lovato and Wendell Smallwood). Penalty on Damontae Kazee: Illegal Block Above the Waist, 10 yards",-2.030,-0.670,125,20180906ATLPHI
+126,3,1:19,1,10,ATL 26,6,10,Devonta Freeman right end for 4 yards (tackle by Kamu Grugier-Hill and Rodney McLeod),0.670,0.670,126,20180906ATLPHI
+127,3,0:47,2,6,ATL 30,6,10,Matt Ryan pass incomplete deep middle intended for Julio Jones,0.670,-0.030,127,20180906ATLPHI
+128,3,0:40,3,6,ATL 30,6,10,Matt Ryan pass incomplete short middle intended for Eric Saubert (defended by Rodney McLeod),-0.030,-1.370,128,20180906ATLPHI
+129,3,0:34,4,6,ATL 30,6,10,"Matthew Bosher punts 38 yards, muffed catch by Tre Sullivan, recovered by Kemal Ishmael at PHI-32 (tackle by LaRoy Reynolds)",-1.370,3.450,129,20180906ATLPHI
+130,3,0:20,1,10,PHI 32,6,10,Matt Ryan pass incomplete short right intended for Julio Jones (defended by Nathan Gerry),3.450,2.900,130,20180906ATLPHI
+131,3,0:17,2,10,PHI 32,6,10,Matt Ryan pass complete short middle to Mohamed Sanu for 5 yards (tackle by Jordan Hicks),2.900,2.870,131,20180906ATLPHI
+132,4,15:00,3,5,PHI 27,6,10,"Matt Ryan sacked by Fletcher Cox for no gain. Penalty on Derek Barnett: Defensive Offside, 5 yards (no play)",2.870,4.110,132,20180906ATLPHI
+133,4,14:28,1,10,PHI 22,6,10,Tevin Coleman left end for 5 yards (tackle by Destiny Vaeao and Ronald Darby),4.110,4.290,133,20180906ATLPHI
+134,4,13:46,2,5,PHI 17,6,10,Tevin Coleman right guard for 2 yards (tackle by Rodney McLeod),4.290,3.930,134,20180906ATLPHI
+135,4,13:03,3,3,PHI 15,6,10,Matt Ryan pass short left intended for Julio Jones is intercepted by Rasul Douglas at PHI-4 and returned for no gain,3.930,0.380,135,20180906ATLPHI
+136,4,12:58,1,10,PHI 4,6,10,Jay Ajayi up the middle for 4 yards (tackle by Derrick Shelby),-0.380,-0.490,136,20180906ATLPHI
+137,4,12:16,2,6,PHI 8,6,10,Jay Ajayi up the middle for 5 yards (tackle by Ricardo Allen and Deadrin Senat),-0.490,-0.370,137,20180906ATLPHI
+138,4,11:31,3,1,PHI 13,6,10,Nelson Agholor right end for 16 yards (tackle by Damontae Kazee),-0.370,0.870,138,20180906ATLPHI
+139,4,10:45,1,10,PHI 29,6,10,Nick Foles pass deep middle (defended by Damontae Kazee) intended for Dallas Goedert is intercepted by Deion Jones at PHI-47 and returned for 20 yards,0.870,-3.780,139,20180906ATLPHI
+140,4,10:35,1,10,PHI 27,6,10,Matt Ryan pass complete deep right to Julio Jones for 18 yards (tackle by Jalen Mills),3.780,5.140,140,20180906ATLPHI
+141,4,9:53,1,9,PHI 9,12,10,"Tevin Coleman right tackle for 9 yards, touchdown",5.140,7.000,141,20180906ATLPHI
+142,4,9:48,,,PHI 15,12,10,Matt Bryant kicks extra point no good hit right upright,0.000,-1.000,142,20180906ATLPHI
+143,4,9:48,,,ATL 35,12,10,"Matthew Bosher kicks off 65 yards, touchback.",0.000,0.610,143,20180906ATLPHI
+144,4,9:48,1,10,PHI 25,12,10,Jay Ajayi up the middle for 7 yards (tackle by De'Vondre Campbell),0.610,1.010,144,20180906ATLPHI
+145,4,9:13,2,3,PHI 32,12,10,Jay Ajayi up the middle for -1 yards (tackle by Grady Jarrett and De'Vondre Campbell),1.010,0.170,145,20180906ATLPHI
+146,4,8:31,3,4,PHI 31,12,10,"Nick Foles pass complete short right to Nelson Agholor for 10 yards (tackle by Deion Jones). Penalty on Zach Ertz: Offensive Pass Interference, 10 yards (no play)",0.170,-1.150,146,20180906ATLPHI
+147,4,7:59,,,,,,Timeout #1 by Philadelphia Eagles,,,147,20180906ATLPHI
+148,4,7:59,3,14,PHI 21,12,10,Nick Foles pass incomplete deep right intended for Zach Ertz,-1.150,-1.960,148,20180906ATLPHI
+149,4,7:54,4,14,PHI 21,12,10,Cameron Johnston punts 59 yards downed by Corey Graham. Penalty on Deante Burton: Offensive Holding (Offsetting) (no play),-1.960,-1.960,149,20180906ATLPHI
+150,4,7:42,4,14,PHI 21,12,10,Cameron Johnston punts 46 yards out of bounds,-1.960,-1.140,150,20180906ATLPHI
+151,4,7:33,1,10,ATL 33,12,10,"Devonta Freeman right end for no gain (tackle by Haloti Ngata). Penalty on Ryan Schraeder: Offensive Holding, 10 yards (no play)",1.140,0.480,151,20180906ATLPHI
+152,4,7:15,1,20,ATL 23,12,10,Matt Ryan pass complete short left to Mohamed Sanu for -5 yards (tackle by Sidney Jones),0.480,-1.540,152,20180906ATLPHI
+153,4,6:31,2,25,ATL 18,12,10,"Matt Ryan sacked by Chris Long and Fletcher Cox for -3 yards. Matt Ryan fumbles (forced by Chris Long), recovered by Alex Mack at ATL-15 (tackle by Michael Bennett)",-1.540,-3.130,153,20180906ATLPHI
+154,4,5:45,3,28,ATL 15,12,10,Matt Ryan pass complete short left to Devonta Freeman for 14 yards (tackle by Corey Graham),-3.130,-1.440,154,20180906ATLPHI
+155,4,5:04,4,14,ATL 29,12,10,"Matthew Bosher punts 52 yards, returned by Darren Sproles for 12 yards (tackle by Eric Saubert and Kemal Ishmael). Penalty on Eric Saubert: Face Mask (15 Yards), 15 yards",-1.440,-1.990,155,20180906ATLPHI
+156,4,4:51,1,10,PHI 46,12,10,Nick Foles pass complete short right to Nelson Agholor for 2 yards (tackle by Desmond Trufant),1.990,1.720,156,20180906ATLPHI
+157,4,4:48,2,8,PHI 48,12,10,Nick Foles pass incomplete deep left intended for Mike Wallace (defended by Robert Alford),1.720,1.030,157,20180906ATLPHI
+158,4,4:41,3,8,PHI 48,12,10,Nick Foles pass complete short right to Darren Sproles for 9 yards (tackle by Desmond Trufant),1.030,2.720,158,20180906ATLPHI
+159,4,4:32,1,10,ATL 43,12,10,Nick Foles pass complete short right to Darren Sproles for 6 yards (tackle by Ricardo Allen),2.720,2.990,159,20180906ATLPHI
+160,4,4:24,2,4,ATL 37,12,10,Jay Ajayi up the middle for 2 yards (tackle by Grady Jarrett),2.990,2.540,160,20180906ATLPHI
+161,4,3:57,3,2,ATL 35,12,10,Corey Clement right tackle for 21 yards (tackle by Damontae Kazee),2.540,4.650,161,20180906ATLPHI
+162,4,3:10,1,10,ATL 14,12,10,Corey Clement up the middle for 3 yards (tackle by Deion Jones),4.650,4.520,162,20180906ATLPHI
+163,4,2:25,2,7,ATL 11,12,16,"Jay Ajayi left end for 11 yards, touchdown",4.520,7.000,163,20180906ATLPHI
+164,4,2:19,,,ATL 2,12,18,"Two Point Attempt: Jay Ajayi rushes, conversion succeeds.",0.000,1.000,164,20180906ATLPHI
+165,4,2:19,,,PHI 35,12,18,"Jake Elliott kicks off 65 yards, touchback.",0.000,0.610,165,20180906ATLPHI
+166,4,2:19,1,10,ATL 25,12,18,Matt Ryan pass complete short right to Austin Hooper for 6 yards (tackle by Corey Graham),0.610,0.870,166,20180906ATLPHI
+167,4,2:01,2,4,ATL 31,12,18,Matt Ryan pass complete deep middle to Julio Jones for 36 yards (tackle by Rodney McLeod),0.870,3.380,167,20180906ATLPHI
+168,4,1:54,1,10,PHI 33,12,18,Matt Ryan pass incomplete short left intended for Tevin Coleman,3.380,2.840,168,20180906ATLPHI
+169,4,1:50,2,10,PHI 33,12,18,Matt Ryan sacked by Chris Long and Jordan Hicks for -7 yards,2.840,1.220,169,20180906ATLPHI
+170,4,1:25,3,17,PHI 40,12,18,Matt Ryan pass complete deep left to Julio Jones for 18 yards (tackle by Ronald Darby),1.220,4.110,170,20180906ATLPHI
+171,4,1:18,,,,,,Timeout #2 by Atlanta Falcons,,,171,20180906ATLPHI
+172,4,1:18,1,10,PHI 22,12,18,Matt Ryan pass complete short right to Julio Jones for 9 yards (tackle by Jalen Mills),4.110,5.060,172,20180906ATLPHI
+173,4,0:55,2,1,PHI 13,12,18,Matt Ryan sacked by Fletcher Cox for -7 yards,5.060,3.140,173,20180906ATLPHI
+174,4,0:29,3,8,PHI 20,12,18,Matt Ryan pass complete short left to Mohamed Sanu for 10 yards (tackle by Sidney Jones),3.140,4.910,174,20180906ATLPHI
+175,4,0:24,,,,,,Timeout #2 by Atlanta Falcons,,,175,20180906ATLPHI
+176,4,0:24,1,10,PHI 10,12,18,Matt Ryan pass incomplete short right,4.910,4.190,176,20180906ATLPHI
+177,4,0:16,2,10,PHI 10,12,18,Matt Ryan pass incomplete short middle intended for Julio Jones,4.190,3.130,177,20180906ATLPHI
+178,4,0:11,3,10,PHI 10,12,18,Matt Ryan pass incomplete short right,3.130,2.760,178,20180906ATLPHI
+179,4,0:06,4,10,PHI 10,12,18,"Matt Ryan pass incomplete short right. Penalty on Jordan Hicks: Illegal Contact, 5 yards (no play)",2.760,6.060,179,20180906ATLPHI
+180,4,0:01,1,5,PHI 5,12,18,Matt Ryan pass incomplete short left intended for Julio Jones,6.060,5.150,180,20180906ATLPHI

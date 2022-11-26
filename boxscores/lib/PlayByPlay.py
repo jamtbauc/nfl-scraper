@@ -1,8 +1,8 @@
 from datetime import time
 
 class PlayByPlay:
-    def __init__(self):
-        self.id = None
+    def __init__(self, id, seq, game_id):
+        self.id = id
         self.qtr = None
         self.qtr_time_rem = None
         self.down = None
@@ -13,8 +13,32 @@ class PlayByPlay:
         self.detail = None
         self.exp_pts_before = None
         self.exp_pts_after = None
-        self.seq = None
-        self.game_id = None
+        self.seq = seq
+        self.game_id = game_id
+        
+    def mapToPlayByPlay(self, label, value):
+        if label == "quarter":
+            self.setQtr(value)
+        elif label == "qtr_time_remain":
+            self.setQtrTimeRem(value)
+        elif label == "down":
+            self.setDown(value)
+        elif label == "yds_to_go":
+            self.setYdsToGo(value)
+        elif label == "location":
+            self.setYdStart(value)
+        elif label == "pbp_score_aw":
+            self.setScoreAway(value)
+        elif label == "pbp_score_hm":
+            self.setScoreHome(value)
+        elif label == "detail":
+            self.setDetail(value)
+        elif label == "exp_pts_before":
+            self.setExpPointsBefore(value)
+        elif label == "exp_pts_after":
+            self.setExpPointsAfter(value)
+        else:
+            print(f"Cannot map {label}")
         
     def getDetail(self):
         return self.detail
@@ -41,7 +65,7 @@ class PlayByPlay:
         self.exp_pts_before = pts
     
     def getGameId(self):
-        return self.id
+        return self.game_id
     
     def setGameId(self, id):
         self.game_id = id
@@ -96,7 +120,19 @@ class PlayByPlay:
     
     def getInfo(self):
         info = {
-            
+            "id": self.getId(),
+            "qtr": self.getQtr(),
+            "qtrTimeRem": self.getQtrTimeRem(),
+            "down": self.getDown(),
+            "ydsToGo": self.getYdsToGo(),
+            "ydStart": self.getYdStart(),
+            "scoreAway": self.getScoreAway(),
+            "scoreHome": self.getScoreHome(),
+            "detail": self.getDetail(),
+            "expPtsBefore": self.getExpPointsBefore(),
+            "expPtsAfter": self.getExpPointsAfter(),
+            "seq": self.getSeq(),
+            "gameId": self.getGameId()
         }
         
         return info
