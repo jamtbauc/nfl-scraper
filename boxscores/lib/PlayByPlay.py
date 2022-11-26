@@ -86,7 +86,10 @@ class PlayByPlay:
         return self.qtr_time_rem
     
     def setQtrTimeRem(self, value):
-        self.qtr_time_rem = datetime.strptime(value,"%M:%S").time()
+        if value:
+            self.qtr_time_rem = datetime.strptime(value,"%M:%S").time()
+        else:
+            self.qtr_time_rem = value
     
     def getScoreAway(self):
         return self.score_away

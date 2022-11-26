@@ -1,3 +1,125 @@
 id,teamId,gameId,wonToss,tossDecision,isHome,isFavored,spread,overUnder,firstDowns,rushAtts,rushYds,rushTds,passComps,passAtts,passYds,passTds,passInts,sacked,sackYdsLost,netPassYds,totalYds,fumbles,fumblesLost,turnovers,penalties,penaltyYds,thirdDownAtts,thirdDownConvs,fourthDownAtts,fourthDownConvs,possessionTime,coach,score
-1,Pittsburgh Steelers,20180909PITCLE,,,False,True,-3.5,41.0,25,35,159,2,23,41,335,1,3,4,22,313,472,3,3,6,12,116,15,7,0,0,00:35:12,Mike Tomlin,21
-2,Cleveland Browns,20180909PITCLE,True,(deferred),True,False,3.5,41.0,22,38,177,2,15,40,197,1,1,7,47,150,327,1,0,1,11,87,18,5,1,0,00:34:48,Hue Jackson,21
+1,Atlanta Falcons,20180906ATLPHI,,,False,False,1.0,44.5,16,18,74,1,21,43,251,0,1,4,26,225,299,1,0,1,15,135,15,4,1,0,00:27:50,Dan Quinn,12
+2,Philadelphia Eagles,20180906ATLPHI,True,(deferred),True,True,-1.0,44.5,18,27,113,2,20,35,132,0,1,2,13,119,232,2,1,2,11,101,16,8,0,0,00:32:10,Doug Pederson,18
+3,Buffalo Bills,20180909BUFBAL,True,(deferred),False,False,7.5,39.0,10,22,83,0,11,33,98,0,2,6,28,70,153,1,0,2,10,100,15,2,1,0,00:24:46,Sean McDermott,3
+4,Baltimore Ravens,20180909BUFBAL,,,True,True,-7.5,39.0,26,34,117,3,26,38,260,3,0,2,8,252,369,4,1,1,9,78,14,6,0,0,00:35:14,John Harbaugh,47
+5,Cincinnati Bengals,20180909CININD,,,False,True,-1.0,47.5,19,20,101,1,21,28,243,2,1,2,14,229,330,2,1,2,8,94,8,4,0,0,00:27:12,Marvin Lewis,34
+6,Indianapolis Colts,20180909CININD,True,(deferred),True,False,1.0,47.5,24,22,75,0,39,53,319,2,1,2,14,305,380,1,1,2,7,91,17,11,0,0,00:32:48,Frank Reich,23
+7,Pittsburgh Steelers,20180909PITCLE,,,False,True,-3.5,41.0,25,35,159,2,23,41,335,1,3,4,22,313,472,3,3,6,12,116,15,7,0,0,00:35:12,Mike Tomlin,21
+8,Cleveland Browns,20180909PITCLE,True,(deferred),True,False,3.5,41.0,22,38,177,2,15,40,197,1,1,7,47,150,327,1,0,1,11,87,18,5,1,0,00:34:48,Hue Jackson,21
+9,Houston Texans,20180909HOUNWE,True,(deferred),False,False,6.0,49.5,21,34,167,1,17,34,176,1,1,3,18,158,325,1,1,2,6,44,11,2,1,0,00:28:50,Bill O'Brien,20
+10,New England Patriots,20180909HOUNWE,,,True,True,-6.0,49.5,23,31,122,0,26,39,277,3,1,2,10,267,389,3,2,3,6,36,14,4,1,1,00:31:10,Bill Belichick,27
+11,Jacksonville Jaguars,20180909JAXNYG,,,False,True,-2.5,43.0,17,28,137,0,18,33,176,1,1,1,8,168,305,0,0,1,11,119,13,4,0,0,00:29:31,Doug Marrone,20
+12,New York Giants,20180909JAXNYG,True,(deferred),True,False,2.5,43.0,15,23,114,1,23,37,224,0,1,2,14,210,324,1,1,2,6,43,13,4,2,0,00:30:29,Pat Shurmur,15
+13,Tennessee Titans,20180909TENMIA,,,False,True,-1.0,43.5,19,29,116,1,20,38,220,0,3,0,0,220,336,0,0,3,5,48,14,6,2,0,00:29:35,Mike Vrabel,20
+14,Miami Dolphins,20180909TENMIA,True,(deferred),True,False,1.0,43.5,18,29,120,0,20,28,230,2,2,1,8,222,342,0,0,2,7,51,10,2,1,0,00:30:25,Adam Gase,27
+15,San Francisco 49ers,20180909SFOMIN,True,(deferred),False,False,6.0,46.5,20,25,90,0,15,33,261,1,3,3,24,237,327,3,1,4,3,21,13,5,0,0,00:28:51,Kyle Shanahan,16
+16,Minnesota Vikings,20180909SFOMIN,,,True,True,-6.0,46.5,19,32,116,0,20,36,244,2,0,3,17,227,343,1,1,1,7,52,17,7,1,0,00:31:09,Mike Zimmer,24
+17,Tampa Bay Buccaneers,20180909TAMNOR,True,(deferred),False,False,10.0,50.0,26,34,112,1,21,28,417,4,0,0,0,417,529,1,0,0,7,70,13,8,0,0,00:32:09,Dirk Koetter,48
+18,New Orleans Saints,20180909TAMNOR,,,True,True,-10.0,50.0,26,13,43,2,37,45,439,3,0,1,7,432,475,2,2,2,8,77,9,4,1,1,00:27:51,Sean Payton,40
+19,Kansas City Chiefs,20180909KANLAC,True,(deferred),False,False,3.5,48.0,19,27,106,0,15,27,256,4,0,1,0,256,362,0,0,0,6,50,10,4,0,0,00:25:34,Andy Reid,38
+20,Los Angeles Chargers,20180909KANLAC,,,True,True,-3.5,48.0,33,22,123,0,34,51,424,3,1,1,6,418,541,2,1,2,7,45,11,3,1,1,00:34:26,Anthony Lynn,28
+21,Dallas Cowboys,20180909DALCAR,,,False,False,2.5,42.5,17,22,94,1,19,29,170,0,0,6,32,138,232,1,1,1,10,85,11,2,1,0,00:29:24,Jason Garrett,8
+22,Carolina Panthers,20180909DALCAR,True,(deferred),True,True,-2.5,42.5,20,32,147,2,17,26,161,0,0,3,15,146,293,2,1,1,9,80,12,4,0,0,00:30:36,Ron Rivera,16
+23,Washington Redskins,20180909WASARI,,,False,False,2.0,43.5,30,42,182,1,21,30,255,2,0,3,8,247,429,3,1,1,9,63,13,6,1,1,00:38:08,Jay Gruden,24
+24,Arizona Cardinals,20180909WASARI,True,(deferred),True,True,-2.0,43.5,14,15,68,1,20,34,153,0,1,2,8,145,213,1,1,2,9,67,8,1,1,0,00:21:52,Steve Wilks,6
+25,Seattle Seahawks,20180909SEADEN,True,(deferred),False,False,3.0,42.5,13,16,64,0,19,33,298,3,2,6,56,242,306,3,1,3,7,45,12,2,0,0,00:24:52,Pete Carroll,24
+26,Denver Broncos,20180909SEADEN,,,True,True,-3.0,42.5,25,32,146,0,25,39,329,3,3,1,5,324,470,0,0,3,7,60,12,4,0,0,00:35:08,Vance Joseph,27
+27,Chicago Bears,20180909CHIGNB,True,(deferred),False,False,6.5,45.0,18,27,139,1,23,35,171,0,0,4,16,155,294,2,1,1,5,35,17,7,2,0,00:33:22,Matt Nagy,23
+28,Green Bay Packers,20180909CHIGNB,,,True,True,-6.5,45.0,16,18,69,0,24,37,341,3,1,4,40,301,370,2,1,2,8,72,13,5,1,0,00:26:38,Mike McCarthy,24
+29,New York Jets,20180910NYJDET,,,False,False,7.0,44.0,18,36,169,2,16,21,198,2,1,2,18,180,349,1,1,2,7,49,14,6,3,2,00:33:07,Todd Bowles,48
+30,Detroit Lions,20180910NYJDET,True,(deferred),True,True,-7.0,44.0,20,15,39,0,29,52,300,1,5,0,0,300,339,0,0,5,3,15,13,3,2,0,00:26:53,Matt Patricia,17
+31,Los Angeles Rams,20180910LAROAK,True,(deferred),False,True,-6.5,47.5,23,26,140,0,18,33,233,2,0,1,8,225,365,1,0,0,8,70,11,4,0,0,00:28:29,Sean McVay,33
+32,Oakland Raiders,20180910LAROAK,,,True,False,6.5,47.5,20,23,95,1,29,40,303,0,3,1,3,300,395,0,0,3,11,155,11,5,0,0,00:31:31,Jon Gruden,13
+33,Baltimore Ravens,20180913BALCIN,,,False,False,1.0,43.0,28,22,66,1,32,55,376,2,2,4,17,359,425,2,1,3,7,51,16,7,4,2,00:28:10,John Harbaugh,23
+34,Cincinnati Bengals,20180913BALCIN,True,(deferred),True,True,-1.0,43.0,24,28,108,0,24,42,265,4,0,0,0,265,373,1,0,0,9,92,13,5,0,0,00:31:50,Marvin Lewis,34
+35,Carolina Panthers,20180916CARATL,,,False,False,5.5,44.0,27,18,121,0,32,45,335,3,1,2,17,318,439,0,0,1,7,49,11,5,1,1,00:30:18,Ron Rivera,24
+36,Atlanta Falcons,20180916CARATL,True,(deferred),True,True,-5.5,44.0,23,32,170,2,23,28,272,2,1,0,0,272,442,3,0,1,2,26,11,6,0,0,00:29:42,Dan Quinn,31
+37,Los Angeles Chargers,20180916LACBUF,,,False,True,-7.5,41.5,21,26,109,1,23,27,256,3,0,2,16,240,349,2,0,0,6,45,9,3,0,0,00:33:02,Anthony Lynn,31
+38,Buffalo Bills,20180916LACBUF,True,(deferred),True,False,7.5,41.5,17,22,84,1,18,33,245,1,2,5,36,209,293,1,0,2,6,31,14,5,0,0,00:26:58,Sean McDermott,20
+39,Cleveland Browns,20180916CLENOR,,,False,False,10.0,51.0,16,27,93,1,22,30,246,1,1,3,12,234,327,3,0,1,4,43,12,4,2,1,00:27:19,Hue Jackson,18
+40,New Orleans Saints,20180916CLENOR,True,(deferred),True,True,-10.0,51.0,18,23,62,0,28,35,243,2,0,3,30,213,275,2,2,2,4,53,12,3,0,0,00:32:41,Sean Payton,21
+41,Indianapolis Colts,20180916INDWAS,,,False,False,6.0,48.0,17,28,104,1,21,31,179,2,2,1,2,177,281,1,0,2,6,26,16,9,0,0,00:26:40,Frank Reich,21
+42,Washington Redskins,20180916INDWAS,True,(deferred),True,True,-6.0,48.0,20,22,65,0,33,46,292,0,0,3,23,269,334,2,1,1,7,90,15,5,2,1,00:33:20,Jay Gruden,9
+43,Minnesota Vikings,20180916MINGNB,True,(deferred),False,True,-2.0,45.0,24,18,68,0,35,48,425,4,1,2,13,412,480,0,0,1,8,70,14,7,0,0,00:31:52,Mike Zimmer,29
+44,Green Bay Packers,20180916MINGNB,,,True,False,2.0,45.0,24,24,98,0,30,42,281,1,0,4,28,253,351,2,0,0,7,54,13,4,0,0,00:38:08,Mike McCarthy,29
+45,Houston Texans,20180916HOUTEN,,,False,True,-3.5,41.0,21,26,148,0,22,32,310,2,1,4,21,289,437,2,0,1,11,88,11,5,0,0,00:29:38,Bill O'Brien,17
+46,Tennessee Titans,20180916HOUTEN,True,(deferred),True,False,3.5,41.0,15,34,100,0,15,22,191,2,0,1,8,183,283,1,0,0,8,70,15,5,2,2,00:30:22,Mike Vrabel,20
+47,Kansas City Chiefs,20180916KANPIT,True,(deferred),False,False,4.5,52.0,24,25,127,0,23,28,326,6,0,1,4,322,449,3,1,1,12,76,5,2,0,0,00:27:49,Andy Reid,42
+48,Pittsburgh Steelers,20180916KANPIT,,,True,True,-4.5,52.0,33,13,33,2,39,60,452,3,0,1,10,442,475,1,0,0,12,90,11,3,2,2,00:32:11,Mike Tomlin,37
+49,Miami Dolphins,20180916MIANYJ,,,False,False,3.0,43.0,18,31,135,1,17,23,168,2,0,4,46,122,257,3,2,2,2,10,13,6,0,0,00:28:25,Adam Gase,20
+50,New York Jets,20180916MIANYJ,True,(deferred),True,True,-3.0,43.0,21,19,42,0,25,41,334,1,2,3,14,320,362,4,1,3,7,50,10,3,0,0,00:31:35,Todd Bowles,12
+51,Philadelphia Eagles,20180916PHITAM,True,(deferred),False,True,-3.0,46.5,24,24,91,2,35,48,334,1,0,3,13,321,412,2,2,2,6,55,15,5,5,3,00:35:39,Doug Pederson,21
+52,Tampa Bay Buccaneers,20180916PHITAM,,,True,False,3.0,46.5,18,23,43,0,27,33,402,4,1,2,9,393,436,1,1,2,4,44,10,4,0,0,00:24:21,Dirk Koetter,27
+53,Arizona Cardinals,20180916ARILAR,True,(deferred),False,False,13.5,43.5,5,15,54,0,17,27,90,0,1,1,7,83,137,0,0,1,9,47,12,3,1,1,00:25:52,Steve Wilks,0
+54,Los Angeles Rams,20180916ARILAR,,,True,True,-13.5,43.5,24,33,90,3,24,32,354,1,1,2,12,342,432,0,0,1,5,49,15,8,3,1,00:34:08,Sean McVay,34
+55,Detroit Lions,20180916DETSFO,,,False,False,6.0,48.5,25,18,98,0,34,53,347,3,0,2,18,329,427,1,1,1,10,105,16,7,1,0,00:30:26,Matt Patricia,27
+56,San Francisco 49ers,20180916DETSFO,True,(deferred),True,True,-6.0,48.5,23,28,190,1,18,26,206,2,0,6,50,156,346,1,0,0,9,86,11,3,0,0,00:29:34,Kyle Shanahan,30
+57,Oakland Raiders,20180916OAKDEN,,,False,False,5.5,44.0,21,27,92,1,29,32,288,1,0,1,7,281,373,0,0,0,4,30,10,3,1,0,00:32:56,Jon Gruden,19
+58,Denver Broncos,20180916OAKDEN,True,(deferred),True,True,-5.5,44.0,20,28,168,2,19,35,222,0,1,1,5,217,385,0,0,1,6,35,16,8,1,1,00:27:04,Vance Joseph,20
+59,New England Patriots,20180916NWEJAX,True,,False,True,-2.0,44.5,18,24,82,0,24,35,234,2,0,2,14,220,302,1,1,1,2,25,12,4,0,0,00:29:14,Bill Belichick,20
+60,Jacksonville Jaguars,20180916NWEJAX,,,True,False,2.0,44.5,27,24,104,0,29,45,376,4,1,0,0,376,480,2,1,2,7,71,14,10,0,0,00:30:46,Doug Marrone,31
+61,New York Giants,20180916NYGDAL,True,(deferred),False,False,3.0,42.0,17,17,35,0,33,44,279,1,0,6,59,220,255,1,1,1,3,24,17,8,2,2,00:32:12,Pat Shurmur,13
+62,Dallas Cowboys,20180916NYGDAL,,,True,True,-3.0,42.0,16,25,138,1,16,25,160,1,0,0,0,160,298,1,0,0,6,47,10,3,1,1,00:27:48,Jason Garrett,20
+63,Seattle Seahawks,20180917SEACHI,,,False,False,4.5,42.5,17,22,74,0,22,36,226,2,1,6,24,202,276,3,1,2,5,37,13,5,0,0,00:25:36,Pete Carroll,17
+64,Chicago Bears,20180917SEACHI,True,(deferred),True,True,-4.5,42.5,20,27,86,0,25,34,200,2,2,2,15,185,271,0,0,2,7,55,12,5,1,1,00:34:24,Matt Nagy,24
+65,New York Jets,20180920NYJCLE,True,(deferred),False,False,3.0,41.0,14,30,107,2,15,31,169,0,2,2,8,161,268,2,1,3,6,55,15,6,1,1,00:29:08,Todd Bowles,17
+66,Cleveland Browns,20180920NYJCLE,,,True,True,-3.0,41.0,20,33,133,2,21,37,220,0,0,4,30,190,323,2,0,0,5,41,18,7,0,0,00:30:52,Hue Jackson,21
+67,New Orleans Saints,20180923NORATL,,,False,False,1.5,54.0,32,27,143,2,39,49,396,3,0,1,5,391,534,1,0,0,11,120,14,7,1,1,00:37:45,Sean Payton,43
+68,Atlanta Falcons,20180923NORATL,True,(deferred),True,True,-1.5,54.0,24,22,48,0,26,35,374,5,0,3,15,359,407,0,0,0,5,54,11,4,0,0,00:29:20,Dan Quinn,37
+69,Buffalo Bills,20180923BUFMIN,,,False,False,16.5,41.0,16,38,128,2,15,22,196,1,0,3,32,164,292,3,0,0,12,84,13,4,1,1,00:35:45,Sean McDermott,27
+70,Minnesota Vikings,20180923BUFMIN,True,(deferred),True,True,-16.5,41.0,21,6,14,0,40,55,296,1,1,4,18,278,292,4,2,3,6,59,14,5,1,0,00:24:15,Mike Zimmer,6
+71,Cincinnati Bengals,20180923CINCAR,True,(deferred),False,False,2.5,44.0,25,13,66,1,29,46,352,2,4,2,22,330,396,0,0,4,4,36,10,4,0,0,00:26:05,Marvin Lewis,21
+72,Carolina Panthers,20180923CINCAR,,,True,True,-2.5,44.0,23,41,230,2,15,24,150,2,0,1,3,147,377,1,0,0,3,17,13,6,1,0,00:33:55,Ron Rivera,31
+73,Indianapolis Colts,20180923INDPHI,,,False,False,6.5,45.5,14,13,68,0,25,41,164,1,0,2,23,141,209,0,0,0,11,77,12,2,2,1,00:19:48,Frank Reich,16
+74,Philadelphia Eagles,20180923INDPHI,True,(deferred),True,True,-6.5,45.5,26,35,152,1,25,37,255,1,1,5,28,227,379,4,1,2,10,110,14,6,0,0,00:40:12,Doug Pederson,20
+75,Denver Broncos,20180923DENBAL,True,(deferred),False,False,5.5,46.0,18,24,120,2,22,34,192,0,1,3,19,173,293,1,0,1,13,120,14,6,1,0,00:29:46,Vance Joseph,14
+76,Baltimore Ravens,20180923DENBAL,,,True,True,-5.5,46.0,20,28,77,2,25,40,277,1,0,2,12,265,342,1,0,0,7,52,16,8,0,0,00:30:14,John Harbaugh,27
+77,Green Bay Packers,20180923GNBWAS,True,(deferred),False,True,-2.5,45.5,19,17,100,0,27,45,265,2,0,4,25,240,340,2,1,1,11,115,14,6,2,0,00:30:55,Mike McCarthy,17
+78,Washington Redskins,20180923GNBWAS,,,True,False,2.5,45.5,20,35,166,2,12,20,220,2,1,0,0,220,386,0,0,1,6,66,11,5,0,0,00:29:05,Jay Gruden,31
+79,New York Giants,20180923NYGHOU,True,(deferred),False,False,6.5,44.0,21,27,114,1,25,29,297,2,0,4,32,265,379,2,0,0,3,20,13,7,0,0,00:35:30,Pat Shurmur,27
+80,Houston Texans,20180923NYGHOU,,,True,True,-6.5,44.0,21,19,59,0,24,40,385,2,1,3,17,368,427,1,1,2,7,50,12,5,2,2,00:24:30,Bill O'Brien,22
+81,Tennessee Titans,20180923TENJAX,True,(deferred),False,False,10.0,39.0,15,35,150,0,13,21,108,0,0,3,25,83,233,0,0,0,4,30,15,5,0,0,00:32:47,Mike Vrabel,9
+82,Jacksonville Jaguars,20180923TENJAX,,,True,True,-10.0,39.0,12,19,87,0,21,34,155,0,0,3,10,145,232,2,1,1,8,75,14,5,1,0,00:27:13,Doug Marrone,6
+83,San Francisco 49ers,20180923SFOKAN,,,False,False,5.5,53.0,26,29,178,1,20,30,251,2,0,4,23,228,406,3,0,0,14,147,9,2,2,2,00:29:59,Kyle Shanahan,27
+84,Kansas City Chiefs,20180923SFOKAN,True,(deferred),True,True,-5.5,53.0,31,28,77,2,24,38,314,3,0,2,7,307,384,2,0,0,6,48,11,7,1,1,00:30:01,Andy Reid,38
+85,Oakland Raiders,20180923OAKMIA,,,False,False,3.0,46.0,25,32,109,1,27,39,345,1,2,3,20,325,434,1,0,2,8,38,13,7,1,0,00:38:31,Jon Gruden,20
+86,Miami Dolphins,20180923OAKMIA,True,(deferred),True,True,-3.0,46.0,13,14,41,0,18,24,341,4,0,1,9,332,373,0,0,0,9,74,8,2,0,0,00:21:29,Adam Gase,28
+87,Los Angeles Chargers,20180923LACLAR,True,(deferred),False,False,7.5,49.0,16,20,141,1,18,30,226,2,0,2,11,215,356,2,2,2,4,30,13,7,2,1,00:25:44,Anthony Lynn,23
+88,Los Angeles Rams,20180923LACLAR,,,True,True,-7.5,49.0,33,35,171,1,29,36,354,3,1,1,4,350,521,1,1,2,6,64,11,8,0,0,00:34:16,Sean McVay,35
+89,Chicago Bears,20180923CHIARI,True,(deferred),False,True,-5.5,39.0,21,31,122,1,24,35,220,0,1,3,26,194,316,1,1,2,7,45,14,5,1,1,00:36:21,Matt Nagy,16
+90,Arizona Cardinals,20180923CHIARI,,,True,False,5.5,39.0,13,18,53,0,17,26,193,2,3,4,25,168,221,2,1,4,6,43,10,3,1,0,00:23:39,Steve Wilks,14
+91,Dallas Cowboys,20180923DALSEA,,,False,False,1.0,40.0,17,19,166,0,19,34,168,1,2,5,31,137,303,1,1,3,7,55,13,3,2,1,00:27:16,Jason Garrett,13
+92,Seattle Seahawks,20180923DALSEA,True,(deferred),True,True,-1.0,40.0,18,39,113,1,16,26,192,2,0,2,10,182,295,1,0,0,10,67,16,7,0,0,00:32:44,Pete Carroll,24
+93,New England Patriots,20180923NWEDET,,,False,True,-7.0,55.0,12,19,89,0,14,26,133,1,1,2,13,120,209,0,0,1,5,38,9,2,1,0,00:20:45,Bill Belichick,10
+94,Detroit Lions,20180923NWEDET,True,(deferred),True,False,7.0,55.0,25,33,159,0,27,36,262,2,1,1,7,255,414,1,0,1,6,70,14,7,0,0,00:39:15,Matt Patricia,26
+95,Pittsburgh Steelers,20180924PITTAM,,,False,False,1.0,55.0,22,22,78,0,30,38,353,3,1,3,18,335,413,1,0,1,13,155,11,3,0,0,00:30:21,Mike Tomlin,30
+96,Tampa Bay Buccaneers,20180924PITTAM,True,(deferred),True,True,-1.0,55.0,28,16,63,0,30,50,411,3,3,3,19,392,455,1,1,4,9,80,9,3,1,1,00:29:39,Dirk Koetter,27
+97,Minnesota Vikings,20180927MINLAR,,,False,False,7.5,48.5,25,17,54,0,36,50,422,3,0,4,30,392,446,1,1,1,4,35,16,8,2,2,00:32:14,Mike Zimmer,31
+98,Los Angeles Rams,20180927MINLAR,True,(deferred),True,True,-7.5,48.5,25,20,100,0,26,34,465,5,0,1,9,456,556,1,0,0,2,15,6,1,1,0,00:27:46,Sean McVay,38
+99,Cincinnati Bengals,20180930CINATL,True,(deferred),False,False,3.5,52.5,30,23,99,2,29,41,337,3,1,3,29,308,407,0,0,1,6,55,12,7,2,2,00:30:38,Marvin Lewis,37
+100,Atlanta Falcons,20180930CINATL,,,True,True,-3.5,52.5,25,24,92,1,29,39,419,3,0,3,16,403,495,0,0,0,10,95,15,11,1,0,00:29:22,Dan Quinn,36
+101,Buffalo Bills,20180930BUFGNB,,,False,False,8.5,43.5,11,16,58,0,16,33,151,0,2,7,64,87,145,1,1,3,3,20,16,3,0,0,00:25:23,Sean McDermott,0
+102,Green Bay Packers,20180930BUFGNB,True,(deferred),True,True,-8.5,43.5,22,32,141,1,22,40,298,1,1,2,16,282,423,3,1,2,5,60,19,11,1,0,00:34:37,Mike McCarthy,22
+103,Tampa Bay Buccaneers,20180930TAMCHI,True,(deferred),False,False,3.0,46.0,16,18,60,0,25,38,271,1,3,4,20,251,311,1,0,3,11,99,12,3,2,2,00:31:54,Dirk Koetter,10
+104,Chicago Bears,20180930TAMCHI,,,True,True,-3.0,46.0,28,31,139,0,19,26,354,6,0,1,10,344,483,0,0,0,4,38,8,4,0,0,00:28:06,Matt Nagy,48
+105,Houston Texans,20180930HOUIND,True,(deferred),False,True,-1.0,48.0,30,35,119,1,29,42,375,2,1,7,28,347,466,0,0,1,10,54,16,8,1,1,00:40:04,Bill O'Brien,37
+106,Indianapolis Colts,20180930HOUIND,,,True,False,1.0,48.0,28,17,41,0,40,62,464,4,0,4,27,437,478,3,2,2,10,85,17,10,1,0,00:29:56,Frank Reich,34
+107,Detroit Lions,20180930DETDAL,,,False,False,2.5,43.5,18,20,96,1,24,30,307,2,0,3,21,286,382,0,0,0,8,58,11,6,0,0,00:29:55,Matt Patricia,24
+108,Dallas Cowboys,20180930DETDAL,True,(deferred),True,True,-2.5,43.5,26,35,183,0,17,27,255,2,0,3,24,231,414,2,0,0,2,20,12,5,1,1,00:30:05,Jason Garrett,26
+109,New York Jets,20180930NYJJAX,,,False,False,7.5,40.5,10,14,34,0,17,34,167,1,0,3,23,144,178,0,0,0,6,43,13,3,1,0,00:22:25,Todd Bowles,12
+110,Jacksonville Jaguars,20180930NYJJAX,True,(deferred),True,True,-7.5,40.5,23,34,126,1,29,38,388,2,1,2,11,377,503,4,2,3,9,89,15,6,1,1,00:37:35,Doug Marrone,31
+111,Miami Dolphins,20180930MIANWE,,,False,False,6.5,50.5,11,18,56,0,15,25,135,1,1,2,19,116,172,1,1,2,10,89,11,3,1,1,00:23:38,Adam Gase,7
+112,New England Patriots,20180930MIANWE,True,(deferred),True,True,-6.5,50.5,26,40,175,2,23,35,274,3,2,0,0,274,449,0,0,2,6,57,15,10,0,0,00:36:22,Bill Belichick,38
+113,Philadelphia Eagles,20180930PHITEN,True,(deferred),False,True,-3.0,41.5,25,22,117,0,33,50,348,2,0,4,33,315,432,3,1,1,8,77,15,5,0,0,00:34:25,Doug Pederson,23
+114,Tennessee Titans,20180930PHITEN,,,True,False,3.0,41.5,22,22,70,1,30,43,344,2,1,3,17,327,397,1,0,1,4,30,16,5,3,3,00:35:30,Mike Vrabel,26
+115,Cleveland Browns,20180930CLEOAK,True,(deferred),False,False,2.5,44.5,21,31,208,3,21,41,295,2,2,2,16,279,487,3,2,4,8,55,15,5,1,1,00:31:23,Hue Jackson,42
+116,Oakland Raiders,20180930CLEOAK,,,True,True,-2.5,44.5,27,29,139,0,35,58,437,4,2,3,11,426,565,0,0,2,6,65,16,5,1,0,00:36:51,Jon Gruden,45
+117,Seattle Seahawks,20180930SEAARI,,,False,True,-3.5,40.0,19,34,171,2,19,26,172,0,0,2,12,160,331,3,0,0,8,57,10,0,2,1,00:31:46,Pete Carroll,20
+118,Arizona Cardinals,20180930SEAARI,True,(deferred),True,False,3.5,40.0,18,28,92,1,15,27,180,1,0,1,9,171,263,2,1,1,5,38,12,5,0,0,00:28:14,Steve Wilks,17
+119,New Orleans Saints,20180930NORNYG,,,False,True,-3.5,51.5,25,32,170,3,19,34,227,0,0,1,8,219,389,1,0,0,5,51,13,5,1,1,00:31:00,Sean Payton,33
+120,New York Giants,20180930NORNYG,True,(deferred),True,False,3.5,51.5,22,15,65,1,31,41,255,1,0,3,21,234,299,2,2,2,6,67,10,5,0,0,00:29:00,Pat Shurmur,18
+121,San Francisco 49ers,20180930SFOLAC,,,False,False,10.5,46.0,22,21,76,0,23,37,298,2,2,1,10,288,364,2,0,2,4,29,12,5,0,0,00:27:34,Kyle Shanahan,27
+122,Los Angeles Chargers,20180930SFOLAC,True,,True,True,-10.5,46.0,21,27,126,0,25,39,250,3,1,1,8,242,368,1,0,1,5,49,14,4,1,1,00:32:26,Anthony Lynn,29
+123,Baltimore Ravens,20180930BALPIT,,,False,False,3.0,51.0,24,30,96,0,28,42,363,2,0,2,8,355,451,1,1,1,7,50,17,8,1,1,00:35:03,John Harbaugh,26
+124,Pittsburgh Steelers,20180930BALPIT,True,(deferred),True,True,-3.0,51.0,14,11,19,0,27,47,274,1,1,1,9,265,284,1,1,2,5,40,12,2,1,0,00:24:57,Mike Tomlin,14
