@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime
 
 class PlayByPlay:
     def __init__(self, id, seq, game_id):
@@ -85,8 +85,8 @@ class PlayByPlay:
     def getQtrTimeRem(self):
         return self.qtr_time_rem
     
-    def setQtrTimeRem(self, time):
-        self.qtr_time_rem = time
+    def setQtrTimeRem(self, value):
+        self.qtr_time_rem = datetime.strptime(value,"%M:%S").time()
     
     def getScoreAway(self):
         return self.score_away
