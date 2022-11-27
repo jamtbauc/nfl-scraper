@@ -6,7 +6,7 @@ class TeamGame:
         self.id = id
         self.team_id = name
         self.game_id = gameId
-        self.won_toss = None
+        self.won_toss = False
         self.toss_decision = None
         self.is_home = isHome
         self.is_favored = None
