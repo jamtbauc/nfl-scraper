@@ -246,10 +246,13 @@ class TeamGame:
         if label == "First Downs":
             self.setFirstDowns(int(value))
         elif label == "Rush-Yds-TDs":
-            stats = value.split('-')
-            self.setRushAtts(int(stats[0]))
-            self.setRushYds(int(stats[1]))
-            self.setRushTds(int(stats[2]))
+            value = value.split('-', 1)
+            atts = value[0]
+            right = value[1].rsplit('-', 1)
+            print(right)
+            self.setRushAtts(int(atts))
+            self.setRushYds(int(right[0]))
+            self.setRushTds(int(right[1]))
         elif label == "Cmp-Att-Yd-TD-INT":
             stats = value.split('-')
             self.setPassComps(int(stats[0]))

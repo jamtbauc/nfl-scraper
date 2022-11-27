@@ -1,174 +1,178 @@
 id,qtr,qtrTimeRem,down,ydsToGo,ydStart,scoreAway,scoreHome,detail,expPtsBefore,expPtsAfter,seq,gameId
-1,,,,,,,,"Chargers won the coin toss and deferred, Broncos to receive the opening kickoff.",,,1,20181118DENLAC
-2,1,00:15:00,,,LAC 35,0,0,"Michael Badgley kicks off 65 yards, touchback.",0.000,0.610,2,20181118DENLAC
-3,1,00:15:00,1,10,DEN 25,0,0,Case Keenum pass incomplete short right intended for Courtland Sutton,0.610,0.060,3,20181118DENLAC
-4,1,00:14:55,2,10,DEN 25,0,0,"Case Keenum pass complete short right to Phillip Lindsay for 8 yards (tackle by Kyle Emanuel). Penalty on Corey Liuget: Defensive Offside, 5 yards (no play)",0.060,0.740,4,20181118DENLAC
-5,1,00:14:35,2,5,DEN 30,0,0,Case Keenum pass incomplete short right intended for Emmanuel Sanders,0.740,0.040,5,20181118DENLAC
-6,1,00:14:31,3,5,DEN 30,0,0,Case Keenum pass complete short right to DaeSean Hamilton for 4 yards (tackle by Michael Davis),0.040,-1.110,6,20181118DENLAC
-7,1,00:13:57,4,1,DEN 34,0,0,Colby Wadman punts 46 yards downed by Brian Parker,-1.110,-0.280,7,20181118DENLAC
-8,1,00:13:47,1,10,LAC 20,0,0,Keenan Allen left tackle for 1 yard (tackle by Bradley Chubb and Adam Gotsis),0.280,-0.130,8,20181118DENLAC
-9,1,00:13:12,2,9,LAC 21,0,0,Philip Rivers pass complete short left to Tyrell Williams for 3 yards (tackle by Su'a Cravens),-0.130,-0.430,9,20181118DENLAC
-10,1,00:12:27,3,6,LAC 24,0,0,Philip Rivers pass complete deep middle to Keenan Allen for 27 yards (tackle by Darian Stewart),-0.430,2.320,10,20181118DENLAC
-11,1,00:11:44,1,10,DEN 49,0,0,Melvin Gordon up the middle for 5 yards (tackle by Zach Kerr and Todd Davis),2.320,2.460,11,20181118DENLAC
-12,1,00:11:04,2,5,DEN 44,0,0,Melvin Gordon right tackle for 3 yards (tackle by Shaquil Barrett),2.460,2.150,12,20181118DENLAC
-13,1,00:10:22,3,2,DEN 41,0,0,Philip Rivers pass complete short middle to Keenan Allen for 7 yards (tackle by Darian Stewart),2.150,3.310,13,20181118DENLAC
-14,1,00:09:42,1,10,DEN 34,0,0,Philip Rivers pass incomplete short left intended for Virgil Green (defended by Todd Davis),3.310,2.770,14,20181118DENLAC
-15,1,00:09:37,2,10,DEN 34,0,0,Philip Rivers pass incomplete short left intended for Tyrell Williams (defended by Justin Simmons),2.770,2.080,15,20181118DENLAC
-16,1,00:09:32,3,10,DEN 34,0,0,Philip Rivers pass complete short right to Antonio Gates for 14 yards (tackle by Su'a Cravens),2.080,4.240,16,20181118DENLAC
-17,1,00:08:46,1,10,DEN 20,0,0,"Melvin Gordon left end for no gain (tackle by Bradley Roby). Penalty on Mike Pouncey: Offensive Holding, 10 yards (no play)",4.240,3.580,17,20181118DENLAC
-18,1,00:08:25,1,20,DEN 30,0,0,Philip Rivers pass incomplete deep left intended for Travis Benjamin,3.580,2.340,18,20181118DENLAC
-19,1,00:08:19,2,20,DEN 30,0,0,"Penalty on Mike Pouncey: False Start, 5 yards (no play)",2.340,1.670,19,20181118DENLAC
-20,1,00:08:18,2,25,DEN 35,0,0,Philip Rivers pass complete short right to Keenan Allen for 4 yards (tackle by Shelby Harris),1.670,1.550,20,20181118DENLAC
-21,1,00:07:42,3,21,DEN 31,0,0,Austin Ekeler up the middle for 3 yards (tackle by Shaquil Barrett and Todd Davis),1.550,1.590,21,20181118DENLAC
-22,1,00:07:05,4,18,DEN 28,0,3,Michael Badgley 46 yard field goal good,1.590,3.000,22,20181118DENLAC
-23,1,00:07:00,,,LAC 35,0,3,"Michael Badgley kicks off 66 yards, returned by Adam Jones for no gain (tackle by Rayshawn Jenkins). Penalty on Andy Janovich: Offensive Holding, 7 yards",0.000,-0.380,23,20181118DENLAC
-24,1,00:06:55,1,10,DEN 8,0,3,Case Keenum pass complete short left to Courtland Sutton for 9 yards (tackle by Derwin James),-0.380,0.050,24,20181118DENLAC
-25,1,00:06:22,2,1,DEN 17,0,3,Phillip Lindsay up the middle for 7 yards (tackle by Jatavis Brown),0.050,0.540,25,20181118DENLAC
-26,1,00:05:45,1,10,DEN 24,0,3,Case Keenum pass incomplete short middle intended for Matt LaCosse,0.540,0.000,26,20181118DENLAC
-27,1,00:05:39,2,10,DEN 24,0,3,Case Keenum pass complete short left to Phillip Lindsay for 8 yards (tackle by Joey Bosa),0.000,0.370,27,20181118DENLAC
-28,1,00:04:59,3,2,DEN 32,0,3,Case Keenum pass incomplete deep right,0.370,-1.240,28,20181118DENLAC
-29,1,00:04:51,4,2,DEN 32,0,3,"Colby Wadman punts 52 yards, returned by Travis Benjamin for 2 yards (tackle by Isaac Yiadom)",-1.240,-0.040,29,20181118DENLAC
-30,1,00:04:43,1,10,LAC 18,0,3,Melvin Gordon right guard for no gain (tackle by Derek Wolfe and Bradley Chubb),0.040,-0.490,30,20181118DENLAC
-31,1,00:04:00,2,10,LAC 18,0,3,Philip Rivers pass incomplete short left intended for Tyrell Williams,-0.490,-1.170,31,20181118DENLAC
-32,1,00:03:56,3,10,LAC 18,0,3,Philip Rivers pass complete deep left to Mike Williams for 27 yards (tackle by Bradley Roby),-1.170,1.930,32,20181118DENLAC
-33,1,00:03:18,1,10,LAC 45,0,3,Philip Rivers pass complete deep middle to Virgil Green for 26 yards (tackle by Justin Simmons and Will Parks),1.930,3.640,33,20181118DENLAC
-34,1,00:02:37,1,10,DEN 29,0,3,"Derek Watt up the middle for no gain (tackle by Domata Peko and Justin Simmons). Penalty on Virgil Green: Illegal Shift, 5 yards (no play)",3.640,3.310,34,20181118DENLAC
-35,1,00:02:10,1,15,DEN 34,0,3,Melvin Gordon up the middle for -1 yards (tackle by Zach Kerr and Su'a Cravens),3.310,2.290,35,20181118DENLAC
-36,1,00:01:27,2,16,DEN 35,0,3,Philip Rivers pass incomplete short right intended for Keenan Allen (defended by Darian Stewart),2.290,1.620,36,20181118DENLAC
-37,1,00:01:22,3,16,DEN 35,0,3,"Penalty on Joe Barksdale: False Start, 5 yards (no play)",1.620,0.960,37,20181118DENLAC
-38,1,00:01:22,3,21,DEN 40,0,3,Philip Rivers pass complete short right to Melvin Gordon for 13 yards (tackle by Justin Simmons and Josey Jewell),0.960,1.670,38,20181118DENLAC
-39,1,00:00:45,4,8,DEN 27,0,6,Michael Badgley 45 yard field goal good,1.670,3.000,39,20181118DENLAC
-40,1,00:00:39,,,LAC 35,0,6,"Michael Badgley kicks off 67 yards, returned by Devontae Booker for no gain (tackle by Adrian Phillips and Brandon Facyson). Penalty on Jeff Richards: Unnecessary Roughness, 15 yards",0.000,0.940,40,20181118DENLAC
-41,1,00:00:33,1,10,DEN 30,0,6,Royce Freeman right end for no gain (tackle by Adrian Phillips),0.940,0.390,41,20181118DENLAC
-42,1,00:00:02,2,10,DEN 30,0,6,"Penalty on Brandon Mebane: Encroachment, 5 yards (no play)",0.390,1.070,42,20181118DENLAC
-43,2,00:15:00,2,5,DEN 35,0,6,Royce Freeman right guard for 7 yards (tackle by Derwin James),1.070,1.730,43,20181118DENLAC
-44,2,00:14:21,1,10,DEN 42,0,6,Case Keenum pass complete short left to Phillip Lindsay for 2 yards (tackle by Kyle Emanuel),1.730,1.460,44,20181118DENLAC
-45,2,00:13:42,2,8,DEN 44,0,6,Case Keenum pass complete short left to Emmanuel Sanders for 3 yards (tackle by Jatavis Brown),1.460,1.160,45,20181118DENLAC
-46,2,00:13:03,3,5,DEN 47,0,6,Case Keenum pass incomplete deep left intended for Courtland Sutton. Penalty on Devontae Booker: Offensive Pass Interference (Declined) ,1.160,-0.260,46,20181118DENLAC
-47,2,00:12:58,4,5,DEN 47,0,6,Colby Wadman pass complete short left to Andy Janovich for 12 yards (tackle by Derek Watt),-0.260,2.850,47,20181118DENLAC
-48,2,00:12:14,1,10,LAC 41,6,6,"Phillip Lindsay up the middle for 41 yards, touchdown",2.850,7.000,48,20181118DENLAC
-49,2,00:12:05,,,LAC 15,7,6,Brandon McManus kicks extra point good,0.000,0.000,49,20181118DENLAC
-50,2,00:12:05,,,DEN 35,7,6,"Brandon McManus kicks off 67 yards, returned by Desmond King for no gain (tackle by Joseph Jones)",0.000,-0.320,50,20181118DENLAC
-51,2,00:12:01,1,10,LAC 13,7,6,Melvin Gordon up the middle for 2 yards (tackle by Todd Davis),-0.320,-0.570,51,20181118DENLAC
-52,2,00:11:21,2,8,LAC 15,7,6,Philip Rivers pass incomplete short right intended for Tyrell Williams (defended by Bradley Roby),-0.570,-1.180,52,20181118DENLAC
-53,2,00:11:16,3,8,LAC 15,7,6,Philip Rivers pass complete short left to Antonio Gates for 27 yards (tackle by Darian Stewart),-1.180,1.730,53,20181118DENLAC
-54,2,00:10:27,1,10,LAC 42,7,6,Philip Rivers sacked by Adam Gotsis for -5 yards,1.730,0.510,54,20181118DENLAC
-55,2,00:09:38,2,15,LAC 37,7,6,"Penalty on LAC: Delay of Game, 5 yards (no play)",0.510,-0.160,55,20181118DENLAC
-56,2,00:09:17,2,20,LAC 32,7,6,Philip Rivers pass short left intended for Tyrell Williams is intercepted by Chris Harris at LAC-46 and returned for no gain,-0.160,-2.520,56,20181118DENLAC
-57,2,00:09:12,1,10,LAC 46,7,6,"Emmanuel Sanders left end for 6 yards (tackle by Jahleel Addae). Penalty on Damion Square: Unnecessary Roughness, 15 yards",2.520,3.910,57,20181118DENLAC
-58,2,00:08:44,1,10,LAC 25,7,6,Case Keenum pass complete short right to Royce Freeman for 7 yards (tackle by Derwin James),3.910,4.370,58,20181118DENLAC
-59,2,00:08:24,2,3,LAC 18,7,6,Royce Freeman left tackle for 1 yard (tackle by Damion Square),4.370,3.850,59,20181118DENLAC
-60,2,00:07:44,3,2,LAC 17,7,6,Royce Freeman up the middle for 1 yard (tackle by Melvin Ingram),3.850,2.530,60,20181118DENLAC
-61,2,00:06:57,4,1,LAC 16,7,6,Phillip Lindsay up the middle for no gain (tackle by Jatavis Brown and Kyle Emanuel),2.530,0.140,61,20181118DENLAC
-62,2,00:06:53,1,10,LAC 16,7,6,Philip Rivers pass complete short left to Keenan Allen for 10 yards (tackle by Chris Harris),-0.140,0.670,62,20181118DENLAC
-63,2,00:06:16,1,10,LAC 26,7,6,Melvin Gordon up the middle for 3 yards (tackle by Bradley Chubb),0.670,0.540,63,20181118DENLAC
-64,2,00:05:37,2,7,LAC 29,7,6,Philip Rivers pass incomplete deep right intended for Keenan Allen,0.540,-0.160,64,20181118DENLAC
-65,2,00:05:31,3,7,LAC 29,7,6,Philip Rivers pass complete short left to Melvin Gordon for 32 yards (tackle by Chris Harris and Justin Simmons),-0.160,2.980,65,20181118DENLAC
-66,2,00:04:42,1,10,DEN 39,7,6,Austin Ekeler up the middle for 2 yards (tackle by Shelby Harris),2.980,2.710,66,20181118DENLAC
-67,2,00:04:05,2,8,DEN 37,7,6,Austin Ekeler up the middle for 4 yards (tackle by Zach Kerr),2.710,2.540,67,20181118DENLAC
-68,2,00:03:25,3,4,DEN 33,7,6,Philip Rivers pass complete deep right to Mike Williams for 29 yards (tackle by Tramaine Brock),2.540,6.280,68,20181118DENLAC
-69,2,00:02:50,1,4,DEN 4,7,6,Philip Rivers pass incomplete short middle intended for Antonio Gates (defended by Todd Davis),6.280,5.340,69,20181118DENLAC
-70,2,00:02:45,2,4,DEN 4,7,12,"Philip Rivers pass complete short middle to Keenan Allen for 4 yards, touchdown. Penalty on Keenan Allen: Unsportsmanlike Conduct, 15 yards",5.340,7.000,70,20181118DENLAC
-71,2,00:02:39,,,DEN 15,7,13,Michael Badgley kicks extra point good,0.000,0.000,71,20181118DENLAC
-72,2,00:02:39,,,LAC 20,7,13,"Michael Badgley kicks off 48 yards, returned by Matt LaCosse for no gain (tackle by Rayshawn Jenkins)",0.000,1.730,72,20181118DENLAC
-73,2,00:02:35,1,10,DEN 42,7,13,Case Keenum pass incomplete short middle intended for Phillip Lindsay (defended by Jatavis Brown),1.730,1.190,73,20181118DENLAC
-74,2,00:02:31,2,10,DEN 42,7,13,Case Keenum pass incomplete short right intended for DaeSean Hamilton (defended by Michael Davis),1.190,0.500,74,20181118DENLAC
-75,2,00:02:24,3,10,DEN 42,7,13,Case Keenum pass complete short right to Phillip Lindsay for 11 yards (tackle by Jahleel Addae),0.500,2.460,75,20181118DENLAC
-76,2,00:02:00,1,10,LAC 47,7,13,"Case Keenum pass incomplete short right. Penalty on Jared Veldheer: Ineligible Downfield Pass, 5 yards (no play)",2.460,2.130,76,20181118DENLAC
-77,2,00:01:55,1,15,DEN 48,7,13,Case Keenum pass complete short left to Jeff Heuerman for 6 yards (tackle by Jatavis Brown),2.130,2.050,77,20181118DENLAC
-78,2,00:01:32,2,9,LAC 46,7,13,Case Keenum pass complete short right to Jeff Heuerman for 6 yards (tackle by Derwin James),2.050,2.150,78,20181118DENLAC
-79,2,00:01:07,3,3,LAC 40,7,13,Case Keenum pass incomplete short right intended for Tim Patrick,2.150,0.590,79,20181118DENLAC
-80,2,00:01:03,4,3,LAC 40,7,13,"Penalty on DEN: Delay of Game, 5 yards (no play)",0.590,0.270,80,20181118DENLAC
-81,2,00:00:59,4,8,LAC 45,7,13,"Colby Wadman punts 36 yards, fair catch by Travis Benjamin at LAC-9",0.270,0.380,81,20181118DENLAC
-82,2,00:00:56,1,10,LAC 9,7,13,Philip Rivers pass complete short left to Antonio Gates for 8 yards (tackle by Todd Davis),-0.380,-0.020,82,20181118DENLAC
-83,2,00:00:30,2,2,LAC 17,7,13,Philip Rivers sacked by Von Miller for -3 yards,-0.020,-0.840,83,20181118DENLAC
-84,2,00:00:25,,,,,,Timeout #1 by Denver Broncos,,,84,20181118DENLAC
-85,2,00:00:25,3,5,LAC 14,7,13,"Philip Rivers pass complete short right to Tyrell Williams for 3 yards (tackle by Tramaine Brock). Penalty on Bradley Chubb: Defensive Offside, 5 yards (no play)",-0.840,0.150,85,20181118DENLAC
-86,2,00:00:19,1,10,LAC 19,7,13,Philip Rivers pass incomplete deep middle intended for Travis Benjamin,0.150,-0.390,86,20181118DENLAC
-87,2,00:00:12,2,10,LAC 19,7,13,Melvin Gordon left tackle for 20 yards (tackle by Darian Stewart),-0.390,1.530,87,20181118DENLAC
-88,2,00:00:05,,,,,,Timeout #1 by Los Angeles Chargers,,,88,20181118DENLAC
-89,2,00:00:05,1,10,LAC 39,7,13,Philip Rivers sacked by Bradley Chubb for -9 yards,1.530,-0.230,89,20181118DENLAC
-90,3,00:15:00,,,DEN 35,7,13,"Brandon McManus kicks off 65 yards, touchback.",0.000,0.610,90,20181118DENLAC
-91,3,00:15:00,1,10,LAC 25,7,13,Philip Rivers pass complete deep left to Tyrell Williams for 19 yards (tackle by Darian Stewart),0.610,1.860,91,20181118DENLAC
-92,3,00:14:35,1,10,LAC 44,7,13,Melvin Gordon left tackle for 2 yards (tackle by Bradley Chubb),1.860,1.590,92,20181118DENLAC
-93,3,00:13:58,2,8,LAC 46,7,13,Melvin Gordon up the middle for 7 yards (tackle by Chris Harris and Bradley Roby),1.590,1.820,93,20181118DENLAC
-94,3,00:13:38,3,1,DEN 47,7,13,Melvin Gordon left tackle for 2 yards (tackle by Darian Stewart),1.820,2.590,94,20181118DENLAC
-95,3,00:13:03,1,10,DEN 45,7,13,Austin Ekeler left end for 17 yards (tackle by Justin Simmons and Chris Harris),2.590,3.710,95,20181118DENLAC
-96,3,00:12:15,1,10,DEN 28,7,13,Philip Rivers pass complete short right to Melvin Gordon for 15 yards (tackle by Darian Stewart),3.710,4.710,96,20181118DENLAC
-97,3,00:11:30,1,10,DEN 13,7,13,"Philip Rivers sacked by Shane Ray for no gain. Penalty on Chris Harris: Defensive Holding, 5 yards (no play)",4.710,5.370,97,20181118DENLAC
-98,3,00:11:02,1,8,DEN 8,7,13,Philip Rivers pass incomplete short right intended for Antonio Gates (defended by Josey Jewell),5.370,4.570,98,20181118DENLAC
-99,3,00:10:55,2,8,DEN 8,7,13,"Philip Rivers pass complete short right to Melvin Gordon for 4 yards (tackle by Will Parks). Penalty on Dan Feeney: Offensive Holding, 10 yards (no play)",4.570,3.150,99,20181118DENLAC
-100,3,00:10:32,2,18,DEN 18,7,13,"Philip Rivers pass complete short left to Keenan Allen for 6 yards (tackle by Justin Simmons). Penalty on Justin Simmons: Unnecessary Roughness, 6 yards",3.150,5.830,100,20181118DENLAC
-101,3,00:10:02,1,6,DEN 6,7,19,"Philip Rivers pass complete short left to Antonio Gates for 6 yards, touchdown",5.830,7.000,101,20181118DENLAC
-102,3,00:09:56,,,DEN 15,7,19,Michael Badgley kicks extra point no good wide left,0.000,-1.000,102,20181118DENLAC
-103,3,00:09:56,,,LAC 35,7,19,"Michael Badgley kicks off 65 yards, touchback.",0.000,0.610,103,20181118DENLAC
-104,3,00:09:56,1,10,DEN 25,7,19,Phillip Lindsay up the middle for 5 yards (tackle by Jatavis Brown),0.610,0.740,104,20181118DENLAC
-105,3,00:09:31,2,5,DEN 30,7,19,Case Keenum pass complete short right to Jeff Heuerman for 3 yards (tackle by Derwin James),0.740,0.430,105,20181118DENLAC
-106,3,00:08:50,3,2,DEN 33,7,19,Case Keenum pass incomplete short right intended for Courtland Sutton,0.430,-1.180,106,20181118DENLAC
-107,3,00:08:40,4,2,DEN 33,7,19,"Colby Wadman punts 45 yards, fair catch by Travis Benjamin at LAC-22",-1.180,-0.410,107,20181118DENLAC
-108,3,00:08:38,1,10,LAC 22,7,19,Philip Rivers pass complete short middle to Keenan Allen for 7 yards (tackle by Will Parks),0.410,0.810,108,20181118DENLAC
-109,3,00:08:02,2,3,LAC 29,7,19,Melvin Gordon left tackle for 5 yards (tackle by Shaquil Barrett and Chris Harris),0.810,1.200,109,20181118DENLAC
-110,3,00:07:19,1,10,LAC 34,7,19,Melvin Gordon right tackle for 4 yards (tackle by Josey Jewell),1.200,1.200,110,20181118DENLAC
-111,3,00:06:36,2,6,LAC 38,7,19,Philip Rivers pass complete short left to Melvin Gordon for 7 yards (tackle by Josey Jewell),1.200,1.930,111,20181118DENLAC
-112,3,00:05:51,1,10,LAC 45,7,19,Austin Ekeler up the middle for 3 yards (tackle by Adam Gotsis and Will Parks),1.930,1.790,112,20181118DENLAC
-113,3,00:05:10,2,7,LAC 48,7,19,Philip Rivers pass complete short left to Keenan Allen for 16 yards (tackle by Chris Harris). Penalty on Chris Harris: Defensive Pass Interference (Declined) ,1.790,3.180,113,20181118DENLAC
-114,3,00:04:41,1,10,DEN 36,7,19,Melvin Gordon left end for 1 yard (tackle by Bradley Chubb and Josey Jewell),3.180,2.770,114,20181118DENLAC
-115,3,00:03:59,2,9,DEN 35,7,19,Philip Rivers pass incomplete short middle intended for Virgil Green,2.770,2.080,115,20181118DENLAC
-116,3,00:03:55,3,9,DEN 35,7,19,Philip Rivers pass short right intended for Travis Benjamin is intercepted by Von Miller at DEN-40 and returned for 42 yards,2.080,-4.370,116,20181118DENLAC
-117,3,00:03:45,1,10,LAC 18,7,19,Phillip Lindsay right end for 8 yards (tackle by Jahleel Addae),4.370,5.230,117,20181118DENLAC
-118,3,00:03:04,2,2,LAC 10,7,19,Royce Freeman up the middle for 7 yards (tackle by Jatavis Brown),5.230,6.510,118,20181118DENLAC
-119,3,00:02:28,1,3,LAC 3,13,19,"Royce Freeman up the middle for 3 yards, touchdown",6.510,7.000,119,20181118DENLAC
-120,3,00:02:24,,,LAC 15,14,19,Brandon McManus kicks extra point good,0.000,0.000,120,20181118DENLAC
-121,3,00:02:24,,,DEN 35,14,19,"Brandon McManus kicks off 64 yards, returned by Desmond King for no gain (tackle by Keishawn Bierria and Su'a Cravens)",0.000,0.670,121,20181118DENLAC
-122,3,00:02:17,1,10,LAC 26,14,19,Philip Rivers pass complete short middle to Keenan Allen for 8 yards (tackle by Chris Harris),0.670,1.210,122,20181118DENLAC
-123,3,00:01:41,2,2,LAC 34,14,19,Melvin Gordon up the middle for 1 yard (tackle by Justin Simmons and Will Parks),1.210,0.630,123,20181118DENLAC
-124,3,00:01:01,3,1,LAC 35,14,19,Philip Rivers pass incomplete short left intended for Mike Williams (defended by Bradley Roby),0.630,-1.040,124,20181118DENLAC
-125,3,00:00:58,4,1,LAC 35,14,19,"Donnie Jones punts 38 yards, fair catch by Adam Jones at DEN-27",-1.040,-0.740,125,20181118DENLAC
-126,3,00:00:50,1,10,DEN 27,14,19,"Phillip Lindsay right end for 4 yards (tackle by Kyle Emanuel). Penalty on Derwin James: Face Mask (15 Yards), 15 yards",0.740,1.990,126,20181118DENLAC
-127,3,00:00:24,1,10,DEN 46,14,19,Case Keenum pass complete short left to Emmanuel Sanders for no gain (tackle by Desmond King),1.990,1.450,127,20181118DENLAC
-128,4,00:15:00,2,10,DEN 46,14,19,Case Keenum pass complete short middle to Courtland Sutton for 39 yards (tackle by Adrian Phillips),1.450,4.580,128,20181118DENLAC
-129,4,00:14:16,1,10,LAC 15,14,19,Phillip Lindsay up the middle for 3 yards (tackle by Jatavis Brown),4.580,4.450,129,20181118DENLAC
-130,4,00:13:37,2,7,LAC 12,14,19,Royce Freeman up the middle for 4 yards (tackle by Damion Square and Casey Hayward),4.450,4.450,130,20181118DENLAC
-131,4,00:12:56,3,3,LAC 8,14,19,Case Keenum pass complete short right to Phillip Lindsay for 6 yards (tackle by Michael Davis),4.450,6.740,131,20181118DENLAC
-132,4,00:12:20,1,2,LAC 2,20,19,"Phillip Lindsay left end for 2 yards, touchdown",6.740,7.000,132,20181118DENLAC
-133,4,00:12:17,,,LAC 2,20,19,"Two Point Attempt: Case Keenum rushes, conversion fails.",0.000,-1.000,133,20181118DENLAC
-134,4,00:12:17,,,DEN 35,20,19,"Brandon McManus kicks off 67 yards, returned by Desmond King for no gain (tackle by Devontae Booker and Keishawn Bierria)",0.000,0.810,134,20181118DENLAC
-135,4,00:12:11,1,10,LAC 28,20,19,Philip Rivers pass complete short right to Austin Ekeler for 17 yards (tackle by Justin Simmons),0.810,1.930,135,20181118DENLAC
-136,4,00:11:26,1,10,LAC 45,20,19,Philip Rivers pass complete short left to Melvin Gordon for 6 yards (tackle by Bradley Roby),1.930,2.190,136,20181118DENLAC
-137,4,00:10:45,2,4,DEN 49,20,19,Melvin Gordon up the middle for 5 yards (tackle by Justin Simmons),2.190,2.650,137,20181118DENLAC
-138,4,00:10:02,1,10,DEN 44,20,19,Philip Rivers pass complete short right to Austin Ekeler for 23 yards (tackle by Darian Stewart and Chris Harris),2.650,4.170,138,20181118DENLAC
-139,4,00:09:12,1,10,DEN 21,20,19,Austin Ekeler right tackle for no gain (tackle by Todd Davis),4.170,3.630,139,20181118DENLAC
-140,4,00:08:31,2,10,DEN 21,20,19,"Penalty on Sam Tevi: False Start, 5 yards (no play)",3.630,2.950,140,20181118DENLAC
-141,4,00:08:09,2,15,DEN 26,20,19,Melvin Gordon up the middle for no gain (tackle by Adam Gotsis),2.950,2.280,141,20181118DENLAC
-142,4,00:07:27,3,15,DEN 26,20,19,Philip Rivers pass complete short left to Melvin Gordon for 14 yards (tackle by Darian Stewart),2.280,2.780,142,20181118DENLAC
-143,4,00:06:51,,,,,,Timeout #1 by Los Angeles Chargers,,,143,20181118DENLAC
-144,4,00:06:51,4,1,DEN 12,20,22,Michael Badgley 30 yard field goal good,2.780,3.000,144,20181118DENLAC
-145,4,00:06:47,,,LAC 35,20,22,"Michael Badgley kicks off 60 yards, returned by Devontae Booker for no gain (tackle by Rayshawn Jenkins and Adrian Phillips)",0.000,0.670,145,20181118DENLAC
-146,4,00:06:42,1,10,DEN 26,20,22,Case Keenum pass incomplete short right intended for Emmanuel Sanders (defended by Casey Hayward),0.670,0.130,146,20181118DENLAC
-147,4,00:06:38,2,10,DEN 26,20,22,Case Keenum pass complete short middle to Emmanuel Sanders for 15 yards (tackle by Adrian Phillips),0.130,1.660,147,20181118DENLAC
-148,4,00:06:04,1,10,DEN 41,20,22,Phillip Lindsay right end for no gain (tackle by Uchenna Nwosu),1.660,1.120,148,20181118DENLAC
-149,4,00:05:24,2,10,DEN 41,20,22,Phillip Lindsay left tackle for 6 yards (tackle by Brandon Mebane),1.120,1.220,149,20181118DENLAC
-150,4,00:04:48,3,4,DEN 47,20,22,"Case Keenum pass deep left is intercepted by Adrian Phillips at LAC-14 and returned for -1 yards. Penalty on Jahleel Addae: Defensive Holding, 5 yards (no play)",1.220,2.390,150,20181118DENLAC
-151,4,00:04:40,1,10,LAC 48,20,22,Phillip Lindsay left tackle for 3 yards (tackle by Kyle Emanuel and Brandon Mebane),2.390,2.250,151,20181118DENLAC
-152,4,00:04:03,2,7,LAC 45,20,22,Case Keenum pass incomplete short right intended for Andy Janovich,2.250,1.550,152,20181118DENLAC
-153,4,00:03:57,3,7,LAC 45,20,22,Case Keenum pass incomplete short right intended for Jeff Heuerman,1.550,0.270,153,20181118DENLAC
-154,4,00:03:53,4,7,LAC 45,20,22,"Colby Wadman punts 45 yards, touchback.",0.270,-0.280,154,20181118DENLAC
-155,4,00:03:45,1,10,LAC 20,20,22,Melvin Gordon up the middle for 3 yards (tackle by Josey Jewell),0.280,0.140,155,20181118DENLAC
-156,4,00:03:38,,,,,,Timeout #1 by Denver Broncos,,,156,20181118DENLAC
-157,4,00:03:38,2,7,LAC 23,20,22,Philip Rivers pass complete short right to Virgil Green for 1 yard (tackle by Darian Stewart),0.140,-0.430,157,20181118DENLAC
-158,4,00:03:33,,,,,,Timeout #2 by Denver Broncos,,,158,20181118DENLAC
-159,4,00:03:33,3,6,LAC 24,20,22,Philip Rivers pass complete short right to Antonio Gates for 25 yards (tackle by Justin Simmons),-0.430,2.190,159,20181118DENLAC
-160,4,00:02:44,1,10,LAC 49,20,22,Melvin Gordon right tackle for 7 yards (tackle by Shelby Harris and Justin Simmons),2.190,2.590,160,20181118DENLAC
-161,4,00:02:39,,,,,,Timeout #3 by Denver Broncos,,,161,20181118DENLAC
-162,4,00:02:39,2,3,DEN 44,20,22,Philip Rivers up the middle for -4 yards (tackle by Bradley Chubb),2.590,1.360,162,20181118DENLAC
-163,4,00:02:00,3,7,DEN 48,20,22,Philip Rivers pass incomplete short right intended for Keenan Allen,1.360,0.070,163,20181118DENLAC
-164,4,00:01:58,4,7,DEN 48,20,22,"Donnie Jones punts 40 yards, fair catch by River Cracraft at DEN-8",0.070,0.380,164,20181118DENLAC
-165,4,00:01:51,1,10,DEN 8,20,22,Case Keenum pass complete short right to Jeff Heuerman for 5 yards (tackle by Derwin James),-0.380,-0.410,165,20181118DENLAC
-166,4,00:01:28,2,5,DEN 13,20,22,Case Keenum pass complete short left to Emmanuel Sanders for 38 yards (tackle by Jatavis Brown),-0.410,2.320,166,20181118DENLAC
-167,4,00:01:05,1,10,LAC 49,20,22,Case Keenum pass complete short middle to Devontae Booker for 4 yards (tackle by Adrian Phillips),2.320,2.320,167,20181118DENLAC
-168,4,00:00:43,2,6,LAC 45,20,22,"Case Keenum pass complete short right to Tim Patrick for 11 yards (tackle by Michael Davis). Penalty on Tim Patrick: Offensive Pass Interference, 10 yards (no play)",2.320,0.970,168,20181118DENLAC
-169,4,00:00:37,2,16,DEN 45,20,22,Case Keenum pass complete short right to Matt LaCosse for 9 yards (tackle by Desmond King),0.970,1.490,169,20181118DENLAC
-170,4,00:00:20,3,7,LAC 46,20,22,Case Keenum pass complete deep middle to Courtland Sutton for 30 yards (tackle by Derwin James),1.490,4.510,170,20181118DENLAC
-171,4,00:00:04,1,10,LAC 16,20,22,Case Keenum spiked the ball,4.510,3.900,171,20181118DENLAC
-172,4,00:00:03,,,,,,Timeout #2 by Los Angeles Chargers,,,172,20181118DENLAC
-173,4,00:00:03,2,10,LAC 16,23,22,Brandon McManus 34 yard field goal good,3.900,3.000,173,20181118DENLAC
+1,,,,,,,,"Buccaneers won the coin toss and deferred, Patriots to receive the opening kickoff.",,,1,20211003TAMNWE
+2,1,00:15:00,,,TAM 35,0,0,"Bradley Pinion kicks off 64 yards, out of bounds",,,2,20211003TAMNWE
+3,1,00:15:00,1,10,NWE 40,0,0,Mac Jones pass complete short right to Hunter Henry for 7 yards (tackle by Richard Sherman),,,3,20211003TAMNWE
+4,1,00:14:42,2,3,NWE 47,0,0,Mac Jones pass complete short right to Kendrick Bourne for 4 yards (tackle by Richard Sherman),,,4,20211003TAMNWE
+5,1,00:14:13,1,10,TAM 49,0,0,Mac Jones pass complete short right to Hunter Henry for 5 yards (tackle by Lavonte David),,,5,20211003TAMNWE
+6,1,00:13:51,2,5,TAM 44,0,0,Mac Jones sacked by Joe Tryon-Shoyinka for -4 yards,,,6,20211003TAMNWE
+7,1,00:13:11,3,9,TAM 48,0,0,Mac Jones pass incomplete short middle intended for Nelson Agholor (defended by Carlton Davis),,,7,20211003TAMNWE
+8,1,00:13:04,4,9,TAM 48,0,0,Jake Bailey punts 37 yards downed by Jakob Johnson,,,8,20211003TAMNWE
+9,1,00:12:54,1,10,TAM 11,0,0,Tom Brady pass incomplete deep middle intended for Mike Evans,,,9,20211003TAMNWE
+10,1,00:12:50,2,10,TAM 11,0,0,Tom Brady pass complete short right to Mike Evans for 8 yards (tackle by J.C. Jackson),,,10,20211003TAMNWE
+11,1,00:12:10,3,2,TAM 19,0,0,Leonard Fournette up the middle for 21 yards (tackle by Jonathan Jones),,,11,20211003TAMNWE
+12,1,00:11:37,1,10,TAM 40,0,0,Leonard Fournette for -1 yards (tackle by Kyle Dugger and Deatrich Wise),,,12,20211003TAMNWE
+13,1,00:10:54,2,11,TAM 39,0,0,Tom Brady pass complete short right to Antonio Brown for 6 yards (tackle by Jonathan Jones),,,13,20211003TAMNWE
+14,1,00:10:09,3,5,TAM 45,0,0,Tom Brady pass incomplete deep right intended for Cameron Brate,,,14,20211003TAMNWE
+15,1,00:10:04,4,5,TAM 45,0,0,Bradley Pinion punts 55 yards,,,15,20211003TAMNWE
+16,1,00:09:55,1,10,NWE 20,0,0,Damien Harris for -4 yards (tackle by Lavonte David),,,16,20211003TAMNWE
+17,1,00:09:31,2,14,NWE 16,0,0,"Mac Jones pass complete short middle to Jakobi Meyers for no gain. Jakobi Meyers fumbles (forced by Shaquil Barrett), recovered by Devin White at NE-24 (tackle by Isaiah Wynn) Replay Assistant challenged the fumble ruling, and the original play was overturned. Mac Jones pass incomplete intended for Jakobi Meyers (defended by Shaquil Barrett)",,,17,20211003TAMNWE
+18,1,00:09:27,3,14,NWE 16,0,0,Mac Jones pass complete short middle to Brandon Bolden for 7 yards (tackle by Ross Cockrell and Mike Edwards),,,18,20211003TAMNWE
+19,1,00:08:53,4,7,NWE 23,0,0,"Jake Bailey punts 49 yards, returned by Jaydon Mickens for no gain (tackle by Matthew Slater). Penalty on Rashard Robinson: Offensive Illegal Block Above the Waist, 10 yards (accepted) ",,,19,20211003TAMNWE
+20,1,00:08:42,1,10,TAM 18,0,0,Leonard Fournette left end for 11 yards (tackle by J.C. Jackson),,,20,20211003TAMNWE
+21,1,00:08:04,1,10,TAM 29,0,0,Tom Brady pass incomplete deep middle intended for Mike Evans (defended by J.C. Jackson),,,21,20211003TAMNWE
+22,1,00:07:59,2,10,TAM 29,0,0,Tom Brady pass complete short left to Leonard Fournette for 13 yards (tackle by Dont'a Hightower and J.C. Jackson),,,22,20211003TAMNWE
+23,1,00:07:23,1,10,TAM 42,0,0,Ronald Jones up the middle for 3 yards (tackle by Deatrich Wise),,,23,20211003TAMNWE
+24,1,00:06:43,1,10,TAM 45,0,0,Tom Brady pass complete to Mike Evans for 13 yards (tackle by J.C. Jackson),,,24,20211003TAMNWE
+25,1,00:06:10,1,10,NWE 42,0,0,Tom Brady pass complete short middle to Mike Evans for 28 yards (tackle by Devin McCourty),,,25,20211003TAMNWE
+26,1,00:05:20,,,,,,Timeout #1 by Tampa Bay Buccaneers,,,26,20211003TAMNWE
+27,1,00:05:20,1,10,NWE 14,0,0,Tom Brady pass complete to Antonio Brown for 3 yards (tackle by Jalen Mills),,,27,20211003TAMNWE
+28,1,00:05:02,2,7,NWE 11,0,0,Tom Brady pass incomplete short middle intended for Codey McElroy,,,28,20211003TAMNWE
+29,1,00:04:57,3,7,NWE 11,0,0,Tom Brady pass incomplete short middle intended for Cameron Brate,,,29,20211003TAMNWE
+30,1,00:04:53,4,7,NWE 11,3,0,Ryan Succop 29 yard field goal good,,,30,20211003TAMNWE
+31,1,00:04:49,,,TAM 35,3,0,"Bradley Pinion kicks off 65 yards, touchback.",,,31,20211003TAMNWE
+32,1,00:04:49,1,10,NWE 25,3,0,Mac Jones pass complete short middle to Kendrick Bourne for 17 yards (tackle by Devin White and Antoine Winfield),,,32,20211003TAMNWE
+33,1,00:04:20,1,10,NWE 42,3,0,J.J. Taylor left tackle for no gain (tackle by William Gholston),,,33,20211003TAMNWE
+34,1,00:03:55,2,10,NWE 42,3,0,Mac Jones pass incomplete short middle intended for Hunter Henry,,,34,20211003TAMNWE
+35,1,00:03:46,3,10,NWE 42,3,0,Mac Jones pass deep middle (defended by Ross Cockrell) intended for Nelson Agholor is intercepted by Antoine Winfield at TB-34 and returned for no gain (tackle by Nelson Agholor),,,35,20211003TAMNWE
+36,1,00:03:39,1,10,TAM 34,3,0,Leonard Fournette for 4 yards (tackle by Kyle Dugger),,,36,20211003TAMNWE
+37,1,00:03:11,2,7,TAM 38,3,0,Tom Brady pass incomplete deep right intended for Tyler Johnson,,,37,20211003TAMNWE
+38,1,00:03:07,3,6,TAM 38,3,0,"Penalty on NWE: Defensive Too Many Men on Field, 5 yards (accepted) (no play)",,,38,20211003TAMNWE
+39,1,00:03:07,3,1,TAM 43,3,0,Leonard Fournette up the middle for 3 yards (tackle by Deatrich Wise),,,39,20211003TAMNWE
+40,1,00:02:36,1,10,TAM 46,3,0,Tom Brady pass complete short right to Mike Evans for 6 yards (tackle by J.C. Jackson),,,40,20211003TAMNWE
+41,1,00:01:57,2,4,NWE 48,3,0,Tom Brady pass complete short right to Mike Evans for no gain (tackle by Kyle Van Noy),,,41,20211003TAMNWE
+42,1,00:01:10,3,4,NWE 48,3,0,Tom Brady pass complete deep left to Antonio Brown for 27 yards (tackle by Jonathan Jones),,,42,20211003TAMNWE
+43,1,00:00:35,1,10,NWE 21,3,0,Leonard Fournette up the middle for 3 yards (tackle by Deatrich Wise and Dont'a Hightower),,,43,20211003TAMNWE
+44,2,00:15:00,2,7,NWE 18,3,0,Tom Brady pass incomplete short middle intended for Mike Evans,,,44,20211003TAMNWE
+45,2,00:14:56,3,7,NWE 18,3,0,Tom Brady pass incomplete short left intended for Leonard Fournette,,,45,20211003TAMNWE
+46,2,00:14:53,4,7,NWE 18,3,0,Ryan Succop 36 yard field goal no good,,,46,20211003TAMNWE
+47,2,00:14:49,1,10,NWE 26,3,0,"Damien Harris up the middle for no gain. Penalty on Michael Onwenu: Offensive Holding, 10 yards (accepted) (no play)",,,47,20211003TAMNWE
+48,2,00:14:29,1,20,NWE 16,3,0,Mac Jones pass complete short right to Jonnu Smith for 1 yard (tackle by William Gholston),,,48,20211003TAMNWE
+49,2,00:13:57,2,19,NWE 17,3,0,Mac Jones pass complete short right to Kendrick Bourne for 16 yards (tackle by Richard Sherman),,,49,20211003TAMNWE
+50,2,00:13:22,3,3,NWE 33,3,0,Mac Jones pass complete to Jakobi Meyers for 15 yards (tackle by Ross Cockrell),,,50,20211003TAMNWE
+51,2,00:12:49,1,10,NWE 48,3,0,Mac Jones pass incomplete short middle intended for Jakobi Meyers,,,51,20211003TAMNWE
+52,2,00:12:44,2,10,NWE 48,3,0,Mac Jones pass complete short right to Kendrick Bourne for 5 yards (tackle by Antoine Winfield),,,52,20211003TAMNWE
+53,2,00:12:08,3,5,TAM 47,3,0,"Mac Jones pass incomplete short right intended for N'Keal Harry. Penalty on Richard Sherman: Defensive Pass Interference, 10 yards (accepted) (no play)",,,53,20211003TAMNWE
+54,2,00:12:02,1,10,TAM 37,3,0,Damien Harris up the middle for no gain (tackle by Lavonte David and Ndamukong Suh),,,54,20211003TAMNWE
+55,2,00:11:25,2,10,TAM 37,3,0,"Damien Harris for no gain (tackle by Lavonte David). Penalty on Michael Onwenu: Offensive Holding, 10 yards (accepted) (no play)",,,55,20211003TAMNWE
+56,2,00:11:06,2,20,TAM 47,3,0,Mac Jones pass complete short middle to Kendrick Bourne for 16 yards (tackle by Richard Sherman),,,56,20211003TAMNWE
+57,2,00:10:24,3,4,TAM 31,3,0,Mac Jones pass complete short right to Brandon Bolden for 7 yards (tackle by Mike Edwards),,,57,20211003TAMNWE
+58,2,00:09:53,1,10,TAM 24,3,0,Brandon Bolden left guard for no gain (tackle by Jordan Whitehead),,,58,20211003TAMNWE
+59,2,00:09:14,2,10,TAM 24,3,0,"Mac Jones pass incomplete intended for Nelson Agholor. Penalty on Carlton Davis: Defensive Pass Interference, 10 yards (accepted) (no play)",,,59,20211003TAMNWE
+60,2,00:09:10,1,10,TAM 14,3,0,Mac Jones pass complete short middle to Jakobi Meyers for 3 yards (tackle by Devin White and Lavonte David),,,60,20211003TAMNWE
+61,2,00:08:35,2,7,TAM 11,3,6,"Mac Jones pass complete to Hunter Henry for 11 yards, touchdown",,,61,20211003TAMNWE
+62,2,00:08:28,,,TAM 15,3,7,Nick Folk kicks extra point good,,,62,20211003TAMNWE
+63,2,00:08:28,,,NWE 35,3,7,"Jake Bailey kicks off 65 yards, touchback.",,,63,20211003TAMNWE
+64,2,00:08:28,1,10,TAM 25,3,7,Ronald Jones right guard for 6 yards (tackle by Henry Anderson),,,64,20211003TAMNWE
+65,2,00:07:50,2,4,TAM 31,3,7,"Penalty on O.J. Howard: False Start, 5 yards (accepted) (no play)",,,65,20211003TAMNWE
+66,2,00:07:50,2,9,TAM 26,3,7,Tom Brady pass complete short left to Antonio Brown for 8 yards (tackle by Jonathan Jones),,,66,20211003TAMNWE
+67,2,00:07:07,3,1,TAM 34,3,7,Leonard Fournette right end for 3 yards (tackle by Matt Judon and Jonathan Jones),,,67,20211003TAMNWE
+68,2,00:06:39,1,10,TAM 37,3,7,Tom Brady sacked by Matt Judon for -8 yards,,,68,20211003TAMNWE
+69,2,00:05:51,2,18,TAM 29,3,7,Tom Brady pass incomplete deep right intended for Cameron Brate,,,69,20211003TAMNWE
+70,2,00:05:45,3,18,TAM 29,3,7,Tom Brady pass complete short left to Chris Godwin for 1 yard (tackle by Jalen Mills),,,70,20211003TAMNWE
+71,2,00:05:05,4,17,TAM 30,3,7,Bradley Pinion punts 38 yards downed by Rashard Robinson,,,71,20211003TAMNWE
+72,2,00:04:54,1,10,NWE 32,3,7,Mac Jones pass complete short right to Jakobi Meyers for 4 yards (tackle by Richard Sherman),,,72,20211003TAMNWE
+73,2,00:04:31,2,6,NWE 36,3,7,Mac Jones pass complete short left to Jakobi Meyers for 12 yards (tackle by Carlton Davis),,,73,20211003TAMNWE
+74,2,00:03:48,1,10,NWE 48,3,7,Damien Harris up the middle for -1 yards (tackle by Jordan Whitehead),,,74,20211003TAMNWE
+75,2,00:03:23,2,11,NWE 47,3,7,Mac Jones sacked by Shaquil Barrett for -6 yards,,,75,20211003TAMNWE
+76,2,00:02:34,3,17,NWE 41,3,7,Jakobi Meyers pass complete to Brandon Bolden for 15 yards (tackle by Antoine Winfield),,,76,20211003TAMNWE
+77,2,00:02:00,4,2,TAM 44,3,7,"Penalty on NWE: Delay of Game, 5 yards (accepted) (no play)",,,77,20211003TAMNWE
+78,2,00:02:00,4,7,TAM 49,3,7,Jake Bailey punts 44 yards downed by Justin Bethel,,,78,20211003TAMNWE
+79,2,00:01:49,1,10,TAM 5,3,7,Tom Brady pass complete short left to Antonio Brown for 4 yards (tackle by Jonathan Jones),,,79,20211003TAMNWE
+80,2,00:01:25,2,6,TAM 9,3,7,Tom Brady pass complete deep right to Chris Godwin for 28 yards (tackle by Adrian Phillips),,,80,20211003TAMNWE
+81,2,00:01:15,,,,,,Timeout #2 by Tampa Bay Buccaneers,,,81,20211003TAMNWE
+82,2,00:01:15,1,10,TAM 37,3,7,Tom Brady pass complete deep left to Chris Godwin for 26 yards (tackle by Jalen Mills),,,82,20211003TAMNWE
+83,2,00:00:50,1,10,NWE 37,3,7,Tom Brady pass complete short right to Cameron Brate for 11 yards (tackle by Jonathan Jones),,,83,20211003TAMNWE
+84,2,00:00:29,1,10,NWE 26,3,7,Tom Brady pass incomplete deep left intended for Chris Godwin,,,84,20211003TAMNWE
+85,2,00:00:24,2,10,NWE 26,3,7,Tom Brady pass incomplete short right intended for Antonio Brown,,,85,20211003TAMNWE
+86,2,00:00:21,3,10,NWE 26,3,7,Tom Brady pass incomplete short right intended for Antonio Brown,,,86,20211003TAMNWE
+87,2,00:00:18,,,,,,Timeout #1 by New England Patriots,,,87,20211003TAMNWE
+88,2,00:00:18,4,10,NWE 26,6,7,Ryan Succop 44 yard field goal good,,,88,20211003TAMNWE
+89,2,00:00:13,,,TAM 35,6,7,"Bradley Pinion kicks off 65 yards, touchback.",,,89,20211003TAMNWE
+90,2,00:00:13,1,10,NWE 25,6,7,Mac Jones kneels for -1 yards,,,90,20211003TAMNWE
+91,3,00:15:00,,,NWE 35,6,7,"Jake Bailey kicks off 64 yards, returned by Jaydon Mickens for 13 yards (tackle by Justin Bethel and Chase Winovich)",,,91,20211003TAMNWE
+92,3,00:14:55,1,10,TAM 14,6,7,Leonard Fournette right guard for 4 yards (tackle by Lawrence Guy),,,92,20211003TAMNWE
+93,3,00:14:16,2,6,TAM 18,6,7,Tom Brady pass incomplete short middle intended for Cameron Brate,,,93,20211003TAMNWE
+94,3,00:14:13,3,6,TAM 18,6,7,"Tom Brady pass complete to Antonio Brown for no gain. Penalty on Donovan Smith: Illegal Use of Hands / Offense, 9 yards (accepted) (no play)",,,94,20211003TAMNWE
+95,3,00:13:55,3,15,TAM 9,6,7,Leonard Fournette right end for 6 yards (tackle by Kyle Dugger),,,95,20211003TAMNWE
+96,3,00:12:58,4,9,TAM 15,6,7,"Bradley Pinion punts 34 yards, returned by Gunner Olszewski for 11 yards (tackle by Kevin Minter)",,,96,20211003TAMNWE
+97,3,00:12:46,1,10,TAM 38,6,7,Mac Jones pass complete short middle to Damien Harris for 9 yards (tackle by Shaquil Barrett),,,97,20211003TAMNWE
+98,3,00:12:06,2,1,TAM 29,6,7,Damien Harris up the middle for 1 yard (tackle by William Gholston),,,98,20211003TAMNWE
+99,3,00:11:19,1,10,TAM 28,6,7,"Mac Jones pass complete short right to J.J. Taylor for no gain. J.J. Taylor fumbles (forced by Antoine Winfield), recovered by Richard Sherman at TB-28 and returned for 4 yards (tackle by J.J. Taylor)",,,99,20211003TAMNWE
+100,3,00:11:11,1,10,TAM 32,6,7,Leonard Fournette left guard for 8 yards (tackle by Adrian Phillips),,,100,20211003TAMNWE
+101,3,00:10:37,2,2,TAM 40,6,7,Leonard Fournette left guard for no gain (tackle by Lawrence Guy),,,101,20211003TAMNWE
+102,3,00:09:55,3,2,TAM 40,6,7,Tom Brady pass incomplete short left intended for O.J. Howard (defended by Deatrich Wise),,,102,20211003TAMNWE
+103,3,00:09:51,4,2,TAM 40,6,7,"Bradley Pinion punts 43 yards, returned by Gunner Olszewski for 6 yards (tackle by Grant Stuard)",,,103,20211003TAMNWE
+104,3,00:09:41,1,10,NWE 23,6,7,Nelson Agholor for 4 yards (tackle by Ross Cockrell and Antoine Winfield),,,104,20211003TAMNWE
+105,3,00:09:08,2,6,NWE 27,6,7,Mac Jones sacked by William Gholston for -6 yards,,,105,20211003TAMNWE
+106,3,00:08:26,3,12,NWE 21,6,7,Mac Jones sacked by Joe Tryon-Shoyinka for -9 yards,,,106,20211003TAMNWE
+107,3,00:07:45,4,21,NWE 12,6,7,"Jake Bailey punts 58 yards, returned by Jaydon Mickens for 4 yards. Jaydon Mickens fumbles (forced by Matthew Slater) (tackle by Matthew Slater), recovered by Jakob Johnson at TB-34. Penalty on Matthew Slater: Unsportsmanlike Conduct / Offense, 6 yards (accepted) (no play)",,,107,20211003TAMNWE
+108,3,00:07:17,4,6,NWE 6,6,7,"Jake Bailey punts 58 yards, returned by Jaydon Mickens for 12 yards (tackle by Brandon Bolden)",,,108,20211003TAMNWE
+109,3,00:07:17,1,10,TAM 48,6,7,Tom Brady pass complete short right to Leonard Fournette for 11 yards (tackle by Matt Judon),,,109,20211003TAMNWE
+110,3,00:06:41,1,10,NWE 41,6,7,"Leonard Fournette for 2 yards (tackle by Matt Judon and Davon Godchaux). Penalty on Davon Godchaux: Illegal Use of Hands / Defense, 5 yards (accepted) ",,,110,20211003TAMNWE
+111,3,00:06:28,1,10,NWE 34,6,7,Leonard Fournette left tackle for 7 yards (tackle by Kyle Dugger),,,111,20211003TAMNWE
+112,3,00:05:44,2,3,NWE 27,6,7,Leonard Fournette left end for 7 yards (tackle by Kyle Dugger),,,112,20211003TAMNWE
+113,3,00:04:48,1,10,NWE 20,6,7,Tom Brady pass incomplete deep right intended for Chris Godwin,,,113,20211003TAMNWE
+114,3,00:04:45,2,10,NWE 20,6,7,Tom Brady pass complete to Mike Evans for 9 yards (tackle by J.C. Jackson),,,114,20211003TAMNWE
+115,3,00:04:10,3,1,NWE 11,6,7,Ronald Jones up the middle for 3 yards (tackle by Carl Davis),,,115,20211003TAMNWE
+116,3,00:03:33,1,8,NWE 8,12,7,"Ronald Jones for 8 yards, touchdown",,,116,20211003TAMNWE
+117,3,00:03:29,,,NWE 15,13,7,Ryan Succop kicks extra point good,,,117,20211003TAMNWE
+118,3,00:03:29,,,TAM 35,13,7,"Bradley Pinion kicks off 67 yards, returned by Brandon Bolden for 25 yards (tackle by Kevin Minter and Rashard Robinson)",,,118,20211003TAMNWE
+119,3,00:03:21,1,10,NWE 23,13,7,Mac Jones pass complete short right to Damien Harris for 21 yards (tackle by Antoine Winfield),,,119,20211003TAMNWE
+120,3,00:02:42,1,10,NWE 44,13,7,Mac Jones pass complete short left to Nelson Agholor for 13 yards (tackle by Pierre Desir),,,120,20211003TAMNWE
+121,3,00:02:10,1,10,TAM 43,13,7,Mac Jones pass complete short left to Jakobi Meyers for 5 yards (tackle by Lavonte David),,,121,20211003TAMNWE
+122,3,00:01:38,2,5,TAM 38,13,7,Mac Jones pass complete short left to N'Keal Harry for 10 yards (tackle by Pierre Desir),,,122,20211003TAMNWE
+123,3,00:00:57,1,10,TAM 28,13,7,Mac Jones pass complete short left to Jonnu Smith for 12 yards (tackle by Antoine Winfield),,,123,20211003TAMNWE
+124,3,00:00:25,1,10,TAM 16,13,7,Mac Jones pass complete short left to Brandon Bolden for 15 yards (tackle by Lavonte David),,,124,20211003TAMNWE
+125,4,00:15:00,1,1,TAM 1,13,13,"Mac Jones pass complete short middle to Jonnu Smith for 1 yard, touchdown",,,125,20211003TAMNWE
+126,4,00:14:57,,,TAM 15,13,14,Nick Folk kicks extra point good,,,126,20211003TAMNWE
+127,4,00:14:57,,,NWE 35,13,14,"Jake Bailey kicks off 51 yards, returned by Tyler Johnson for 10 yards (tackle by Brandon Bolden)",,,127,20211003TAMNWE
+128,4,00:14:52,1,10,TAM 24,13,14,Leonard Fournette right guard for 6 yards (tackle by Davon Godchaux and Christian Barmore),,,128,20211003TAMNWE
+129,4,00:14:20,2,4,TAM 30,13,14,Leonard Fournette left end for 1 yard (tackle by Christian Barmore),,,129,20211003TAMNWE
+130,4,00:13:40,3,3,TAM 31,13,14,Tom Brady pass complete short left to Antonio Brown for 7 yards (tackle by Jonathan Jones),,,130,20211003TAMNWE
+131,4,00:13:19,1,10,TAM 38,13,14,Leonard Fournette up the middle for 4 yards (tackle by Carl Davis),,,131,20211003TAMNWE
+132,4,00:12:39,2,6,TAM 42,13,14,Tom Brady pass incomplete short middle intended for Mike Evans,,,132,20211003TAMNWE
+133,4,00:12:34,3,6,TAM 42,13,14,Tom Brady scrambles right guard for 6 yards (tackle by Davon Godchaux),,,133,20211003TAMNWE
+134,4,00:11:47,1,10,TAM 48,13,14,Ronald Jones up the middle for 4 yards (tackle by Dont'a Hightower),,,134,20211003TAMNWE
+135,4,00:11:00,,,,,,Timeout #1 by Tampa Bay Buccaneers,,,135,20211003TAMNWE
+136,4,00:11:00,2,6,NWE 48,13,14,Tom Brady pass complete short right to Leonard Fournette for 23 yards (tackle by Devin McCourty),,,136,20211003TAMNWE
+137,4,00:10:24,1,10,NWE 25,13,14,Ronald Jones left tackle for 1 yard (tackle by Lawrence Guy and Matt Judon),,,137,20211003TAMNWE
+138,4,00:09:39,2,9,NWE 24,13,14,Tom Brady pass incomplete deep left intended for Mike Evans,,,138,20211003TAMNWE
+139,4,00:09:35,3,9,NWE 24,13,14,Tom Brady pass complete short middle to Cameron Brate for 18 yards (tackle by Kyle Dugger and Jonathan Jones),,,139,20211003TAMNWE
+140,4,00:08:41,1,6,NWE 6,13,14,Leonard Fournette left guard for -2 yards (tackle by Matt Judon and Adrian Phillips),,,140,20211003TAMNWE
+141,4,00:08:14,2,8,NWE 8,13,14,Tom Brady pass incomplete short right intended for Leonard Fournette,,,141,20211003TAMNWE
+142,4,00:08:09,3,8,NWE 8,13,14,Tom Brady pass incomplete short right intended for Tyler Johnson,,,142,20211003TAMNWE
+143,4,00:08:01,4,8,NWE 8,16,14,Ryan Succop 27 yard field goal good,,,143,20211003TAMNWE
+144,4,00:07:58,,,TAM 35,16,14,"Bradley Pinion kicks off 65 yards, touchback.",,,144,20211003TAMNWE
+145,4,00:07:58,1,10,NWE 25,16,14,Mac Jones pass complete short left to Nelson Agholor for 12 yards (tackle by Devin White),,,145,20211003TAMNWE
+146,4,00:07:23,1,10,NWE 37,16,14,Mac Jones pass complete short middle to Jakobi Meyers for 3 yards (tackle by Devin White),,,146,20211003TAMNWE
+147,4,00:06:42,2,7,NWE 40,16,14,Mac Jones pass complete to Jakobi Meyers for 21 yards (tackle by Richard Sherman),,,147,20211003TAMNWE
+148,4,00:06:10,1,10,TAM 39,16,14,Jakobi Meyers pass complete deep right to Nelson Agholor for 30 yards (tackle by Richard Sherman),,,148,20211003TAMNWE
+149,4,00:05:31,1,9,TAM 9,16,14,Mac Jones pass incomplete short left intended for Jonnu Smith,,,149,20211003TAMNWE
+150,4,00:05:25,2,9,TAM 9,16,14,Mac Jones pass incomplete short middle intended for Jonnu Smith (defended by Devin White),,,150,20211003TAMNWE
+151,4,00:05:21,3,9,TAM 9,16,14,Mac Jones pass complete short right to Brandon Bolden for no gain (tackle by Shaquil Barrett),,,151,20211003TAMNWE
+152,4,00:04:38,4,9,TAM 9,16,17,Nick Folk 27 yard field goal good,,,152,20211003TAMNWE
+153,4,00:04:34,,,NWE 35,16,17,"Jake Bailey kicks off 65 yards, touchback.",,,153,20211003TAMNWE
+154,4,00:04:34,1,10,TAM 25,16,17,"Tom Brady pass incomplete deep right intended for Leonard Fournette. Penalty on Kyle Van Noy: Defensive Pass Interference, 31 yards (accepted) (no play)",,,154,20211003TAMNWE
+155,4,00:04:28,1,10,NWE 44,16,17,Leonard Fournette left guard for 3 yards (tackle by Matt Judon and Kyle Dugger),,,155,20211003TAMNWE
+156,4,00:03:43,2,7,NWE 41,16,17,"Tom Brady pass complete short right to Mike Evans for no gain. Penalty on Mike Evans: Offensive Pass Interference, 10 yards (accepted) (no play)",,,156,20211003TAMNWE
+157,4,00:03:37,2,17,TAM 49,16,17,Tom Brady pass complete short right to Mike Evans for 11 yards (tackle by Josh Uche),,,157,20211003TAMNWE
+158,4,00:03:03,3,6,NWE 40,16,17,Tom Brady pass complete short left to Antonio Brown for 8 yards (tackle by Justin Bethel),,,158,20211003TAMNWE
+159,4,00:02:19,1,10,NWE 32,16,17,Leonard Fournette left tackle for 2 yards (tackle by Adrian Phillips),,,159,20211003TAMNWE
+160,4,00:02:13,,,,,,Timeout #1 by New England Patriots,,,160,20211003TAMNWE
+161,4,00:02:13,2,8,NWE 30,16,17,Tom Brady pass incomplete deep left intended for Antonio Brown,,,161,20211003TAMNWE
+162,4,00:02:07,,,,,,Timeout #2 by New England Patriots,,,162,20211003TAMNWE
+163,4,00:02:07,3,8,NWE 30,16,17,Tom Brady pass incomplete deep right intended for Antonio Brown,,,163,20211003TAMNWE
+164,4,00:02:02,4,8,NWE 30,19,17,Ryan Succop 48 yard field goal good,,,164,20211003TAMNWE
+165,4,00:01:57,,,TAM 35,19,17,"Bradley Pinion kicks off 65 yards, touchback.",,,165,20211003TAMNWE
+166,4,00:01:57,1,10,NWE 25,19,17,"Mac Jones pass incomplete. Penalty on Jordan Whitehead: Defensive Pass Interference, 20 yards (accepted) . Penalty on Mac Jones: Defensive Pass Interference, 20 yards (accepted) . Penalty on Jordan Whitehead: Defensive Pass Interference, 20 yards (accepted) . Penalty on Mac Jones: Defensive Pass Interference, 20 yards (accepted) (no play)",,,166,20211003TAMNWE
+167,4,00:01:53,1,10,NWE 45,19,17,Mac Jones pass complete short middle to Hunter Henry for 9 yards (tackle by Devin White),,,167,20211003TAMNWE
+168,4,00:01:33,2,1,TAM 46,19,17,"Penalty on Hunter Henry: False Start, 5 yards (accepted) (no play)",,,168,20211003TAMNWE
+169,4,00:01:15,2,6,NWE 49,19,17,Mac Jones pass complete short right to Brandon Bolden for 7 yards (tackle by Lavonte David),,,169,20211003TAMNWE
+170,4,00:01:12,1,10,TAM 44,19,17,Mac Jones pass incomplete short left intended for Jakobi Meyers,,,170,20211003TAMNWE
+171,4,00:01:07,2,10,TAM 44,19,17,Mac Jones pass complete short right to Jakobi Meyers for 7 yards,,,171,20211003TAMNWE
+172,4,00:01:03,3,3,TAM 37,19,17,Mac Jones pass incomplete short middle intended for Jakobi Meyers (defended by Lavonte David),,,172,20211003TAMNWE
+173,4,00:00:59,4,3,TAM 37,19,17,Nick Folk 56 yard field goal no good,,,173,20211003TAMNWE
+174,4,00:00:55,1,10,TAM 46,19,17,Tom Brady kneels for -1 yards,,,174,20211003TAMNWE
+175,4,00:00:52,,,,,,Timeout #3 by New England Patriots,,,175,20211003TAMNWE
+176,4,00:00:52,2,11,TAM 45,19,17,Tom Brady kneels for -1 yards,,,176,20211003TAMNWE
+177,4,00:00:21,3,12,TAM 44,19,17,Tom Brady kneels for -1 yards,,,177,20211003TAMNWE
