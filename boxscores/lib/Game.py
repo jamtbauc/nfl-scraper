@@ -12,6 +12,7 @@ class Game:
         self.attendance = None
         self.stadium_id = None
         self.game_duration = None
+        self.roof_type = None
         
     # GETTERS AND SETTERS   
     def getAttendance(self):
@@ -55,6 +56,12 @@ class Game:
         
     def setWeek(self, week):
         self.week = week
+        
+    def getRoofType(self):
+        return self.roof_type
+    
+    def setRoofType(self, value):
+        self.roof_type = value
     
     # OUTPUT FUNCTIONS
     def getInfo(self):
@@ -65,7 +72,8 @@ class Game:
             "week": self.getWeek(),
             "attendance": self.getAttendance(),
             "stadiumId": self.getStadiumId(),
-            "gameDuration": self.getGameDuration().isoformat()   
+            "gameDuration": self.getGameDuration().isoformat(),
+            "roofType": self.getRoofType()  
         }
         
         return info

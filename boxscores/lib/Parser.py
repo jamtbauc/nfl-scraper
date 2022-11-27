@@ -329,6 +329,12 @@ class Parser:
                     if len(stat) > 1:
                         self.home_team.setTossDecision(stat[1])
             elif header == "Roof":
+                if stat.find("(") > -1:
+                    temp = stat.split("(")
+                    stat = temp[0]
+                    roof = temp[1]
+                    roof = roof.replace(")", "")
+                    self.games[self.game.getId()].setRoofType(roof)
                 self.stadiums[self.game.getStadiumId()].setRoof(stat)
             elif header == "Surface":
                 self.stadiums[self.game.getStadiumId()].setSurface(stat.strip())
@@ -978,7 +984,7 @@ class Parser:
     # write all files
     def writeFiles(self):
         with open("csv/games.csv", "w") as file:
-            fieldnames = ["id", "date", "season", "week", "attendance", "stadiumId", "gameDuration"]
+            fieldnames = ["id", "date", "season", "week", "attendance", "stadiumId", "gameDuration", "roofType"]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for game in self.games:

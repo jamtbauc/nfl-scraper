@@ -42,7 +42,7 @@ def run_scraper():
     # loop through all urls
     last_run = time()
     for url in urls:
-        if "201809" in url:
+        if "/boxscores/201809090crd.htm" in url:
             print(url)
             # pro-football-reference limits to 20 request per minute. Ensure request only happens every 3 seconds
             if (time() - last_run) < 3:
