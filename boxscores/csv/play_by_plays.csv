@@ -1,164 +1,174 @@
 id,qtr,qtrTimeRem,down,ydsToGo,ydStart,scoreAway,scoreHome,detail,expPtsBefore,expPtsAfter,seq,gameId
-1,,,,,,,,"Cardinals won the coin toss and deferred, Redskins to receive the opening kickoff.",,,1,20180909WASARI
-2,1,00:15:00,,,ARI 35,0,0,"Phil Dawson kicks off 66 yards, returned by Danny Johnson for no gain (tackle by Bene Benwikere)",0.000,0.480,2,20180909WASARI
-3,1,00:14:55,1,10,WAS 23,0,0,Adrian Peterson up the middle for 5 yards (tackle by Corey Peters),0.480,0.610,3,20180909WASARI
-4,1,00:14:19,2,5,WAS 28,0,0,"Alex Smith pass complete short right to Jordan Reed for 16 yards (tackle by Budda Baker). Penalty on Tre Boston: Unnecessary Roughness, 15 yards",0.610,2.850,4,20180909WASARI
-5,1,00:13:54,1,10,ARI 41,0,0,Alex Smith pass incomplete short right intended for Chris Thompson,2.850,2.310,5,20180909WASARI
-6,1,00:13:47,2,10,ARI 41,0,0,Adrian Peterson right tackle for 6 yards (tackle by Budda Baker),2.310,2.410,6,20180909WASARI
-7,1,00:13:02,3,4,ARI 35,0,0,Alex Smith pass complete short middle to Chris Thompson for 5 yards (tackle by Budda Baker),2.410,3.580,7,20180909WASARI
-8,1,00:12:20,1,10,ARI 30,0,0,"Penalty on Trent Williams: False Start, 5 yards (no play)",3.580,3.250,8,20180909WASARI
-9,1,00:11:56,1,15,ARI 35,0,0,Adrian Peterson right tackle for 1 yard (tackle by Josh Bynes),3.250,2.490,9,20180909WASARI
-10,1,00:11:12,2,14,ARI 34,0,0,Alex Smith pass complete short left to Paul Richardson for 5 yards (tackle by Budda Baker),2.490,2.480,10,20180909WASARI
-11,1,00:10:29,3,9,ARI 29,0,0,"Alex Smith pass incomplete short left. Penalty on Alex Smith: Intentional Grounding, 12 yards",2.480,0.530,11,20180909WASARI
-12,1,00:10:22,4,21,ARI 41,0,0,"Penalty on Nick Sundberg: False Start, 5 yards (no play)",0.530,0.200,12,20180909WASARI
-13,1,00:10:22,4,26,ARI 46,0,0,"Tress Way punts 38 yards, fair catch by Christian Kirk at ARI-8",0.200,0.380,13,20180909WASARI
-14,1,00:10:13,1,10,ARI 8,0,0,David Johnson up the middle for 2 yards (tackle by Jonathan Allen and Da'Ron Payne),-0.380,-0.630,14,20180909WASARI
-15,1,00:09:36,2,8,ARI 10,0,0,David Johnson up the middle for 10 yards (tackle by Montae Nicholson),-0.630,0.280,15,20180909WASARI
-16,1,00:08:54,1,10,ARI 20,0,0,Sam Bradford pass incomplete short left intended for Chad Williams,0.280,-0.270,16,20180909WASARI
-17,1,00:08:47,2,10,ARI 20,0,0,David Johnson up the middle for 11 yards (tackle by D.J. Swearinger),-0.270,1.000,17,20180909WASARI
-18,1,00:08:01,1,10,ARI 31,0,0,David Johnson up the middle for 1 yard (tackle by Evander Hood),1.000,0.600,18,20180909WASARI
-19,1,00:07:20,2,9,ARI 32,0,0,Sam Bradford pass complete short right to David Johnson for 4 yards (tackle by Josh Norman),0.600,0.430,19,20180909WASARI
-20,1,00:06:38,3,5,ARI 36,0,0,Sam Bradford pass complete short middle to Christian Kirk for 4 yards (tackle by Quinton Dunbar),0.430,-0.720,20,20180909WASARI
-21,1,00:05:57,4,1,ARI 40,0,0,"Andy Lee punts 60 yards, touchback.",-0.720,-0.280,21,20180909WASARI
-22,1,00:05:47,1,10,WAS 20,0,0,Adrian Peterson up the middle for 1 yard (tackle by Antoine Bethea),0.280,-0.130,22,20180909WASARI
-23,1,00:05:09,2,9,WAS 21,0,0,Alex Smith pass complete short left to Vernon Davis for 9 yards (tackle by Deone Bucannon),-0.130,0.940,23,20180909WASARI
-24,1,00:04:35,1,10,WAS 30,0,0,Chris Thompson left end for 13 yards (tackle by Antoine Bethea),0.940,1.800,24,20180909WASARI
-25,1,00:03:51,1,10,WAS 43,0,0,Alex Smith pass incomplete short left intended for Jamison Crowder,1.800,1.250,25,20180909WASARI
-26,1,00:03:47,2,10,WAS 43,0,0,Chris Thompson left tackle for 14 yards (tackle by Rudy Ford),1.250,2.720,26,20180909WASARI
-27,1,00:03:08,1,10,ARI 43,0,0,Adrian Peterson right tackle for 13 yards (tackle by Antoine Bethea),2.720,3.580,27,20180909WASARI
-28,1,00:02:28,1,10,ARI 30,0,0,Adrian Peterson right end for 8 yards (tackle by Antoine Bethea),3.580,4.110,28,20180909WASARI
-29,1,00:01:44,2,2,ARI 22,0,0,Adrian Peterson right tackle for 1 yard (tackle by Deone Bucannon and Josh Bynes),4.110,3.530,29,20180909WASARI
-30,1,00:01:04,,,,,,Timeout #1 by Washington Redskins,,,30,20180909WASARI
-31,1,00:01:04,3,1,ARI 21,0,0,Adrian Peterson left end for 8 yards (tackle by Haason Reddick and Jacquies Smith),3.530,4.710,31,20180909WASARI
-32,1,00:00:21,1,10,ARI 13,0,0,Adrian Peterson up the middle for no gain (tackle by Robert Nkemdiche),4.710,4.050,32,20180909WASARI
-33,2,00:15:00,2,10,ARI 13,6,0,"Alex Smith pass complete short left to Chris Thompson for 13 yards, touchdown, touchdown",4.050,7.000,33,20180909WASARI
-34,2,00:14:54,,,ARI 15,7,0,Dustin Hopkins kicks extra point good,0.000,0.000,34,20180909WASARI
-35,2,00:14:54,,,WAS 35,7,0,"Dustin Hopkins kicks off 65 yards, touchback.",0.000,0.610,35,20180909WASARI
-36,2,00:14:54,1,10,ARI 25,7,0,Sam Bradford pass complete short middle to Larry Fitzgerald for 3 yards (tackle by Zach Brown),0.610,0.470,36,20180909WASARI
-37,2,00:14:16,2,7,ARI 28,7,0,David Johnson up the middle for no gain (tackle by Zach Brown),0.470,-0.230,37,20180909WASARI
-38,2,00:13:32,3,7,ARI 28,7,0,Sam Bradford pass incomplete short right intended for Ricky Seals-Jones (defended by D.J. Swearinger),-0.230,-1.500,38,20180909WASARI
-39,2,00:13:27,4,7,ARI 28,7,0,"Andy Lee punts 57 yards, returned by Trey Quinn for 12 yards (tackle by Derrick Coleman)",-1.500,-0.740,39,20180909WASARI
-40,2,00:13:16,1,10,WAS 27,7,0,Alex Smith right end for 5 yards (tackle by Budda Baker),0.740,0.870,40,20180909WASARI
-41,2,00:12:43,2,5,WAS 32,7,0,Alex Smith right end for -2 yards (tackle by Antoine Bethea),0.870,-0.100,41,20180909WASARI
-42,2,00:11:59,3,7,WAS 30,7,0,Alex Smith pass complete short middle to Chris Thompson for 11 yards (tackle by Haason Reddick),-0.100,1.660,42,20180909WASARI
-43,2,00:11:14,1,10,WAS 41,7,0,Robert Kelley up the middle for 6 yards (tackle by Antoine Bethea and Budda Baker),1.660,1.930,43,20180909WASARI
-44,2,00:10:52,2,4,WAS 47,7,0,Robert Kelley left tackle for no gain (tackle by Tre Boston),1.930,1.220,44,20180909WASARI
-45,2,00:10:13,3,4,WAS 47,7,0,Alex Smith pass complete short left,1.220,-0.060,45,20180909WASARI
-46,2,00:09:18,4,1,WAS 50,7,0,Alex Smith up the middle for 1 yard (tackle by Corey Peters),-0.060,2.320,46,20180909WASARI
-47,2,00:08:46,1,10,ARI 49,7,0,Alex Smith pass complete short left to Jordan Reed for 22 yards (tackle by Antoine Bethea),2.320,3.780,47,20180909WASARI
-48,2,00:08:12,1,10,ARI 27,7,0,Adrian Peterson up the middle for 5 yards (tackle by Corey Peters and Tre Boston),3.780,3.910,48,20180909WASARI
-49,2,00:07:31,2,5,ARI 22,7,0,Alex Smith up the middle for 7 yards (tackle by Deone Bucannon),3.910,4.580,49,20180909WASARI
-50,2,00:06:53,1,10,ARI 15,7,0,Adrian Peterson up the middle for 1 yard (tackle by Josh Bynes),4.580,4.110,50,20180909WASARI
-51,2,00:06:13,2,9,ARI 14,7,0,Alex Smith pass complete short middle to Jamison Crowder for 10 yards (tackle by Josh Bynes),4.110,6.280,51,20180909WASARI
-52,2,00:05:34,1,4,ARI 4,7,0,Adrian Peterson up the middle for 2 yards (tackle by Chandler Jones and Josh Bynes),6.280,5.720,52,20180909WASARI
-53,2,00:04:57,2,2,ARI 2,7,0,Adrian Peterson up the middle for 1 yard (tackle by Josh Bynes),5.720,5.170,53,20180909WASARI
-54,2,00:04:12,3,1,ARI 1,13,0,"Adrian Peterson up the middle for 1 yard, touchdown",5.170,7.000,54,20180909WASARI
-55,2,00:04:10,,,ARI 15,14,0,Dustin Hopkins kicks extra point good,0.000,0.000,55,20180909WASARI
-56,2,00:04:10,,,WAS 35,14,0,"Dustin Hopkins kicks off 65 yards, touchback.",0.000,0.610,56,20180909WASARI
-57,2,00:04:10,1,10,ARI 25,14,0,Sam Bradford pass incomplete short right intended for Larry Fitzgerald,0.610,0.060,57,20180909WASARI
-58,2,00:04:07,2,10,ARI 25,14,0,Sam Bradford pass incomplete short middle intended for Christian Kirk (defended by Quinton Dunbar),0.060,-0.620,58,20180909WASARI
-59,2,00:04:03,3,10,ARI 25,14,0,David Johnson left end for 2 yards (tackle by Quinton Dunbar),-0.620,-1.570,59,20180909WASARI
-60,2,00:03:27,4,8,ARI 27,14,0,"Andy Lee punts 56 yards, fair catch by Trey Quinn at WAS-17. Penalty on Robert Kelley: Offensive Holding, 9 yards",-1.570,0.380,60,20180909WASARI
-61,2,00:03:19,1,10,WAS 8,14,0,Alex Smith pass complete short right to Chris Thompson for 23 yards (tackle by Deone Bucannon),-0.380,1.000,61,20180909WASARI
-62,2,00:02:42,1,10,WAS 31,14,0,Alex Smith pass complete short left to Paul Richardson for 7 yards (tackle by Budda Baker),1.000,1.410,62,20180909WASARI
-63,2,00:02:05,2,3,WAS 38,14,0,Alex Smith pass complete short right to Adrian Peterson for 18 yards (tackle by Tre Boston),1.410,2.650,63,20180909WASARI
-64,2,00:01:57,1,10,ARI 44,14,0,Alex Smith pass complete short right to Jordan Reed for 6 yards (tackle by Tre Boston),2.650,2.920,64,20180909WASARI
-65,2,00:01:23,2,4,ARI 38,14,0,Alex Smith pass complete short right to Paul Richardson for 6 yards (tackle by Josh Bynes),2.920,3.450,65,20180909WASARI
-66,2,00:00:49,1,10,ARI 32,14,0,Alex Smith pass complete short middle to Jamison Crowder for 5 yards (tackle by Josh Bynes),3.450,3.580,66,20180909WASARI
-67,2,00:00:43,,,,,,Timeout #2 by Washington Redskins,,,67,20180909WASARI
-68,2,00:00:43,2,5,ARI 27,14,0,"Penalty on Benson Mayowa: Neutral Zone Infraction, 5 yards (no play)",3.580,4.110,68,20180909WASARI
-69,2,00:00:43,1,10,ARI 22,14,0,"Alex Smith pass complete short middle to Jamison Crowder for 3 yards (tackle by Budda Baker). Penalty on Budda Baker: Illegal Contact, 5 yards (no play)",4.110,4.440,69,20180909WASARI
-70,2,00:00:37,1,10,ARI 17,14,0,"Alex Smith sacked by Chandler Jones for -7 yards. Alex Smith fumbles (forced by Chandler Jones), recovered by Alex Smith at ARI-26. Penalty on Chandler Jones: Unnecessary Roughness, 12 yards",4.440,4.780,70,20180909WASARI
-71,2,00:00:29,1,10,ARI 12,14,0,Alex Smith pass complete short left to Chris Thompson for 8 yards (tackle by Jamar Taylor),4.780,5.600,71,20180909WASARI
-72,2,00:00:21,2,2,ARI 4,14,0,Alex Smith sacked by Patrick Peterson for no gain,5.600,4.840,72,20180909WASARI
-73,2,00:00:12,3,2,ARI 4,20,0,"Alex Smith pass complete short right to Jordan Reed for 4 yards, touchdown",4.840,7.000,73,20180909WASARI
-74,2,00:00:08,,,ARI 15,21,0,Dustin Hopkins kicks extra point good,0.000,0.000,74,20180909WASARI
-75,2,00:00:08,,,WAS 35,21,0,"Dustin Hopkins kicks off 65 yards, touchback.",0.000,0.610,75,20180909WASARI
-76,2,00:00:08,1,10,ARI 25,21,0,Sam Bradford kneels for -1 yards,0.610,-0.070,76,20180909WASARI
-77,3,00:15:00,,,WAS 35,21,0,"Dustin Hopkins kicks off 65 yards, touchback.",0.000,0.610,77,20180909WASARI
-78,3,00:15:00,1,10,ARI 25,21,0,Sam Bradford pass complete deep right to Larry Fitzgerald for 27 yards (tackle by D.J. Swearinger),0.610,2.390,78,20180909WASARI
-79,3,00:14:26,1,10,WAS 48,21,0,David Johnson up the middle for 1 yard (tackle by Da'Ron Payne),2.390,1.980,79,20180909WASARI
-80,3,00:13:44,2,9,WAS 47,21,0,Sam Bradford pass complete short left to Ricky Seals-Jones for 6 yards (tackle by Quinton Dunbar),1.980,2.080,80,20180909WASARI
-81,3,00:13:03,3,3,WAS 41,21,0,Sam Bradford pass incomplete short left intended for David Johnson (defended by Josh Harvey-Clemons),2.080,0.530,81,20180909WASARI
-82,3,00:12:59,4,3,WAS 41,21,0,"Andy Lee punts 33 yards, fair catch by Trey Quinn at WAS-8",0.530,0.380,82,20180909WASARI
-83,3,00:12:52,1,10,WAS 8,21,0,Adrian Peterson left end for -4 yards (tackle by Corey Peters). Penalty on Chase Roullier: Offensive Holding (Declined) ,-0.380,-1.070,83,20180909WASARI
-84,3,00:12:30,2,14,WAS 4,21,0,Alex Smith pass incomplete short middle intended for Adrian Peterson,-1.070,-1.890,84,20180909WASARI
-85,3,00:12:25,3,14,WAS 4,21,0,Alex Smith pass incomplete short left intended for Josh Doctson,-1.890,-2.490,85,20180909WASARI
-86,3,00:12:20,4,14,WAS 4,21,0,"Tress Way punts 55 yards, returned by Christian Kirk for no gain (tackle by Josh Harvey-Clemons). Penalty on Tre Boston: Offensive Holding, 10 yards",-2.490,-1.000,86,20180909WASARI
-87,3,00:12:07,1,10,ARI 31,21,0,Chase Edmonds up the middle for 4 yards (tackle by Da'Ron Payne),1.000,1.000,87,20180909WASARI
-88,3,00:11:29,2,6,ARI 35,21,0,Sam Bradford pass incomplete deep left intended for Larry Fitzgerald (defended by Quinton Dunbar),1.000,0.300,88,20180909WASARI
-89,3,00:11:24,3,6,ARI 35,21,0,"Penalty on ARI: Delay of Game, 5 yards (no play)",0.300,-0.360,89,20180909WASARI
-90,3,00:11:24,3,11,ARI 30,21,0,Sam Bradford pass incomplete deep left intended for Chad Williams,-0.360,-1.370,90,20180909WASARI
-91,3,00:11:18,4,11,ARI 30,21,0,"Andy Lee punts 57 yards, returned by Trey Quinn for no gain (tackle by Bene Benwikere). Penalty on Troy Apke: Illegal Block Above the Waist (Declined) . Penalty on Fabian Moreau: Unnecessary Roughness, 5 yards",-1.370,0.380,91,20180909WASARI
-92,3,00:11:07,1,10,WAS 8,21,0,Alex Smith up the middle for 3 yards (tackle by Deone Bucannon),-0.380,-0.560,92,20180909WASARI
-93,3,00:10:24,2,7,WAS 11,21,0,Alex Smith pass complete short left to Josh Doctson for 11 yards (tackle by Jamar Taylor). Penalty on Jamar Taylor: Defensive Holding (Declined) ,-0.560,0.410,93,20180909WASARI
-94,3,00:10:10,1,10,WAS 22,21,0,Adrian Peterson up the middle for 1 yard (tackle by Budda Baker),0.410,0.000,94,20180909WASARI
-95,3,00:09:24,2,9,WAS 23,21,0,Alex Smith pass incomplete short right intended for Paul Richardson,0.000,-0.690,95,20180909WASARI
-96,3,00:09:19,3,9,WAS 23,21,0,"Alex Smith pass incomplete deep middle intended for Paul Richardson. Penalty on Jamar Taylor: Defensive Holding, 5 yards (no play)",-0.690,0.810,96,20180909WASARI
-97,3,00:09:12,1,10,WAS 28,21,0,Alex Smith pass incomplete short right intended for Josh Doctson (defended by Tre Boston),0.810,0.260,97,20180909WASARI
-98,3,00:09:04,2,10,WAS 28,21,0,"Adrian Peterson up the middle for 1 yard (tackle by Deone Bucannon and Josh Bynes). Penalty on Antoine Bethea: Illegal Use of Hands, 5 yards",0.260,1.200,98,20180909WASARI
-99,3,00:08:42,1,10,WAS 34,21,0,"Jamison Crowder right end for no gain (tackle by Antoine Bethea and Zach Moore). Penalty on Vernon Davis: Offensive Holding, 10 yards (no play)",1.200,0.540,99,20180909WASARI
-100,3,00:08:09,1,20,WAS 24,21,0,Adrian Peterson left end for 17 yards (tackle by Rodney Gunter),0.540,1.600,100,20180909WASARI
-101,3,00:07:22,2,3,WAS 41,21,0,Chris Thompson left tackle for 15 yards (tackle by Deone Bucannon),1.600,2.650,101,20180909WASARI
-102,3,00:06:41,1,10,ARI 44,21,0,"Robert Kelley right tackle for 1 yard (tackle by Antoine Bethea). Penalty on Trent Williams: Offensive Holding, 10 yards",2.650,2.060,102,20180909WASARI
-103,3,00:06:13,1,19,WAS 47,21,0,Alex Smith sacked by Robert Nkemdiche for -1 yards,2.060,0.760,103,20180909WASARI
-104,3,00:05:35,2,20,WAS 46,21,0,Alex Smith pass complete short left,0.760,0.630,104,20180909WASARI
-105,3,00:05:01,3,16,WAS 50,21,0,Alex Smith left end for 1 yard (tackle by Haason Reddick),0.630,0.000,105,20180909WASARI
-106,3,00:04:27,4,15,ARI 49,21,0,"Tress Way punts 34 yards, fair catch by Christian Kirk at ARI-15",0.000,0.220,106,20180909WASARI
-107,3,00:04:21,1,10,ARI 15,21,0,Sam Bradford pass complete short middle to Larry Fitzgerald for 7 yards (tackle by D.J. Swearinger),-0.220,0.350,107,20180909WASARI
-108,3,00:03:52,2,3,ARI 22,21,0,David Johnson up the middle for 8 yards (tackle by Fabian Moreau),0.350,0.940,108,20180909WASARI
-109,3,00:03:21,1,10,ARI 30,21,0,Sam Bradford pass incomplete short right intended for David Johnson,0.940,0.390,109,20180909WASARI
-110,3,00:03:14,2,10,ARI 30,21,0,Sam Bradford pass complete deep left to Larry Fitzgerald for 27 yards (tackle by Mason Foster and Quinton Dunbar),0.390,2.720,110,20180909WASARI
-111,3,00:02:33,1,10,WAS 43,21,0,Sam Bradford sacked by Ryan Anderson for -4 yards,2.720,1.640,111,20180909WASARI
-112,3,00:02:03,2,14,WAS 47,21,0,Sam Bradford pass deep left intended for Ricky Seals-Jones is intercepted by Quinton Dunbar at WAS-27 and returned for -3 yards,1.640,-0.540,112,20180909WASARI
-113,3,00:01:55,1,10,WAS 24,21,0,Adrian Peterson right end for 17 yards (tackle by Antoine Bethea),0.540,1.660,113,20180909WASARI
-114,3,00:01:11,1,10,WAS 41,21,0,Chris Thompson right end for 16 yards (tackle by Josh Bynes),1.660,2.720,114,20180909WASARI
-115,3,00:00:34,1,10,ARI 43,21,0,Adrian Peterson up the middle for 6 yards (tackle by Robert Nkemdiche),2.720,2.990,115,20180909WASARI
-116,4,00:15:00,2,4,ARI 37,21,0,"Alex Smith pass incomplete short right intended for Paul Richardson (defended by Jamar Taylor). Penalty on Jamar Taylor: Defensive Holding, 5 yards (no play)",2.990,3.450,116,20180909WASARI
-117,4,00:14:54,1,10,ARI 32,21,0,Adrian Peterson up the middle for -2 yards (tackle by Garrison Smith),3.450,2.630,117,20180909WASARI
-118,4,00:14:13,2,12,ARI 34,21,0,Alex Smith pass incomplete short left intended for Paul Richardson,2.630,1.950,118,20180909WASARI
-119,4,00:14:09,3,12,ARI 34,21,0,Alex Smith pass complete short middle to Jamison Crowder for 17 yards (tackle by Tre Boston),1.950,4.440,119,20180909WASARI
-120,4,00:13:31,1,10,ARI 17,21,0,Adrian Peterson right tackle for 4 yards (tackle by Budda Baker),4.440,4.500,120,20180909WASARI
-121,4,00:12:49,2,6,ARI 13,21,0,Adrian Peterson right end for no gain (tackle by Antoine Bethea),4.500,3.680,121,20180909WASARI
-122,4,00:12:20,3,6,ARI 13,21,0,Alex Smith pass incomplete short right intended for Jordan Reed,3.680,2.590,122,20180909WASARI
-123,4,00:12:16,4,6,ARI 13,24,0,Dustin Hopkins 31 yard field goal good,2.590,3.000,123,20180909WASARI
-124,4,00:12:13,,,WAS 35,24,0,"Dustin Hopkins kicks off 65 yards, touchback.",0.000,0.610,124,20180909WASARI
-125,4,00:12:13,1,10,ARI 25,24,0,Sam Bradford pass complete short middle to Larry Fitzgerald for 4 yards (tackle by Mason Foster),0.610,0.600,125,20180909WASARI
-126,4,00:11:45,2,6,ARI 29,24,0,Sam Bradford pass complete short left to Ricky Seals-Jones for 7 yards (tackle by Quinton Dunbar),0.600,1.330,126,20180909WASARI
-127,4,00:11:22,1,10,ARI 36,24,0,Chase Edmonds up the middle for 8 yards (tackle by Montae Nicholson),1.330,1.870,127,20180909WASARI
-128,4,00:11:00,2,2,ARI 44,24,0,Chase Edmonds up the middle for 3 yards (tackle by Montae Nicholson),1.870,2.060,128,20180909WASARI
-129,4,00:10:24,1,10,ARI 47,24,0,Sam Bradford pass complete short left to Chase Edmonds for 8 yards (tackle by Mason Foster and Fabian Moreau),2.060,2.600,129,20180909WASARI
-130,4,00:09:58,2,2,WAS 45,24,0,Chase Edmonds left end for 9 yards (tackle by Pernell McPhee and Mason Foster),2.600,3.180,130,20180909WASARI
-131,4,00:09:20,1,10,WAS 36,24,0,Sam Bradford pass complete short right to Chase Edmonds for 7 yards (tackle by D.J. Swearinger),3.180,3.580,131,20180909WASARI
-132,4,00:08:45,2,3,WAS 29,24,0,Sam Bradford pass complete short right to Ricky Seals-Jones for 6 yards (tackle by Zach Brown),3.580,4.040,132,20180909WASARI
-133,4,00:08:11,1,10,WAS 23,24,0,Sam Bradford pass complete short left to David Johnson for 6 yards (tackle by Mason Foster),4.040,4.380,133,20180909WASARI
-134,4,00:07:36,2,4,WAS 17,24,0,Sam Bradford up the middle for 8 yards (tackle by D.J. Swearinger),4.380,5.140,134,20180909WASARI
-135,4,00:07:00,1,9,WAS 9,24,0,Sam Bradford pass complete short left to David Johnson for 1 yard (tackle by Zach Brown),5.140,4.570,135,20180909WASARI
-136,4,00:06:28,2,8,WAS 8,24,0,"Sam Bradford pass incomplete short right intended for Larry Fitzgerald. Penalty on Fabian Moreau: Illegal Contact, 4 yards (no play)",4.570,6.280,136,20180909WASARI
-137,4,00:06:24,,,,,,Timeout #1 by Arizona Cardinals,,,137,20180909WASARI
-138,4,00:06:24,1,4,WAS 4,24,0,Sam Bradford pass complete short middle to Larry Fitzgerald for 2 yards (tackle by Zach Brown),6.280,5.720,138,20180909WASARI
-139,4,00:05:51,2,2,WAS 2,24,6,"David Johnson up the middle for 2 yards, touchdown",5.720,7.000,139,20180909WASARI
-140,4,00:05:47,,,WAS 2,24,6,"Two Point Attempt: Sam Bradford pass incomplete intended for Christian Kirk, conversion fails",0.000,-1.000,140,20180909WASARI
-141,4,00:05:47,,,ARI 35,24,6,"Phil Dawson kicks off 59 yards, returned by Chris Thompson for no gain (tackle by Rudy Ford)",0.000,-0.380,141,20180909WASARI
-142,4,00:05:44,1,10,WAS 6,24,6,"Penalty on Shawn Lauvao: False Start, 3 yards (no play)",-0.380,-0.490,142,20180909WASARI
-143,4,00:05:44,1,13,WAS 3,24,6,Adrian Peterson left end for 2 yards (tackle by Corey Peters),-0.490,-0.850,143,20180909WASARI
-144,4,00:05:39,,,,,,Timeout #2 by Arizona Cardinals,,,144,20180909WASARI
-145,4,00:05:39,2,11,WAS 5,24,6,"Alex Smith aborted snap, recovered by Alex Smith at WAS-4 and returned for -1 yards",-0.850,-1.650,145,20180909WASARI
-146,4,00:05:32,,,,,,Timeout #3 by Arizona Cardinals,,,146,20180909WASARI
-147,4,00:05:32,3,12,WAS 4,24,6,Chris Thompson right end for 7 yards (tackle by Josh Bynes),-1.650,-2.490,147,20180909WASARI
-148,4,00:04:48,4,5,WAS 11,24,6,"Tress Way punts 59 yards, returned by Christian Kirk for 44 yards (tackle by Troy Apke)",-2.490,-3.840,148,20180909WASARI
-149,4,00:04:30,1,10,WAS 26,24,6,Sam Bradford pass complete short middle to David Johnson for 16 yards (tackle by Zach Vigil),3.840,4.910,149,20180909WASARI
-150,4,00:04:03,1,10,WAS 10,24,6,Sam Bradford pass incomplete short right intended for David Johnson,4.910,4.190,150,20180909WASARI
-151,4,00:04:00,2,10,WAS 10,24,6,Sam Bradford pass complete short right to David Johnson for 3 yards (tackle by Zach Vigil),4.190,3.810,151,20180909WASARI
-152,4,00:03:29,3,7,WAS 7,24,6,Sam Bradford pass incomplete short left intended for David Johnson,3.810,2.970,152,20180909WASARI
-153,4,00:03:26,4,7,WAS 7,24,6,Sam Bradford pass incomplete short right intended for Ricky Seals-Jones,2.970,0.380,153,20180909WASARI
-154,4,00:03:20,1,10,WAS 7,24,6,Adrian Peterson up the middle for -1 yards (tackle by Haason Reddick),-0.380,-0.850,154,20180909WASARI
-155,4,00:02:36,2,11,WAS 6,24,6,Adrian Peterson up the middle for 2 yards (tackle by Budda Baker and Zach Moore),-0.850,-1.300,155,20180909WASARI
-156,4,00:02:00,3,9,WAS 8,24,6,"Alex Smith pass complete short right to Adrian Peterson for 52 yards (tackle by Tre Boston). Adrian Peterson fumbles (forced by Tre Boston), recovered by Tre Boston at ARI-40 (tackle by Adrian Peterson)",-1.300,-1.600,156,20180909WASARI
-157,4,00:01:45,1,10,ARI 40,24,6,Sam Bradford pass incomplete short middle intended for Larry Fitzgerald,1.600,1.050,157,20180909WASARI
-158,4,00:01:41,2,10,ARI 40,24,6,Sam Bradford pass complete short middle to Chase Edmonds for 6 yards (tackle by Montae Nicholson),1.050,1.160,158,20180909WASARI
-159,4,00:01:03,3,4,ARI 46,24,6,Sam Bradford pass complete short right to Larry Fitzgerald for 6 yards (tackle by Zach Vigil),1.160,2.390,159,20180909WASARI
-160,4,00:00:40,1,10,WAS 48,24,6,Sam Bradford pass complete short right to Chase Edmonds for 3 yards (tackle by Montae Nicholson),2.390,2.250,160,20180909WASARI
-161,4,00:00:19,2,7,WAS 45,24,6,Sam Bradford pass incomplete short right intended for Chad Williams,2.250,1.550,161,20180909WASARI
-162,4,00:00:14,3,7,WAS 45,24,6,"Sam Bradford sacked by Matthew Ioannidis for -4 yards. Sam Bradford fumbles (forced by Matthew Ioannidis), recovered by Matthew Ioannidis at WAS-49 (tackle by Justin Pugh)",1.550,-2.190,162,20180909WASARI
-163,4,00:00:06,1,10,WAS 49,24,6,Alex Smith kneels for -1 yards,2.190,1.510,163,20180909WASARI
+1,,,,,,,,"Chargers won the coin toss and deferred, Broncos to receive the opening kickoff.",,,1,20181118DENLAC
+2,1,00:15:00,,,LAC 35,0,0,"Michael Badgley kicks off 65 yards, touchback.",0.000,0.610,2,20181118DENLAC
+3,1,00:15:00,1,10,DEN 25,0,0,Case Keenum pass incomplete short right intended for Courtland Sutton,0.610,0.060,3,20181118DENLAC
+4,1,00:14:55,2,10,DEN 25,0,0,"Case Keenum pass complete short right to Phillip Lindsay for 8 yards (tackle by Kyle Emanuel). Penalty on Corey Liuget: Defensive Offside, 5 yards (no play)",0.060,0.740,4,20181118DENLAC
+5,1,00:14:35,2,5,DEN 30,0,0,Case Keenum pass incomplete short right intended for Emmanuel Sanders,0.740,0.040,5,20181118DENLAC
+6,1,00:14:31,3,5,DEN 30,0,0,Case Keenum pass complete short right to DaeSean Hamilton for 4 yards (tackle by Michael Davis),0.040,-1.110,6,20181118DENLAC
+7,1,00:13:57,4,1,DEN 34,0,0,Colby Wadman punts 46 yards downed by Brian Parker,-1.110,-0.280,7,20181118DENLAC
+8,1,00:13:47,1,10,LAC 20,0,0,Keenan Allen left tackle for 1 yard (tackle by Bradley Chubb and Adam Gotsis),0.280,-0.130,8,20181118DENLAC
+9,1,00:13:12,2,9,LAC 21,0,0,Philip Rivers pass complete short left to Tyrell Williams for 3 yards (tackle by Su'a Cravens),-0.130,-0.430,9,20181118DENLAC
+10,1,00:12:27,3,6,LAC 24,0,0,Philip Rivers pass complete deep middle to Keenan Allen for 27 yards (tackle by Darian Stewart),-0.430,2.320,10,20181118DENLAC
+11,1,00:11:44,1,10,DEN 49,0,0,Melvin Gordon up the middle for 5 yards (tackle by Zach Kerr and Todd Davis),2.320,2.460,11,20181118DENLAC
+12,1,00:11:04,2,5,DEN 44,0,0,Melvin Gordon right tackle for 3 yards (tackle by Shaquil Barrett),2.460,2.150,12,20181118DENLAC
+13,1,00:10:22,3,2,DEN 41,0,0,Philip Rivers pass complete short middle to Keenan Allen for 7 yards (tackle by Darian Stewart),2.150,3.310,13,20181118DENLAC
+14,1,00:09:42,1,10,DEN 34,0,0,Philip Rivers pass incomplete short left intended for Virgil Green (defended by Todd Davis),3.310,2.770,14,20181118DENLAC
+15,1,00:09:37,2,10,DEN 34,0,0,Philip Rivers pass incomplete short left intended for Tyrell Williams (defended by Justin Simmons),2.770,2.080,15,20181118DENLAC
+16,1,00:09:32,3,10,DEN 34,0,0,Philip Rivers pass complete short right to Antonio Gates for 14 yards (tackle by Su'a Cravens),2.080,4.240,16,20181118DENLAC
+17,1,00:08:46,1,10,DEN 20,0,0,"Melvin Gordon left end for no gain (tackle by Bradley Roby). Penalty on Mike Pouncey: Offensive Holding, 10 yards (no play)",4.240,3.580,17,20181118DENLAC
+18,1,00:08:25,1,20,DEN 30,0,0,Philip Rivers pass incomplete deep left intended for Travis Benjamin,3.580,2.340,18,20181118DENLAC
+19,1,00:08:19,2,20,DEN 30,0,0,"Penalty on Mike Pouncey: False Start, 5 yards (no play)",2.340,1.670,19,20181118DENLAC
+20,1,00:08:18,2,25,DEN 35,0,0,Philip Rivers pass complete short right to Keenan Allen for 4 yards (tackle by Shelby Harris),1.670,1.550,20,20181118DENLAC
+21,1,00:07:42,3,21,DEN 31,0,0,Austin Ekeler up the middle for 3 yards (tackle by Shaquil Barrett and Todd Davis),1.550,1.590,21,20181118DENLAC
+22,1,00:07:05,4,18,DEN 28,0,3,Michael Badgley 46 yard field goal good,1.590,3.000,22,20181118DENLAC
+23,1,00:07:00,,,LAC 35,0,3,"Michael Badgley kicks off 66 yards, returned by Adam Jones for no gain (tackle by Rayshawn Jenkins). Penalty on Andy Janovich: Offensive Holding, 7 yards",0.000,-0.380,23,20181118DENLAC
+24,1,00:06:55,1,10,DEN 8,0,3,Case Keenum pass complete short left to Courtland Sutton for 9 yards (tackle by Derwin James),-0.380,0.050,24,20181118DENLAC
+25,1,00:06:22,2,1,DEN 17,0,3,Phillip Lindsay up the middle for 7 yards (tackle by Jatavis Brown),0.050,0.540,25,20181118DENLAC
+26,1,00:05:45,1,10,DEN 24,0,3,Case Keenum pass incomplete short middle intended for Matt LaCosse,0.540,0.000,26,20181118DENLAC
+27,1,00:05:39,2,10,DEN 24,0,3,Case Keenum pass complete short left to Phillip Lindsay for 8 yards (tackle by Joey Bosa),0.000,0.370,27,20181118DENLAC
+28,1,00:04:59,3,2,DEN 32,0,3,Case Keenum pass incomplete deep right,0.370,-1.240,28,20181118DENLAC
+29,1,00:04:51,4,2,DEN 32,0,3,"Colby Wadman punts 52 yards, returned by Travis Benjamin for 2 yards (tackle by Isaac Yiadom)",-1.240,-0.040,29,20181118DENLAC
+30,1,00:04:43,1,10,LAC 18,0,3,Melvin Gordon right guard for no gain (tackle by Derek Wolfe and Bradley Chubb),0.040,-0.490,30,20181118DENLAC
+31,1,00:04:00,2,10,LAC 18,0,3,Philip Rivers pass incomplete short left intended for Tyrell Williams,-0.490,-1.170,31,20181118DENLAC
+32,1,00:03:56,3,10,LAC 18,0,3,Philip Rivers pass complete deep left to Mike Williams for 27 yards (tackle by Bradley Roby),-1.170,1.930,32,20181118DENLAC
+33,1,00:03:18,1,10,LAC 45,0,3,Philip Rivers pass complete deep middle to Virgil Green for 26 yards (tackle by Justin Simmons and Will Parks),1.930,3.640,33,20181118DENLAC
+34,1,00:02:37,1,10,DEN 29,0,3,"Derek Watt up the middle for no gain (tackle by Domata Peko and Justin Simmons). Penalty on Virgil Green: Illegal Shift, 5 yards (no play)",3.640,3.310,34,20181118DENLAC
+35,1,00:02:10,1,15,DEN 34,0,3,Melvin Gordon up the middle for -1 yards (tackle by Zach Kerr and Su'a Cravens),3.310,2.290,35,20181118DENLAC
+36,1,00:01:27,2,16,DEN 35,0,3,Philip Rivers pass incomplete short right intended for Keenan Allen (defended by Darian Stewart),2.290,1.620,36,20181118DENLAC
+37,1,00:01:22,3,16,DEN 35,0,3,"Penalty on Joe Barksdale: False Start, 5 yards (no play)",1.620,0.960,37,20181118DENLAC
+38,1,00:01:22,3,21,DEN 40,0,3,Philip Rivers pass complete short right to Melvin Gordon for 13 yards (tackle by Justin Simmons and Josey Jewell),0.960,1.670,38,20181118DENLAC
+39,1,00:00:45,4,8,DEN 27,0,6,Michael Badgley 45 yard field goal good,1.670,3.000,39,20181118DENLAC
+40,1,00:00:39,,,LAC 35,0,6,"Michael Badgley kicks off 67 yards, returned by Devontae Booker for no gain (tackle by Adrian Phillips and Brandon Facyson). Penalty on Jeff Richards: Unnecessary Roughness, 15 yards",0.000,0.940,40,20181118DENLAC
+41,1,00:00:33,1,10,DEN 30,0,6,Royce Freeman right end for no gain (tackle by Adrian Phillips),0.940,0.390,41,20181118DENLAC
+42,1,00:00:02,2,10,DEN 30,0,6,"Penalty on Brandon Mebane: Encroachment, 5 yards (no play)",0.390,1.070,42,20181118DENLAC
+43,2,00:15:00,2,5,DEN 35,0,6,Royce Freeman right guard for 7 yards (tackle by Derwin James),1.070,1.730,43,20181118DENLAC
+44,2,00:14:21,1,10,DEN 42,0,6,Case Keenum pass complete short left to Phillip Lindsay for 2 yards (tackle by Kyle Emanuel),1.730,1.460,44,20181118DENLAC
+45,2,00:13:42,2,8,DEN 44,0,6,Case Keenum pass complete short left to Emmanuel Sanders for 3 yards (tackle by Jatavis Brown),1.460,1.160,45,20181118DENLAC
+46,2,00:13:03,3,5,DEN 47,0,6,Case Keenum pass incomplete deep left intended for Courtland Sutton. Penalty on Devontae Booker: Offensive Pass Interference (Declined) ,1.160,-0.260,46,20181118DENLAC
+47,2,00:12:58,4,5,DEN 47,0,6,Colby Wadman pass complete short left to Andy Janovich for 12 yards (tackle by Derek Watt),-0.260,2.850,47,20181118DENLAC
+48,2,00:12:14,1,10,LAC 41,6,6,"Phillip Lindsay up the middle for 41 yards, touchdown",2.850,7.000,48,20181118DENLAC
+49,2,00:12:05,,,LAC 15,7,6,Brandon McManus kicks extra point good,0.000,0.000,49,20181118DENLAC
+50,2,00:12:05,,,DEN 35,7,6,"Brandon McManus kicks off 67 yards, returned by Desmond King for no gain (tackle by Joseph Jones)",0.000,-0.320,50,20181118DENLAC
+51,2,00:12:01,1,10,LAC 13,7,6,Melvin Gordon up the middle for 2 yards (tackle by Todd Davis),-0.320,-0.570,51,20181118DENLAC
+52,2,00:11:21,2,8,LAC 15,7,6,Philip Rivers pass incomplete short right intended for Tyrell Williams (defended by Bradley Roby),-0.570,-1.180,52,20181118DENLAC
+53,2,00:11:16,3,8,LAC 15,7,6,Philip Rivers pass complete short left to Antonio Gates for 27 yards (tackle by Darian Stewart),-1.180,1.730,53,20181118DENLAC
+54,2,00:10:27,1,10,LAC 42,7,6,Philip Rivers sacked by Adam Gotsis for -5 yards,1.730,0.510,54,20181118DENLAC
+55,2,00:09:38,2,15,LAC 37,7,6,"Penalty on LAC: Delay of Game, 5 yards (no play)",0.510,-0.160,55,20181118DENLAC
+56,2,00:09:17,2,20,LAC 32,7,6,Philip Rivers pass short left intended for Tyrell Williams is intercepted by Chris Harris at LAC-46 and returned for no gain,-0.160,-2.520,56,20181118DENLAC
+57,2,00:09:12,1,10,LAC 46,7,6,"Emmanuel Sanders left end for 6 yards (tackle by Jahleel Addae). Penalty on Damion Square: Unnecessary Roughness, 15 yards",2.520,3.910,57,20181118DENLAC
+58,2,00:08:44,1,10,LAC 25,7,6,Case Keenum pass complete short right to Royce Freeman for 7 yards (tackle by Derwin James),3.910,4.370,58,20181118DENLAC
+59,2,00:08:24,2,3,LAC 18,7,6,Royce Freeman left tackle for 1 yard (tackle by Damion Square),4.370,3.850,59,20181118DENLAC
+60,2,00:07:44,3,2,LAC 17,7,6,Royce Freeman up the middle for 1 yard (tackle by Melvin Ingram),3.850,2.530,60,20181118DENLAC
+61,2,00:06:57,4,1,LAC 16,7,6,Phillip Lindsay up the middle for no gain (tackle by Jatavis Brown and Kyle Emanuel),2.530,0.140,61,20181118DENLAC
+62,2,00:06:53,1,10,LAC 16,7,6,Philip Rivers pass complete short left to Keenan Allen for 10 yards (tackle by Chris Harris),-0.140,0.670,62,20181118DENLAC
+63,2,00:06:16,1,10,LAC 26,7,6,Melvin Gordon up the middle for 3 yards (tackle by Bradley Chubb),0.670,0.540,63,20181118DENLAC
+64,2,00:05:37,2,7,LAC 29,7,6,Philip Rivers pass incomplete deep right intended for Keenan Allen,0.540,-0.160,64,20181118DENLAC
+65,2,00:05:31,3,7,LAC 29,7,6,Philip Rivers pass complete short left to Melvin Gordon for 32 yards (tackle by Chris Harris and Justin Simmons),-0.160,2.980,65,20181118DENLAC
+66,2,00:04:42,1,10,DEN 39,7,6,Austin Ekeler up the middle for 2 yards (tackle by Shelby Harris),2.980,2.710,66,20181118DENLAC
+67,2,00:04:05,2,8,DEN 37,7,6,Austin Ekeler up the middle for 4 yards (tackle by Zach Kerr),2.710,2.540,67,20181118DENLAC
+68,2,00:03:25,3,4,DEN 33,7,6,Philip Rivers pass complete deep right to Mike Williams for 29 yards (tackle by Tramaine Brock),2.540,6.280,68,20181118DENLAC
+69,2,00:02:50,1,4,DEN 4,7,6,Philip Rivers pass incomplete short middle intended for Antonio Gates (defended by Todd Davis),6.280,5.340,69,20181118DENLAC
+70,2,00:02:45,2,4,DEN 4,7,12,"Philip Rivers pass complete short middle to Keenan Allen for 4 yards, touchdown. Penalty on Keenan Allen: Unsportsmanlike Conduct, 15 yards",5.340,7.000,70,20181118DENLAC
+71,2,00:02:39,,,DEN 15,7,13,Michael Badgley kicks extra point good,0.000,0.000,71,20181118DENLAC
+72,2,00:02:39,,,LAC 20,7,13,"Michael Badgley kicks off 48 yards, returned by Matt LaCosse for no gain (tackle by Rayshawn Jenkins)",0.000,1.730,72,20181118DENLAC
+73,2,00:02:35,1,10,DEN 42,7,13,Case Keenum pass incomplete short middle intended for Phillip Lindsay (defended by Jatavis Brown),1.730,1.190,73,20181118DENLAC
+74,2,00:02:31,2,10,DEN 42,7,13,Case Keenum pass incomplete short right intended for DaeSean Hamilton (defended by Michael Davis),1.190,0.500,74,20181118DENLAC
+75,2,00:02:24,3,10,DEN 42,7,13,Case Keenum pass complete short right to Phillip Lindsay for 11 yards (tackle by Jahleel Addae),0.500,2.460,75,20181118DENLAC
+76,2,00:02:00,1,10,LAC 47,7,13,"Case Keenum pass incomplete short right. Penalty on Jared Veldheer: Ineligible Downfield Pass, 5 yards (no play)",2.460,2.130,76,20181118DENLAC
+77,2,00:01:55,1,15,DEN 48,7,13,Case Keenum pass complete short left to Jeff Heuerman for 6 yards (tackle by Jatavis Brown),2.130,2.050,77,20181118DENLAC
+78,2,00:01:32,2,9,LAC 46,7,13,Case Keenum pass complete short right to Jeff Heuerman for 6 yards (tackle by Derwin James),2.050,2.150,78,20181118DENLAC
+79,2,00:01:07,3,3,LAC 40,7,13,Case Keenum pass incomplete short right intended for Tim Patrick,2.150,0.590,79,20181118DENLAC
+80,2,00:01:03,4,3,LAC 40,7,13,"Penalty on DEN: Delay of Game, 5 yards (no play)",0.590,0.270,80,20181118DENLAC
+81,2,00:00:59,4,8,LAC 45,7,13,"Colby Wadman punts 36 yards, fair catch by Travis Benjamin at LAC-9",0.270,0.380,81,20181118DENLAC
+82,2,00:00:56,1,10,LAC 9,7,13,Philip Rivers pass complete short left to Antonio Gates for 8 yards (tackle by Todd Davis),-0.380,-0.020,82,20181118DENLAC
+83,2,00:00:30,2,2,LAC 17,7,13,Philip Rivers sacked by Von Miller for -3 yards,-0.020,-0.840,83,20181118DENLAC
+84,2,00:00:25,,,,,,Timeout #1 by Denver Broncos,,,84,20181118DENLAC
+85,2,00:00:25,3,5,LAC 14,7,13,"Philip Rivers pass complete short right to Tyrell Williams for 3 yards (tackle by Tramaine Brock). Penalty on Bradley Chubb: Defensive Offside, 5 yards (no play)",-0.840,0.150,85,20181118DENLAC
+86,2,00:00:19,1,10,LAC 19,7,13,Philip Rivers pass incomplete deep middle intended for Travis Benjamin,0.150,-0.390,86,20181118DENLAC
+87,2,00:00:12,2,10,LAC 19,7,13,Melvin Gordon left tackle for 20 yards (tackle by Darian Stewart),-0.390,1.530,87,20181118DENLAC
+88,2,00:00:05,,,,,,Timeout #1 by Los Angeles Chargers,,,88,20181118DENLAC
+89,2,00:00:05,1,10,LAC 39,7,13,Philip Rivers sacked by Bradley Chubb for -9 yards,1.530,-0.230,89,20181118DENLAC
+90,3,00:15:00,,,DEN 35,7,13,"Brandon McManus kicks off 65 yards, touchback.",0.000,0.610,90,20181118DENLAC
+91,3,00:15:00,1,10,LAC 25,7,13,Philip Rivers pass complete deep left to Tyrell Williams for 19 yards (tackle by Darian Stewart),0.610,1.860,91,20181118DENLAC
+92,3,00:14:35,1,10,LAC 44,7,13,Melvin Gordon left tackle for 2 yards (tackle by Bradley Chubb),1.860,1.590,92,20181118DENLAC
+93,3,00:13:58,2,8,LAC 46,7,13,Melvin Gordon up the middle for 7 yards (tackle by Chris Harris and Bradley Roby),1.590,1.820,93,20181118DENLAC
+94,3,00:13:38,3,1,DEN 47,7,13,Melvin Gordon left tackle for 2 yards (tackle by Darian Stewart),1.820,2.590,94,20181118DENLAC
+95,3,00:13:03,1,10,DEN 45,7,13,Austin Ekeler left end for 17 yards (tackle by Justin Simmons and Chris Harris),2.590,3.710,95,20181118DENLAC
+96,3,00:12:15,1,10,DEN 28,7,13,Philip Rivers pass complete short right to Melvin Gordon for 15 yards (tackle by Darian Stewart),3.710,4.710,96,20181118DENLAC
+97,3,00:11:30,1,10,DEN 13,7,13,"Philip Rivers sacked by Shane Ray for no gain. Penalty on Chris Harris: Defensive Holding, 5 yards (no play)",4.710,5.370,97,20181118DENLAC
+98,3,00:11:02,1,8,DEN 8,7,13,Philip Rivers pass incomplete short right intended for Antonio Gates (defended by Josey Jewell),5.370,4.570,98,20181118DENLAC
+99,3,00:10:55,2,8,DEN 8,7,13,"Philip Rivers pass complete short right to Melvin Gordon for 4 yards (tackle by Will Parks). Penalty on Dan Feeney: Offensive Holding, 10 yards (no play)",4.570,3.150,99,20181118DENLAC
+100,3,00:10:32,2,18,DEN 18,7,13,"Philip Rivers pass complete short left to Keenan Allen for 6 yards (tackle by Justin Simmons). Penalty on Justin Simmons: Unnecessary Roughness, 6 yards",3.150,5.830,100,20181118DENLAC
+101,3,00:10:02,1,6,DEN 6,7,19,"Philip Rivers pass complete short left to Antonio Gates for 6 yards, touchdown",5.830,7.000,101,20181118DENLAC
+102,3,00:09:56,,,DEN 15,7,19,Michael Badgley kicks extra point no good wide left,0.000,-1.000,102,20181118DENLAC
+103,3,00:09:56,,,LAC 35,7,19,"Michael Badgley kicks off 65 yards, touchback.",0.000,0.610,103,20181118DENLAC
+104,3,00:09:56,1,10,DEN 25,7,19,Phillip Lindsay up the middle for 5 yards (tackle by Jatavis Brown),0.610,0.740,104,20181118DENLAC
+105,3,00:09:31,2,5,DEN 30,7,19,Case Keenum pass complete short right to Jeff Heuerman for 3 yards (tackle by Derwin James),0.740,0.430,105,20181118DENLAC
+106,3,00:08:50,3,2,DEN 33,7,19,Case Keenum pass incomplete short right intended for Courtland Sutton,0.430,-1.180,106,20181118DENLAC
+107,3,00:08:40,4,2,DEN 33,7,19,"Colby Wadman punts 45 yards, fair catch by Travis Benjamin at LAC-22",-1.180,-0.410,107,20181118DENLAC
+108,3,00:08:38,1,10,LAC 22,7,19,Philip Rivers pass complete short middle to Keenan Allen for 7 yards (tackle by Will Parks),0.410,0.810,108,20181118DENLAC
+109,3,00:08:02,2,3,LAC 29,7,19,Melvin Gordon left tackle for 5 yards (tackle by Shaquil Barrett and Chris Harris),0.810,1.200,109,20181118DENLAC
+110,3,00:07:19,1,10,LAC 34,7,19,Melvin Gordon right tackle for 4 yards (tackle by Josey Jewell),1.200,1.200,110,20181118DENLAC
+111,3,00:06:36,2,6,LAC 38,7,19,Philip Rivers pass complete short left to Melvin Gordon for 7 yards (tackle by Josey Jewell),1.200,1.930,111,20181118DENLAC
+112,3,00:05:51,1,10,LAC 45,7,19,Austin Ekeler up the middle for 3 yards (tackle by Adam Gotsis and Will Parks),1.930,1.790,112,20181118DENLAC
+113,3,00:05:10,2,7,LAC 48,7,19,Philip Rivers pass complete short left to Keenan Allen for 16 yards (tackle by Chris Harris). Penalty on Chris Harris: Defensive Pass Interference (Declined) ,1.790,3.180,113,20181118DENLAC
+114,3,00:04:41,1,10,DEN 36,7,19,Melvin Gordon left end for 1 yard (tackle by Bradley Chubb and Josey Jewell),3.180,2.770,114,20181118DENLAC
+115,3,00:03:59,2,9,DEN 35,7,19,Philip Rivers pass incomplete short middle intended for Virgil Green,2.770,2.080,115,20181118DENLAC
+116,3,00:03:55,3,9,DEN 35,7,19,Philip Rivers pass short right intended for Travis Benjamin is intercepted by Von Miller at DEN-40 and returned for 42 yards,2.080,-4.370,116,20181118DENLAC
+117,3,00:03:45,1,10,LAC 18,7,19,Phillip Lindsay right end for 8 yards (tackle by Jahleel Addae),4.370,5.230,117,20181118DENLAC
+118,3,00:03:04,2,2,LAC 10,7,19,Royce Freeman up the middle for 7 yards (tackle by Jatavis Brown),5.230,6.510,118,20181118DENLAC
+119,3,00:02:28,1,3,LAC 3,13,19,"Royce Freeman up the middle for 3 yards, touchdown",6.510,7.000,119,20181118DENLAC
+120,3,00:02:24,,,LAC 15,14,19,Brandon McManus kicks extra point good,0.000,0.000,120,20181118DENLAC
+121,3,00:02:24,,,DEN 35,14,19,"Brandon McManus kicks off 64 yards, returned by Desmond King for no gain (tackle by Keishawn Bierria and Su'a Cravens)",0.000,0.670,121,20181118DENLAC
+122,3,00:02:17,1,10,LAC 26,14,19,Philip Rivers pass complete short middle to Keenan Allen for 8 yards (tackle by Chris Harris),0.670,1.210,122,20181118DENLAC
+123,3,00:01:41,2,2,LAC 34,14,19,Melvin Gordon up the middle for 1 yard (tackle by Justin Simmons and Will Parks),1.210,0.630,123,20181118DENLAC
+124,3,00:01:01,3,1,LAC 35,14,19,Philip Rivers pass incomplete short left intended for Mike Williams (defended by Bradley Roby),0.630,-1.040,124,20181118DENLAC
+125,3,00:00:58,4,1,LAC 35,14,19,"Donnie Jones punts 38 yards, fair catch by Adam Jones at DEN-27",-1.040,-0.740,125,20181118DENLAC
+126,3,00:00:50,1,10,DEN 27,14,19,"Phillip Lindsay right end for 4 yards (tackle by Kyle Emanuel). Penalty on Derwin James: Face Mask (15 Yards), 15 yards",0.740,1.990,126,20181118DENLAC
+127,3,00:00:24,1,10,DEN 46,14,19,Case Keenum pass complete short left to Emmanuel Sanders for no gain (tackle by Desmond King),1.990,1.450,127,20181118DENLAC
+128,4,00:15:00,2,10,DEN 46,14,19,Case Keenum pass complete short middle to Courtland Sutton for 39 yards (tackle by Adrian Phillips),1.450,4.580,128,20181118DENLAC
+129,4,00:14:16,1,10,LAC 15,14,19,Phillip Lindsay up the middle for 3 yards (tackle by Jatavis Brown),4.580,4.450,129,20181118DENLAC
+130,4,00:13:37,2,7,LAC 12,14,19,Royce Freeman up the middle for 4 yards (tackle by Damion Square and Casey Hayward),4.450,4.450,130,20181118DENLAC
+131,4,00:12:56,3,3,LAC 8,14,19,Case Keenum pass complete short right to Phillip Lindsay for 6 yards (tackle by Michael Davis),4.450,6.740,131,20181118DENLAC
+132,4,00:12:20,1,2,LAC 2,20,19,"Phillip Lindsay left end for 2 yards, touchdown",6.740,7.000,132,20181118DENLAC
+133,4,00:12:17,,,LAC 2,20,19,"Two Point Attempt: Case Keenum rushes, conversion fails.",0.000,-1.000,133,20181118DENLAC
+134,4,00:12:17,,,DEN 35,20,19,"Brandon McManus kicks off 67 yards, returned by Desmond King for no gain (tackle by Devontae Booker and Keishawn Bierria)",0.000,0.810,134,20181118DENLAC
+135,4,00:12:11,1,10,LAC 28,20,19,Philip Rivers pass complete short right to Austin Ekeler for 17 yards (tackle by Justin Simmons),0.810,1.930,135,20181118DENLAC
+136,4,00:11:26,1,10,LAC 45,20,19,Philip Rivers pass complete short left to Melvin Gordon for 6 yards (tackle by Bradley Roby),1.930,2.190,136,20181118DENLAC
+137,4,00:10:45,2,4,DEN 49,20,19,Melvin Gordon up the middle for 5 yards (tackle by Justin Simmons),2.190,2.650,137,20181118DENLAC
+138,4,00:10:02,1,10,DEN 44,20,19,Philip Rivers pass complete short right to Austin Ekeler for 23 yards (tackle by Darian Stewart and Chris Harris),2.650,4.170,138,20181118DENLAC
+139,4,00:09:12,1,10,DEN 21,20,19,Austin Ekeler right tackle for no gain (tackle by Todd Davis),4.170,3.630,139,20181118DENLAC
+140,4,00:08:31,2,10,DEN 21,20,19,"Penalty on Sam Tevi: False Start, 5 yards (no play)",3.630,2.950,140,20181118DENLAC
+141,4,00:08:09,2,15,DEN 26,20,19,Melvin Gordon up the middle for no gain (tackle by Adam Gotsis),2.950,2.280,141,20181118DENLAC
+142,4,00:07:27,3,15,DEN 26,20,19,Philip Rivers pass complete short left to Melvin Gordon for 14 yards (tackle by Darian Stewart),2.280,2.780,142,20181118DENLAC
+143,4,00:06:51,,,,,,Timeout #1 by Los Angeles Chargers,,,143,20181118DENLAC
+144,4,00:06:51,4,1,DEN 12,20,22,Michael Badgley 30 yard field goal good,2.780,3.000,144,20181118DENLAC
+145,4,00:06:47,,,LAC 35,20,22,"Michael Badgley kicks off 60 yards, returned by Devontae Booker for no gain (tackle by Rayshawn Jenkins and Adrian Phillips)",0.000,0.670,145,20181118DENLAC
+146,4,00:06:42,1,10,DEN 26,20,22,Case Keenum pass incomplete short right intended for Emmanuel Sanders (defended by Casey Hayward),0.670,0.130,146,20181118DENLAC
+147,4,00:06:38,2,10,DEN 26,20,22,Case Keenum pass complete short middle to Emmanuel Sanders for 15 yards (tackle by Adrian Phillips),0.130,1.660,147,20181118DENLAC
+148,4,00:06:04,1,10,DEN 41,20,22,Phillip Lindsay right end for no gain (tackle by Uchenna Nwosu),1.660,1.120,148,20181118DENLAC
+149,4,00:05:24,2,10,DEN 41,20,22,Phillip Lindsay left tackle for 6 yards (tackle by Brandon Mebane),1.120,1.220,149,20181118DENLAC
+150,4,00:04:48,3,4,DEN 47,20,22,"Case Keenum pass deep left is intercepted by Adrian Phillips at LAC-14 and returned for -1 yards. Penalty on Jahleel Addae: Defensive Holding, 5 yards (no play)",1.220,2.390,150,20181118DENLAC
+151,4,00:04:40,1,10,LAC 48,20,22,Phillip Lindsay left tackle for 3 yards (tackle by Kyle Emanuel and Brandon Mebane),2.390,2.250,151,20181118DENLAC
+152,4,00:04:03,2,7,LAC 45,20,22,Case Keenum pass incomplete short right intended for Andy Janovich,2.250,1.550,152,20181118DENLAC
+153,4,00:03:57,3,7,LAC 45,20,22,Case Keenum pass incomplete short right intended for Jeff Heuerman,1.550,0.270,153,20181118DENLAC
+154,4,00:03:53,4,7,LAC 45,20,22,"Colby Wadman punts 45 yards, touchback.",0.270,-0.280,154,20181118DENLAC
+155,4,00:03:45,1,10,LAC 20,20,22,Melvin Gordon up the middle for 3 yards (tackle by Josey Jewell),0.280,0.140,155,20181118DENLAC
+156,4,00:03:38,,,,,,Timeout #1 by Denver Broncos,,,156,20181118DENLAC
+157,4,00:03:38,2,7,LAC 23,20,22,Philip Rivers pass complete short right to Virgil Green for 1 yard (tackle by Darian Stewart),0.140,-0.430,157,20181118DENLAC
+158,4,00:03:33,,,,,,Timeout #2 by Denver Broncos,,,158,20181118DENLAC
+159,4,00:03:33,3,6,LAC 24,20,22,Philip Rivers pass complete short right to Antonio Gates for 25 yards (tackle by Justin Simmons),-0.430,2.190,159,20181118DENLAC
+160,4,00:02:44,1,10,LAC 49,20,22,Melvin Gordon right tackle for 7 yards (tackle by Shelby Harris and Justin Simmons),2.190,2.590,160,20181118DENLAC
+161,4,00:02:39,,,,,,Timeout #3 by Denver Broncos,,,161,20181118DENLAC
+162,4,00:02:39,2,3,DEN 44,20,22,Philip Rivers up the middle for -4 yards (tackle by Bradley Chubb),2.590,1.360,162,20181118DENLAC
+163,4,00:02:00,3,7,DEN 48,20,22,Philip Rivers pass incomplete short right intended for Keenan Allen,1.360,0.070,163,20181118DENLAC
+164,4,00:01:58,4,7,DEN 48,20,22,"Donnie Jones punts 40 yards, fair catch by River Cracraft at DEN-8",0.070,0.380,164,20181118DENLAC
+165,4,00:01:51,1,10,DEN 8,20,22,Case Keenum pass complete short right to Jeff Heuerman for 5 yards (tackle by Derwin James),-0.380,-0.410,165,20181118DENLAC
+166,4,00:01:28,2,5,DEN 13,20,22,Case Keenum pass complete short left to Emmanuel Sanders for 38 yards (tackle by Jatavis Brown),-0.410,2.320,166,20181118DENLAC
+167,4,00:01:05,1,10,LAC 49,20,22,Case Keenum pass complete short middle to Devontae Booker for 4 yards (tackle by Adrian Phillips),2.320,2.320,167,20181118DENLAC
+168,4,00:00:43,2,6,LAC 45,20,22,"Case Keenum pass complete short right to Tim Patrick for 11 yards (tackle by Michael Davis). Penalty on Tim Patrick: Offensive Pass Interference, 10 yards (no play)",2.320,0.970,168,20181118DENLAC
+169,4,00:00:37,2,16,DEN 45,20,22,Case Keenum pass complete short right to Matt LaCosse for 9 yards (tackle by Desmond King),0.970,1.490,169,20181118DENLAC
+170,4,00:00:20,3,7,LAC 46,20,22,Case Keenum pass complete deep middle to Courtland Sutton for 30 yards (tackle by Derwin James),1.490,4.510,170,20181118DENLAC
+171,4,00:00:04,1,10,LAC 16,20,22,Case Keenum spiked the ball,4.510,3.900,171,20181118DENLAC
+172,4,00:00:03,,,,,,Timeout #2 by Los Angeles Chargers,,,172,20181118DENLAC
+173,4,00:00:03,2,10,LAC 16,23,22,Brandon McManus 34 yard field goal good,3.900,3.000,173,20181118DENLAC

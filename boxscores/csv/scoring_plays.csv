@@ -1,6 +1,10 @@
 id,homeScore,scoringTeamId,awayScore,qtr,qtrTimeRem,description
-1,0,1,7,2,00:14:54,Chris Thompson 13 yard pass from Alex Smith (Dustin Hopkins kick)
-2,0,1,14,2,00:04:10,Adrian Peterson 1 yard rush (Dustin Hopkins kick)
-3,0,1,21,2,00:00:08,Jordan Reed 4 yard pass from Alex Smith (Dustin Hopkins kick)
-4,0,1,24,4,00:12:13,Dustin Hopkins 31 yard field goal 
-5,6,2,24,4,00:05:47,David Johnson 2 yard rush (pass failed)
+1,3,2,0,1,00:07:00,Michael Badgley 46 yard field goal 
+2,6,2,0,1,00:00:39,Michael Badgley 45 yard field goal 
+3,6,1,7,2,00:12:05,Phillip Lindsay 41 yard rush (Brandon McManus kick)
+4,13,2,7,2,00:02:39,Keenan Allen 4 yard pass from Philip Rivers (Michael Badgley kick)
+5,19,2,7,3,00:09:56,Antonio Gates 6 yard pass from Philip Rivers (Michael Badgley kick failed)
+6,19,1,14,3,00:02:24,Royce Freeman 3 yard rush (Brandon McManus kick)
+7,19,1,20,4,00:12:17,Phillip Lindsay 2 yard rush (run failed)
+8,22,2,20,4,00:06:47,Michael Badgley 30 yard field goal 
+9,22,1,23,4,00:00:00,Brandon McManus 34 yard field goal 
