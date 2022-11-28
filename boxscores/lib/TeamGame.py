@@ -249,7 +249,6 @@ class TeamGame:
             value = value.split('-', 1)
             atts = value[0]
             right = value[1].rsplit('-', 1)
-            print(right)
             self.setRushAtts(int(atts))
             self.setRushYds(int(right[0]))
             self.setRushTds(int(right[1]))
