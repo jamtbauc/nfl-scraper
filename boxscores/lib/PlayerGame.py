@@ -964,6 +964,7 @@ class PlayerGame:
             "longPunt": self.getLongPunt(),
             "passFirstDowns": self.getPassFirstDowns(),
             "passFirstDownPct": self.getPassFirstDownPct(),
+            "passTgtYds": self.getPassTgtYds(),
             "passTgtYdsPerAtt": self.getPassTgtYdsPerAtt(),
             "passAirYds": self.getPassAirYds(),
             "passAirYdsPerComp": self.getPassAirYdsPerComp(),
