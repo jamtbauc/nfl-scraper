@@ -38,7 +38,7 @@ class PlayByPlay:
         elif label == "exp_pts_after":
             self.setExpPointsAfter(value)
         else:
-            print(f"Cannot map {label}")
+            print(f"Cannot map {label} for PlayByPlay")
         
     def getDetail(self):
         return self.detail

@@ -203,8 +203,6 @@ class Parser:
         
         self.home_team = TeamGame(self.getNextTmGmId(), home_name, self.game.getId(), True)
         self.team_gms[self.home_team.getId()] = self.home_team
-        
-        return date.date()
     
 #     ##### PRIVATE HELPERS 
     def __extract_time(self, time_str):

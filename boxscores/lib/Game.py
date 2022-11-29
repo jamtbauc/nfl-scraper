@@ -1,5 +1,4 @@
-from datetime import time
-import json
+from datetime import datetime
 
 class Game:
     def __init__(self, date, week, away_abbrev, home_abbrev):
@@ -28,7 +27,10 @@ class Game:
         self.date = date
         
     def getGameDuration(self):
-        return self.game_duration
+        if self.game_duration:
+            return self.game_duration
+        else:
+            return datetime.strptime(0, "%S")
     
     def setGameDuration(self, value):
         self.game_duration = value

@@ -85,7 +85,7 @@ class PlayerGameSnap:
         elif label == "st_pct":
             self.setStSnapPct(value)
         else:
-            print(f"Could not set {label} to {value} for playerGmSnap ID: {self.getId()}")
+            print(f"Could not map {label} for PlayerGameSnap")
         
     def getInfo(self):
         info = {

@@ -901,7 +901,7 @@ class PlayerGame:
                 value = float(value[0])
             self.tacks_missed_pct = float(value)
         else:
-            print(f"{label}: {value}")
+            print(f"Cannot map {label} for PlayerGame")
             
     # Return JSON object
     def getInfo(self):
