@@ -31,7 +31,7 @@ def request_data(conn, url):
         return body
     
 # Scrape response body for desired information  
-def run_scraper():
+def run_scraper(stop):
     # hold all urls
     urls = get_urls('links.csv')
     # define base url and get request urls
@@ -42,7 +42,7 @@ def run_scraper():
     parser = Parser()
     # loop through all urls
     for url in urls:
-        if url[11:20] < "20221127":
+        if url[11:20] < stop:
             bytes = request_data(conn, url)
             sleep(3)
             # trim html to content we need
@@ -78,7 +78,7 @@ def run_scraper():
     conn.close()
     
     # write files
-    parser.writeFiles()
+    parser.writeFiles(stop)
     
 # Trim body of test to start and end
 def trim_text(text, start, end):
@@ -91,7 +91,7 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper()
+        run_scraper("20221127")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)

@@ -980,13 +980,16 @@ class Parser:
         return date
     
     # write all files
-    def writeFiles(self):
+    def writeFiles(self, stop):
         with open("csv/games.csv", "w") as file:
             fieldnames = ["id", "date", "season", "week", "attendance", "stadiumId", "gameDuration", "roofType"]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for game in self.games:
                 writer.writerow(self.games[game].getInfo())
+            
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
                 
         with open("csv/teams.csv", "w") as file:
             fieldnames = ["name", "locale", "mascot", "abbrevPff"]
@@ -994,6 +997,9 @@ class Parser:
             writer.writeheader()
             for team in self.teams:
                 writer.writerow(self.teams[team].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
                 
         with open("csv/team_games.csv", "w") as file:
             fieldnames = ["id", "teamId", "gameId", "wonToss", "tossDecision", "isHome", "isFavored",
@@ -1007,6 +1013,9 @@ class Parser:
             for team in self.team_gms:
                 writer.writerow(self.team_gms[team].getInfo())
                 
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
+                
         with open("csv/stadiums.csv", "w") as file:
             fieldnames = ['name', 'city', 'state', 'surface', 'roof']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
@@ -1014,12 +1023,18 @@ class Parser:
             for stadium in self.stadiums:
                 writer.writerow(self.stadiums[stadium].getInfo())
                 
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
+                
         with open("csv/scoring_plays.csv", "w") as file:
             fieldnames = ['id', 'homeScore', 'scoringTeamId', 'awayScore', 'qtr', 'qtrTimeRem', 'description']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for scoring_play in self.scoring_plays:
                 writer.writerow(self.scoring_plays[scoring_play].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
             
         with open("csv/gm_weathers.csv", "w") as file:
             fieldnames = ['id', 'temp','humidity', 'wind', 'gameId']
@@ -1028,12 +1043,18 @@ class Parser:
             for gm_weather in self.gm_weathers:
                 writer.writerow(self.gm_weathers[gm_weather].getInfo())
                 
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
+                
         with open("csv/officials.csv", "w") as file:
             fieldnames = ['name', 'careerStart', 'careerEnd', 'jerseyNum']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for official in self.officials:
                 writer.writerow(self.officials[official].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
                 
         with open("csv/off_gms.csv", "w") as file:
             fieldnames = ['id', 'refPosition', 'officialId', 'gameId']
@@ -1042,12 +1063,18 @@ class Parser:
             for off_gm in self.off_gms:
                 writer.writerow(self.off_gms[off_gm].getInfo())
                 
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
+                
         with open("csv/players.csv", "w") as file:
             fieldnames = ['id', 'name', 'college', 'dob', 'careerStart', 'careerEnd']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player in self.players:
                 writer.writerow(self.players[player].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
                 
         with open("csv/player_gms.csv", "w") as file:
             fieldnames = ['id', 'playerId', 'tmGameId', 'passComps', 'passAtts', 'passYds',
@@ -1076,6 +1103,9 @@ class Parser:
             writer.writeheader()
             for player_gm in self.player_gms:
                 writer.writerow(self.player_gms[player_gm].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
 
         with open("csv/player_gm_snaps.csv", "w") as file:
             fieldnames = ['id', 'playerGmId', 'startPos', 'offSnaps', 'offSnapPct', 'defSnaps', 'defSnapPct', 'stSnaps', 'stSnapPct']
@@ -1084,12 +1114,18 @@ class Parser:
             for player in self.player_gm_snaps:
                 writer.writerow(self.player_gm_snaps[player].getInfo())
                 
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
+                
         with open("csv/tm_gm_drives.csv", "w") as file:
             fieldnames = ['id', 'driveNum', 'quarter', 'timeStart', 'ydStart', 'numPlays', 'driveTime', 'netYds', 'driveResult', 'teamGameId']
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for drive in self.tm_gm_drives:
                 writer.writerow(self.tm_gm_drives[drive].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
                 
         with open("csv/play_by_plays.csv", "w") as file:
             fieldnames = ["id", "qtr", "qtrTimeRem", "down", "ydsToGo", "ydStart",
@@ -1099,4 +1135,7 @@ class Parser:
             writer.writeheader()
             for play in self.play_by_plays:
                 writer.writerow(self.play_by_plays[play].getInfo())
+                
+            updateWriter = csv.writer(file, delimiter=',')    
+            updateWriter.writerow([stop])
         
