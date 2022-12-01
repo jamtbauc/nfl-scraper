@@ -32,6 +32,7 @@ class Parser:
     player_gms = {}
     player_gm_snaps = {}
     tm_gm_drives = {}
+    errors = []
     
     # hold id counters
     tm_game_id = 1
@@ -141,6 +142,9 @@ class Parser:
         
     def setPlays(self, text):
         self._plays = text
+        
+    def addErrorUrl(self, url):
+        self.errors.append(url)
         
     # extract date, home and away teams from header
     def extract_basic_info(self):
@@ -1134,4 +1138,9 @@ class Parser:
                 
             updateWriter = csv.writer(file, delimiter=',')    
             updateWriter.writerow([stop])
+            
+        with open("csv/errors.csv", "w") as file:
+            writer = csv.writer(file, delimiter=',')
+            for url in self.errors:
+                writer.writerow([url])
         

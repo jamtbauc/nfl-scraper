@@ -2447,7 +2447,7 @@ id,teamId,gameId,wonToss,tossDecision,isHome,isFavored,spread,overUnder,firstDow
 2446,Kansas City Chiefs,20221106TENKAN,False,,True,True,-12.5,45.5,29,19,77,1,43,68,446,1,1,4,24,422,499,0,0,1,10,69,19,8,2,2,00:41:28,Andy Reid,20
 2447,Baltimore Ravens,20221107BALNOR,True,(deferred),False,True,-1.5,46.5,23,40,188,2,12,22,133,1,0,3,2,131,319,1,0,0,5,31,15,9,0,0,00:37:47,John Harbaugh,27
 2448,New Orleans Saints,20221107BALNOR,False,,True,False,1.5,46.5,13,15,48,0,20,30,223,1,1,4,28,195,243,0,0,1,5,40,11,3,1,1,00:22:13,Dennis Allen,13
-2449,Atlanta Falcons,20221110ATLCAR,True,,False,True,-2.5,41.5,20,25,138,0,19,30,186,2,1,5,33,153,291,0,0,1,4,37,11,3,2,0,00:25:48,Arthur Smith,15
+2449,Atlanta Falcons,20221110ATLCAR,True,,False,True,-2.5,41.5,20,25,138,0,19,30,180,2,1,5,33,147,285,0,0,1,4,37,11,3,2,0,00:25:48,Arthur Smith,15
 2450,Carolina Panthers,20221110ATLCAR,False,,True,False,2.5,41.5,18,47,232,2,10,16,108,0,0,1,7,101,333,0,0,0,10,89,15,6,0,0,00:34:12,Steve Wilks,25
 2451,Seattle Seahawks,20221113SEATAM,True,(deferred),False,False,2.5,45.0,19,14,39,0,23,33,275,2,0,3,31,244,283,1,1,1,6,46,9,1,2,2,00:23:05,Pete Carroll,16
 2452,Tampa Bay Buccaneers,20221113SEATAM,False,,True,True,-2.5,45.0,26,44,161,1,22,30,258,2,2,0,0,258,419,0,0,2,4,40,15,10,0,0,00:36:55,Todd Bowles,21
@@ -2509,3 +2509,30 @@ id,teamId,gameId,wonToss,tossDecision,isHome,isFavored,spread,overUnder,firstDow
 2508,Dallas Cowboys,20221124NYGDAL,True,(deferred),True,True,-10.0,45.5,26,39,169,2,21,30,261,2,2,0,0,261,430,1,0,2,13,86,11,7,1,0,00:34:09,Mike McCarthy,28
 2509,New England Patriots,20221124NWEMIN,True,(deferred),False,False,2.5,42.5,17,13,45,0,28,39,382,2,0,3,18,364,409,1,0,0,6,55,10,3,1,0,00:23:43,Bill Belichick,26
 2510,Minnesota Vikings,20221124NWEMIN,False,,True,True,-2.5,42.5,23,27,57,0,31,38,310,3,1,1,9,301,358,0,0,1,3,20,15,8,0,0,00:36:17,Kevin O'Connell,33
+2511,Atlanta Falcons,20221127ATLWAS,False,,False,False,4.0,40.5,18,29,167,0,15,25,174,1,1,1,9,165,332,0,0,1,2,20,10,4,1,0,00:26:51,Arthur Smith,13
+2512,Washington Commanders,20221127ATLWAS,True,(deferred),True,True,-4.0,40.5,20,37,176,0,14,23,138,2,1,0,0,138,314,0,0,1,4,28,12,5,1,1,00:33:09,Ron Rivera,19
+2513,Chicago Bears,20221127CHINYJ,True,(deferred),False,False,7.0,38.5,14,29,127,0,14,25,179,1,1,2,14,165,292,2,0,1,1,10,13,4,3,2,00:27:55,Matt Eberflus,10
+2514,New York Jets,20221127CHINYJ,False,,True,True,-7.0,38.5,22,32,158,1,22,29,315,3,0,1,7,308,466,2,0,0,1,5,12,7,1,0,00:32:05,Robert Saleh,31
+2515,Cincinnati Bengals,20221127CINTEN,False,,False,True,-1.5,43.0,21,28,108,1,22,37,270,1,0,1,4,266,374,0,0,0,9,80,14,5,0,0,00:31:46,Zac Taylor,20
+2516,Tennessee Titans,20221127CINTEN,True,(deferred),True,False,1.5,43.0,15,21,63,0,22,34,291,0,0,1,10,281,344,1,0,0,8,57,16,7,0,0,00:28:14,Mike Vrabel,16
+2517,Denver Broncos,20221127DENCAR,True,(deferred),False,True,-1.0,36.0,14,19,121,0,19,35,142,1,0,3,17,125,246,2,2,2,4,44,14,4,1,0,00:22:57,Nathaniel Hackett,10
+2518,Carolina Panthers,20221127DENCAR,False,,True,False,1.0,36.0,19,46,185,1,11,19,164,1,0,0,0,164,349,2,1,1,4,34,12,2,2,2,00:37:03,Steve Wilks,23
+2519,Houston Texans,20221127HOUMIA,False,,False,False,14.0,47.0,14,14,36,1,26,39,215,1,2,5,41,174,210,3,1,3,5,45,13,2,1,1,00:27:33,Lovie Smith,15
+2520,Miami Dolphins,20221127HOUMIA,True,(deferred),True,True,-14.0,47.0,25,26,66,1,23,41,305,1,0,5,32,273,339,1,1,1,4,35,15,4,1,1,00:32:27,Mike McDaniel,30
+2521,Baltimore Ravens,20221127BALJAX,False,,False,True,-3.5,43.0,24,35,162,1,16,32,254,1,0,1,1,253,415,3,2,2,3,20,14,8,1,0,00:32:39,John Harbaugh,27
+2522,Jacksonville Jaguars,20221127BALJAX,True,(deferred),True,False,3.5,43.0,18,20,38,0,29,37,321,3,0,4,27,294,332,2,1,1,4,19,13,4,3,2,00:27:21,Doug Pederson,28
+2523,Tampa Bay Buccaneers,20221127TAMCLE,False,,False,True,-3.0,42.0,16,20,96,0,29,43,246,2,0,3,17,229,325,0,0,0,9,70,15,4,1,1,00:30:37,Todd Bowles,17
+2524,Cleveland Browns,20221127TAMCLE,True,,True,False,3.0,42.0,22,34,189,2,23,37,210,1,1,4,32,178,367,0,0,1,5,42,17,5,4,2,00:39:04,Kevin Stefanski,23
+2525,Las Vegas Raiders,20221127LVRSEA,False,,False,False,4.0,47.5,27,40,283,2,25,36,295,3,2,1,2,293,576,1,0,2,7,50,14,8,2,1,00:37:35,Josh McDaniels,40
+2526,Seattle Seahawks,20221127LVRSEA,True,(deferred),True,True,-4.0,47.5,22,23,65,2,27,37,328,2,1,3,21,307,372,1,1,2,2,10,9,3,0,0,00:28:05,Pete Carroll,34
+2527,Los Angeles Chargers,20221127LACARI,False,,False,True,-2.5,48.5,22,13,65,0,35,47,274,3,0,4,28,246,311,1,0,0,4,30,13,6,0,0,00:29:25,Brandon Staley,25
+2528,Arizona Cardinals,20221127LACARI,True,(deferred),True,False,2.5,48.5,20,34,181,1,18,29,191,2,1,1,6,185,366,1,1,2,3,19,13,7,1,0,00:30:35,Kliff Kingsbury,24
+2529,New Orleans Saints,20221127NORSFO,False,,False,False,9.0,43.0,14,22,63,0,18,30,204,0,0,1,7,197,260,2,2,2,6,46,11,4,1,0,00:25:10,Dennis Allen,0
+2530,San Francisco 49ers,20221127NORSFO,True,(deferred),True,True,-9.0,43.0,21,29,96,0,26,37,222,1,0,1,1,221,317,0,0,0,7,64,13,5,2,1,00:34:50,Kyle Shanahan,13
+2531,Los Angeles Rams,20221127LARKAN,True,(deferred),False,False,15.5,42.0,13,28,116,0,14,24,106,1,2,3,24,82,198,0,0,2,5,25,13,5,3,3,00:27:34,Sean McVay,10
+2532,Kansas City Chiefs,20221127LARKAN,False,,True,True,-15.5,42.0,29,30,117,1,27,42,320,1,1,0,0,320,437,1,1,2,3,25,11,5,0,0,00:32:26,Andy Reid,26
+2533,Green Bay Packers,20221127GNBPHI,True,(deferred),False,False,6.5,46.0,19,21,106,1,17,25,253,3,2,3,17,236,342,0,0,2,4,35,7,1,1,1,00:24:26,Matt LaFleur,33
+2534,Philadelphia Eagles,20221127GNBPHI,False,,True,True,-6.5,46.0,29,49,363,3,16,28,153,2,0,2,16,137,500,2,1,1,3,25,15,8,3,2,00:35:34,Nick Sirianni,40
+2535,Pittsburgh Steelers,20221128PITIND,False,,False,False,2.5,39.5,22,36,172,2,20,28,174,0,0,3,23,151,323,0,0,0,3,19,14,7,0,0,00:34:22,Mike Tomlin,24
+2536,Indianapolis Colts,20221128PITIND,True,(deferred),True,True,-2.5,39.5,19,25,110,1,22,34,199,1,1,3,19,180,290,3,1,2,2,20,12,3,3,2,00:25:38,Jeff Saturday,17
+20221130

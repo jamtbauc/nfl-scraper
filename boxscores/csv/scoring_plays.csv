@@ -10735,3 +10735,113 @@ id,homeScore,scoringTeamId,awayScore,qtr,qtrTimeRem,description
 10734,23,2509,26,3,00:06:43,Nick Folk 25 yard field goal 
 10735,26,2510,26,4,00:14:07,Greg Joseph 36 yard field goal 
 10736,33,2510,26,4,00:09:34,Adam Thielen 15 yard pass from Kirk Cousins (Greg Joseph kick)
+10737,0,2511,3,1,00:08:07,Younghoe Koo 47 yard field goal 
+10738,7,2512,3,1,00:03:46,Brian Robinson Jr. 14 yard pass from Taylor Heinicke (Joey Slye kick)
+10739,7,2511,10,2,00:08:26,MyCole Pruitt 4 yard pass from Marcus Mariota (Younghoe Koo kick)
+10740,10,2512,10,2,00:01:50,Joey Slye 30 yard field goal 
+10741,16,2512,10,3,00:04:03,John Bates 16 yard pass from Taylor Heinicke (Joey Slye kick failed)
+10742,16,2511,13,3,00:01:17,Younghoe Koo 48 yard field goal 
+10743,19,2512,13,4,00:09:05,Joey Slye 45 yard field goal 
+10744,7,2514,0,1,00:10:12,Garrett Wilson 8 yard pass from Mike White (Greg Zuerlein kick)
+10745,7,2513,3,1,00:05:59,Cairo Santos 22 yard field goal 
+10746,7,2513,10,2,00:14:20,Byron Pringle 4 yard pass from Trevor Siemian (Cairo Santos kick)
+10747,14,2514,10,2,00:04:57,Garrett Wilson 54 yard pass from Mike White (Greg Zuerlein kick)
+10748,17,2514,10,2,00:00:12,Greg Zuerlein 57 yard field goal 
+10749,24,2514,10,3,00:06:35,Elijah Moore 22 yard pass from Mike White (Greg Zuerlein kick)
+10750,31,2514,10,3,00:02:28,Ty Johnson 32 yard rush (Greg Zuerlein kick)
+10751,3,2516,0,2,00:14:06,Caleb Shudak 33 yard field goal 
+10752,3,2515,3,2,00:11:30,Evan McPherson 47 yard field goal 
+10753,10,2516,3,2,00:11:15,Treylon Burks fumble recovery in end zone (Caleb Shudak kick)
+10754,10,2515,10,2,00:01:55,Samaje Perine 7 yard rush (Evan McPherson kick)
+10755,10,2515,13,3,00:02:35,Evan McPherson 38 yard field goal 
+10756,13,2516,13,3,00:00:39,Caleb Shudak 24 yard field goal 
+10757,13,2515,20,4,00:13:42,Tee Higgins 27 yard pass from Joe Burrow (Evan McPherson kick)
+10758,16,2516,20,4,00:06:07,Caleb Shudak 38 yard field goal 
+10759,7,2518,0,1,00:00:30,D.J. Moore 5 yard pass from Sam Darnold (Eddy Pineiro kick)
+10760,7,2517,3,2,00:10:11,Brandon McManus 27 yard field goal 
+10761,10,2518,3,2,00:04:42,Eddy Pineiro 42 yard field goal 
+10762,17,2518,3,3,00:07:16,Sam Darnold 2 yard rush (Eddy Pineiro kick)
+10763,20,2518,3,4,00:13:33,Eddy Pineiro 26 yard field goal 
+10764,23,2518,3,4,00:08:59,Eddy Pineiro 36 yard field goal 
+10765,23,2517,10,4,00:03:19,Brandon Johnson 1 yard pass from Russell Wilson (Brandon McManus kick)
+10766,3,2520,0,1,00:10:21,Jason Sanders 45 yard field goal 
+10767,10,2520,0,1,00:02:57,Durham Smythe 4 yard pass from Tua Tagovailoa (Jason Sanders kick)
+10768,17,2520,0,2,00:12:22,Jeff Wilson 3 yard rush (Jason Sanders kick)
+10769,20,2520,0,2,00:06:22,Jason Sanders 23 yard field goal 
+10770,27,2520,0,2,00:04:59,Xavien Howard 16 yard fumble return (Jason Sanders kick)
+10771,30,2520,0,2,00:00:00,Jason Sanders 35 yard field goal 
+10772,30,2519,6,3,00:03:18,Dare Ogunbowale 3 yard rush (run failed)
+10773,30,2519,12,4,00:12:46,Jordan Akins 25 yard pass from Kyle Allen (pass failed)
+10774,30,2519,15,4,00:09:00,Ka'imi Fairbairn 28 yard field goal 
+10775,0,2521,3,1,00:09:23,Justin Tucker 27 yard field goal 
+10776,0,2521,6,1,00:02:03,Justin Tucker 29 yard field goal 
+10777,7,2522,6,2,00:09:57,Jamycal Hasty 28 yard pass from Trevor Lawrence (Riley Patterson kick)
+10778,7,2521,9,2,00:04:51,Justin Tucker 55 yard field goal 
+10779,10,2522,9,2,00:00:09,Riley Patterson 22 yard field goal 
+10780,10,2521,12,3,00:07:51,Justin Tucker 24 yard field goal 
+10781,10,2521,19,4,00:13:07,Gus Edwards 1 yard rush (Justin Tucker kick)
+10782,17,2522,19,4,00:05:55,Jamal Agnew 1 yard pass from Trevor Lawrence (Riley Patterson kick)
+10783,20,2522,19,4,00:04:19,Riley Patterson 29 yard field goal 
+10784,20,2521,27,4,00:02:02,Josh Oliver 12 yard pass from Lamar Jackson (two point pass successful)
+10785,28,2522,27,4,00:00:14,Marvin Jones 10 yard pass from Trevor Lawrence (two point pass successful)
+10786,7,2524,0,1,00:10:45,Anthony Schwartz 31 yard rush (Cade York kick)
+10787,7,2523,7,1,00:05:11,Chris Godwin 10 yard pass from Tom Brady (Ryan Succop kick)
+10788,10,2524,7,1,00:02:22,Cade York 51 yard field goal 
+10789,10,2523,10,2,00:00:39,Ryan Succop 42 yard field goal 
+10790,10,2523,17,3,00:07:41,Ko Kieft 5 yard pass from Tom Brady (Ryan Succop kick)
+10791,17,2524,17,4,00:00:32,David Njoku 12 yard pass from Jacoby Brissett (Cade York kick)
+10792,23,2524,17,5,00:00:19,Nick Chubb 3 yard rush 
+10793,7,2526,0,1,00:14:32,Kenneth Walker III 12 yard rush (Jason Myers kick)
+10794,7,2525,7,1,00:09:24,Ameer Abdullah 18 yard pass from Derek Carr (Daniel Carlson kick)
+10795,10,2526,7,1,00:04:23,Jason Myers 24 yard field goal 
+10796,13,2526,7,2,00:13:34,Jason Myers 34 yard field goal 
+10797,13,2525,14,2,00:10:02,Mack Hollins 36 yard pass from Derek Carr (Daniel Carlson kick)
+10798,13,2525,21,2,00:08:29,Josh Jacobs 30 yard rush (Daniel Carlson kick)
+10799,20,2526,21,2,00:05:21,Tyler Lockett 35 yard pass from Geno Smith (Jason Myers kick)
+10800,20,2525,24,2,00:00:10,Daniel Carlson 36 yard field goal 
+10801,27,2526,24,3,00:11:46,Kenneth Walker III 14 yard rush (Jason Myers kick)
+10802,27,2525,27,3,00:05:03,Daniel Carlson 25 yard field goal 
+10803,34,2526,27,4,00:05:37,Travis Homer 18 yard pass from Geno Smith (Jason Myers kick)
+10804,34,2525,34,4,00:01:54,Foster Moreau 5 yard pass from Derek Carr (Daniel Carlson kick)
+10805,34,2525,40,5,00:04:20,Josh Jacobs 86 yard rush 
+10806,7,2528,0,1,00:02:33,DeAndre Hopkins 33 yard pass from Kyler Murray (Matt Prater kick)
+10807,10,2528,0,2,00:14:03,Matt Prater 43 yard field goal 
+10808,10,2527,7,2,00:08:51,Keenan Allen 2 yard pass from Justin Herbert (Cameron Dicker kick)
+10809,10,2527,14,2,00:04:28,DeAndre Carter 33 yard pass from Justin Herbert (Cameron Dicker kick)
+10810,17,2528,14,2,00:00:12,Kyler Murray 5 yard rush (Matt Prater kick)
+10811,17,2527,17,3,00:04:28,Cameron Dicker 26 yard field goal 
+10812,24,2528,17,4,00:13:31,James Conner 6 yard pass from Kyler Murray (Matt Prater kick)
+10813,24,2527,25,4,00:00:15,Austin Ekeler 1 yard pass from Justin Herbert (two point pass successful)
+10814,3,2530,0,1,00:08:01,Robbie Gould 24 yard field goal 
+10815,10,2530,0,2,00:00:13,Jauan Jennings 5 yard pass from Jimmy Garoppolo (Robbie Gould kick)
+10816,13,2530,0,3,00:10:25,Robbie Gould 46 yard field goal 
+10817,7,2532,0,1,00:05:40,Travis Kelce 39 yard pass from Patrick Mahomes (Harrison Butker kick)
+10818,7,2531,3,2,00:14:57,Matt Gay 47 yard field goal 
+10819,10,2532,3,2,00:09:50,Harrison Butker 27 yard field goal 
+10820,13,2532,3,2,00:00:16,Harrison Butker 32 yard field goal 
+10821,20,2532,3,3,00:06:32,Isiah Pacheco 3 yard rush (Harrison Butker kick)
+10822,20,2531,10,4,00:14:56,Van Jefferson 7 yard pass from Bryce Perkins (Matt Gay kick)
+10823,23,2532,10,4,00:06:36,Harrison Butker 22 yard field goal 
+10824,26,2532,10,4,00:01:44,Harrison Butker 22 yard field goal 
+10825,7,2534,0,1,00:11:19,Kenneth Gainwell 4 yard rush (Jake Elliott  kick)
+10826,13,2534,0,1,00:09:03,Miles Sanders 15 yard rush (Jake Elliott  kick failed)
+10827,13,2533,7,1,00:06:45,AJ Dillon  20 yard rush (Mason Crosby kick)
+10828,13,2533,14,1,00:03:12,Randall Cobb 11 yard pass from Aaron Rodgers (Mason Crosby kick)
+10829,20,2534,14,2,00:14:54,Miles Sanders 2 yard rush (Jake Elliott  kick)
+10830,20,2533,20,2,00:07:41,Aaron Jones 23 yard pass from Aaron Rodgers (Mason Crosby kick failed)
+10831,27,2534,20,2,00:00:13,Quez Watkins 30 yard pass from Jalen Hurts (Jake Elliott  kick)
+10832,34,2534,20,3,00:07:14,A.J. Brown 6 yard pass from Jalen Hurts (Jake Elliott  kick)
+10833,34,2533,23,3,00:02:03,Mason Crosby 29 yard field goal 
+10834,37,2534,23,4,00:11:11,Jake Elliott  31 yard field goal 
+10835,37,2533,30,4,00:09:00,Christian Watson 63 yard pass from Jordan Love (Mason Crosby kick)
+10836,40,2534,30,4,00:02:16,Jake Elliott  54 yard field goal 
+10837,40,2533,33,4,00:01:08,Mason Crosby 33 yard field goal 
+10838,0,2535,3,1,00:09:27,Matthew Wright 45 yard field goal 
+10839,0,2535,6,2,00:14:09,Matthew Wright 52 yard field goal 
+10840,0,2535,13,2,00:07:46,Najee Harris 6 yard rush (Matthew Wright kick)
+10841,3,2536,13,2,00:03:48,Chase McLaughlin 51 yard field goal 
+10842,3,2535,16,2,00:00:56,Matthew Wright 25 yard field goal 
+10843,10,2536,16,3,00:13:04,Jonathan Taylor 2 yard rush (Chase McLaughlin kick)
+10844,17,2536,16,3,00:00:16,Michael Pittman Jr. 6 yard pass from Matt Ryan (Chase McLaughlin kick)
+10845,17,2535,24,4,00:09:55,Benny Snell Jr. 2 yard rush (two point pass successful)
+20221130
