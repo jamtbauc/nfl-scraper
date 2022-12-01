@@ -68,7 +68,7 @@ class Parser:
         self._away_drives = None
         self._plays = None
         
-        # define objects specific to one  (RESET IN WRITEFILES)
+        # define objects specific to one  (RESET AT END OF parseGame)
         self.game = {}
         self.away_team = {}
         self.home_team = {}
@@ -958,16 +958,12 @@ class Parser:
         # extract play by plays
         self.extract_plays()
         
-        # print(self.game)
-        # print(self.away_team)
-        # print(self.home_team)
-        # print(self.stadiums)
-        # print(self.scoring_plays)
-        # print(self.gm_weathers)
-        # print(self.officials)
-        # print(self.off_gms)
-        # print(self.players)
-        # print(self.player_gms)
+        # Rest single game dicts
+        self.game = {}
+        self.away_team = {}
+        self.home_team = {}
+        self.player_games = {}
+        self.starters = {}
     
     # Remove 'st', 'nd', 'rd', 'th', from date
     def remove_date_formals(self, date):
@@ -1087,7 +1083,7 @@ class Parser:
                           'kickRets', 'kickRetYds', 'avgKickRet', 'kickRetTds', 'longKickRet',
                           'puntRets', 'puntRetYds', 'avgPuntRet', 'puntRetTds', 'longPuntRet',
                           'xpm', 'xpa', 'fgm', 'fga', 'punts', 'puntYds', 'avgPunt', 'longPunt',
-                          'passFirstDowns', 'passFirstDownPct', 'passTgtYdsPerAtt', 'passAirYds',
+                          'passFirstDowns', 'passFirstDownPct', 'passTgtYds', 'passTgtYdsPerAtt', 'passAirYds',
                           'passAirYdsPerComp', 'passAirYdsPerAtt', 'passYac', 'passYacPerComp',
                           'passDrops', 'passDropPct', 'passPoorThrows', 'passPoorThrowPct', 'passBlitzed',
                           'passHurried', 'passHits', 'passPressured', 'passPressuredPct', 'rushScrambles',

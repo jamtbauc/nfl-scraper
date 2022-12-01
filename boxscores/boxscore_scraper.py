@@ -91,7 +91,7 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper("20221127")
+        run_scraper("20221130")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)
