@@ -42,7 +42,7 @@ def run_scraper(stop):
     parser = Parser()
     # loop through all urls
     for url in urls:
-        if url[11:20] < stop:
+        if "20180906" in url:
             try:
                 bytes = request_data(conn, url)
                 sleep(3)
