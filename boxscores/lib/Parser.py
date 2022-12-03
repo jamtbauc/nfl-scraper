@@ -513,7 +513,7 @@ class Parser:
                     # check if player id in master players list 
                     if id not in self.players:
                         player = Player(id, stat)
-                        self.players[player.getId()] = player
+                        self.players[id] = player
                     else:
                         player = self.players[id]
                     
@@ -523,6 +523,11 @@ class Parser:
                         if player.getId() not in self.player_games:
                             # create new player game object
                             player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
+                            # Set player team game
+                            if team == self.teams[self.away_team.getTeamId()].getAbbrevPff():
+                                player_gm.setGameId(self.away_team.getId())
+                            elif team == self.teams[self.home_team.getTeamId()].getAbbrevPff():
+                                player_gm.setGameId(self.home_team.getId())
                             # add to master list
                             self.player_gms[player_gm.getId()] = player_gm
                             # add to single game list with this id as value
@@ -548,11 +553,6 @@ class Parser:
                     
                     if stat == '':
                         stat = 0
-                        
-                    if team == self.teams[self.away_team.getTeamId()].getAbbrevPff():
-                        player_gm.setGameId(self.away_team.getId())
-                    elif team == self.teams[self.home_team.getTeamId()].getAbbrevPff():
-                        player_gm.setGameId(self.home_team.getId())
                         
                     player_gm.mapToPlayerGame(ds, stat)
                 
@@ -697,6 +697,11 @@ class Parser:
                 if player.getId() not in self.player_games:
                     # create new player game object
                     player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
+                    # Set player team game
+                    if text.find('all_home_starters'):
+                        player_gm.setGameId(self.home_team.getId())
+                    elif text.find('all_vis_starters'):
+                        player_gm.setGameId(self.away_team.getId())
                     # add to master list
                     self.player_gms[player_gm.getId()] = player_gm
                     # add to single game list with this id as value
@@ -707,11 +712,6 @@ class Parser:
                     player_gm_id = self.player_games[player.getId()]
                     # retrieve master player_gm
                     player_gm = self.player_gms[player_gm_id]
-                    
-                if text.find('all_home_starters'):
-                    player_gm.setGameId(self.home_team.getId())
-                elif text.find('all_vis_starters'):
-                    player_gm.setGameID(self.away_team.getId())
 
             row = row[name_end + 4:]
             player_gm_snap = None
@@ -778,6 +778,11 @@ class Parser:
                 if player.getId() not in self.player_games:
                     # create new player game object
                     player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
+                    # set player team game
+                    if text.find('all_home_starters'):
+                        player_gm.setGameId(self.home_team.getId())
+                    elif text.find('all_vis_starters'):
+                        player_gm.setGameId(self.away_team.getId())
                     # add to master list
                     self.player_gms[player_gm.getId()] = player_gm
                     # add to single game list with this id as value
@@ -791,10 +796,6 @@ class Parser:
                     
                 player_gm.is_starter = True
                 player_gm.starting_pos = pos
-                if text.find('all_home_starters'):
-                    player_gm.setGameId(self.home_team.getId())
-                elif text.find('all_vis_starters'):
-                    player_gm.setGameID(self.away_team.getId())
 
             starters = starters[row_end + 5:]
 
@@ -919,47 +920,68 @@ class Parser:
     
     def parseGame(self):
         # extract scores and coaches
+        print("Extracting scorebox...")
         self.extract_scorebox()
         # extract scorebox meta
+        print("Extracting scorebox meta...")
         self.extract_scorebox_meta()
         ### OPTIMIZATION: Starting from here can be ran concurrently
         # extract all scoring
+        print("Extracting scoring plays...")
         self.extract_scoring_plays()
         # extract basic game info
+        print("Extracting game info...")
         self.extract_game_info()
         # extract game officials
+        print("Extracting officials...")
         self.extract_officials()
         # extract team stats
+        print("Extracting team stats...")
         self.extract_team_stats()
         # extract player offense
+        print("Extracting offense stats...")
         self.extract_player_stats(self._all_player_off)
         # extract player defense
+        print("Extracting defense stats...")
         self.extract_player_stats(self._all_player_def)
         # extract player returns
+        print("Extracting return stats...")
         self.extract_player_stats(self._all_returns)
         # extract player kicking/punting
+        print("Extracting kicking stats...")
         self.extract_player_stats(self._all_kicking)
         # extract advanced passing
+        print("Extracting passing adv stats...")
         self.extract_player_stats(self._passing_adv)
         # extract advanced rushing
+        print("Extracting rushing adv stats...")
         self.extract_player_stats(self._rushing_adv)
         # extract advanced receiving
+        print("Extracting rec adv stats...")
         self.extract_player_stats(self._receiving_adv)
         # extract advanced defense
+        print("Extracting defense adv stats...")
         self.extract_player_stats(self._defense_adv)
         # extract home starters
+        print("Extracting home starters...")
         self.extract_starters(self._home_starters)
         # extract away starters
+        print("Extracting away starters...")
         self.extract_starters(self._away_starters)
         # extract home snaps
+        print("Extracting home snaps...")
         self.extract_snaps(self._home_snaps)
         # extract away snaps
+        print("Extracting away snaps...")
         self.extract_snaps(self._away_snaps)
         # extract home drives
+        print("Extracting home drives...")
         self.extract_drives(self._home_drives)
         # extract away drives
+        print("Extracting away drives...")
         self.extract_drives(self._away_drives)
         # extract play by plays
+        print("Extracting play by plays...")
         self.extract_plays()
         
         # Rest single game dicts
