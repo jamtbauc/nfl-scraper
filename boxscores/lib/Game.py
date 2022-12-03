@@ -16,7 +16,6 @@ class Game:
         
         self.id = date_str + away_abbrev + home_abbrev
         self.date = date
-        self.season = None
         self.week = week
         self.attendance = None
         self.stadium_id = None
