@@ -218,10 +218,10 @@ class Parser:
             
         time_str = time_str[:-2] + am_pm
         
-        date_str = self.game.getDate().strftime("%B %m, %Y")
+        date_str = self.game.getDate().strftime("%B %d, %Y")
         date_str += " " + time_str
         
-        self.game.setDate(datetime.strptime(date_str, "%B %m, %Y %I:%M%p"))
+        self.game.setDate(datetime.strptime(date_str, "%B %d, %Y %I:%M%p"))
 
     def __extract_score_coach(self, info):
         tm_start = info.find('.htm">') + 6
