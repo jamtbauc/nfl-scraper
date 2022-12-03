@@ -531,11 +531,6 @@ class Parser:
                         if player.getId() not in self.player_games:
                             # create new player game object
                             player_gm = PlayerGame(self.getNextPlyrGmId(), player.getId())
-                            # Set player team game
-                            if team == self.teams[self.away_team.getTeamId()].getAbbrevPff():
-                                player_gm.setGameId(self.away_team.getId())
-                            elif team == self.teams[self.home_team.getTeamId()].getAbbrevPff():
-                                player_gm.setGameId(self.home_team.getId())
                             # add to master list
                             self.player_gms[player_gm.getId()] = player_gm
                             # add to single game list with this id as value
@@ -555,6 +550,11 @@ class Parser:
                         stat = 0
                         
                     team = stat
+                    # Set player team game
+                    if team == self.teams[self.away_team.getTeamId()].getAbbrevPff():
+                        player_gm.setGameId(self.away_team.getId())
+                    elif team == self.teams[self.home_team.getTeamId()].getAbbrevPff():
+                        player_gm.setGameId(self.home_team.getId())
                 else:
                     html = re.compile('<.*?>')
                     stat = re.sub(html, '', stat)
