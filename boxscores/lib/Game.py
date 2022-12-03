@@ -2,6 +2,16 @@ from datetime import datetime
 
 class Game:
     def __init__(self, date, week, away_abbrev, home_abbrev):
+        # Set game season
+        date = date.date()
+        month = date.month
+        year = date.year
+        if month < 9:
+            self.season = year - 1
+        else:
+            self.season = year
+            
+        # Create date string for id
         date_str = date.strftime('%Y%m%d')
         
         self.id = date_str + away_abbrev + home_abbrev

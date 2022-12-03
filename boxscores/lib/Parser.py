@@ -920,68 +920,47 @@ class Parser:
     
     def parseGame(self):
         # extract scores and coaches
-        print("Extracting scorebox...")
         self.extract_scorebox()
         # extract scorebox meta
-        print("Extracting scorebox meta...")
         self.extract_scorebox_meta()
         ### OPTIMIZATION: Starting from here can be ran concurrently
         # extract all scoring
-        print("Extracting scoring plays...")
         self.extract_scoring_plays()
         # extract basic game info
-        print("Extracting game info...")
         self.extract_game_info()
         # extract game officials
-        print("Extracting officials...")
         self.extract_officials()
         # extract team stats
-        print("Extracting team stats...")
         self.extract_team_stats()
         # extract player offense
-        print("Extracting offense stats...")
         self.extract_player_stats(self._all_player_off)
         # extract player defense
-        print("Extracting defense stats...")
         self.extract_player_stats(self._all_player_def)
         # extract player returns
-        print("Extracting return stats...")
         self.extract_player_stats(self._all_returns)
         # extract player kicking/punting
-        print("Extracting kicking stats...")
         self.extract_player_stats(self._all_kicking)
         # extract advanced passing
-        print("Extracting passing adv stats...")
         self.extract_player_stats(self._passing_adv)
         # extract advanced rushing
-        print("Extracting rushing adv stats...")
         self.extract_player_stats(self._rushing_adv)
         # extract advanced receiving
-        print("Extracting rec adv stats...")
         self.extract_player_stats(self._receiving_adv)
         # extract advanced defense
-        print("Extracting defense adv stats...")
         self.extract_player_stats(self._defense_adv)
         # extract home starters
-        print("Extracting home starters...")
         self.extract_starters(self._home_starters)
         # extract away starters
-        print("Extracting away starters...")
         self.extract_starters(self._away_starters)
         # extract home snaps
-        print("Extracting home snaps...")
         self.extract_snaps(self._home_snaps)
         # extract away snaps
-        print("Extracting away snaps...")
         self.extract_snaps(self._away_snaps)
         # extract home drives
-        print("Extracting home drives...")
         self.extract_drives(self._home_drives)
         # extract away drives
-        print("Extracting away drives...")
         self.extract_drives(self._away_drives)
         # extract play by plays
-        print("Extracting play by plays...")
         self.extract_plays()
         
         # Rest single game dicts
