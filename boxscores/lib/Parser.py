@@ -258,6 +258,8 @@ class Parser:
         start = text.find('<tbody>')
         drives = text[start:]
         
+        last_qtr = 0
+        
         while drives.find('<tr ') > -1:
             row_start = drives.find('<tr ')
             row_end = drives.find('</tr>')
@@ -282,6 +284,12 @@ class Parser:
                 data_end = row.find('</td>')
                 data = row[lbl_end + 3:data_end]
                 data = re.sub(self.rem_html, '', data)
+                
+                if label == "quarter":
+                    if data:
+                        last_qtr = data
+                    else:
+                        data = last_qtr
                 
                 gm_drive.mapToTeamGameDrive(label, data)
 
