@@ -1030,121 +1030,329 @@ class Parser:
         return date
     
     # write all files
-    def writeFiles(self, stop):
+    def writeFiles(self):
+        with open("csv/stadiums.csv", "w") as file:
+            fieldnames = [
+                'name', 
+                'city', 
+                'state', 
+                'surface', 
+                'roof'
+            ]
+            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
+            writer.writeheader()
+            for stadium in self.stadiums:
+                writer.writerow(self.stadiums[stadium].getInfo())
+         
         with open("csv/games.csv", "w") as file:
-            fieldnames = ["id", "date", "season", "week", "attendance", "stadiumId", "gameDuration", "roofType"]
+            fieldnames = [
+                "id", 
+                "date", 
+                "season", 
+                "week", 
+                "attendance", 
+                "stadium_id", 
+                "game_duration", 
+                "roof_type"
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for game in self.games:
                 writer.writerow(self.games[game].getInfo())
                 
         with open("csv/teams.csv", "w") as file:
-            fieldnames = ["name", "locale", "mascot", "abbrevPff"]
+            fieldnames = [
+                "name", 
+                "locale", 
+                "mascot", 
+                "abbrev_pff"
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for team in self.teams:
                 writer.writerow(self.teams[team].getInfo())
                 
         with open("csv/team_games.csv", "w") as file:
-            fieldnames = ["id", "teamId", "gameId", "wonToss", "tossDecision", "isHome", "isFavored",
-                          "spread", "overUnder", "firstDowns", "rushAtts", "rushYds", "rushTds", "passComps",
-                          "passAtts", "passYds", "passTds", "passInts", "sacked", "sackYdsLost", "netPassYds",
-                          "totalYds", "fumbles", "fumblesLost", "turnovers", "penalties", "penaltyYds",
-                          "thirdDownAtts", "thirdDownConvs", "fourthDownAtts", "fourthDownConvs", "possessionTime",
-                          "coach", "score"]
+            fieldnames = [
+                "id", 
+                "team_id", 
+                "game_id", 
+                "won_toss", 
+                "toss_decision", 
+                "is_home", 
+                "is_favored",
+                "spread", 
+                "over_under", 
+                "first_downs", 
+                "rush_atts", 
+                "rush_yds", 
+                "rush_tds", 
+                "pass_comps",
+                "pass_atts", 
+                "pass_yds", 
+                "pass_tds", 
+                "pass_ints", 
+                "sacked", 
+                "sack_yds_lost", 
+                "net_pass_yds",
+                "total_yds", 
+                "fumbles", 
+                "fumbles_lost", 
+                "turnovers", 
+                "penalties", 
+                "penalty_yds",
+                "third_down_atts", 
+                "third_down_convs", 
+                "fourth_down_atts", 
+                "fourth_down_convs", 
+                "possession_time",
+                "coach",
+                "score"
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for team in self.team_gms:
                 writer.writerow(self.team_gms[team].getInfo())
-                
-        with open("csv/stadiums.csv", "w") as file:
-            fieldnames = ['name', 'city', 'state', 'surface', 'roof']
+
+        with open("csv/team_game_drives.csv", "w") as file:
+            fieldnames = [
+                'id', 
+                'drive_num', 
+                'quarter', 
+                'time_start', 
+                'yd_start', 
+                'num_plays', 
+                'drive_time', 
+                'net_yds', 
+                'drive_result', 
+                'team_game_id'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
-            for stadium in self.stadiums:
-                writer.writerow(self.stadiums[stadium].getInfo())
-                
+            for drive in self.tm_gm_drives:
+                writer.writerow(self.tm_gm_drives[drive].getInfo())       
+
         with open("csv/scoring_plays.csv", "w") as file:
-            fieldnames = ['id', 'homeScore', 'scoringTeamId', 'awayScore', 'qtr', 'qtrTimeRem', 'description']
+            fieldnames = [
+                'id', 
+                'scoring_team_id',
+                'home_score',  
+                'away_score', 
+                'qtr', 
+                'qtr_time_rem', 
+                'description'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for scoring_play in self.scoring_plays:
                 writer.writerow(self.scoring_plays[scoring_play].getInfo())
             
         with open("csv/gm_weathers.csv", "w") as file:
-            fieldnames = ['id', 'temp','humidity', 'wind', 'gameId']
+            fieldnames = [
+                'id', 
+                'temp',
+                'humidity', 
+                'wind', 
+                'game_id'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for gm_weather in self.gm_weathers:
                 writer.writerow(self.gm_weathers[gm_weather].getInfo())
                 
         with open("csv/officials.csv", "w") as file:
-            fieldnames = ['name', 'careerStart', 'careerEnd', 'jerseyNum']
+            fieldnames = [
+                'name', 
+                'career_start', 
+                'career_end', 
+                'jersey_num'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for official in self.officials:
                 writer.writerow(self.officials[official].getInfo())
                 
         with open("csv/off_gms.csv", "w") as file:
-            fieldnames = ['id', 'refPosition', 'officialId', 'gameId']
+            fieldnames = [
+                'id', 
+                'ref_position', 
+                'official_id', 
+                'game_id'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for off_gm in self.off_gms:
                 writer.writerow(self.off_gms[off_gm].getInfo())
                 
         with open("csv/players.csv", "w") as file:
-            fieldnames = ['id', 'name', 'college', 'dob', 'careerStart', 'careerEnd']
+            fieldnames = [
+                'id', 
+                'name', 
+                'college', 
+                'dob', 
+                'career_start', 
+                'career_end'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player in self.players:
                 writer.writerow(self.players[player].getInfo())
                 
-        with open("csv/player_gms.csv", "w") as file:
-            fieldnames = ['id', 'playerId', 'tmGameId', 'passComps', 'passAtts', 'passYds',
-                          'passTds', 'passInts', 'sacked', 'sackYdsLost', 'longPass', 'passRating',
-                          'rushAtts', 'rushYds', 'rushTds', 'longRush', 'recTargets', 'recs',
-                          'recYds', 'recTds', 'longRec', 'fumbles', 'fumblesLost', 'defInts',
-                          'defIntYds', 'defIntTds', 'longDefInt', 'passDefs', 'defSacks',
-                          'defTackCombined', 'defTackSolo', 'defTackAssists', 'defTackForLoss',
-                          'defQbHits', 'fumbleRecs', 'fumbleRecYds', 'fumbleRecTds', 'forcedFumbles',
-                          'kickRets', 'kickRetYds', 'avgKickRet', 'kickRetTds', 'longKickRet',
-                          'puntRets', 'puntRetYds', 'avgPuntRet', 'puntRetTds', 'longPuntRet',
-                          'xpm', 'xpa', 'fgm', 'fga', 'punts', 'puntYds', 'avgPunt', 'longPunt',
-                          'passFirstDowns', 'passFirstDownPct', 'passTgtYds', 'passTgtYdsPerAtt', 'passAirYds',
-                          'passAirYdsPerComp', 'passAirYdsPerAtt', 'passYac', 'passYacPerComp',
-                          'passDrops', 'passDropPct', 'passPoorThrows', 'passPoorThrowPct', 'passBlitzed',
-                          'passHurried', 'passHits', 'passPressured', 'passPressuredPct', 'rushScrambles',
-                          'rushScramblesYdsPerAtt', 'rushFirstDown', 'rushYdsBeforeContact', 'rushYdsBcPerRush',
-                          'rushYac', 'rushYacPerRush', 'rushBrokenTacks', 'rushBrokenTacksPerRush',
-                          'recFirstDown', 'recAirYds', 'recAirYdsPerRec', 'recYac', 'recYacPerRec',
-                          'recAdot', 'recBrokenTacks', 'recBrokenTacksPerRec', 'recDrops', 'recDropPct',
-                          'recTargetInt', 'recPassRating', 'defTargets', 'defComps', 'defCompPct',
-                          'defCompYds', 'defYdsPerComp', 'defYdsPerTarget', 'defCompTds', 'defPassRating',
-                          'defTgtYdsPerAtt', 'defAirYds', 'defYac', 'blitzes', 'qbHurries', 'qbKnockdown',
-                          'pressures', 'tacksMissed', 'tacksMissedPct', 'isStarter', 'startingPos']
+        with open("csv/player_games.csv", "w") as file:
+            fieldnames = [
+                'id', 
+                'player_id', 
+                'tmGame_id', 
+                'pass_comps', 
+                'pass_atts', 
+                'pass_yds',
+                'pass_tds', 
+                'pass_ints', 
+                'sacked', 
+                'sack_yds_lost', 
+                'long_pass', 
+                'pass_rating',
+                'rush_atts', 
+                'rush_yds', 
+                'rush_tds', 
+                'long_rush', 
+                'rec_targets', 
+                'recs',
+                'rec_yds', 
+                'rec_tds', 
+                'long_rec', 
+                'fumbles', 
+                'fumbles_lost', 
+                'def_ints',
+                'def_int_yds', 
+                'def_int_tds', 
+                'long_def_int', 
+                'pass_defs', 
+                'def_sacks',
+                'def_tack_combined', 
+                'def_tack_solo', 
+                'def_tack_assists', 
+                'def_tack_for_loss',
+                'def_qb_hits', 
+                'fumble_recs', 
+                'fumble_rec_yds', 
+                'fumble_rec_tds', 
+                'forced_fumbles',
+                'kick_rets', 
+                'kick_ret_yds', 
+                'avg_kick_ret', 
+                'kick_ret_tds', 
+                'long_kick_ret',
+                'punt_rets', 
+                'punt_ret_yds', 
+                'avg_punt_ret', 
+                'punt_ret_tds', 
+                'long_punt_ret',
+                'xpm', 
+                'xpa', 
+                'fgm', 
+                'fga', 
+                'punts', 
+                'punt_yds', 
+                'avg_punt', 
+                'long_punt',
+                'pass_first_downs', 
+                'pass_first_down_pct', 
+                'pass_tgt_yds', 
+                'pass_tgt_yds_per_att', 
+                'pass_air_yds',
+                'pass_air_yds_per_comp', 
+                'pass_air_yds_per_att', 
+                'pass_yac', 
+                'pass_yac_per_comp',
+                'pass_drops', 
+                'pass_drop_pct', 
+                'pass_poor_throws', 
+                'pass_poor_throw_pct', 
+                'pass_blitzed',
+                'pass_hurried', 
+                'pass_hits', 
+                'pass_pressured', 
+                'pass_pressured_pct', 
+                'rush_scrambles',
+                'rush_scrambles_yds_per_att', 
+                'rush_first_down', 
+                'rush_yds_before_contact', 
+                'rush_yds_bc_per_rush',
+                'rush_yac', 
+                'rush_yac_per_rush', 
+                'rush_broken_tacks', 
+                'rush_broken_tacks_per_rush',
+                'rec_first_down', 
+                'rec_air_yds', 
+                'rec_air_yds_per_rec', 
+                'rec_yac', 
+                'rec_yac_per_rec',
+                'rec_adot', 
+                'rec_broken_tacks', 
+                'rec_broken_tacks_per_rec', 
+                'rec_drops', 
+                'rec_drop_pct',
+                'rec_target_int', 
+                'recPassRating', 
+                'def_targets', 
+                'def_comps', 
+                'def_comp_pct',
+                'def_comp_yds', 
+                'def_yds_per_comp', 
+                'def_yds_per_target', 
+                'def_comp_tds', 
+                'def_pass_rating',
+                'def_tgt_yds_per_att', 
+                'def_air_yds', 
+                'def_yac', 
+                'blitzes', 
+                'qb_hurries', 
+                'qb_knockdown',
+                'pressures', 
+                'tacks_missed', 
+                'tacks_missed_pct', 
+                'is_starter', 
+                'starting_pos'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player_gm in self.player_gms:
                 writer.writerow(self.player_gms[player_gm].getInfo())
 
-        with open("csv/player_gm_snaps.csv", "w") as file:
-            fieldnames = ['id', 'playerGmId', 'startPos', 'offSnaps', 'offSnapPct', 'defSnaps', 'defSnapPct', 'stSnaps', 'stSnapPct']
+        with open("csv/player_game_snaps.csv", "w") as file:
+            fieldnames = [
+                'id', 
+                'player_game_id', 
+                'start_pos', 
+                'off_snaps', 
+                'off_snap_pct', 
+                'def_snaps', 
+                'def_snap_pct', 
+                'st_snaps', 
+                'st_snap_pct'
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for player in self.player_gm_snaps:
                 writer.writerow(self.player_gm_snaps[player].getInfo())
-                
-        with open("csv/tm_gm_drives.csv", "w") as file:
-            fieldnames = ['id', 'driveNum', 'quarter', 'timeStart', 'ydStart', 'numPlays', 'driveTime', 'netYds', 'driveResult', 'teamGameId']
-            writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
-            writer.writeheader()
-            for drive in self.tm_gm_drives:
-                writer.writerow(self.tm_gm_drives[drive].getInfo())
-                
+                   
         with open("csv/play_by_plays.csv", "w") as file:
-            fieldnames = ["id", "qtr", "qtrTimeRem", "down", "ydsToGo", "ydStart",
-                          "scoreAway", "scoreHome", "detail", "expPtsBefore", "expPtsAfter",
-                          "seq", "gameId"]
+            fieldnames = [
+                "id", 
+                "qtr", 
+                "qtr_time_rem", 
+                "down", 
+                "yds_to_go", 
+                "yd_start",
+                "score_away", 
+                "score_home", 
+                "detail", 
+                "exp_pts_before", 
+                "exp_pts_after",
+                "seq", 
+                "game_id"
+            ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
             for play in self.play_by_plays:

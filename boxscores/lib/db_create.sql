@@ -3,35 +3,6 @@
 BEGIN;
 
 
-CREATE TABLE IF NOT EXISTS nfl.team
-(
-    name character varying(25) NOT NULL,
-    locale character varying(15) NOT NULL,
-    mascot character varying(15) NOT NULL,
-    abbrev_pff character(3) NOT NULL,
-    PRIMARY KEY (name)
-);
-
-CREATE TABLE IF NOT EXISTS nfl.player
-(
-	id character varying(10) NOT NULL,
-    name character varying(30) NOT NULL,
-    college character varying(100),
-    dob date,
-    career_start smallint DEFAULT 0,
-    career_end smallint DEFAULT 0,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS nfl.official
-(
-    name character varying(25) NOT NULL,
-    career_start smallint,
-    career_end smallint,
-    jersey_num smallint,
-    PRIMARY KEY (name)
-);
-
 CREATE TABLE IF NOT EXISTS nfl.stadium
 (
     name character varying(35) NOT NULL,
@@ -50,18 +21,18 @@ CREATE TABLE IF NOT EXISTS nfl.game
     week character varying(8) NOT NULL,
     attendance integer,
     stadium_id character varying(40) NOT NULL,
-	game_duration time without time zone NOT NULL,
+	game_duration smallint,
     roof_type character varying(6),
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS nfl.official_game
+CREATE TABLE IF NOT EXISTS nfl.team
 (
-	id serial NOT NULL,
-	ref_position character varying(11) NOT NULL,
-    official_id character varying(25) NOT NULL,
-    game_id character(14) NOT NULL,
-    PRIMARY KEY (id)
+    name character varying(25) NOT NULL,
+    locale character varying(15) NOT NULL,
+    mascot character varying(15) NOT NULL,
+    abbrev_pff character(3) NOT NULL,
+    PRIMARY KEY (name)
 );
 
 CREATE TABLE IF NOT EXISTS nfl.team_game
@@ -100,6 +71,72 @@ CREATE TABLE IF NOT EXISTS nfl.team_game
     possession_time time without time zone NOT NULL,
     coach character varying(20) NOT NULL,
     score smallint NOT NULL DEFAULT 0,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.team_game_drive
+(
+    id serial NOT NULL,
+    drive_num smallint NOT NULL DEFAULT 0,
+    quarter smallint NOT NULL DEFAULT 0,
+    time_start time without time zone NOT NULL,
+    yd_start character varying(6) NOT NULL,
+    num_plays smallint NOT NULL DEFAULT 0,
+    drive_time time without time zone NOT NULL,
+    net_yds smallint NOT NULL DEFAULT 0,
+    drive_result character varying(20) NOT NULL,
+    team_game_id integer NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.scoring_play
+(
+    id serial NOT NULL,
+    scoring_team_id integer NOT NULL,
+	home_score smallint NOT NULL,
+	away_score smallint NOT NULL,
+    qtr smallint NOT NULL,
+    qtr_time_rem time without time zone NOT NULL,
+    description text NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.game_weather
+(
+    id serial NOT NULL,
+    temp integer NOT NULL,
+    humidity double precision NOT NULL,
+    wind integer NOT NULL,
+    game_id character varying(14) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.official
+(
+    name character varying(25) NOT NULL,
+    career_start smallint,
+    career_end smallint,
+    jersey_num smallint,
+    PRIMARY KEY (name)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.official_game
+(
+	id serial NOT NULL,
+	ref_position character varying(11) NOT NULL,
+    official_id character varying(25) NOT NULL,
+    game_id character(14) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS nfl.player
+(
+	id character varying(10) NOT NULL,
+    name character varying(30) NOT NULL,
+    college character varying(100),
+    dob date,
+    career_start smallint DEFAULT 0,
+    career_end smallint DEFAULT 0,
     PRIMARY KEY (id)
 );
 
@@ -222,25 +259,17 @@ CREATE TABLE IF NOT EXISTS nfl.player_game
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS nfl.game_weather
+CREATE TABLE IF NOT EXISTS nfl.player_game_snap
 (
     id serial NOT NULL,
-    temp integer NOT NULL,
-    humidity double precision NOT NULL,
-    wind integer NOT NULL,
-    game_id character varying(14) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS nfl.scoring_play
-(
-    id serial NOT NULL,
-	home_score smallint NOT NULL,
-	scoring_team_id integer NOT NULL,
-	away_score smallint NOT NULL,
-    qtr smallint NOT NULL,
-    qtr_time_rem time without time zone NOT NULL,
-    description text NOT NULL,
+	player_game_id integer NOT NULL,
+    start_pos character varying(5) NOT NULL,
+    off_snaps smallint NOT NULL DEFAULT 0,
+    off_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
+    def_snaps smallint NOT NULL DEFAULT 0,
+    def_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
+    st_snaps smallint NOT NULL DEFAULT 0,
+    st_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
     PRIMARY KEY (id)
 );
 
@@ -259,35 +288,6 @@ CREATE TABLE IF NOT EXISTS nfl.play_by_play
     exp_pts_after numeric(3,1),
     seq smallint NOT NULL,
     game_id character varying(14) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS nfl.player_gm_snap
-(
-    id serial NOT NULL,
-	player_game_id integer NOT NULL,
-    start_pos character varying(5) NOT NULL,
-    off_snaps smallint NOT NULL DEFAULT 0,
-    off_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
-    def_snaps smallint NOT NULL DEFAULT 0,
-    def_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
-    st_snaps smallint NOT NULL DEFAULT 0,
-    st_snap_pct numeric(4,1) NOT NULL DEFAULT 0.0,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS nfl.tm_gm_drive
-(
-    id serial NOT NULL,
-    drive_num smallint NOT NULL DEFAULT 0,
-    quarter smallint NOT NULL DEFAULT 0,
-    time_start time without time zone NOT NULL,
-    yd_start character varying(6) NOT NULL,
-    num_plays smallint NOT NULL DEFAULT 0,
-    drive_time time without time zone NOT NULL,
-    net_yds smallint NOT NULL DEFAULT 0,
-    drive_result character varying(20) NOT NULL,
-    tm_gm_id integer NOT NULL,
     PRIMARY KEY (id)
 );
 

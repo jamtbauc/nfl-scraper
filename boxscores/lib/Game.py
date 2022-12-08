@@ -125,9 +125,9 @@ class Game:
             "season": self.getSeason(),
             "week": self.getWeek(),
             "attendance": self.getAttendance(),
-            "stadiumId": self.getStadiumId(),
-            "gameDuration": self.getGameDuration(),
-            "roofType": self.getRoofType()  
+            "stadium_id": self.getStadiumId(),
+            "game_duration": self.getGameDuration(),
+            "roof_type": self.getRoofType()  
         }
         
         return info
