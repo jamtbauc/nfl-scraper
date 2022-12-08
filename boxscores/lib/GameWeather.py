@@ -2,7 +2,7 @@ import json
 
 class GameWeather:
     def __init__(self, id, temp, humidity, wind, gameId):
-        self.id = id
+        self.id = int(id)
         self.temp = temp
         self.humidity = humidity
         self.wind = wind
@@ -34,9 +34,9 @@ class GameWeather:
     def getTemp(self):
         return self.temp
     
-    def setTemp(self, temp):
+    def setTemp(self, value):
         try:
-            self.temp = int(temp)
+            self.temp = int(value)
         except:
             self.temp = 0
         
@@ -55,7 +55,7 @@ class GameWeather:
             "temp": self.getTemp(),
             "humidity": self.getHumidity(),
             "wind": self.getWind(),
-            "gameId": self.getGameId()
+            "game_id": self.getGameId()
         }
         
         return info
