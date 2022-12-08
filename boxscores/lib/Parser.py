@@ -960,6 +960,9 @@ class Parser:
                 game.setGameDuration(game_dur)
                 game.setRoofType(roof_type)
 
+                if game not in self.games:
+                    self.games[id] = game
+
                 max_comp_str = datetime.strftime(game.getDate().date(), "%Y%m%d")
                 if max_comp_str > max_date:
                     max_date = max_comp_str
