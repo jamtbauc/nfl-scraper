@@ -969,6 +969,32 @@ class Parser:
 
         return max_date
 
+    def loadCsvGameWeather(self, file):
+        with open(file, "r") as gamescsv:
+            reader = csv.reader(gamescsv, delimiter=",")
+            next(reader)
+            
+            for row in reader:
+                id = row[0]
+                temp = row[1]
+                humidity = row[2]
+                wind = row[3]
+                game_id = row[4]
+
+                gm_weather = GameWeather(id, temp, humidity, wind, game_id)
+                gm_weather.setId(id)
+                gm_weather.setTemp(temp)
+                gm_weather.setHumidity(humidity)
+                gm_weather.setWind(wind)
+                gm_weather.setGameId(game_id)
+
+                comp_id = gm_weather.getId()
+
+                if comp_id not in self.gm_weathers:
+                    self.gm_weathers[id] = gm_weather
+
+                if comp_id > self.gm_weather_id:
+                    self.gm_weather_id = comp_id + 1
     
     def parseGame(self):
         # extract scores and coaches

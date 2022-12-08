@@ -11,32 +11,43 @@ class GameWeather:
     def getId(self):
         return self.id
     
-    def setId(self, id):
-        self.id = id
+    def setId(self, value):
+        if id:
+            self.id = int(value)
         
     def getGameId(self):
         return self.game_id
     
-    def setGameId(self, id):
-        self.game_id = id
+    def setGameId(self, value):
+        if value:
+            self.game_id = str(value)
         
     def getHumidity(self):
         return self.humidity
     
-    def setHumidity(self, humidity):
-        self.humidity = humidity
+    def setHumidity(self, value):
+        try:
+            self.humidity = int(value)
+        except:
+            self.humidity = 0
         
     def getTemp(self):
         return self.temp
     
     def setTemp(self, temp):
-        self.temp = temp
+        try:
+            self.temp = int(temp)
+        except:
+            self.temp = 0
         
     def getWind(self):
         return self.wind
     
-    def setWind(self, wind):
-        self.wind = wind
+    def setWind(self, value):
+        try:
+            self.wind = int(value)
+        except:
+            self.wind = 0
     
     def getInfo(self):
         info = {
