@@ -31,7 +31,7 @@ def request_data(conn, url):
         return body
     
 # Scrape response body for desired information  
-def run_scraper(stop):
+def run_scraper(url_stop):
     # hold all urls
     urls = get_urls('links.csv')
     # define base url and get request urls
@@ -40,9 +40,13 @@ def run_scraper(stop):
     conn = http.client.HTTPSConnection(base)
     # create Parser object
     parser = Parser()
+    # load existing db items into array
+    url_start = parser.loadCsvGames()
     # loop through all urls
     for url in urls:
-        if url[11:20] < stop:
+        url_date = url[11:20]
+        # if url_date > url_start and url_date < url_stop:
+        if url == 'abcde':
             try:
                 bytes = request_data(conn, url)
                 sleep(3)
@@ -80,8 +84,8 @@ def run_scraper(stop):
     # close http connection
     conn.close()
     
-    # write files
-    parser.writeFiles(stop)
+    # # write files
+    # parser.writeFiles(stop)
     
 # Trim body of test to start and end
 def trim_text(text, start, end):

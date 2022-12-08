@@ -925,6 +925,47 @@ class Parser:
         temp = self.play_by_play_id
         self.play_by_play_id += 1
         return temp
+
+    def loadCsvGames(self):
+        max_date = "20180906"
+        with open('csv/games.csv', 'r') as gamescsv:
+            reader = csv.reader(gamescsv, delimiter=',')
+            next(reader)
+
+            for row in reader:
+                id = row[0]
+                date = row[1]
+                season = row[2]
+                week = row[3]
+                attendance = row[4]
+                stadium_id = row[5]
+                game_dur = row[6]
+                roof_type = row[7]
+
+                game = Game(
+                    date,
+                    week,
+                    id[-6:-3],
+                    id[:-3]
+                )
+
+                # ensure we keep existing id
+                game.setId(id)
+
+                game.setDate(date)
+                game.setSeason(season)
+                game.setWeek(week)
+                game.setAttendance(attendance)
+                game.setStadiumId(stadium_id)
+                game.setGameDuration(game_dur)
+                game.setRoofType(roof_type)
+
+                max_comp_str = datetime.strftime(game.getDate().date(), "%Y%m%d")
+                if max_comp_str > max_date:
+                    max_date = max_comp_str
+
+        return max_date
+
     
     def parseGame(self):
         # extract scores and coaches
