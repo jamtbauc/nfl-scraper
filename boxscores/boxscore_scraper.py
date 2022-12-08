@@ -41,7 +41,7 @@ def run_scraper(url_stop):
     # create Parser object
     parser = Parser()
     # load existing db items into array
-    url_start = parser.loadCsvGames()
+    url_start = parser.loadCsvGames("./csv/games.csv")
     # loop through all urls
     for url in urls:
         url_date = url[11:20]

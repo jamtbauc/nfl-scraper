@@ -926,10 +926,10 @@ class Parser:
         self.play_by_play_id += 1
         return temp
 
-    def loadCsvGames(self):
+    def loadCsvGames(self, file):
         max_date = "20180906"
-        with open('csv/games.csv', 'r') as gamescsv:
-            reader = csv.reader(gamescsv, delimiter=',')
+        with open(file, "r") as gamescsv:
+            reader = csv.reader(gamescsv, delimiter=",")
             next(reader)
 
             for row in reader:
