@@ -831,61 +831,7 @@ class Parser:
             self.home_team.mapToTmGm(label, home_stat)
             
             text = text[row_end + 5:]
-        
-#     def get_game_dict(self):
-#         game = {
-#                     "id": self.__id,
-#                     "week": self.__week,
-#                     "date": self.__date.date().isoformat(),
-#                     "away": {
-#                         "id": self.__away_id,
-#                         "game_id": self.__id,
-#                         "team": self.__away,
-#                         "abbrev_pff": self.abbrevs[self.__away],
-#                         "score": self.__away_score,
-#                         "coach": self.__away_coach,
-#                         "team_stats": self.__away_team_stats,
-#                         "players": self.__away_players,
-#                         "drives": self.__away_drives
-#                         },
-#                     "home": {
-#                         "id": self.__home_id,
-#                         "game_id": self.__id,
-#                         "team": self.__home,
-#                         "abbrev_pff": self.abbrevs[self.__home],
-#                         "score": self.__home_score,
-#                         "coach": self.__home_coach,
-#                         "team_stats": self.__home_team_stats,
-#                         "players": self.__home_players,
-#                         "drives": self.__home_drives
-#                         },
-#                     "start_time": self.__date.time().isoformat(),
-#                     "stadium": {
-#                         "name": self.__stadium,
-#                         "roof_type": self.__roof,
-#                         "surface": self.__surface
-#                     },
-#                     "attendance": self.__attendance,
-#                     "scoring_plays": self.__scoring_plays,
-#                     "won_toss": self.__won_toss,
-#                     "toss_decision": self.__toss_decision,
-#                     "duration": self.__game_duration,
-#                     "weather": {
-#                         "temp" : self.__temp,
-#                         "humidity": self.__humidity,
-#                         "wind": self.__wind
-#                     },
-#                     "vegas": {
-#                         "favored": self.__favored_team,
-#                         "spread": self.__spread,
-#                         "over/under": self.__over_under
-#                     },
-#                     "officials": self.__officials,
-#                     "play_by_play": self.__play_by_play
-#                 }
-        
-#         return game
-    
+            
     def getNextGmWeatherId(self):
         temp = self.gm_weather_id
         self.gm_weather_id += 1
@@ -928,8 +874,8 @@ class Parser:
 
     def loadCsvGames(self, file):
         max_date = "20180906"
-        with open(file, "r") as gamescsv:
-            reader = csv.reader(gamescsv, delimiter=",")
+        with open(file, "r") as csvfile:
+            reader = csv.reader(csvfile, delimiter=",")
             next(reader)
 
             for row in reader:
@@ -970,8 +916,8 @@ class Parser:
         return max_date
 
     def loadCsvGameWeather(self, file):
-        with open(file, "r") as gamescsv:
-            reader = csv.reader(gamescsv, delimiter=",")
+        with open(file, "r") as csvfile:
+            reader = csv.reader(csvfile, delimiter=",")
             next(reader)
             
             for row in reader:
@@ -995,6 +941,18 @@ class Parser:
 
                 if comp_id > self.gm_weather_id:
                     self.gm_weather_id = comp_id + 1
+    
+    def loadCsvOfficials(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                name = row[0]
+                official = Official(name)
+                
+                if official not in self.officials:
+                    self.officials[name] = official
     
     def parseGame(self):
         # extract scores and coaches

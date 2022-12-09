@@ -17,7 +17,7 @@ class Official:
         return self.jersey_num
     
     def getName(self):
-        return self.name
+        return self.name.strip()
     
     def setCareerEnd(self, end):
         self.career_end = end
@@ -34,9 +34,9 @@ class Official:
     def getInfo(self):
         info = {
             "name": self.getName(),
-            "careerStart": self.getCareerStart(),
-            "careerEnd": self.getCareerEnd(),
-            "jerseyNum": self.getJerseyNum()
+            "career_start": self.getCareerStart(),
+            "career_end": self.getCareerEnd(),
+            "jersey_num": self.getJerseyNum()
         }
         
         return info
