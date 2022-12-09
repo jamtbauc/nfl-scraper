@@ -44,6 +44,7 @@ def run_scraper(url_stop):
     url_start = parser.loadCsvGames("./csv/games.csv")
     parser.loadCsvGameWeather("./csv/gm_weathers.csv")
     parser.loadCsvOfficials("./csv/officials.csv")
+    parser.loadCsvOfficialGames("./csv/off_gms.csv")
     # loop through all urls
     for url in urls:
         url_date = url[11:20]

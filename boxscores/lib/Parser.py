@@ -953,6 +953,27 @@ class Parser:
                 
                 if official not in self.officials:
                     self.officials[name] = official
+                    
+    def loadCsvOfficialGames(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = row[0]
+                position = row[1]
+                name = row[2]
+                game_id = row[3]
+                
+                official_game = OfficialGame(id, name, game_id, position)
+                official_game.setId(id)
+                
+                id = official_game.getId()
+                if id not in self.off_gms:
+                    self.off_gms[id] = official_game
+                    
+                if id > self.off_gm_id:
+                    self.off_gm_id = id + 1
     
     def parseGame(self):
         # extract scores and coaches

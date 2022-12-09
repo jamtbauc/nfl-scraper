@@ -22,8 +22,11 @@ class OfficialGame:
     def setGameId(self, id):
         self.game_id = id
         
-    def setId(self, id):
-        self.id = id
+    def setId(self, value):
+        try:
+            self.id = int(value)
+        except:
+            self.id = None
         
     def setOfficialId(self, id):
         self.official_id = id
@@ -34,9 +37,9 @@ class OfficialGame:
     def getInfo(self):
         info = {
             "id": self.getId(),
-            "refPosition": self.getRefPosition(),
-            "officialId": self.getOfficialId(),
-            "gameId": self.getGameId()
+            "ref_position": self.getRefPosition(),
+            "official_id": self.getOfficialId(),
+            "game_id": self.getGameId()
         }
         
         return info
