@@ -1031,6 +1031,21 @@ class Parser:
                 if comp_id >= self.play_by_play_id:
                     self.play_by_play_id = comp_id + 1
     
+    def loadCsvPlayers(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                player_id = row[0]
+                name = row[1]
+                
+                player = Player(player_id, name)
+                
+                id = player.getId()
+                if id not in self.players:
+                    self.players[id] = player
+    
     def parseGame(self):
         # extract scores and coaches
         self.extract_scorebox()

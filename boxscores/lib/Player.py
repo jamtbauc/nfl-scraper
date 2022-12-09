@@ -52,8 +52,8 @@ class Player:
             "name": self.getName(),
             "college": self.getCollege(),
             "dob": self.getDOB(),
-            "careerStart": self.getCareerStart(),
-            "careerEnd": self.getCareerEnd()
+            "career_start": self.getCareerStart(),
+            "career_end": self.getCareerEnd()
         }
         
         return info
