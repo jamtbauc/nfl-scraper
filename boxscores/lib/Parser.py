@@ -939,7 +939,7 @@ class Parser:
                 if comp_id not in self.gm_weathers:
                     self.gm_weathers[id] = gm_weather
 
-                if comp_id > self.gm_weather_id:
+                if comp_id >= self.gm_weather_id:
                     self.gm_weather_id = comp_id + 1
     
     def loadCsvOfficials(self, file):
@@ -972,8 +972,64 @@ class Parser:
                 if id not in self.off_gms:
                     self.off_gms[id] = official_game
                     
-                if id > self.off_gm_id:
+                if id >= self.off_gm_id:
                     self.off_gm_id = id + 1
+                    
+    def loadCsvPlayByPlays(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                qtr = row[1]
+                qtr_time_rem = row[2]
+                if qtr_time_rem != '':
+                    qtr_time_rem = datetime.strptime(row[2],"%H:%M:%S")
+                    qtr_time_rem = datetime.strftime(qtr_time_rem, "%M:%S")
+                down = row[3]
+                if down != '':
+                    down = int(row[3])
+                yds_to_go = row[4]
+                if yds_to_go != '':
+                    yds_to_go = int(row[4])
+                yrd_start = row[5]
+                score_away = row[6]
+                if score_away != '':
+                    score_away = int(row[6])
+                score_home = row[7]
+                if score_home != '':
+                    score_home = int(row[7])
+                detail = row[8]
+                exp_pts_before = row[9]
+                if exp_pts_before != '':
+                    exp_pts_before = float(row[9])
+                exp_pts_after = row[10]
+                if exp_pts_after != '':
+                    exp_pts_after = float(row[10])
+                seq = row[11]
+                if seq != '':
+                    seq = float(row[11])
+                game_id = row[12]
+                
+                pbp = PlayByPlay(id, seq, game_id)
+                pbp.setQtr(qtr)
+                pbp.setQtrTimeRem(qtr_time_rem)
+                pbp.setDown(down)
+                pbp.setYdsToGo(yds_to_go)
+                pbp.setYdStart(yrd_start)
+                pbp.setScoreAway(score_away)
+                pbp.setScoreHome(score_home)
+                pbp.setDetail(detail)
+                pbp.setExpPointsBefore(exp_pts_before)
+                pbp.setExpPointsAfter(exp_pts_after)
+                
+                comp_id = pbp.getId()
+                if comp_id not in self.play_by_plays:
+                    self.play_by_plays[comp_id] = pbp
+                    
+                if comp_id >= self.play_by_play_id:
+                    self.play_by_play_id = comp_id + 1
     
     def parseGame(self):
         # extract scores and coaches

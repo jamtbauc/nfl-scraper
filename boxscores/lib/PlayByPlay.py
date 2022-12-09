@@ -125,17 +125,17 @@ class PlayByPlay:
         info = {
             "id": self.getId(),
             "qtr": self.getQtr(),
-            "qtrTimeRem": self.getQtrTimeRem(),
+            "qtr_time_rem": self.getQtrTimeRem(),
             "down": self.getDown(),
-            "ydsToGo": self.getYdsToGo(),
-            "ydStart": self.getYdStart(),
-            "scoreAway": self.getScoreAway(),
-            "scoreHome": self.getScoreHome(),
+            "yds_to_go": self.getYdsToGo(),
+            "yd_start": self.getYdStart(),
+            "score_away": self.getScoreAway(),
+            "score_home": self.getScoreHome(),
             "detail": self.getDetail(),
-            "expPtsBefore": self.getExpPointsBefore(),
-            "expPtsAfter": self.getExpPointsAfter(),
+            "exp_pts_before": self.getExpPointsBefore(),
+            "exp_pts_after": self.getExpPointsAfter(),
             "seq": self.getSeq(),
-            "gameId": self.getGameId()
+            "game_id": self.getGameId()
         }
         
         return info
