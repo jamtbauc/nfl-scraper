@@ -1672,13 +1672,13 @@ class Parser:
 
         with open("csv/scoring_plays.csv", "w") as file:
             fieldnames = [
-                'id',  
+                'id',
+                'home_score',
+                'scoring_team_id',
+                'away_score', 
                 'qtr', 
                 'qtr_time_rem',
-                'scoring_team_id', 
-                'description',
-                'away_score',
-                'home_score', 
+                'description'
             ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()

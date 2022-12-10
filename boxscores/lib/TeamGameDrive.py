@@ -79,15 +79,15 @@ class TeamGameDrive:
     def getInfo(self):
         info = {
             "id": self.getId(),
-            "driveNum": self.getDriveNum(),
+            "drive_num": self.getDriveNum(),
             "quarter": self.getQuarter(),
-            "timeStart": self.getTimeStart(),
-            "ydStart": self.getYdStart(),
-            "numPlays": self.getNumPlays(),
-            "driveTime": self.getDriveTime(),
-            "netYds": self.getNetYds(),
-            "driveResult": self.getDriveResult(),
-            "teamGameId": self.getTeamGameId()
+            "time_start": self.getTimeStart(),
+            "yd_start": self.getYdStart(),
+            "num_plays": self.getNumPlays(),
+            "drive_time": self.getDriveTime(),
+            "net_yds": self.getNetYds(),
+            "drive_result": self.getDriveResult(),
+            "team_game_id": self.getTeamGameId()
         }
         
         return info

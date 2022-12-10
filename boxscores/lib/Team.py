@@ -77,7 +77,7 @@ class Team:
             "name": self.getName(),
             "locale": self.getLocale(),
             "mascot": self.getMascot(),
-            "abbrevPff": self.getAbbrevPff()
+            "abbrev_pff": self.getAbbrevPff()
         }
         
         return info
