@@ -90,14 +90,14 @@ class PlayerGameSnap:
     def getInfo(self):
         info = {
             "id": self.getId(),
-            "playerGmId": self.getPlayerGameId(),
-            "startPos": self.getStartPos(),
-            "offSnaps": self.getOffSnaps(),
-            "offSnapPct": self.getOffSnapPct(),
-            "defSnaps": self.getDefSnaps(),
-            "defSnapPct": self.getDefSnapPct(),
-            "stSnaps": self.getStSnaps(),
-            "stSnapPct": self.getStSnapPct()
+            "player_gm_id": self.getPlayerGameId(),
+            "start_pos": self.getStartPos(),
+            "off_snaps": self.getOffSnaps(),
+            "off_snap_pct": self.getOffSnapPct(),
+            "def_snaps": self.getDefSnaps(),
+            "def_snap_pct": self.getDefSnapPct(),
+            "st_snaps": self.getStSnaps(),
+            "st_snap_pct": self.getStSnapPct()
         }
         
         return info

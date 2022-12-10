@@ -1287,6 +1287,38 @@ class Parser:
                     
                 if comp_id >= self.player_gm_id:
                     self.player_gm_id = comp_id + 1
+                    
+    def loadCsvPlayerGameSnaps(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                player_gm_id = int(row[1])
+                start_pos = row[2]
+                off_snaps = int(row[3])
+                off_snap_pct = row[4]
+                def_snaps = int(row[5])
+                def_snap_pct = row[6]
+                st_snaps = int(row[7])
+                st_snap_pct = row[8]
+                
+                player_gm_snap = PlayerGameSnap(id, player_gm_id)
+                player_gm_snap.setStartPos(start_pos)
+                player_gm_snap.setOffSnaps(off_snaps)
+                player_gm_snap.setOffSnapPct(off_snap_pct)
+                player_gm_snap.setDefSnaps(def_snaps)
+                player_gm_snap.setDefSnapPct(def_snap_pct)
+                player_gm_snap.setStSnaps(st_snaps)
+                player_gm_snap.setStSnapPct(st_snap_pct)
+                
+                comp_id = player_gm_snap.getId()
+                if comp_id not in self.player_gm_snaps:
+                    self.player_gm_snaps[comp_id] = player_gm_snap
+                    
+                if comp_id >= self.player_gm_snap_id:
+                    self.player_gm_snap_id = comp_id + 1
                 
     def parseGame(self):
         # extract scores and coaches
