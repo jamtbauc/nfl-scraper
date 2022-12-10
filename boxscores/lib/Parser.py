@@ -1348,6 +1348,27 @@ class Parser:
                     
                 if comp_id >= self.scoring_play_id:
                     self.scoring_play_id = comp_id + 1
+                    
+    def loadCsvStadiums(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                name = row[0]
+                city = row[1]
+                state = row[2]
+                surface = row[3]
+                roof = row[4]
+                
+                stadium = Stadium(name)
+                stadium.setCity(city)
+                stadium.setState(state)
+                stadium.setSurface(surface)
+                stadium.setRoof(roof)
+                
+                if name not in self.stadiums:
+                    self.stadiums[name] = stadium
                 
     def parseGame(self):
         # extract scores and coaches
