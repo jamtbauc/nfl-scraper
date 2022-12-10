@@ -1046,6 +1046,248 @@ class Parser:
                 if id not in self.players:
                     self.players[id] = player
     
+    def loadCsvPlayerGames(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                player_id = row[1]
+                game_id = int(row[2])
+                pass_comps = int(row[3])
+                pass_atts = int(row[4])
+                pass_yds = int(row[5])
+                pass_tds = int(row[6])
+                pass_ints = int(row[7])
+                sacked = int(row[8])
+                sack_yds_lost = int(row[9])
+                long_pass = int(row[10])
+                pass_rating = float(row[11])
+                rush_atts = int(row[12])         
+                rush_yds = int(row[13])
+                rush_tds = int(row[14])
+                long_rush = int(row[15])
+                rec_targets = int(row[16])
+                receptions = int(row[17])
+                rec_yds = int(row[18])
+                rec_tds = int(row[19])
+                long_rec = int(row[20])
+                fumbles = int(row[21])
+                fumbles_lost = int(row[22])
+                def_int = int(row[23])
+                def_int_yds = int(row[24])
+                def_int_tds = int(row[25])
+                long_def_int = int(row[26])
+                pass_defs = int(row[27])
+                def_sacks = float(row[28])
+                def_tack_combo = int(row[29])
+                def_tack_solo = int(row[30])
+                def_tack_assist = int(row[31])
+                def_tack_loss = int(row[32])
+                def_qb_hits = int(row[33])
+                fumble_recs = int(row[34])
+                fumble_rec_yds = int(row[35])
+                fumble_rec_tds = int(row[36])
+                forced_fumbles = int(row[37])
+                kick_rets = int(row[38])
+                kick_ret_yds = int(row[39])
+                avg_kick_ret = float(row[40])
+                kick_ret_tds = int(row[41])
+                long_kick_ret = int(row[42])
+                punt_rets = int(row[43])
+                punt_ret_yds = int(row[44])
+                avg_punt_ret = float(row[45])
+                punt_ret_tds = int(row[46])
+                long_punt_ret = int(row[47])
+                xpm = int(row[48])
+                xpa = int(row[49])
+                fgm = int(row[50])
+                fga = int(row[51])
+                punts = int(row[52])
+                punt_yds = int(row[53])
+                avg_punt = float(row[54])
+                long_punt = int(row[55])
+                pass_first_downs = int(row[56])
+                pass_first_down_pct = float(row[57])
+                pass_tgt_yds = int(row[58])
+                pass_tgt_yds_per_att = float(row[59])
+                pass_air_yds = int(row[60])
+                pass_air_yds_per_comp = float(row[61])
+                pass_air_yds_per_att = float(row[62])
+                pass_yac = int(row[63])
+                pass_yac_per_comp = float(row[64])
+                pass_drops = int(row[65])
+                pass_drop_pct = row[66]
+                pass_poor_throws = int(row[67])
+                pass_poor_throw_pct = float(row[68])
+                pass_blitzed = int(row[69])
+                pass_hurried = int(row[70])
+                pass_hits = int(row[71])
+                pass_pressured = int(row[72])
+                pass_pressured_pct = float(row[73])
+                rush_scrambles = int(row[74])
+                rush_scrambles_yds_per_att = float(row[75])
+                rush_first_down = int(row[76])
+                rush_yds_before_contact = int(row[77])
+                rush_yds_bc_per_rush = float(row[78])
+                rush_yac = int(row[79])
+                rush_yac_per_rush = float(row[80])
+                rush_broken_tacks = int(row[81])
+                rush_per_broken_tackle = float(row[82])
+                rec_first_down = int(row[83])
+                rec_air_yds = int(row[84])
+                rec_air_yds_per_rec = float(row[85])
+                rec_yac = int(row[86])
+                rec_yac_per_rec = float(row[87])
+                rec_adot = float(row[88])
+                rec_broken_tacks = int(row[89])
+                rec_per_broken_tackle = float(row[90])
+                rec_drops = int(row[91])
+                rec_drop_pct = float(row[92])
+                rec_target_int = int(row[93])
+                rec_pass_rating = float(row[94])
+                def_targets = int(row[95])
+                def_comps = int(row[96])
+                def_comp_pct = float(row[97])
+                def_comp_yds = int(row[98])
+                def_yds_per_comp = float(row[99])
+                def_yds_per_target = float(row[100])
+                def_comp_tds = int(row[101])
+                def_pass_rating = float(row[102])
+                def_tgt_yds_per_att = float(row[103])
+                def_air_yds = int(row[104])
+                def_yac = float(row[105])
+                blitzes = int(row[106])
+                qb_hurries = int(row[107])
+                qb_knockdown = int(row[108])
+                pressures = int(row[109])
+                tacks_missed = int(row[110])
+                tacks_missed_pct = float(row[111])
+                is_starter = row[112]
+                starting_pos = row[113]
+                
+                player_gm = PlayerGame(id, player_id)
+                player_gm.setGameId(game_id)
+                player_gm.setPassComps(pass_comps)
+                player_gm.setPassAtts(pass_atts)
+                player_gm.setPassYds(pass_yds)
+                player_gm.setPassTds(pass_tds)
+                player_gm.setPassInts(pass_ints)
+                player_gm.setSacked(sacked)
+                player_gm.setSackYdsLost(sack_yds_lost)
+                player_gm.setLongPass(long_pass)
+                player_gm.setPassRating(pass_rating)
+                player_gm.setRushAtts(rush_atts)
+                player_gm.setRushYds(rush_yds)
+                player_gm.setRushTds(rush_tds)
+                player_gm.setLongRush(long_rush)
+                player_gm.setRecTargets(rec_targets)
+                player_gm.setReceptions(receptions)
+                player_gm.setRecYds(rec_yds)
+                player_gm.setRecTds(rec_tds)
+                player_gm.setLongRec(long_rec)
+                player_gm.setFumbles(fumbles)
+                player_gm.setFumblesLost(fumbles_lost)
+                player_gm.setDefInt(def_int)
+                player_gm.setDefIntYds(def_int_yds)
+                player_gm.setDefIntTds(def_int_tds)
+                player_gm.setLongDefInt(long_def_int)
+                player_gm.setPassDefs(pass_defs)
+                player_gm.setDefSacks(def_sacks)
+                player_gm.SetDefTacksComb(def_tack_combo)
+                player_gm.SetDefTacksSolo(def_tack_solo)
+                player_gm.SetDefTacksAssist(def_tack_assist)
+                player_gm.SetDefTacksLoss(def_tack_loss)
+                player_gm.setDefQbHits(def_qb_hits)
+                player_gm.setFumbleRecs(fumble_recs)
+                player_gm.setFumbleRecYds(fumble_rec_yds)
+                player_gm.setFumbleRecTds(fumble_rec_tds)
+                player_gm.setForcedFumbles(forced_fumbles)
+                player_gm.setKickRets(kick_rets)
+                player_gm.setKickRetYds(kick_ret_yds)
+                player_gm.setAvgKickRet(avg_kick_ret)
+                player_gm.setKickRetTds(kick_ret_tds)
+                player_gm.setLongKickRet(long_kick_ret)
+                player_gm.setPuntRets(punt_rets)
+                player_gm.setPuntRetYds(punt_ret_yds)
+                player_gm.setAvgPuntRet(avg_punt_ret)
+                player_gm.setPuntRetTds(punt_ret_tds)
+                player_gm.setLongPuntRet(long_punt_ret)
+                player_gm.setXpm(xpm)
+                player_gm.setXpa(xpa)
+                player_gm.setFgm(fgm)
+                player_gm.setFga(fga)
+                player_gm.setPunts(punts)
+                player_gm.setPuntYds(punt_yds)
+                player_gm.setAvgPunt(avg_punt)
+                player_gm.setLongPunt(long_punt)
+                player_gm.setPassFirstDowns(pass_first_downs)
+                player_gm.setPassFirstDownPct(pass_first_down_pct)
+                player_gm.setPassTgtYds(pass_tgt_yds)
+                player_gm.setPassTgtYdsPerAtt(pass_tgt_yds_per_att)
+                player_gm.setPassAirYds(pass_air_yds)
+                player_gm.setPassAirYdsPerComp(pass_air_yds_per_comp)
+                player_gm.setPassAirYdsPerAtt(pass_air_yds_per_att)
+                player_gm.setPassYac(pass_yac)
+                player_gm.setPassYacPerComp(pass_yac_per_comp)
+                player_gm.setPassDrops(pass_drops)
+                player_gm.setPassDropPct(pass_drop_pct)
+                player_gm.setPassPoorThrows(pass_poor_throws)
+                player_gm.pass_poor_throw_pct = pass_poor_throw_pct
+                player_gm.pass_blitzed = pass_blitzed
+                player_gm.pass_hurried = pass_hurried
+                player_gm.pass_hits = pass_hits
+                player_gm.pass_pressured = pass_pressured
+                player_gm.pass_pressured_pct = pass_pressured_pct
+                player_gm.rush_scrambles = rush_scrambles
+                player_gm.rush_scrambles_yds_per_att = rush_scrambles_yds_per_att 
+                player_gm.rush_first_down = rush_first_down
+                player_gm.rush_yds_before_contact = rush_yds_before_contact
+                player_gm.rush_yds_bc_per_rush = rush_yds_bc_per_rush
+                player_gm.rush_yac = rush_yac
+                player_gm.rush_yac_per_rush = rush_yac_per_rush
+                player_gm.rush_broken_tacks = rush_broken_tacks
+                player_gm.rush_per_broken_tackle = rush_per_broken_tackle
+                player_gm.rec_first_down = rec_first_down
+                player_gm.rec_air_yds = rec_air_yds
+                player_gm.rec_air_yds_per_rec = rec_air_yds_per_rec
+                player_gm.rec_yac = rec_yac
+                player_gm.rec_yac_per_rec = rec_yac_per_rec
+                player_gm.rec_adot = rec_adot
+                player_gm.rec_broken_tacks = rec_broken_tacks 
+                player_gm.rec_per_broken_tackle = rec_per_broken_tackle
+                player_gm.rec_drops = rec_drops
+                player_gm.rec_drop_pct = rec_drop_pct
+                player_gm.rec_target_int = rec_target_int
+                player_gm.rec_pass_rating = rec_pass_rating
+                player_gm.def_targets = def_targets
+                player_gm.def_comps = def_comps
+                player_gm.def_comp_pct = def_comp_pct
+                player_gm.def_comp_yds = def_comp_yds
+                player_gm.def_yds_per_comp = def_yds_per_comp
+                player_gm.def_yds_per_target = def_yds_per_target
+                player_gm.def_comp_tds = def_comp_tds
+                player_gm.def_pass_rating = def_pass_rating
+                player_gm.def_tgt_yds_per_att = def_tgt_yds_per_att
+                player_gm.def_air_yds = def_air_yds
+                player_gm.def_yac = def_yac
+                player_gm.blitzes = blitzes
+                player_gm.qb_hurries = qb_hurries
+                player_gm.qb_knockdown = qb_knockdown
+                player_gm.pressures = pressures
+                player_gm.tacks_missed = tacks_missed
+                player_gm.tacks_missed_pct = tacks_missed_pct
+                player_gm.is_starter = is_starter
+                player_gm.starting_pos = starting_pos
+                
+                comp_id = player_gm.getId()
+                if comp_id not in self.player_gms:
+                    self.player_gms[comp_id] = player_gm
+                    
+                if comp_id >= self.player_gm_id:
+                    self.player_gm_id = comp_id + 1
+                
     def parseGame(self):
         # extract scores and coaches
         self.extract_scorebox()
@@ -1361,7 +1603,7 @@ class Parser:
                 'rush_yac', 
                 'rush_yac_per_rush', 
                 'rush_broken_tacks', 
-                'rush_broken_tacks_per_rush',
+                'rush_per_broken_tack',
                 'rec_first_down', 
                 'rec_air_yds', 
                 'rec_air_yds_per_rec', 
@@ -1369,7 +1611,7 @@ class Parser:
                 'rec_yac_per_rec',
                 'rec_adot', 
                 'rec_broken_tacks', 
-                'rec_broken_tacks_per_rec', 
+                'rec_per_broken_tack', 
                 'rec_drops', 
                 'rec_drop_pct',
                 'rec_target_int', 
