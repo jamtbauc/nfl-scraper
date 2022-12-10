@@ -57,11 +57,11 @@ class ScoringPlay:
         info = {
             "id": self.getId(),
             "qtr": self.getQtr(),
-            "qtrTimeRem": self.getQtrTimeRem().isoformat(),
-            "scoringTeamId": self.getScoringTeamId(),
+            "qtr_time_rem": self.getQtrTimeRem().isoformat(),
+            "scoring_team_id": self.getScoringTeamId(),
             "description": self.getDescription(),
-            "awayScore": self.getAwayScore(),
-            "homeScore": self.getHomeScore()
+            "away_score": self.getAwayScore(),
+            "home_score": self.getHomeScore()
         }
         
         return info

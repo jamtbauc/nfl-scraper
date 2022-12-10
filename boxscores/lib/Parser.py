@@ -1319,6 +1319,35 @@ class Parser:
                     
                 if comp_id >= self.player_gm_snap_id:
                     self.player_gm_snap_id = comp_id + 1
+                    
+    def loadCsvScoringPlays(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                home_score = int(row[1])
+                scoring_team_id = int(row[2])
+                away_score = int(row[3])
+                qtr = int(row[4])
+                qtr_time_rem = datetime.strptime(row[5], "%H:%M:%S").time()
+                description = row[6]
+                
+                scoring_play = ScoringPlay(id)
+                scoring_play.setHomeScore(home_score)
+                scoring_play.setScoringTeamId(scoring_team_id)
+                scoring_play.setAwayScore(away_score)
+                scoring_play.setQtr(qtr)
+                scoring_play.setQtrTimeRem(qtr_time_rem)
+                scoring_play.setDescription(description)
+                
+                comp_id = scoring_play.getId()
+                if comp_id not in self.scoring_plays:
+                    self.scoring_plays[comp_id] = scoring_play
+                    
+                if comp_id >= self.scoring_play_id:
+                    self.scoring_play_id = comp_id + 1
                 
     def parseGame(self):
         # extract scores and coaches
@@ -1487,13 +1516,13 @@ class Parser:
 
         with open("csv/scoring_plays.csv", "w") as file:
             fieldnames = [
-                'id', 
-                'scoring_team_id',
-                'home_score',  
-                'away_score', 
+                'id',  
                 'qtr', 
-                'qtr_time_rem', 
-                'description'
+                'qtr_time_rem',
+                'scoring_team_id', 
+                'description',
+                'away_score',
+                'home_score', 
             ]
             writer = csv.DictWriter(file, delimiter=",", fieldnames=fieldnames)
             writer.writeheader()
