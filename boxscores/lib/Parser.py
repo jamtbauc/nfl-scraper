@@ -1369,6 +1369,25 @@ class Parser:
                 
                 if name not in self.stadiums:
                     self.stadiums[name] = stadium
+                    
+    def loadCsvTeams(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                team_name = row[0]
+                locale = row[1]
+                mascot = row[2]
+                pff_abbrev = row[3]
+                
+                team = Team(team_name)
+                team.setLocale(locale)
+                team.setMascot(mascot)
+                team.setAbbrevPff(pff_abbrev)
+                
+                if team_name not in self.teams:
+                    self.teams[team_name] = team
                 
     def parseGame(self):
         # extract scores and coaches
