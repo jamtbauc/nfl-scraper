@@ -1388,6 +1388,86 @@ class Parser:
                 
                 if team_name not in self.teams:
                     self.teams[team_name] = team
+                    
+    def loadCsvTeamGames(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                team_id = row[1]
+                game_id = row[2]
+                won_toss = row[3] == "True"
+                toss_decision = row[4]
+                is_home = row[5] == "True"
+                is_favored = row[6] == "True"
+                spread = float(row[7])
+                over_under = float(row[8])
+                first_downs = int(row[9])
+                rush_atts = int(row[10])
+                rush_yds = int(row[11])
+                rush_tds = int(row[12])
+                pass_comps = int(row[13])
+                pass_atts = int(row[14])
+                pass_yds = int(row[15])
+                pass_tds = int(row[16])
+                pass_ints = int(row[17])
+                sacked = int(row[18])
+                sack_yds_lost = int(row[19])
+                net_pass_yds = int(row[20])
+                total_yds = int(row[21])
+                fumbles = int(row[22])
+                fumbles_lost = int(row[23])
+                turnovers = int(row[24])
+                penalties = int(row[25])
+                penalty_yds = int(row[26])
+                third_down_atts = int(row[27])
+                third_down_convs = int(row[28])
+                fourth_down_atts = int(row[29])
+                fourth_down_convs = int(row[30])
+                possession_time = datetime.strptime(row[31], "%H:%M:%S").time()
+                coach = row[32]
+                score = int(row[33])
+                
+                team_game = TeamGame(id, team_id, game_id, is_home)
+                team_game.setWonToss(won_toss)
+                team_game.setTossDecision(toss_decision)
+                team_game.setIsFavored(is_favored)
+                team_game.setSpread(spread)
+                team_game.setOverUnder(over_under)
+                team_game.setFirstDowns(first_downs)
+                team_game.setRushAtts(rush_atts)
+                team_game.setRushYds(rush_yds)
+                team_game.setRushTds(rush_tds)
+                team_game.setPassComps(pass_comps)
+                team_game.setPassAtts(pass_atts)
+                team_game.setPassYds(pass_yds)
+                team_game.setPassTds(pass_tds)
+                team_game.setPassInts(pass_ints)
+                team_game.setSacked(sacked)
+                team_game.setSackYdsLost(sack_yds_lost)
+                team_game.setNetPassYds(net_pass_yds)
+                team_game.setTotalYds(total_yds)
+                team_game.setFumbles(fumbles)
+                team_game.setFumblesLost(fumbles_lost)
+                team_game.setTurnovers(turnovers)
+                team_game.setPenalites(penalties)
+                team_game.setPenaltyYds(penalty_yds)
+                team_game.setThirdDownAtts(third_down_atts)
+                team_game.setThirdDownConvs(third_down_convs)
+                team_game.setFourthDownAtts(fourth_down_atts)
+                team_game.setFourthDownConvs(fourth_down_convs)
+                team_game.setPossessionTime(possession_time)
+                team_game.setCoach(coach)
+                team_game.setScore(score)
+                
+                comp_id = team_game.getId()
+                if comp_id not in self.team_gms:
+                    self.team_gms[comp_id] = team_game
+                    
+                if comp_id >= self.tm_game_id:
+                    self.tm_game_id = comp_id + 1
                 
     def parseGame(self):
         # extract scores and coaches
