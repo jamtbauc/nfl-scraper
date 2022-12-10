@@ -1468,6 +1468,42 @@ class Parser:
                     
                 if comp_id >= self.tm_game_id:
                     self.tm_game_id = comp_id + 1
+                    
+    def loadCsvTeamGameDrive(self, file):
+        with open(file, 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            
+            for row in reader:
+                id = int(row[0])
+                drive_num = int(row[1])
+                quarter = int(row[2])
+                time_start = datetime.strptime(row[3], "%H:%M:%S")
+                time_start = datetime.strftime(time_start, "%M:%S")
+                yd_start = row[4]
+                num_plays = int(row[5])
+                drive_time = datetime.strptime(row[6], "%H:%M:%S")
+                drive_time = datetime.strftime(drive_time, "%M:%S")
+                net_yds = int(row[7])
+                drive_result = row[8]
+                team_game_id = int(row[9])
+                
+                team_game_drive = TeamGameDrive(id, drive_num)
+                team_game_drive.setQuarter(quarter)
+                team_game_drive.setTimeStart(time_start)
+                team_game_drive.setYdStart(yd_start)
+                team_game_drive.setNumPlays(num_plays)
+                team_game_drive.setDriveTime(drive_time)
+                team_game_drive.setNetYds(net_yds)
+                team_game_drive.setDriveResult(drive_result)
+                team_game_drive.setTeamGameId(team_game_id)
+                
+                comp_id = team_game_drive.getId()
+                if comp_id not in self.tm_gm_drives:
+                    self.tm_gm_drives[comp_id] = team_game_drive
+                    
+                if comp_id >= self.team_gm_drive_id:
+                    self.team_gm_drive_id= comp_id + 1
                 
     def parseGame(self):
         # extract scores and coaches

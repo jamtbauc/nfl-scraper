@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class TeamGameDrive:
-    def __init__(self, id, num):
+    def __init__(self, id: int, num: int):
         self.id = int(id)
         self.drive_num = int(num)
         self.quarter = None
@@ -26,7 +26,7 @@ class TeamGameDrive:
         self.drive_result = result
     
     def getDriveTime(self):
-        return self.drive_time
+        return self.drive_time.isoformat()
     
     def setDriveTime(self, value):
         self.drive_time = datetime.strptime(value,"%M:%S").time()
@@ -62,7 +62,7 @@ class TeamGameDrive:
         self.team_game_id = int(id)
     
     def getTimeStart(self):
-        return self.time_start
+        return self.time_start.isoformat()
     
     def setTimeStart(self, value):
         self.time_start = datetime.strptime(value,"%M:%S").time()
