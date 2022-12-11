@@ -2,13 +2,8 @@ from datetime import datetime
 
 class Game:
     def __init__(self, date, week, away_abbrev, home_abbrev):
-        if isinstance(date, datetime):
-            self.date = date
-        else:
-            self.setDate(date)
-
         # Set game season
-        date = self.date.date()
+        date = date.date()
         month = date.month
         year = date.year
         if month < 9:
@@ -41,10 +36,7 @@ class Game:
         return self.date
     
     def setDate(self, value):
-        try:
-            self.date = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S")
-        except:
-            self.date = datetime.strptime("1900-01-01T0:00:00", "%Y-%m-%dT%H:%M:%S")
+        self.date = value
         
     def getGameDuration(self):
         if self.game_duration:

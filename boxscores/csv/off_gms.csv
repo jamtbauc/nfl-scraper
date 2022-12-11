@@ -1,4 +1,4 @@
-id,refPosition,officialId,gameId
+id,ref_position,official_id,game_id
 1,Referee,John Hussey,20180906ATLPHI
 2,Umpire,Tony Michalek,20180906ATLPHI
 3,Down Judge,Kevin Codey,20180906ATLPHI
@@ -8867,3 +8867,108 @@ id,refPosition,officialId,gameId
 8866,Back Judge,Jimmy Russell,20221128PITIND
 8867,Side Judge,Jimmy Buchanan,20221128PITIND
 8868,Field Judge,Joe Blubaugh,20221128PITIND
+8869,Referee,Shawn Hochuli,20221201BUFNWE
+8870,Umpire,Terry Killens,20221201BUFNWE
+8871,Down Judge,Patrick Holt,20221201BUFNWE
+8872,Line Judge,Greg Bradley,20221201BUFNWE
+8873,Back Judge,Rich Martinez,20221201BUFNWE
+8874,Side Judge,Chad Hill,20221201BUFNWE
+8875,Field Judge,Anthony Flemming,20221201BUFNWE
+8876,Referee,Land Clark,20221204CLEHOU
+8877,Umpire,Paul King,20221204CLEHOU
+8878,Down Judge,Tom Stephan,20221204CLEHOU
+8879,Line Judge,Brian Bolinger,20221204CLEHOU
+8880,Back Judge,Greg Meyer,20221204CLEHOU
+8881,Side Judge,Dominique Pender,20221204CLEHOU
+8882,Field Judge,Michael Banks,20221204CLEHOU
+8883,Referee,Alex Kemp,20221204DENBAL
+8884,Umpire,Mike Morton,20221204DENBAL
+8885,Down Judge,Danny Short,20221204DENBAL
+8886,Line Judge,Jeff Bergman,20221204DENBAL
+8887,Back Judge,Scott Helverson,20221204DENBAL
+8888,Side Judge,Dale Shaw,20221204DENBAL
+8889,Field Judge,John Jenkins,20221204DENBAL
+8890,Referee,Scott Novak,20221204GNBCHI
+8891,Umpire,Ramon George,20221204GNBCHI
+8892,Down Judge,Derick Bowers,20221204GNBCHI
+8893,Line Judge,Walt Coleman,20221204GNBCHI
+8894,Back Judge,Terrence Miles,20221204GNBCHI
+8895,Side Judge,David Meslow,20221204GNBCHI
+8896,Field Judge,Tra Boger,20221204GNBCHI
+8897,Referee,Jerome Boger,20221204JAXDET
+8898,Umpire,Barry Anderson,20221204JAXDET
+8899,Down Judge,Frank LeBlanc,20221204JAXDET
+8900,Line Judge,Rusty Baynes,20221204JAXDET
+8901,Back Judge,Steve Patrick,20221204JAXDET
+8902,Side Judge,Jonah Monroe,20221204JAXDET
+8903,Field Judge,Alonzo Ramsey,20221204JAXDET
+8904,Referee,Clete Blakeman,20221204NYJMIN
+8905,Umpire,Tab Slaughter,20221204NYJMIN
+8906,Down Judge,Dana McKenzie,20221204NYJMIN
+8907,Line Judge,Julian Mapp,20221204NYJMIN
+8908,Back Judge,Perry Paganelli,20221204NYJMIN
+8909,Side Judge,Lo Van,20221204NYJMIN
+8910,Field Judge,Terry Brown,20221204NYJMIN
+8911,Referee,Adrian Hill,20221204TENPHI
+8912,Umpire,Roy Ellison,20221204TENPHI
+8913,Down Judge,David Oliver,20221204TENPHI
+8914,Line Judge,Kevin Codey,20221204TENPHI
+8915,Back Judge,Keith Ferguson,20221204TENPHI
+8916,Side Judge,Jim Quirk,20221204TENPHI
+8917,Field Judge,Mearl Robinson,20221204TENPHI
+8918,Referee,Ron Torbert,20221204PITATL
+8919,Umpire,Mark Pellis,20221204PITATL
+8920,Down Judge,Max Causey,20221204PITATL
+8921,Line Judge,Tim Podraza,20221204PITATL
+8922,Back Judge,Tony Josselyn,20221204PITATL
+8923,Side Judge,Keith Washington,20221204PITATL
+8924,Field Judge,Ryan Dickson,20221204PITATL
+8925,Referee,Brad Allen,20221204WASNYG
+8926,Umpire,Duane Heydt,20221204WASNYG
+8927,Down Judge,Sarah Thomas,20221204WASNYG
+8928,Line Judge,Daniel Gallagher,20221204WASNYG
+8929,Back Judge,Greg Yette,20221204WASNYG
+8930,Side Judge,Boris Cheek,20221204WASNYG
+8931,Field Judge,Rick Patterson,20221204WASNYG
+8932,Referee,Tra Blake,20221204MIASFO
+8933,Umpire,Tony Michalek,20221204MIASFO
+8934,Down Judge,Patrick Turner,20221204MIASFO
+8935,Line Judge,Mark Stewart,20221204MIASFO
+8936,Back Judge,Todd Prukop,20221204MIASFO
+8937,Side Judge,Don Willard,20221204MIASFO
+8938,Field Judge,Tom Hill,20221204MIASFO
+8939,Referee,Shawn Smith,20221204SEALAR
+8940,Umpire,Bryan Neale,20221204SEALAR
+8941,Down Judge,Mark Hittner,20221204SEALAR
+8942,Line Judge,Michael Dolce,20221204SEALAR
+8943,Back Judge,Dino Paganelli,20221204SEALAR
+8944,Side Judge,Clay Reynard,20221204SEALAR
+8945,Field Judge,Dyrol Prioleau,20221204SEALAR
+8946,Referee,John Hussey,20221204KANCIN
+8947,Umpire,Alan Eck,20221204KANCIN
+8948,Down Judge,Robin DeLorenzo,20221204KANCIN
+8949,Line Judge,Carl Johnson,20221204KANCIN
+8950,Back Judge,Brad Freeman,20221204KANCIN
+8951,Side Judge,Allen Baynes,20221204KANCIN
+8952,Field Judge,Jabir Walker,20221204KANCIN
+8953,Referee,Craig Wrolstad,20221204LACLVR
+8954,Umpire,Steve Woods,20221204LACLVR
+8955,Down Judge,Jim Mello,20221204LACLVR
+8956,Line Judge,Tripp Sutter,20221204LACLVR
+8957,Back Judge,Grantis Bell,20221204LACLVR
+8958,Side Judge,Jeff Lamberth,20221204LACLVR
+8959,Field Judge,Jeff Shears,20221204LACLVR
+8960,Referee,Carl Cheffers,20221204INDDAL
+8961,Umpire,Brandon Cruse,20221204INDDAL
+8962,Down Judge,Mike Carr,20221204INDDAL
+8963,Line Judge,Jeff Seeman,20221204INDDAL
+8964,Back Judge,Matt Edwards,20221204INDDAL
+8965,Side Judge,Eugene Hall,20221204INDDAL
+8966,Field Judge,Nathan Jones,20221204INDDAL
+8967,Referee,Clay Martin,20221205NORTAM
+8968,Umpire,Fred Bryan,20221205NORTAM
+8969,Down Judge,Jerod Phillips,20221205NORTAM
+8970,Line Judge,Maia Chaka,20221205NORTAM
+8971,Back Judge,Greg Wilson,20221205NORTAM
+8972,Side Judge,Dave Hawkshaw,20221205NORTAM
+8973,Field Judge,James Coleman,20221205NORTAM

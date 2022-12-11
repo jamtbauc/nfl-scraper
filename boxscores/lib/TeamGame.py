@@ -155,8 +155,22 @@ class TeamGame:
     def getPossessionTime(self):
         return self.possession_time
     
-    def setPossessionTime(self, time):
-        self.possession_time = time
+    def setPossessionTime(self, value):
+        if isinstance(value, str):
+            duration = datetime.strptime(value, "%M:%S")
+        else:
+            duration = value
+            
+        # hours to minutes
+        h_t_m = duration.hour * 60
+        # sum minutes
+        mins = h_t_m + duration.minute
+        # minutes to seconds
+        m_t_s = mins * 60
+        # sum seconds
+        secs = m_t_s + duration.second
+
+        self.possession_time = secs
     
     def getRushAtts(self):
         return self.rush_atts
@@ -286,7 +300,7 @@ class TeamGame:
             self.setFourthDownConvs(int(stats[0]))
             self.setFourthDownAtts(int(stats[1]))
         elif label == "Time of Possession":
-            self.setPossessionTime(datetime.strptime(value, "%M:%S").time())
+            self.setPossessionTime(value)
         
     def getInfo(self):
         info = {

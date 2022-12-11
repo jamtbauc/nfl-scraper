@@ -42,6 +42,7 @@ def run_scraper(url_stop):
     parser = Parser()
     # load existing db items into array
     url_start = parser.loadCsvGames("./csv/games.csv")
+    print(f"Updating with urls starting at: {url_start}")
     parser.loadCsvGameWeather("./csv/gm_weathers.csv")
     parser.loadCsvOfficials("./csv/officials.csv")
     parser.loadCsvOfficialGames("./csv/off_gms.csv")
@@ -56,9 +57,8 @@ def run_scraper(url_stop):
     parser.loadCsvTeamGameDrive("./csv/tm_gm_drives.csv")
     # loop through all urls
     for url in urls:
-        url_date = url[11:20]
-        # if url_date > url_start and url_date < url_stop:
-        if url == 'abcde':
+        url_date = url[11:19]
+        if url_date > url_start and url_date < url_stop:
             try:
                 bytes = request_data(conn, url)
                 sleep(3)
@@ -96,8 +96,8 @@ def run_scraper(url_stop):
     # close http connection
     conn.close()
     
-    # # write files
-    # parser.writeFiles(stop)
+    # write files
+    parser.writeFiles()
     
 # Trim body of test to start and end
 def trim_text(text, start, end):
@@ -110,7 +110,7 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper("20221130")
+        run_scraper("20221206")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)

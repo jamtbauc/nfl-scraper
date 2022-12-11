@@ -90,7 +90,7 @@ class PlayerGameSnap:
     def getInfo(self):
         info = {
             "id": self.getId(),
-            "player_gm_id": self.getPlayerGameId(),
+            "player_game_id": self.getPlayerGameId(),
             "start_pos": self.getStartPos(),
             "off_snaps": self.getOffSnaps(),
             "off_snap_pct": self.getOffSnapPct(),
