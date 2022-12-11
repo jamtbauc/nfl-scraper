@@ -421,6 +421,7 @@ class Parser:
                 off_end = row.find('</a>')
                 if off_start > -1 and off_end > -1:
                     off = row[off_start:off_end]
+                    off = off.strip()
                     if off not in self.officials:
                         self.officials[off] = Official(off)
                     
@@ -966,6 +967,7 @@ class Parser:
                 id = row[0]
                 position = row[1]
                 name = row[2]
+                name = name.strip()
                 game_id = row[3]
                 
                 official_game = OfficialGame(id, name, game_id, position)

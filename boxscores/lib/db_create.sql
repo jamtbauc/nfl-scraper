@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS nfl.team_game
     third_down_convs smallint NOT NULL DEFAULT 0,
     fourth_down_atts smallint NOT NULL DEFAULT 0,
     fourth_down_convs smallint NOT NULL DEFAULT 0,
-    possession_time time without time zone NOT NULL,
+    possession_time smallint NOT NULL,
     coach character varying(20) NOT NULL,
     score smallint NOT NULL DEFAULT 0,
     PRIMARY KEY (id)
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS nfl.player_game
     poor_throw_pct numeric(4,1) NOT NULL DEFAULT 0.0,
     passes_blitzed smallint NOT NULL DEFAULT 0,
     passes_hurried smallint NOT NULL DEFAULT 0,
-    passes_hits smallint NOT NULL DEFAULT 0,
+    passes_hit smallint NOT NULL DEFAULT 0,
     passes_pressured smallint NOT NULL DEFAULT 0,
     pass_pressured_pct numeric(4,1) NOT NULL DEFAULT 0.0,
     scrambles smallint NOT NULL DEFAULT 0,
