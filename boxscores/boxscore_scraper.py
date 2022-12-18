@@ -48,13 +48,13 @@ def run_scraper(url_stop):
     parser.loadCsvOfficialGames("./csv/off_gms.csv")
     parser.loadCsvPlayByPlays("./csv/play_by_plays.csv")
     parser.loadCsvPlayers("./csv/players.csv")
-    parser.loadCsvPlayerGames("./csv/player_gms.csv")
-    parser.loadCsvPlayerGameSnaps("./csv/player_gm_snaps.csv")
+    parser.loadCsvPlayerGames("./csv/player_games.csv")
+    parser.loadCsvPlayerGameSnaps("./csv/player_game_snaps.csv")
     parser.loadCsvScoringPlays("./csv/scoring_plays.csv")
     parser.loadCsvStadiums("./csv/stadiums.csv")
     parser.loadCsvTeams("./csv/teams.csv")
     parser.loadCsvTeamGames("./csv/team_games.csv")
-    parser.loadCsvTeamGameDrive("./csv/tm_gm_drives.csv")
+    parser.loadCsvTeamGameDrive("./csv/team_game_drives.csv")
     # loop through all urls
     for url in urls:
         url_date = url[11:19]
@@ -110,7 +110,7 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper("20221206")
+        run_scraper("20221213")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)

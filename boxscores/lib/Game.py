@@ -45,23 +45,32 @@ class Game:
             return 0
     
     def setGameDuration(self, value):
-        duration = None
-
         if isinstance(value, str):
             duration = datetime.strptime(value, "%H:%M:%S")
+            # hours to minutes
+            h_t_m = duration.hour * 60
+            # sum minutes
+            mins = h_t_m + duration.minute
+            # minutes to seconds
+            m_t_s = mins * 60
+            # sum seconds
+            secs = m_t_s + duration.second
+            
+            self.game_duration = secs
+        elif isinstance(value, int):
+            self.game_duration = value
         else:
             duration = value
-
-        # hours to minutes
-        h_t_m = duration.hour * 60
-        # sum minutes
-        mins = h_t_m + duration.minute
-        # minutes to seconds
-        m_t_s = mins * 60
-        # sum seconds
-        secs = m_t_s + duration.second
-
-        self.game_duration = secs
+            # hours to minutes
+            h_t_m = duration.hour * 60
+            # sum minutes
+            mins = h_t_m + duration.minute
+            # minutes to seconds
+            m_t_s = mins * 60
+            # sum seconds
+            secs = m_t_s + duration.second
+            
+            self.game_duration = secs
 
     
     def getId(self):

@@ -889,7 +889,7 @@ class Parser:
                 except:
                     attendance = 0
                 stadium_id = row[5]
-                game_dur = datetime.strptime(row[6], "%H:%M:%S")
+                game_dur = int(row[6])
                 roof_type = row[7]
 
                 game = Game(
@@ -1431,7 +1431,7 @@ class Parser:
                 third_down_convs = int(row[28])
                 fourth_down_atts = int(row[29])
                 fourth_down_convs = int(row[30])
-                possession_time = datetime.strptime(row[31], "%H:%M:%S").time()
+                possession_time =int(row[31])
                 coach = row[32]
                 score = int(row[33])
                 
@@ -1574,7 +1574,9 @@ class Parser:
     
     # write all files
     def writeFiles(self):
-        with open("csv/stadiums.csv", "w") as file:
+        date = datetime.now()
+        date_str = date.strftime('%Y%m%d')
+        with open(f"csv/{date_str}stadiums.csv", "w") as file:
             fieldnames = [
                 'name', 
                 'city', 
@@ -1587,7 +1589,7 @@ class Parser:
             for stadium in self.stadiums:
                 writer.writerow(self.stadiums[stadium].getInfo())
          
-        with open("csv/games.csv", "w") as file:
+        with open(f"csv/{date_str}games.csv", "w") as file:
             fieldnames = [
                 "id", 
                 "date", 
@@ -1603,7 +1605,7 @@ class Parser:
             for game in self.games:
                 writer.writerow(self.games[game].getInfo())
                 
-        with open("csv/teams.csv", "w") as file:
+        with open(f"csv/{date_str}teams.csv", "w") as file:
             fieldnames = [
                 "name", 
                 "locale", 
@@ -1615,7 +1617,7 @@ class Parser:
             for team in self.teams:
                 writer.writerow(self.teams[team].getInfo())
                 
-        with open("csv/team_games.csv", "w") as file:
+        with open(f"csv/{date_str}team_games.csv", "w") as file:
             fieldnames = [
                 "id", 
                 "team_id", 
@@ -1657,7 +1659,7 @@ class Parser:
             for team in self.team_gms:
                 writer.writerow(self.team_gms[team].getInfo())
 
-        with open("csv/team_game_drives.csv", "w") as file:
+        with open(f"csv/{date_str}team_game_drives.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'drive_num', 
@@ -1675,11 +1677,11 @@ class Parser:
             for drive in self.tm_gm_drives:
                 writer.writerow(self.tm_gm_drives[drive].getInfo())       
 
-        with open("csv/scoring_plays.csv", "w") as file:
+        with open(f"csv/{date_str}scoring_plays.csv", "w") as file:
             fieldnames = [
                 'id',
-                'scoring_team_id',
                 'home_score',
+                'scoring_team_id',
                 'away_score', 
                 'qtr', 
                 'qtr_time_rem',
@@ -1690,7 +1692,7 @@ class Parser:
             for scoring_play in self.scoring_plays:
                 writer.writerow(self.scoring_plays[scoring_play].getInfo())
             
-        with open("csv/gm_weathers.csv", "w") as file:
+        with open(f"csv/{date_str}gm_weathers.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'temp',
@@ -1703,7 +1705,7 @@ class Parser:
             for gm_weather in self.gm_weathers:
                 writer.writerow(self.gm_weathers[gm_weather].getInfo())
                 
-        with open("csv/officials.csv", "w") as file:
+        with open(f"csv/{date_str}officials.csv", "w") as file:
             fieldnames = [
                 'name', 
                 'career_start', 
@@ -1715,7 +1717,7 @@ class Parser:
             for official in self.officials:
                 writer.writerow(self.officials[official].getInfo())
                 
-        with open("csv/off_gms.csv", "w") as file:
+        with open(f"csv/{date_str}off_gms.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'ref_position', 
@@ -1727,7 +1729,7 @@ class Parser:
             for off_gm in self.off_gms:
                 writer.writerow(self.off_gms[off_gm].getInfo())
                 
-        with open("csv/players.csv", "w") as file:
+        with open(f"csv/{date_str}players.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'name', 
@@ -1741,7 +1743,7 @@ class Parser:
             for player in self.players:
                 writer.writerow(self.players[player].getInfo())
                 
-        with open("csv/player_games.csv", "w") as file:
+        with open(f"csv/{date_str}player_games.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'player_id', 
@@ -1863,7 +1865,7 @@ class Parser:
             for player_gm in self.player_gms:
                 writer.writerow(self.player_gms[player_gm].getInfo())
 
-        with open("csv/player_game_snaps.csv", "w") as file:
+        with open(f"csv/{date_str}player_game_snaps.csv", "w") as file:
             fieldnames = [
                 'id', 
                 'player_game_id', 
@@ -1880,7 +1882,7 @@ class Parser:
             for player in self.player_gm_snaps:
                 writer.writerow(self.player_gm_snaps[player].getInfo())
                    
-        with open("csv/play_by_plays.csv", "w") as file:
+        with open(f"csv/{date_str}play_by_plays.csv", "w") as file:
             fieldnames = [
                 "id", 
                 "qtr", 
@@ -1901,7 +1903,7 @@ class Parser:
             for play in self.play_by_plays:
                 writer.writerow(self.play_by_plays[play].getInfo())
             
-        with open("csv/errors.csv", "w") as file:
+        with open(f"csv/{date_str}errors.csv", "w") as file:
             writer = csv.writer(file, delimiter=',')
             for url in self.errors:
                 writer.writerow([url])

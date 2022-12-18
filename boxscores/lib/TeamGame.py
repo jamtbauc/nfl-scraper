@@ -158,19 +158,19 @@ class TeamGame:
     def setPossessionTime(self, value):
         if isinstance(value, str):
             duration = datetime.strptime(value, "%M:%S")
-        else:
-            duration = value
             
-        # hours to minutes
-        h_t_m = duration.hour * 60
-        # sum minutes
-        mins = h_t_m + duration.minute
-        # minutes to seconds
-        m_t_s = mins * 60
-        # sum seconds
-        secs = m_t_s + duration.second
+            # hours to minutes
+            h_t_m = duration.hour * 60
+            # sum minutes
+            mins = h_t_m + duration.minute
+            # minutes to seconds
+            m_t_s = mins * 60
+            # sum seconds
+            secs = m_t_s + duration.second
 
-        self.possession_time = secs
+            self.possession_time = secs
+        else:
+            self.possession_time = value
     
     def getRushAtts(self):
         return self.rush_atts
@@ -335,7 +335,7 @@ class TeamGame:
             "third_down_convs": self.getThirdDownConvs(),
             "fourth_down_atts": self.getFourthDownAtts(),
             "fourth_down_convs": self.getFourthDownConvs(),
-            "possession_time": self.getPossessionTime().isoformat(),
+            "possession_time": self.getPossessionTime(),
             "coach": self.getCoach(),
             "score": self.getScore()
         }
