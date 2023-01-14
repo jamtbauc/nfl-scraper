@@ -31,7 +31,7 @@ def request_data(conn, url):
         return body
     
 # Scrape response body for desired information  
-def run_scraper(url_stop):
+def run_scraper(last_file_update, url_stop):
     # hold all urls
     urls = get_urls('links.csv')
     # define base url and get request urls
@@ -41,20 +41,20 @@ def run_scraper(url_stop):
     # create Parser object
     parser = Parser()
     # load existing db items into array
-    url_start = parser.loadCsvGames("./csv/games.csv")
+    url_start = parser.loadCsvGames(f"./csv/{last_file_update}games.csv")
     print(f"Updating with urls starting at: {url_start}")
-    parser.loadCsvGameWeather("./csv/gm_weathers.csv")
-    parser.loadCsvOfficials("./csv/officials.csv")
-    parser.loadCsvOfficialGames("./csv/off_gms.csv")
-    parser.loadCsvPlayByPlays("./csv/play_by_plays.csv")
-    parser.loadCsvPlayers("./csv/players.csv")
-    parser.loadCsvPlayerGames("./csv/player_games.csv")
-    parser.loadCsvPlayerGameSnaps("./csv/player_game_snaps.csv")
-    parser.loadCsvScoringPlays("./csv/scoring_plays.csv")
-    parser.loadCsvStadiums("./csv/stadiums.csv")
-    parser.loadCsvTeams("./csv/teams.csv")
-    parser.loadCsvTeamGames("./csv/team_games.csv")
-    parser.loadCsvTeamGameDrive("./csv/team_game_drives.csv")
+    parser.loadCsvGameWeather(f"./csv/{last_file_update}gm_weathers.csv")
+    parser.loadCsvOfficials(f"./csv/{last_file_update}officials.csv")
+    parser.loadCsvOfficialGames(f"./csv/{last_file_update}off_gms.csv")
+    parser.loadCsvPlayByPlays(f"./csv/{last_file_update}play_by_plays.csv")
+    parser.loadCsvPlayers(f"./csv/{last_file_update}players.csv")
+    parser.loadCsvPlayerGames(f"./csv/{last_file_update}player_games.csv")
+    parser.loadCsvPlayerGameSnaps(f"./csv/{last_file_update}player_game_snaps.csv")
+    parser.loadCsvScoringPlays(f"./csv/{last_file_update}scoring_plays.csv")
+    parser.loadCsvStadiums(f"./csv/{last_file_update}stadiums.csv")
+    parser.loadCsvTeams(f"./csv/{last_file_update}teams.csv")
+    parser.loadCsvTeamGames(f"./csv/{last_file_update}team_games.csv")
+    parser.loadCsvTeamGameDrive(f"./csv/{last_file_update}team_game_drives.csv")
     # loop through all urls
     for url in urls:
         url_date = url[11:19]
@@ -110,7 +110,7 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper("20221213")
+        run_scraper("20221217", "20230113")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)
