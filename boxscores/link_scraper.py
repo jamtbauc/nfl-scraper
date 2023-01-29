@@ -20,10 +20,13 @@ def get_data(base, url):
         return html.decode('ISO-8859-1')
     
 def run_scraper():
+    print("Starting scraper")
     # define starting year to gather data (2018 is fisrt year for advanced stats)
     year = 2018
     today = date.today()
+    print("Opening links.csv")
     with open('links.csv', 'w', newline='') as f:
+        print("Successfully opened links.csv")
         writer = csv.writer(f)
         while year <= today.year:
             # define base url and get request urls

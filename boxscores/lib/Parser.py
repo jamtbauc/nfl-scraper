@@ -1403,10 +1403,10 @@ class Parser:
                 id = int(row[0])
                 team_id = row[1]
                 game_id = row[2]
-                won_toss = row[3] == "True"
+                won_toss = row[3] == "TRUE"
                 toss_decision = row[4]
-                is_home = row[5] == "True"
-                is_favored = row[6] == "True"
+                is_home = row[5] == "TRUE"
+                is_favored = row[6] == "TRUE"
                 spread = float(row[7])
                 over_under = float(row[8])
                 first_downs = int(row[9])
@@ -1680,8 +1680,8 @@ class Parser:
         with open(f"csv/{date_str}scoring_plays.csv", "w", newline="") as file:
             fieldnames = [
                 'id',
-                'home_score',
                 'scoring_team_id',
+                'home_score',
                 'away_score', 
                 'qtr', 
                 'qtr_time_rem',

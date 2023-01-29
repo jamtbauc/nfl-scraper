@@ -110,7 +110,9 @@ def trim_text(text, start, end):
 if __name__ == "__main__":
     start_time = time()
     try:
-        run_scraper("20221217", "20230113")
+        # Param 1: last file update date
+        # Parama 2: Day to stop
+        run_scraper("20230129", "20230128")
         print(time() - start_time) 
     except KeyboardInterrupt:
         print(time() - start_time)

@@ -4,12 +4,12 @@ import json
 class ScoringPlay:
     def __init__(self, id):
         self.id = id
+        self.home_score = None
+        self.scoring_team_id = None
+        self.away_score = None
         self.qtr = None
         self.qtr_time_rem = None
-        self.scoring_team_id = None
         self.description = None
-        self.away_score = None
-        self.home_score = None
         
     def getAwayScore(self):
         return self.away_score
@@ -56,12 +56,12 @@ class ScoringPlay:
     def getInfo(self):
         info = {
             "id": self.getId(),
+            "scoring_team_id": self.getScoringTeamId(),
+            "home_score": self.getHomeScore(),
+            "away_score": self.getAwayScore(),
             "qtr": self.getQtr(),
             "qtr_time_rem": self.getQtrTimeRem().isoformat(),
-            "scoring_team_id": self.getScoringTeamId(),
-            "description": self.getDescription(),
-            "away_score": self.getAwayScore(),
-            "home_score": self.getHomeScore()
+            "description": self.getDescription()
         }
         
         return info
